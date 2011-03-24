@@ -1,0 +1,53 @@
+<div class="filter_controls">
+  <div class="line">
+    <span class="left">
+      <label>Selected Flight: </label>
+      <select id="flight">
+        {{#flights}}
+          <option>{{flight}}</option>
+        {{/flights}}
+      </select>
+    </span>
+    <span class="center">
+      Add new: 
+      <a href="vet_edit.html?vetid=New">Veteran</a>, 
+      <a href="grd_edit.html?grdid=New">Guardian</a> 
+    </span>
+    <span class="right">
+      <label>Downloads: </label>
+      <a href="_list/veteran-full-csv/veterans">All Veterans</a> 
+    </span>
+  </div>
+  <br />
+  <br />
+  <div class="line">
+    <span class="left">
+      <label>Search (Last Name): </label>
+      <input type="text" id="last_name" pattern="[a-zA-Z ]{2,}" maxlength="30" value="" style="width: 15em"/>
+    </span>
+    <span class="right">
+      <label>Pasted URL: </label>
+      <input type="text" id="pasted_url" value="" style="width: 15em"/> <input type="submit" value="Go" /> 
+    </span>
+  </div>
+  <p></p>
+</div>
+<br />
+<br />
+<div class="result_list">
+  <table class='MixedList'>
+    <thead>
+      <tr>
+        <th class="colName">Name</th>
+        <th class="colCity">City</th>
+        <th class="colAppDate">App. Date</th>
+        <th class="colFlight">Flight</th>
+        <th class="colGroup">Group</th>
+        <th class="colPairing">Pairing</th>
+      </tr>
+    </thead>
+    <tbody id="results">
+    </tbody>
+  </table>
+</div>
+
