@@ -1,7 +1,11 @@
 function(doc) {
   if (doc.type == "Guardian") {
     emit([doc.flight.id, doc.veteran.id, doc.app_date],
-         [doc.name.last, doc.name.first]);
+         [doc.name.last, 
+          doc.name.first,
+          doc.address.street,
+          doc.address.city,
+          doc.address.county]);
   }
 }
 

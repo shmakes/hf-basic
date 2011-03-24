@@ -4,7 +4,10 @@ function(doc) {
         && doc.veteran.id == "") {
     emit([doc.address.zip,
           doc.app_date], 
-         [doc.name.last, doc.name.first]);
+         [doc.name.last, 
+          doc.name.first,
+          doc.address.street,
+          doc.address.city]);
   }
 }
 

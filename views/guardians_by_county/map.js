@@ -5,7 +5,10 @@ function(doc) {
     emit([doc.address.state.toUpperCase(),
           doc.address.county.toUpperCase(),
           doc.app_date], 
-         [doc.name.last, doc.name.first]);
+         [doc.name.last, 
+          doc.name.first,
+          doc.address.street,
+          doc.address.city]);
   }
 }
 
