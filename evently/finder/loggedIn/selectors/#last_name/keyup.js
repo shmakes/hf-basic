@@ -13,7 +13,7 @@ function() {
 
   if (flt != "All") {
     startKey.push(flt);
-    endKey.push(flt + "\ufff0");
+    endKey.push(flt);
     viewName = "basic/all_by_flight_and_name";
   }
 
