@@ -1,25 +1,29 @@
 function() {
   var value = $(this).val();
+  var flt = $("#flight").val();
   
   if (value.match(/[^a-zA-Z ]/g)) {
     this.value = this.value.replace(/[^a-zA-Z ]/g, '');
     return false;
   }
 
-  var startString = "a";
-  var endString = "zzzz";
+  var startKey = [];
+  var endKey = [];
+  var viewName = "basic/all_by_name";
+
+  if (flt != "All") {
+    startKey.push(flt);
+    endKey.push(flt + "\ufff0");
+    viewName = "basic/all_by_flight_and_name";
+  }
 
   if (value.length > 0) {
-    startString = value;
-    var lastChar = value.charCodeAt(value.length - 1);
-    if ((lastChar == 90) || (lastChar == 122)) {
-      endString = value + "z";
-    }
-    else {
-      endString = value.substr(0, value.length - 1) + String.fromCharCode(lastChar + 1);
-    }
+    startKey.push(value);
+    endKey.push(value + "\ufff0");
+  } else {
+    startKey.push("a");
+    endKey.push("\ufff0");
   }
-  //$("p").text(startString + " - " + endString);
 
   // Clear the result area.
   var rslt = $("#results");
@@ -27,10 +31,10 @@ function() {
 
   // Get the data.
   var app = $$(this).app;
-  app.db.view("basic/all_by_name", {
+  app.db.view(viewName, {
     limit : 50,
-    startkey : [startString],
-    endkey : [endString],
+    startkey : startKey,
+    endkey : endKey,
     descending : false,
     type : "newRows",
     success: function(resp) {
