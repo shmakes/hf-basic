@@ -1,0 +1,48 @@
+<div>
+  <form id="form-Flight">
+
+    <fieldset>
+      <legend accesskey="F">
+        <span>Flight</span>
+        <span class="grey-note">
+          Doc ID: {{id}} 
+          <a target="_blank" href="/_utils/document.html?{{db_name}}/{{id}}">{{raw_data_lnk}}</a>
+        </span>
+      </legend>
+      <ol>
+        <li>
+          <label for="flight_name">flight</label>
+          <input type="text" name="flight_name" readonly="readonly" value="{{flight_name}}" style="width: 15em" />
+        </li>
+        <li>
+          <label for="capacity">capacity</label>
+          <input type="text" name="capacity" readonly="readonly" value="{{capacity}}" style="width: 5em" />
+        </li>
+        <li>
+          <label for="flight_date">flight date</label>
+          <input type="text" name="flight_date" readonly="readonly" value="{{flight_date}}" style="width: 15em" />
+        </li>
+      </ol>
+    </fieldset>
+
+    <fieldset>
+      <legend accesskey="S">
+        <span>Seating</span>
+      </legend>
+      <ol>
+      {{#pairs}}
+        <li>
+          <label for="vet_name">vet</label>
+          <input type="text" name="vet_name" readonly="readonly" value="{{vet_name}}" style="width: 15em" />
+        </li>
+      {{/pairs}}
+      </ol>
+    </fieldset>
+
+    <fieldset class="submit">
+      <button type="submit">Save</button> 
+      <button type="reset">Reset</button>
+    </fieldset>
+  </form>
+</div>
+

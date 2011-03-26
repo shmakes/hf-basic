@@ -44,7 +44,7 @@ h2 {
   padding:24px 4px;
 }
 
-#vets ul, #tasks ul {
+#flights ul, #tasks ul {
   list-style: none;
   margin:0;
   padding:0;
@@ -54,7 +54,7 @@ h2 {
   clear:left;
 }
 
-#vets li, #tasks li, #profile {
+#flights li, #tasks li, #profile {
   padding:4px;
   padding-bottom:0;
   margin:6px;
@@ -78,7 +78,7 @@ div#profile {
   width:80%;
 }
 
-#vets li:hover {
+#flights li:hover {
   border: 1px solid #999;
   background-color:#aaa;
 }

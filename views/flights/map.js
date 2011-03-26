@@ -1,5 +1,5 @@
 function(doc) {
   if (doc.type == "Flight") {
-    emit([doc.name], null);
+    emit([doc.flight_date, doc.name], null);
   }
 }
