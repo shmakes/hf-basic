@@ -1,0 +1,75 @@
+table {
+  border-width: 1px 1px 1px 1px;
+  border-spacing: 0;
+  border-style: solid;
+}
+
+table th, td {
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+  margin: 0;
+  padding: 1px;
+  text-align: center;
+}
+
+td.Veteran,
+tr.Veteran {
+  background-color:#fcc;
+}
+td.Guardian,
+tr.Guardian {
+  background-color:#ccf;
+}
+tr.Veteran:hover,
+tr.Guardian:hover,
+tr.DataRow td:hover {
+  background-color: #9c9;
+}
+
+table a {
+  display:block;
+}
+table a:link {
+  color:#000000;
+  text-decoration: none;
+}
+table a:visited {
+  color:#000000;
+  text-decoration: none;
+}
+table a:hover {
+  color:#000000;
+  text-decoration: none;
+}
+table a:active {
+  color:#0000FF;
+  text-decoration: none;
+}
+
+table.MixedList .colName {
+  width: 250px;
+}
+
+table.MixedList .colCity {
+  width: 200px;
+}
+
+table.MixedList .colAppDate {
+  width: 100px;
+}
+
+table.MixedList .colFlight {
+  width: 150px;
+}
+
+table.MixedList .colGroup {
+  width: 100px;
+}
+
+table.MixedList .colPairing {
+  width: 250px;
+}
+
+
+
+

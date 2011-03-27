@@ -20,6 +20,7 @@ function(cb) {
             cb(doc);
           }
         })
+
       }
     });
   } else if (docid == 'New') {

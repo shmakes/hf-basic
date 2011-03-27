@@ -1,48 +1,65 @@
 <div>
-  <form id="form-Flight">
 
-    <fieldset>
-      <legend accesskey="F">
-        <span>Flight</span>
-        <span class="grey-note">
-          Doc ID: {{id}} 
-          <a target="_blank" href="/_utils/document.html?{{db_name}}/{{id}}">{{raw_data_lnk}}</a>
-        </span>
-      </legend>
-      <ol>
-        <li>
-          <label for="flight_name">flight</label>
-          <input type="text" name="flight_name" readonly="readonly" value="{{flight_name}}" style="width: 15em" />
-        </li>
-        <li>
-          <label for="capacity">capacity</label>
-          <input type="text" name="capacity" readonly="readonly" value="{{capacity}}" style="width: 5em" />
-        </li>
-        <li>
-          <label for="flight_date">flight date</label>
-          <input type="text" name="flight_date" readonly="readonly" value="{{flight_date}}" style="width: 15em" />
-        </li>
-      </ol>
-    </fieldset>
+  <span>Flight</span>
+  <span class="grey-note">
+    Doc ID: {{id}} 
+    <a target="_blank" href="/_utils/document.html?{{db_name}}/{{id}}">{{raw_data_lnk}}</a>
+  </span>
+  <p>
+    <label for="flight_name">flight</label>
+    <input type="text" name="flight_name" readonly="readonly" value="{{flight_name}}" style="width: 15em" /> 
+    <label for="capacity">capacity</label>
+    <input type="text" name="capacity" readonly="readonly" value="{{capacity}}" style="width: 5em" /> 
+    <label for="flight_date">flight date</label>
+    <input type="text" name="flight_date" readonly="readonly" value="{{flight_date}}" style="width: 15em" />
+  </p>
+  <p>
+    <label for="add_vets">number of vets to add:</label>
+    <input type="number" name="add_vets" min="0" max="100" maxlength="3" value="0" style="width: 4em" /> 
+    <button>Add</button>
+    Unassigned Vets with earliest application date will be picked first. (max 100 per add)
+  </p>
 
-    <fieldset>
-      <legend accesskey="S">
-        <span>Seating</span>
-      </legend>
-      <ol>
-      {{#pairs}}
-        <li>
-          <label for="vet_name">vet</label>
-          <input type="text" name="vet_name" readonly="readonly" value="{{vet_name}}" style="width: 15em" />
-        </li>
-      {{/pairs}}
-      </ol>
-    </fieldset>
+  <table>
+    <tr>
+      <th colspan="7">Veteran</th>
+      <th rowspan="2"> - </th>
+      <th colspan="6">Guardian</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>City</th>
+      <th>App Date</th>
+      <th>Preference</th>
+      <th>Group</th>
+      <th>Seat</th>
+      <th>Seat</th>
+      <th>Group</th>
+      <th>Preference</th>
+      <th>App Date</th>
+      <th>City</th>
+      <th>Name</th>
+    </tr> 
+  {{#pairs}}
+    <tr class="DataRow" vetid="{{vet_id}}" grdid="{{grd_id}}">
+      <td class="Veteran"><button>Del</button></td>
+      <td class="Veteran">{{vet_name}}</td>
+      <td class="Veteran">{{vet_city}}</td>
+      <td class="Veteran">{{vet_appdate}}</td>
+      <td class="Veteran">{{vet_pairPref}}</td>
+      <td class="Veteran">{{vet_group}}</td>
+      <td class="Veteran"><input type="text" value="{{vet_seat}}" style="width: 2em" /></td>
+      <td class="Veteran"><button>--&gt;</button></td>
+      <td class="Guardian"><input type="text" value="{{grd_seat}}" style="width: 2em" /></td>
+      <td class="Guardian">{{grd_group}}</td>
+      <td class="Guardian">{{grd_pairPref}}</td>
+      <td class="Guardian">{{grd_appdate}}</td>
+      <td class="Guardian">{{grd_city}}</td>
+      <td class="Guardian">{{grd_name}}</td>
+    </tr>
+  {{/pairs}}
+  </table>
 
-    <fieldset class="submit">
-      <button type="submit">Save</button> 
-      <button type="reset">Reset</button>
-    </fieldset>
-  </form>
 </div>
 

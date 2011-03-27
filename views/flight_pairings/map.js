@@ -6,11 +6,13 @@ function(doc) {
       listing = doc._id,
       pairing = (doc.guardian.id || "");
       pairName = (doc.guardian.name || "");
+      pairPref = (doc.guardian.pref_notes || "");
     } 
     if (ptype == "Guardian") {
       listing = (doc.veteran.id || ""),
       pairing = listing;
       pairName = (doc.veteran.name || "");
+      pairPref = (doc.veteran.pref_notes || "");
     }
     emit([(doc.flight.id || ""), 
            listing],
@@ -23,7 +25,8 @@ function(doc) {
            "group": (doc.flight.group || "N/A"),
            "seat": (doc.flight.seat || ""),
            "pairing": pairing,
-           "pairName": pairName
+           "pairName": pairName,
+           "pairPref": pairPref
          });
   }
 }
