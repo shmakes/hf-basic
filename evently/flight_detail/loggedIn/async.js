@@ -17,10 +17,9 @@ function(cb) {
             for (row in resp.rows) {
               doc.pairs.push(resp.rows[row]);
             }
+            cb(doc);
           }
         })
-
-        cb(doc);
       }
     });
   } else if (docid == 'New') {
