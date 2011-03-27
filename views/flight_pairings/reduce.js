@@ -11,7 +11,8 @@ function(keys, values, rereduce) {
           group: values[idx].group,
           seat: values[idx].seat,
           pairing: values[idx].pairing,
-          pairName: values[idx].pairName
+          pairName: values[idx].pairName,
+          pairPref: values[idx].pairPref
         });
       } else if (values[idx].grd !== undefined) {
         output.grd.push({
@@ -22,8 +23,8 @@ function(keys, values, rereduce) {
           group: values[idx].group,
           seat: values[idx].seat,
           pairing: values[idx].pairing,
-          pairName: values[idx].pairName
-
+          pairName: values[idx].pairName,
+          pairPref: values[idx].pairPref
         });
       }
     }
@@ -39,8 +40,8 @@ function(keys, values, rereduce) {
           group: values[idx].group,
           seat: values[idx].seat,
           pairing: values[idx].pairing,
-          pairName: values[idx].pairName
-
+          pairName: values[idx].pairName,
+          pairPref: values[idx].pairPref
         });
         output.vet = vets;
       }
@@ -53,8 +54,8 @@ function(keys, values, rereduce) {
           group: values[idx].group,
           seat: values[idx].seat,
           pairing: values[idx].pairing,
-          pairName: values[idx].pairName
-
+          pairName: values[idx].pairName,
+          pairPref: values[idx].pairPref
         });
         output.grd = grds;
       }
