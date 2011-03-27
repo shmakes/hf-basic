@@ -1,15 +1,16 @@
 function(doc) {
   if (doc.type == "Guardian" 
-	&& doc.flight.id == "None"
-        && doc.veteran.id == "") {
+	    && doc.flight.id == "None"
+      && doc.veteran.id == "") 
+  {
     emit([doc.address.state.toUpperCase(),
           doc.address.county.toUpperCase(),
           doc.address.city.toUpperCase(),
           doc.app_date], 
-         [doc.name.last, 
-          doc.name.first,
-          doc.address.street,
-          doc.address.zip]);
+         { "name"    : doc.name.first + " " + doc.name.last, 
+           "street"  : doc.address.street, 
+           "zip"     : doc.address.zip
+         });
 
   }
 }

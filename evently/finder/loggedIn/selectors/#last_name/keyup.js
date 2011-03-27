@@ -40,7 +40,7 @@ function() {
     success: function(resp) {
       for (row in resp.rows) {
         var id = resp.rows[row].id;
-        var person = resp.rows[row].value[0];
+        var person = resp.rows[row].value;
 
         var anchor = "<a href='#'>";
         if (person.type == 'Veteran') {
