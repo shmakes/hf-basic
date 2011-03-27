@@ -1,5 +1,4 @@
 {
   "view" : "flights",
-  "limit" : 25,
-  "descending" : false
+  "descending" : true
 }

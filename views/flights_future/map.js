@@ -4,6 +4,6 @@ function(doc) {
   if ((doc.type == "Flight") 
     && (fdt > now)
     && (!doc.completed)) {
-    emit([doc.name], null);
+    emit([doc.flight_date, doc.name], null);
   }
 }
