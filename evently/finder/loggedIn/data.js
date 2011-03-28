@@ -1,7 +1,7 @@
 function(resp) {
   var flights = resp.rows.map(function(r) {
     return {
-      flight : r.key[0]
+      flight : r.key[1]
     };
   });
   flights.unshift({"flight": "All"});
