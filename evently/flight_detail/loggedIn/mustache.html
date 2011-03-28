@@ -50,7 +50,7 @@
       <td class="Veteran" style="width: 4em">{{vet_pairPref}}</td>
       <td class="Veteran">{{vet_group}}</td>
       <td class="Veteran"><input type="text" value="{{vet_seat}}" style="width: 2em" /></td>
-      <td class="Veteran"><button class="modalInput" rel="#prompt">--&gt;</button></td>
+      <td class="Veteran"><button class="modalInput" rel="#{{vet_id}}">--&gt;</button></td>
       <td class="Guardian"><input type="text" value="{{grd_seat}}" style="width: 2em" /></td>
       <td class="Guardian">{{grd_group}}</td>
       <td class="Guardian" style="width: 4em">{{grd_pairPref}}</td>
@@ -61,22 +61,67 @@
   {{/pairs}}
   </table>
 
-<div class="modal" id="prompt">
-	<h2>This is a modal dialog</h2>
+  <div id="trigger" rel="#prompt"></div>
+  <div class="modal" id="prompt">
+    <h2 id="vet_name"></h2>
 
-	<p>
-		You can only interact with elements that are inside this dialog.
-		To close it click a button or use the ESC key.
-	</p>
+    <p>
+      Select a guardian from the lists arranged below.
+    </p>
 
-	<!-- input form. you can press enter too -->
-	<form>
-		<input />
-		<button type="submit"> OK </button>
-		<button type="button" class="close"> Cancel </button>
-	</form>
-	<br />
+    <h3>Select by same zip code.</h3>
+    <form>
+      <select name="drop1" id="Select1" size="4" style="width: 30em" >
+        <option value="1">item 1</option>
+        <option value="2">item 2</option>
+        <option value="3">item 3</option>
+        <option value="4">item 4</option>
+        <option value="0">All</option>
+      </select>
+      <button type="submit"> OK </button>
+    </form>
 
-</div>
+    <h3>Select by same city.</h3>
+    <form>
+      <select name="drop1" id="Select1" size="4" style="width: 30em" >
+        <option value="1">item 1</option>
+        <option value="2">item 2</option>
+        <option value="3">item 3</option>
+        <option value="4">item 4</option>
+        <option value="0">All</option>
+      </select>
+      <button type="submit"> OK </button>
+    </form>
+
+    <h3>Select by same county.</h3>
+    <form>
+      <select name="drop1" id="Select1" size="4" style="width: 30em" >
+        <option value="1">item 1</option>
+        <option value="2">item 2</option>
+        <option value="3">item 3</option>
+        <option value="4">item 4</option>
+        <option value="0">All</option>
+      </select>
+      <button type="submit"> OK </button>
+    </form>
+
+    <h3>Select by next on waiting list.</h3>
+    <form>
+      <select name="drop1" id="Select1" size="4" style="width: 30em" >
+        <option value="1">item 1</option>
+        <option value="2">item 2</option>
+        <option value="3">item 3</option>
+        <option value="4">item 4</option>
+        <option value="0">All</option>
+      </select>
+      <button type="submit"> OK </button>
+    </form>
+
+    <br />
+    <form>
+      <button type="button" class="close"> Cancel </button>
+    </form>
+    <br />
+  </div>
 </div>
 
