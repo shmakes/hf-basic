@@ -70,6 +70,16 @@ table.MixedList .colPairing {
   width: 250px;
 }
 
+table.addPeople {
+  border-width: 0;
+  border-spacing: 0;
+  border-style: none;
+}
 
-
-
+table.addPeople td {
+  border-width: 0;
+  border-style: none;
+  margin: 0;
+  padding: 1px;
+  text-align: left;
+}

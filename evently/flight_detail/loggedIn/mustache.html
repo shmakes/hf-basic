@@ -13,12 +13,27 @@
     <label for="flight_date">flight date</label>
     <input type="text" name="flight_date" readonly="readonly" value="{{flight_date}}" style="width: 15em" />
   </p>
-  <p>
-    <label for="add_vets">number of vets to add:</label>
-    <input type="number" name="add_vets" min="0" max="100" maxlength="3" value="0" style="width: 4em" /> 
-    <button>Add</button>
-    Unassigned Vets with earliest application date will be picked first. (max 100 per add)
-  </p>
+  <table class="addPeople">
+    <tr>
+      <td>
+        <label for="add_vets">number of veterans to add:</label>
+      </td>
+      <td>
+        <input type="number" name="add_vets" min="0" max="100" maxlength="3" value="0" style="width: 4em" /> 
+        <button id="addVets">Add</button> Unassigned Vets with earliest application date will be picked first. (max 100 per add)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label for="add_grds">number of guardians to add:</label>
+      </td>
+      <td>
+        <input type="number" name="add_grds" min="0" max="100" maxlength="3" value="0" style="width: 4em" /> 
+        <button id="addGrds">Add</button> Unassigned Guardians with earliest application date will be picked first. (max 100 per add)
+      </td>
+    </tr>
+  </table>
+  <br />
 
   <table>
     <tr>
