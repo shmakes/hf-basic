@@ -10,7 +10,6 @@
 * "Unable to fly" and/or "Removed" status.
 * Handle "flown" flight assignments on edit forms.
 * CouchDb devs: What is the "right way" to document pairing with scalar reduce rule in place?
-* DRY on ISODateString function - move to app.js.
 
 ##Outputs
 
