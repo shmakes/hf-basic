@@ -54,6 +54,28 @@ function() {
       })
 
 
+      var endCounty = startCounty.toUpperCase() + "\ufff0";
+      $("#byCounty")[0].textContent = doc.address.county;
+      var countySel = $("select[name='ByCountySel']");
+      countySel.find('option').remove().end();
+      var countyOpt = countySel.attr('options');
+      app.db.view("basic/guardians_by_county", {
+        descending : false,
+        limit: 10,
+        startkey : [ state, startCounty ],
+        endkey : [ state, endCounty ],
+        success: function(resp) {
+          selected = true;
+          for (idx in resp.rows) {
+            row = resp.rows[idx];
+            entry = row.value.name + " | " + row.value.street + " | " + row.value.city;
+            countyOpt[countyOpt.length] = new Option(entry, row.id, selected, selected);
+            selected = false;
+          }
+        }
+      })
+
+
       $("#trigger").click();
     }
   });
