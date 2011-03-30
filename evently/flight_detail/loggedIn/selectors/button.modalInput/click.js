@@ -76,6 +76,26 @@ function() {
       })
 
 
+      var app_dateSel = $("select[name='ByAppDateSel']");
+      app_dateSel.find('option').remove().end();
+      var app_dateOpt = app_dateSel.attr('options');
+      app.db.view("basic/guardians_by_app_date", {
+        descending : false,
+        limit: 10,
+        startkey : [ "None" ],
+        endkey : [ "None\ufff0" ],
+        success: function(resp) {
+          selected = true;
+          for (idx in resp.rows) {
+            row = resp.rows[idx];
+            entry = row.value.name + " | " + row.value.street + " | " + row.value.city;
+            app_dateOpt[app_dateOpt.length] = new Option(entry, row.id, selected, selected);
+            selected = false;
+          }
+        }
+      })
+
+
       $("#trigger").click();
     }
   });
