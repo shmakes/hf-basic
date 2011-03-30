@@ -11,7 +11,7 @@ function() {
   $("#birth_date").dateinput({
     format: 'yyyy-mm-dd',
     selectors: true,
-    yearRange: [-100,-60],
+    yearRange: [-70,-18],
     speed: 100
   });
 
@@ -33,9 +33,9 @@ function() {
     return (jQuery.inArray(value, validShirtSizes) >= 0);
   });
 
-  var grdId = $("#guardian_id");
+  var grdId = $("#veteran_id");
   if (grdId.attr('value').length == 0) {
-    $("#vet_edit_link").hide();
+    $("#grd_edit_link").hide();
   }
 
   $(this).show();

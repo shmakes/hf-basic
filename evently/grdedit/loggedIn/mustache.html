@@ -59,6 +59,14 @@
           <input type="text" name="phone" pattern="[0-9 -]{12,}" maxlength="20" value="{{addr_phone}}" style="width: 10em" required="required" />
         </li>
         <li>
+          <label for="phone_eve">phone eve</label>
+          <input type="text" name="phone_eve" pattern="[0-9 -]{12,}" maxlength="20" value="{{addr_phone_eve}}" style="width: 10em" required="required" />
+        </li>
+        <li>
+          <label for="phone_mbl">phone mbl</label>
+          <input type="text" name="phone_mbl" pattern="[0-9 -]{12,}" maxlength="20" value="{{addr_phone_mbl}}" style="width: 10em" required="required" />
+        </li>
+        <li>
           <label for="email">email</label>
           <input type="email" name="email" value="{{addr_email}}" style="width: 20em" />
         </li>
@@ -112,13 +120,13 @@
           </select>
         </li>
         <li>
-          <label for="guardian_pref_notes">guardian preferance</label>
-          <input type="text" name="guardian_pref_notes" value="{{guardian_pref_notes}}" style="width: 25em" />
+          <label for="veteran_pref_notes">veteran preferance</label>
+          <input type="text" name="veteran_pref_notes" value="{{veteran_pref_notes}}" style="width: 25em" />
         </li>
         <li>
-          <input type="hidden" id="guardian_id" name="guardian_id" value="{{guardian_id}}" />
-          <label for="guardian_assigned">guardian assigned</label>
-          <input type="text" name="guardian_name" readonly="readonly" value="{{guardian_name}}" style="width: 15em" /> 
+          <input type="hidden" id="veteran_id" name="veteran_id" value="{{veteran_id}}" />
+          <label for="veteran_assigned">veteran assigned</label>
+          <input type="text" name="veteran_name" readonly="readonly" value="{{veterar_name}}" style="width: 15em" /> 
           <a id="vet_edit_link" target="_blank" href="veteran_edit.html?grdid='{{veteran_id}}'">edit</a>
         </li>
       </ol>
@@ -138,7 +146,7 @@
         </li>
         <li>
           <label for="age">age</label>
-          <input type="number" name="age" min="60" max="110" value="{{age}}" style="width: 4em" />
+          <input type="number" name="age" min="18" max="70" value="{{age}}" style="width: 4em" />
           <span class="grey-note">
             {{ageFromBirthDate}}
           </span>
@@ -149,7 +157,7 @@
         </li>
         <li>
           <label for="weight">weight</label>
-          <input type="number" name="weight" min="60" max="450" value="{{weight}}" style="width: 4em" />
+          <input type="number" name="weight" min="100" max="350" value="{{weight}}" style="width: 4em" />
         </li>
         <li>
           <label for="shirt_size">shirt</label>
@@ -169,6 +177,10 @@
           <input type="text" name="notes_service" value="{{notes_service}}" style="width: 35em" />
         </li>
         <li>
+          <label for="notes_previous_hf">previous hf</label>
+          <input type="text" name="notes_previous_hf" value="{{notes_previous_hf}}" style="width: 35em" />
+        </li>
+        <li>
           <label for="notes_other">other notes</label>
           <input type="text" name="notes_other" value="{{notes_other}}" style="width: 35em" />
         </li>
@@ -185,16 +197,12 @@
           <input type="text" name="medical_limitations" value="{{medical_limitations}}" style="width: 35em" />
         </li>
         <li>
-          <label for="medical_perscriptions">perscriptions</label>
-          <input type="text" name="medical_perscriptions" value="{{medical_perscriptions}}" style="width: 35em" />
+          <label for="medical_experience">experience</label>
+          <input type="text" name="medical_experience" value="{{medical_experience}}" style="width: 35em" />
         </li>
         <li>
-          <label for="medical_general">general</label>
-          <input type="text" name="medical_general" value="{{medical_general}}" style="width: 35em" />
-        </li>
-        <li>
-          <label for="medical_review">review</label>
-          <input type="text" name="medical_review" value="{{medical_review}}" style="width: 35em" />
+          <label for="medical_release">release</label>
+          <input type="text" name="medical_release" value="{{medical_release}}" style="width: 35em" />
         </li>
       </ol>
     </fieldset>
