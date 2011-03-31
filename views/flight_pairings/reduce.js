@@ -5,7 +5,8 @@ function(keys, values, rereduce) {
       if (values[idx].vet !== undefined) {
         output.vet.push({
           id: values[idx].id,
-          name: values[idx].name,
+          name_first: values[idx].name_first,
+          name_last: values[idx].name_last,
           city: values[idx].city,
           appdate: values[idx].appdate,
           group: values[idx].group,
@@ -17,7 +18,8 @@ function(keys, values, rereduce) {
       } else if (values[idx].grd !== undefined) {
         output.grd.push({
           id: values[idx].id,
-          name: values[idx].name,
+          name_first: values[idx].name_first,
+          name_last: values[idx].name_last,
           city: values[idx].city,
           appdate: values[idx].appdate,
           group: values[idx].group,
@@ -34,7 +36,8 @@ function(keys, values, rereduce) {
       if (values[idx].type == "Veteran") {
         vets.push({
           id: values[idx].id,
-          name: values[idx].name,
+          name_first: values[idx].name_first,
+          name_last: values[idx].name_last,
           city: values[idx].city,
           appdate: values[idx].appdate,
           group: values[idx].group,
@@ -48,7 +51,8 @@ function(keys, values, rereduce) {
       else if (values[idx].type == "Guardian") {
         grds.push({
           id: values[idx].id,
-          name: values[idx].name,
+          name_first: values[idx].name_first,
+          name_last: values[idx].name_last,
           city: values[idx].city,
           appdate: values[idx].appdate,
           group: values[idx].group,

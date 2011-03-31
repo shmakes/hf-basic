@@ -11,29 +11,31 @@ function(r) {
 
       if (pair.vet) {
         vet = pair.vet[0];
-        entry["vet_id"]       = vet.id;
-        entry["vet_name"]     = vet.name;
-        entry["vet_city"]     = vet.city;
-        entry["vet_appdate"]  = vet.appdate;
-        entry["vet_group"]    = vet.group;
-        entry["vet_seat"]     = vet.seat;
-        entry["vet_pairing"]  = vet.pairing;
-        entry["vet_pairName"] = vet.pairName;
-        entry["vet_pairPref"] = vet.pairPref;
+        entry["vet_id"]         = vet.id;
+        entry["vet_name_first"] = vet.name_first;
+        entry["vet_name_last"]  = vet.name_last;
+        entry["vet_city"]       = vet.city;
+        entry["vet_appdate"]    = vet.appdate;
+        entry["vet_group"]      = vet.group;
+        entry["vet_seat"]       = vet.seat;
+        entry["vet_pairing"]    = vet.pairing;
+        entry["vet_pairName"]   = vet.pairName;
+        entry["vet_pairPref"]   = vet.pairPref;
       }
 
       if (pair.grd) {
         entry["guardians"] = pair.grd.length;
         grd = pair.grd[0];
-        entry["grd_id"]       = grd.id;
-        entry["grd_name"]     = grd.name;
-        entry["grd_city"]     = grd.city;
-        entry["grd_appdate"]  = grd.appdate;
-        entry["grd_group"]    = grd.group;
-        entry["grd_seat"]     = grd.seat;
-        entry["grd_pairing"]  = grd.pairing;
-        entry["grd_pairName"] = grd.pairName;
-        entry["grd_pairPref"] = grd.pairPref;
+        entry["grd_id"]         = grd.id;
+        entry["grd_name_first"] = grd.name_first;
+        entry["grd_name_last"]  = grd.name_last;
+        entry["grd_city"]       = grd.city;
+        entry["grd_appdate"]    = grd.appdate;
+        entry["grd_group"]      = grd.group;
+        entry["grd_seat"]       = grd.seat;
+        entry["grd_pairing"]    = grd.pairing;
+        entry["grd_pairName"]   = grd.pairName;
+        entry["grd_pairPref"]   = grd.pairPref;
       }
       pairList.push(entry);
     }

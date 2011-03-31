@@ -7,6 +7,27 @@ function() {
     app.db.openDoc(vetId, {
       success : function(doc) {
 
+        var vetLastName = doc.name.last.toUpperCase();
+        $("#byPref")[0].textContent = doc.name.last;
+        var prefSel = $("select[name='ByPrefSel']");
+        prefSel.find('option').remove().end();
+        var prefOpt = prefSel.attr('options');
+        app.db.view("basic/guardians_by_pref", {
+          descending : false,
+          limit: 10,
+          startkey : [ vetLastName ],
+          endkey : [ vetLastName + "\ufff0" ],
+          success: function(resp) {
+            selected = true;
+            for (idx in resp.rows) {
+              row = resp.rows[idx];
+              entry = row.value.name + " | " + row.value.pref;
+              prefOpt[prefOpt.length] = new Option(entry, row.id, selected, selected);
+              selected = false;
+            }
+          }
+        })
+
         var startZip = parseInt(doc.address.zip.substr(0, 5));
         var endZip = startZip + 1;
         $("#byZip")[0].textContent = startZip;

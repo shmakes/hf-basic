@@ -59,7 +59,7 @@
   {{#pairs}}
     <tr class="DataRow" vetid="{{vet_id}}" grdid="{{grd_id}}">
       <td class="Veteran"><button>Del</button></td>
-      <td class="Veteran">{{vet_name}}</td>
+      <td class="Veteran">{{vet_name_first}} {{vet_name_last}}</td>
       <td class="Veteran">{{vet_city}}</td>
       <td class="Veteran">{{vet_appdate}}</td>
       <td class="Veteran" style="width: 4em">{{vet_pairPref}}</td>
@@ -71,7 +71,7 @@
       <td class="Guardian" style="width: 4em">{{grd_pairPref}}</td>
       <td class="Guardian">{{grd_appdate}}</td>
       <td class="Guardian">{{grd_city}}</td>
-      <td class="Guardian">{{grd_name}}</td>
+      <td class="Guardian">{{grd_name_first}} {{grd_name_last}}</td>
     </tr>
   {{/pairs}}
   </table>
@@ -83,6 +83,11 @@
     <p>
       Select a guardian from the lists arranged below.
     </p>
+
+    <h3>Select by preference name: <span id="byPref" /></h3>
+    <select name="ByPrefSel" id="SelectByPref" size="4" style="width: 40em" >
+    </select>
+    <button name="ByPrefSubmit"> OK </button>
 
     <h3>Select by same zip code: <span id="byZip" /></h3>
     <select name="ByZipSel" id="SelectByZip" size="4" style="width: 40em" >
