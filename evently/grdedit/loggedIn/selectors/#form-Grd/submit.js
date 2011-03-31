@@ -62,6 +62,14 @@ function(context) {
         doc.address.phone = f.phone;
         hasChanged = true;
       }
+      if (doc.address.phone_eve != f.phone_eve) {
+        doc.address.phone_eve = f.phone_eve;
+        hasChanged = true;
+      }
+      if (doc.address.phone_mbl != f.phone_mbl) {
+        doc.address.phone_mbl = f.phone_mbl;
+        hasChanged = true;
+      }
       if (doc.address.email != f.email) {
         doc.address.email = f.email;
         hasChanged = true;
@@ -112,16 +120,16 @@ function(context) {
       if (!doc.veteran) {
         doc.veteran = {};
       }
-      if (doc.veteran.pref_notes != f.guardian_pref_notes) {
-        doc.veteran.pref_notes = f.guardian_pref_notes;
+      if (doc.veteran.pref_notes != f.veteran_pref_notes) {
+        doc.veteran.pref_notes = f.veteran_pref_notes;
         hasChanged = true;
       }
-      if (doc.veteran.id != f.guardian_id) {
-        doc.veteran.id = f.guardian_id;
+      if (doc.veteran.id != f.veteran_id) {
+        doc.veteran.id = f.veteran_id;
         hasChanged = true;
       }
-      if (doc.veteran.name != f.guardian_name) {
-        doc.veteran.name = f.guardian_name;
+      if (doc.veteran.name != f.veteran_name) {
+        doc.veteran.name = f.veteran_name;
         hasChanged = true;
       }
 
@@ -156,6 +164,10 @@ function(context) {
         doc.notes.other = f.notes_other;
         hasChanged = true;
       }
+      if (doc.notes.previous_hf != f.notes_previous_hf) {
+        doc.notes.previous_hf = f.notes_previous_hf;
+        hasChanged = true;
+      }
       if (doc.notes.service != f.notes_service) {
         doc.notes.service = f.notes_service;
         hasChanged = true;
@@ -164,16 +176,16 @@ function(context) {
       if (!doc.medical) {
         doc.medical = {};
       }
-      if (doc.medical.perscriptions != f.medical_perscriptions) {
-        doc.medical.perscriptions = f.medical_perscriptions;
+      if (doc.medical.limitations != f.medical_limitations) {
+        doc.medical.limitations = f.medical_limitations;
         hasChanged = true;
       }
-      if (doc.medical.review != f.medical_review) {
-        doc.medical.review = f.medical_review;
+      if (doc.medical.experience != f.medical_experience) {
+        doc.medical.experience = f.medical_experience;
         hasChanged = true;
       }
-      if (doc.medical.general != f.medical_general) {
-        doc.medical.general = f.medical_general;
+      if (doc.medical.release != f.medical_release) {
+        doc.medical.release = f.medical_release;
         hasChanged = true;
       }
 
@@ -207,14 +219,7 @@ function(context) {
       }); 
     } else {
       // create a new page
-    /*
-      saveDoc({
-        _id : f._id,
-        "jquery.couch.attachPrevRev" : true
-      });
-    */
       saveDoc({});
-        
     }
     return false;
 
