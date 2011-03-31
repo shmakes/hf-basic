@@ -11,7 +11,7 @@ function(cb) {
           descending : true,
           group: true,
           endkey : [ doc.name ],
-          startkey : [ doc.name + "Z" ],
+          startkey : [ doc.name + "\ufff0" ],
           success: function(resp) {
             doc.pairs = [];
             for (row in resp.rows) {

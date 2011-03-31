@@ -8,17 +8,20 @@ function(r) {
     for (idx in r.pairs) {
       entry = {};
       pair = r.pairs[idx].value;
-      vet = pair.vet[0];
-      entry["vet_id"]       = vet.id;
-      entry["vet_name"]     = vet.name;
-      entry["vet_city"]     = vet.city;
-      entry["vet_appdate"]  = vet.appdate;
-      entry["vet_group"]    = vet.group;
-      entry["vet_seat"]     = vet.seat;
-      entry["vet_pairing"]  = vet.pairing;
-      entry["vet_pairName"] = vet.pairName;
-      entry["vet_pairPref"] = vet.pairPref;
-      var assignedGuardians = 0;
+
+      if (pair.vet) {
+        vet = pair.vet[0];
+        entry["vet_id"]       = vet.id;
+        entry["vet_name"]     = vet.name;
+        entry["vet_city"]     = vet.city;
+        entry["vet_appdate"]  = vet.appdate;
+        entry["vet_group"]    = vet.group;
+        entry["vet_seat"]     = vet.seat;
+        entry["vet_pairing"]  = vet.pairing;
+        entry["vet_pairName"] = vet.pairName;
+        entry["vet_pairPref"] = vet.pairPref;
+      }
+
       if (pair.grd) {
         entry["guardians"] = pair.grd.length;
         grd = pair.grd[0];
