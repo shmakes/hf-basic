@@ -9,7 +9,7 @@ function() {
 
         var vetLastName = doc.name.last.toUpperCase();
         $("#byPref")[0].textContent = doc.name.last;
-        var prefSel = $("select[name='ByPrefSel']");
+        var prefSel = $("select#SelectByPref");
         prefSel.find('option').remove().end();
         var prefOpt = prefSel.attr('options');
         app.db.view("basic/guardians_by_pref", {
@@ -31,7 +31,7 @@ function() {
         var startZip = parseInt(doc.address.zip.substr(0, 5));
         var endZip = startZip + 1;
         $("#byZip")[0].textContent = startZip;
-        var zipSel = $("select[name='ByZipSel']");
+        var zipSel = $("select#SelectByZip");
         zipSel.find('option').remove().end();
         var zipOpt = zipSel.attr('options');
         app.db.view("basic/guardians_by_zip", {
@@ -56,7 +56,7 @@ function() {
         var endCity = startCity.toUpperCase() + "\ufff0";
 
         $("#byCity")[0].textContent = doc.address.city;
-        var citySel = $("select[name='ByCitySel']");
+        var citySel = $("select#SelectByCity");
         citySel.find('option').remove().end();
         var cityOpt = citySel.attr('options');
         app.db.view("basic/guardians_by_city", {
@@ -78,7 +78,7 @@ function() {
 
         var endCounty = startCounty.toUpperCase() + "\ufff0";
         $("#byCounty")[0].textContent = doc.address.county;
-        var countySel = $("select[name='ByCountySel']");
+        var countySel = $("select#SelectByCounty");
         countySel.find('option').remove().end();
         var countyOpt = countySel.attr('options');
         app.db.view("basic/guardians_by_county", {
@@ -98,7 +98,7 @@ function() {
         })
 
 
-        var app_dateSel = $("select[name='ByAppDateSel']");
+        var app_dateSel = $("select#SelectByAppDate");
         app_dateSel.find('option').remove().end();
         var app_dateOpt = app_dateSel.attr('options');
         app.db.view("basic/guardians_by_app_date", {
