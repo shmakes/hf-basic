@@ -3,7 +3,7 @@ function(doc) {
 	    && doc.flight.id == "None"
       && doc.veteran.id == "") 
   {
-    emit([doc.address.zip,
+    emit([doc.address.zip.substr(0, 5),
           doc.app_date], 
          { "name"    : doc.name.first + " " + doc.name.last, 
            "street"  : doc.address.street, 

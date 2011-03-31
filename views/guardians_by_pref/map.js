@@ -18,5 +18,3 @@ function(doc) {
   }
 }
 
-//Same zip: http://localhost:5984/hf/_design/basic/_view/guardians_by_pref?limit=50&startkey=["53092"]&endkey=["53092\ufff0"]
-
