@@ -9,13 +9,25 @@ function(cb) {
 
         app.db.view("basic/flight_pairings", {
           descending : true,
-          group: true,
+          //group: true,
           endkey : [ doc.name ],
           startkey : [ doc.name + "\ufff0" ],
           success: function(resp) {
             doc.pairs = [];
+            var pairing = {};
             for (row in resp.rows) {
-              doc.pairs.push(resp.rows[row]);
+              p = resp.rows[row].value;
+              if (p.type == "Guardian") {
+                if (typeof pairing.grd === 'undefined') {
+                  pairing.grd = [];
+                }
+                pairing.grd.push(p);
+              }
+              if (p.type == "Veteran") {
+                pairing.vet = p;
+                doc.pairs.push(pairing);
+                pairing = {};
+              }
             }
             cb(doc);
           }

@@ -7,10 +7,10 @@ function(r) {
   if (r._rev) {
     for (idx in r.pairs) {
       entry = {};
-      pair = r.pairs[idx].value;
+      pair = r.pairs[idx];
 
       if (pair.vet) {
-        vet = pair.vet[0];
+        vet = pair.vet;
         entry["vet_id"]         = vet.id;
         entry["vet_name_first"] = vet.name_first;
         entry["vet_name_last"]  = vet.name_last;
