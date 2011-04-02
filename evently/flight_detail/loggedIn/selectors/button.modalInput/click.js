@@ -1,7 +1,12 @@
 function() {
   var vetId = $(this).parent().parent().attr("vetid");
   if (vetId.length == 32) {
+    // Add the veteran name.
     $("#vet_name")[0].textContent = $(this).parent().siblings()[1].textContent;
+    var grdId = $(this).parent().parent().attr("grdid");
+    $("#vet_id").val(vetId);
+    $("#grd_id").val(grdId);
+
     var app = $$(this).app;
 
     app.db.openDoc(vetId, {

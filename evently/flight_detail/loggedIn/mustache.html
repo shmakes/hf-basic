@@ -79,6 +79,8 @@
   <div id="trigger" rel="#prompt"></div>
   <div class="modal" id="prompt">
     <h2 id="vet_name"></h2>
+    <input id="vet_id" type="hidden" />
+    <input id="grd_id" type="hidden" />
 
     <p>
       Select a guardian from the lists arranged below.
@@ -87,27 +89,27 @@
     <h3>Select by preference name: <span id="byPref" /></h3>
     <select name="ByPrefSel" id="SelectByPref" size="4" style="width: 40em" >
     </select>
-    <button name="ByPrefSubmit"> OK </button>
+    <button id="ByPrefSubmit"> OK </button>
 
     <h3>Select by same zip code: <span id="byZip" /></h3>
     <select name="ByZipSel" id="SelectByZip" size="4" style="width: 40em" >
     </select>
-    <button name="ByZipSubmit"> OK </button>
+    <button id="ByZipSubmit"> OK </button>
 
     <h3>Select by same city: <span id="byCity" /></h3>
     <select name="ByCitySel" id="SelectByCity" size="4" style="width: 40em" >
     </select>
-    <button type="submit" name="ByCitySubmit"> OK </button>
+    <button id="ByCitySubmit"> OK </button>
 
     <h3>Select by same county: <span id="byCounty" /></h3>
     <select name="ByCountySel" id="SelectByCounty" size="4" style="width: 40em" >
     </select>
-    <button type="submit" name="ByCountySubmit"> OK </button>
+    <button id="ByCountySubmit"> OK </button>
 
     <h3>Select by next on waiting list.</h3>
     <select name="ByAppDateSel" id="SelectByAppDate" size="4" style="width: 40em" >
     </select>
-    <button type="submit" name="ByAppDateSubmit"> OK </button>
+    <button id="ByAppDateSubmit"> OK </button>
 
     <br />
     <button type="button" class="close"> Cancel </button>
