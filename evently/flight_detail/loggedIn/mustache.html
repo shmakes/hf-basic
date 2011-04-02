@@ -65,7 +65,7 @@
       <td class="Veteran" style="width: 4em">{{vet_pairPref}}</td>
       <td class="Veteran">{{vet_group}}</td>
       <td class="Veteran"><input type="text" value="{{vet_seat}}" style="width: 2em" /></td>
-      <td class="Veteran"><button class="modalInput" rel="#{{vet_id}}">--&gt;</button></td>
+      <td class="Veteran"><button class="modalInput" rel="#{{vet_id}}">&gt;</button></td>
       <td class="Guardian"><input type="text" value="{{grd_seat}}" style="width: 2em" /></td>
       <td class="Guardian">{{grd_group}}</td>
       <td class="Guardian" style="width: 4em">{{grd_pairPref}}</td>
@@ -89,27 +89,27 @@
     <h3>Select by preference name: <span id="byPref" /></h3>
     <select name="ByPrefSel" id="SelectByPref" size="4" style="width: 40em" >
     </select>
-    <button id="ByPrefSubmit"> OK </button>
+    <button id="ByPrefSubmit" class="close"> OK </button>
 
     <h3>Select by same zip code: <span id="byZip" /></h3>
     <select name="ByZipSel" id="SelectByZip" size="4" style="width: 40em" >
     </select>
-    <button id="ByZipSubmit"> OK </button>
+    <button id="ByZipSubmit" class="close"> OK </button>
 
     <h3>Select by same city: <span id="byCity" /></h3>
     <select name="ByCitySel" id="SelectByCity" size="4" style="width: 40em" >
     </select>
-    <button id="ByCitySubmit"> OK </button>
+    <button id="ByCitySubmit" class="close"> OK </button>
 
     <h3>Select by same county: <span id="byCounty" /></h3>
     <select name="ByCountySel" id="SelectByCounty" size="4" style="width: 40em" >
     </select>
-    <button id="ByCountySubmit"> OK </button>
+    <button id="ByCountySubmit" class="close"> OK </button>
 
     <h3>Select by next on waiting list.</h3>
     <select name="ByAppDateSel" id="SelectByAppDate" size="4" style="width: 40em" >
     </select>
-    <button id="ByAppDateSubmit"> OK </button>
+    <button id="ByAppDateSubmit" class="close"> OK </button>
 
     <br />
     <button type="button" class="close"> Cancel </button>
