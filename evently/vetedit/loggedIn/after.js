@@ -17,6 +17,8 @@ function() {
 
   $("#form-Vet").validator();
 
+  document.title = "test";
+
   // Handle shirt size selection.
   var storedShirtSize = $("#raw_shirt_size").attr('value').toUpperCase();
   $("#shirt_size").val(storedShirtSize);
