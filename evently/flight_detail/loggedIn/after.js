@@ -2,7 +2,15 @@ function() {
 
   $("#form-Flight").validator();
 
-  $("#trigger").overlay({
+  $("#chooser_trigger").overlay({
+    mask: {
+      color: '#ebecff',
+      loadSpeed: 200,
+      opacity: 0.7
+    },
+  });
+
+  $("#group_trigger").overlay({
     mask: {
       color: '#ebecff',
       loadSpeed: 200,

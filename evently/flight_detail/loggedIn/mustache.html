@@ -63,7 +63,7 @@
       <td class="Veteran">{{vet_city}}</td>
       <td class="Veteran">{{vet_appdate}}</td>
       <td class="Veteran" style="width: 4em">{{vet_pairPref}}</td>
-      <td class="Veteran">{{vet_group}}</td>
+      <td class="Veteran" name="vet_group">{{vet_group}}</td>
       <td class="Veteran"><input type="text" value="{{vet_seat}}" style="width: 2em" /></td>
       <td class="Veteran"><button class="modalInput" rel="#{{vet_id}}">&gt;</button></td>
       <td class="Guardian"><input type="text" value="{{grd_seat}}" style="width: 2em" /></td>
@@ -76,8 +76,8 @@
   {{/pairs}}
   </table>
 
-  <div id="trigger" rel="#prompt"></div>
-  <div class="modal" id="prompt">
+  <div id="chooser_trigger" rel="#chooser"></div>
+  <div class="modal chooser" id="chooser">
     <h2 id="vet_name"></h2>
     <input id="vet_id" type="hidden" />
     <input id="grd_id" type="hidden" />
@@ -111,6 +111,32 @@
     </select>
     <button id="ByAppDateSubmit" class="close"> OK </button>
 
+    <br />
+    <button type="button" class="close"> Cancel </button>
+    <br />
+  </div>
+
+  <div id="group_trigger" rel="#group"></div>
+  <div class="modal vet_group" id="group">
+    <h2 id="vet_name"></h2>
+    <input id="vet_id" type="hidden" />
+    <input id="grd_id" type="hidden" />
+
+    <p>
+      Select a tour group.
+    </p>
+
+    <table>
+      <tr class="DataRow"><td class="GroupPick close" value="None">None</td></tr>
+      <tr class="DataRow"><td class="GroupPick close" value="Alpha1">Alpha 1</td></tr>
+      <tr class="DataRow"><td class="GroupPick close" value="Alpha2">Alpha 2</td></tr>
+      <tr class="DataRow"><td class="GroupPick close" value="Alpha3">Alpha 3</td></tr>
+      <tr class="DataRow"><td class="GroupPick close" value="Alpha4">Alpha 4</td></tr>
+      <tr class="DataRow"><td class="GroupPick close" value="Beta1">Bravo 1</td></tr>
+      <tr class="DataRow"><td class="GroupPick close" value="Beta2">Bravo 2</td></tr>
+      <tr class="DataRow"><td class="GroupPick close" value="Beta3">Bravo 3</td></tr>
+      <tr class="DataRow"><td class="GroupPick close" value="Beta4">Bravo 4</td></tr>
+    </table>
     <br />
     <button type="button" class="close"> Cancel </button>
     <br />

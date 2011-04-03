@@ -123,7 +123,7 @@ function() {
         })
 
 
-        $("#trigger").click();
+        $("#chooser_trigger").click();
       }
     });
   }

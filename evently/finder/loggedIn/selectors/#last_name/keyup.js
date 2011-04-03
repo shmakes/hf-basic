@@ -44,9 +44,9 @@ function() {
 
         var anchor = "<a href='#'>";
         if (person.type == 'Veteran') {
-          anchor = "<a href='vet_edit.html?vetid=" + id + "'>";
+          anchor = "<a href='vet_edit.html?vetid=" + id + "' target='_blank'>";
         } else if (person.type == 'Guardian') {
-          anchor = "<a href='grd_edit.html?grdid=" + id + "'>";
+          anchor = "<a href='grd_edit.html?grdid=" + id + "' target='_blank'>";
         }
 
 
