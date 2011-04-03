@@ -33,9 +33,9 @@ function() {
     return (jQuery.inArray(value, validShirtSizes) >= 0);
   });
 
-  var grdId = $("#veteran_id");
-  if (grdId.attr('value').length == 0) {
-    $("#grd_edit_link").hide();
+  var vetId = $("#veteran_id");
+  if (vetId.attr('value').length == 0) {
+    $("#vet_edit_link").hide();
   }
 
   $(this).show();
