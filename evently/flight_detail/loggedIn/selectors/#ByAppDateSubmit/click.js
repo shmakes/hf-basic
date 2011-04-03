@@ -10,4 +10,4 @@ function() {
   return true;
 };
 
-//@ sourceURL=flight_detail/loggedIn/selectors/#ByAppDateSubmit/click.js
+//@ sourceURL=flight_detail/loggedIn/selectors/#ByAppDateSubmit~click.js

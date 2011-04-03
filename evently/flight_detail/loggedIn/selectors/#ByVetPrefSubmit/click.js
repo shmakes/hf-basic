@@ -1,7 +1,7 @@
 function() {
-  var vetId = $("#vet_id").val();
-  var vetName = $("#vet_name")[0].textContent;
-  var grdId = $("select#SelectByPref").val();
+  var vetId = $("#vet_id_pref").val();
+  var vetName = $("#vet_name_pref")[0].textContent;
+  var grdId = $("select#SelectByLastNameSearch").val();
   var user = $("#user_name").text();
   var app = $$(this).app;
 

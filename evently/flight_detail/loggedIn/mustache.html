@@ -62,7 +62,7 @@
       <td class="Veteran" name="vet_name">{{vet_name_first}} {{vet_name_last}}</td>
       <td class="Veteran">{{vet_city}}</td>
       <td class="Veteran">{{vet_appdate}}</td>
-      <td class="Veteran" style="width: 4em">{{vet_pairPref}}</td>
+      <td class="Veteran" name="vet_pref" style="width: 4em">{{vet_pairPref}}</td>
       <td class="Veteran" name="vet_group">{{vet_group}}</td>
       <td class="Veteran"><input type="text" value="{{vet_seat}}" style="width: 2em" /></td>
       <td class="Veteran"><button class="modalInput" rel="#{{vet_id}}">&gt;</button></td>
@@ -118,9 +118,9 @@
 
   <div id="group_trigger" rel="#group"></div>
   <div class="modal vet_group" id="group">
-    <h2 id="vet_name"></h2>
-    <input id="vet_id" type="hidden" />
-    <input id="grd_id" type="hidden" />
+    <h2 id="vet_name_group"></h2>
+    <input id="vet_id_group" type="hidden" />
+    <input id="grd_id_group" type="hidden" />
 
     <p>
       Select a tour group.
@@ -137,6 +137,30 @@
       <tr class="DataRow"><td class="GroupPick close" value="Beta3">Bravo 3</td></tr>
       <tr class="DataRow"><td class="GroupPick close" value="Beta4">Bravo 4</td></tr>
     </table>
+    <br />
+    <button type="button" class="close"> Cancel </button>
+    <br />
+  </div>
+
+  <div id="pref_trigger" rel="#pref"></div>
+  <div class="modal vet_pref" id="pref">
+    <h2 id="vet_name_pref"></h2>
+    <input id="vet_id_pref" type="hidden" />
+    <input id="grd_id_pref" type="hidden" />
+    <br />
+
+    <h3>Veteran Preference Notes.</h3>
+    <p id="pref_notes"></p>
+
+    <h3>Search Last Name</h3>
+    <input id="last_name_search" type="text" />
+    <button id="ByLastNameSearchSubmit"> Search </button>
+
+    <h3>Search Results.</h3>
+    <select name="ByLastNameSearchSel" id="SelectByLastNameSearch" size="10" style="width: 40em" >
+    </select>
+    <button id="ByVetPrefSubmit" class="close"> OK </button>
+
     <br />
     <button type="button" class="close"> Cancel </button>
     <br />

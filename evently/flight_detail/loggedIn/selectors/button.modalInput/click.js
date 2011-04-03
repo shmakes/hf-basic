@@ -130,4 +130,4 @@ function() {
   return false;
 };
 
-//@ sourceURL=flight_detail/loggedIn/selectors/#.modalInput/click.js
+//@ sourceURL=flight_detail/loggedIn/selectors/#.modalInput~click.js
