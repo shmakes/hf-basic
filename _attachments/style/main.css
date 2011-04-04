@@ -5,9 +5,10 @@ body {
 }
 
 h1 {
-  margin:0;
-  display:block;
+  margin-top:10px;
+  margin-bottom:0;
   text-align: center;
+  padding:1px;
 }
 
 h2 {
@@ -24,7 +25,9 @@ h2 {
 }
 
 #account {
-  float:right;
+  position:absolute; 
+  top:2px; 
+  right:2px; 
 }
 
 #content {
@@ -111,5 +114,10 @@ span.right {
 #result_list {
   width: 850px;
   margin:10px;
+}
+
+span.grey-note {
+  font-size: 75%;     
+  color: #555;
 }
 
