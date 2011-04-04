@@ -10,7 +10,14 @@
 * Can dates be displayed yyy-mm-dd or must they be mm/dd/yyy?
 * "Unable to fly" and/or "Removed" status.
 * Handle "flown" flight assignments on edit forms.
+* Make logo the "Home" link and remove the link text.
 
 ##Outputs
 
 * CSV list outputs for reports.
+* Enable filters for list views.
+
+## Administration
+
+* Create a "conflicts" view.
+* Remove general, unused Veteran and Guardian views.
