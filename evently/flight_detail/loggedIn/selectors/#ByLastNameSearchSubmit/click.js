@@ -11,7 +11,7 @@ function() {
   var lastnameOpt = lastnameSel.attr('options');
   app.db.view("basic/guardians_by_lastname", {
     descending : false,
-    limit: 10,
+    limit: 50,
     startkey : [ startLastName ],
     endkey : [ endLastName ],
     success: function(resp) {

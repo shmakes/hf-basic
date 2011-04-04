@@ -17,6 +17,8 @@ function() {
 
   $("#form-Grd").validator();
 
+  document.title = $("input[name='first_name']").val() + " " + $("input[name='last_name']").val();
+
   // Handle shirt size selection.
   var storedShirtSize = $("#raw_shirt_size").attr('value').toUpperCase();
   $("#shirt_size").val(storedShirtSize);
