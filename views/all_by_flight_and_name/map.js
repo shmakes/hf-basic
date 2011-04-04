@@ -13,7 +13,7 @@ function(doc) {
            "name": doc.name.first + " " + doc.name.last, 
            "city": doc.address.city + ", " + doc.address.state, 
            "appdate": doc.app_date,
-           "flight": (doc.flight.id || "Waiting"),
+           "flight": (doc.flight.id || "None"),
            "group": (doc.flight.group || "N/A"),
            "pairing": pairing
          });

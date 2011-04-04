@@ -16,7 +16,7 @@ function(doc) {
       pairName = (doc.veteran.name || "");
       pairPref = (doc.veteran.pref_notes || "");
     }
-    emit([(doc.flight.id || ""), 
+    emit([(doc.flight.id || "None"), 
            listing, pt],
          {"type": ptype,
            "id": doc._id, 
@@ -24,7 +24,7 @@ function(doc) {
            "name_last": doc.name.last, 
            "city": doc.address.city + ", " + doc.address.state, 
            "appdate": doc.app_date,
-           "flight": (doc.flight.id || "Waiting"),
+           "flight": (doc.flight.id || "None"),
            "group": (doc.flight.group || "N/A"),
            "seat": (doc.flight.seat || ""),
            "pairing": pairing,

@@ -8,6 +8,9 @@ function() {
       loadSpeed: 200,
       opacity: 0.7
     },
+
+    closeOnClick: false,
+    top: '1'
   });
 
   $("#group_trigger").overlay({
@@ -17,8 +20,7 @@ function() {
       opacity: 0.7
     },
 
-    closeOnClick: false,
-    top: '1'
+    closeOnClick: false
   });
 
 
@@ -29,8 +31,7 @@ function() {
       opacity: 0.7
     },
 
-    closeOnClick: false,
-    top: '1'
+    closeOnClick: false
   });
 
 

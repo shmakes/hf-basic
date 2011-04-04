@@ -26,6 +26,10 @@ tr.DataRow td:hover {
   background-color: #9c9;
 }
 
+tr.invalid_row {
+  color: #f00;
+}
+
 table a {
   display:block;
 }

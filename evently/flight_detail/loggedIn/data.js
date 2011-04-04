@@ -24,7 +24,11 @@ function(r) {
       }
 
       if (pair.grd) {
-        entry["guardians"] = pair.grd.length;
+        if (pair.grd.length > 1) {
+          entry["invalid_row"] = " invalid_row";
+        } else {
+          entry["invalid_row"] = "";
+        }
         grd = pair.grd[0];
         entry["grd_id"]         = grd.id;
         entry["grd_name_first"] = grd.name_first;

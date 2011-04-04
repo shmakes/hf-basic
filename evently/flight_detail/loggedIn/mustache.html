@@ -57,7 +57,7 @@
       <th>Name</th>
     </tr> 
   {{#pairs}}
-    <tr class="DataRow" vetid="{{vet_id}}" grdid="{{grd_id}}">
+    <tr class="DataRow{{invalid_row}}" vetid="{{vet_id}}" grdid="{{grd_id}}">
       <td class="Veteran"><button>Del</button></td>
       <td class="Veteran" name="vet_name">{{vet_name_first}} {{vet_name_last}}</td>
       <td class="Veteran">{{vet_city}}</td>
@@ -112,7 +112,8 @@
     <button id="ByAppDateSubmit" class="close"> OK </button>
 
     <br />
-    <button type="button" class="close"> Cancel </button>
+    <button type="button" class="close"> Cancel </button> 
+    | Remove existing ==&gt; <button id="RemoveGuardianSubmit" class="close"> None </button>
     <br />
   </div>
 
@@ -138,7 +139,7 @@
       <tr class="DataRow"><td class="GroupPick close" value="Beta4">Bravo 4</td></tr>
     </table>
     <br />
-    <button type="button" class="close"> Cancel </button>
+    <button type="button" class="close"> Cancel </button> 
     <br />
   </div>
 
