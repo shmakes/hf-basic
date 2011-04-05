@@ -18,5 +18,3 @@
 
 ## Administration
 
-* Create a "conflicts" view.
-* Remove general, unused Veteran and Guardian views.
