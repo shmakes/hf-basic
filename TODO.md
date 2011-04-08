@@ -1,15 +1,21 @@
 ## Import
 
-* Do guardians still need "Prime Loc"?
-* Should Guardians have a dictionary of veteran history?
 * How do you know if a guardian wants to fly again?
-* Flight docs to use natural key instead of guid?
+  * need historical flight 
+  * copy?
 
 ## Basic UI
 
 * Can dates be displayed yyy-mm-dd or must they be mm/dd/yyy?
-* "Unable to fly" and/or "Removed" status.
+* "Unable to fly" and/or "Removed" status.  D, F, R
 * Handle "flown" flight assignments on edit forms.
+* Veteran
+  * Emergency contact.
+  * Alternate contact.
+  * Waiver 
+  * Medical (category number)
+* Guardian
+  * Emergency contact.
 
 ##Outputs
 
@@ -17,4 +23,3 @@
 * Enable filters for list views.
 
 ## Administration
-
