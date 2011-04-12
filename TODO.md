@@ -6,16 +6,11 @@
 
 ## Basic UI
 
-* Can dates be displayed yyy-mm-dd or must they be mm/dd/yyy?
-* "Unable to fly" and/or "Removed" status.  D, F, R
-* Handle "flown" flight assignments on edit forms.
+* Finish updates of edit forms.
+* Add flight status dropdown.
+* Redo add-to-flight and pre-pairing vets.
 * Veteran
-  * Emergency contact.
-  * Alternate contact.
-  * Waiver 
-  * Medical (category number)
-* Guardian
-  * Emergency contact.
+  * Separate Medical history form.
 
 ##Outputs
 

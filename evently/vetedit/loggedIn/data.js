@@ -42,9 +42,10 @@ function(r) {
         app_date_string:       appDateString,
         preferred_airport:     r.preferred_airport,
         flights:               r.availableFlights,
+        flight_group:          r.flight.group,
         flight_id:             r.flight.id,
         flight_seat:           r.flight.seat,
-        flight_group:          r.flight.group,
+        flight_bus:            r.flight.bus,
         flight_history:        r.flight.history,
         guardian_id:           r.guardian.id,
         guardian_name:         r.guardian.name,
@@ -67,8 +68,8 @@ function(r) {
         gender:                r.gender,
         weight:                r.weight,
         shirt_size:            r.shirt.size,
-        notes_other:           r.notes.other,
-        notes_service:         r.notes.service,
+        notes_other:           r.service.branch,
+        notes_service:         r.service.activity,
         medical_limitations:   r.medical.limitations,
         medical_perscriptions: r.medical.perscriptions,
         medical_review:        r.medical.review,
@@ -83,8 +84,8 @@ function(r) {
     // to propper value.
     var selectedFlight = "selFlt-" + r.flight.id;
     result[selectedFlight] = "selected";
-    var selectedGroup = "selGrp-" + r.flight.group;
-    result[selectedGroup] = "selected";
+    var selectedBus = "selBus-" + r.flight.bus;
+    result[selectedBus] = "selected";
     var selectedSize = "selShrt-" + r.shirt.size;
     result[selectedSize] = "selected";
 
@@ -100,9 +101,10 @@ function(r) {
         app_date_string:       "",
         preferred_airport:     "",
         flights:               r.availableFlights,
+        flight_group:          "",
         flight_id:             "",
         flight_seat:           "",
-        flight_group:          "",
+        flight_bus:            "",
         flight_history:        [],
         guardian_id:           "",
         guardian_name:         "",

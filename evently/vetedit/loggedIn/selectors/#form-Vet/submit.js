@@ -81,7 +81,8 @@ function(context) {
         doc.flight.history = [];
         doc.flight.id = "None";
         doc.flight.seat = "";
-        doc.flight.group = "None";
+        doc.flight.group = "";
+        doc.flight.bus = "None";
       }
       if (f.flight_id != doc.flight.id) {
         doc.flight.history.push({
@@ -97,6 +98,14 @@ function(context) {
           change: "changed seat from: " + doc.flight.seat + " to: " + f.flight_seat + " by: " + user
         });
         doc.flight.seat = f.flight_seat;
+        hasChanged = true;
+      }
+      if (f.flight_bus != doc.flight.bus) {
+        doc.flight.history.push({
+          id: timestamp,
+          change: "changed bus from: " + doc.flight.bus + " to: " + f.flight_bus + " by: " + user
+        });
+        doc.flight.bus = f.flight_bus;
         hasChanged = true;
       }
       if (f.flight_group != doc.flight.group) {
@@ -149,15 +158,15 @@ function(context) {
         hasChanged = true;
       }
 
-      if (!doc.notes) {
-        doc.notes = {};
+      if (!doc.service) {
+        doc.service = {};
       }
-      if (doc.notes.other != f.notes_other) {
-        doc.notes.other = f.notes_other;
+      if (doc.service.branch != f.notes_other) {
+        doc.service.branch = f.notes_other;
         hasChanged = true;
       }
-      if (doc.notes.service != f.notes_service) {
-        doc.notes.service = f.notes_service;
+      if (doc.service.activity != f.notes_service) {
+        doc.service.activity = f.notes_service;
         hasChanged = true;
       }
 
