@@ -6,11 +6,10 @@
 
 ## Basic UI
 
-* Finish updates of edit forms.
-* Add flight status dropdown.
 * Redo add-to-flight and pre-pairing vets.
 * Veteran
   * Separate Medical history form.
+  * Medical Waiver
 
 ##Outputs
 

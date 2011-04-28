@@ -271,8 +271,8 @@ function(context) {
         doc.medical.review = f.medical_review;
         hasChanged = true;
       }
-      if (doc.medical.general != f.medical_general) {
-        doc.medical.general = f.medical_general;
+      if (doc.medical.category != f.medical_category) {
+        doc.medical.category = f.medical_category;
         hasChanged = true;
       }
 

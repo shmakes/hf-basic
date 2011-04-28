@@ -42,9 +42,11 @@ function(r) {
         app_date_string:       appDateString,
         preferred_airport:     r.preferred_airport,
         flights:               r.availableFlights,
+        flight_status:         r.flight.status,
+        flight_group:          r.flight.group,
         flight_id:             r.flight.id,
         flight_seat:           r.flight.seat,
-        flight_group:          r.flight.group,
+        flight_bus:            r.flight.bus,
         flight_history:        r.flight.history,
         veteran_id:            r.veteran.id,
         veteran_name:          r.veteran.name,
@@ -72,6 +74,22 @@ function(r) {
         notes_other:           r.notes.other,
         notes_previous_hf:     r.notes.previous_hf,
         notes_service:         r.notes.service,
+        ec_relation:           r.emerg_contact.relation,
+        ec_name:               r.emerg_contact.name,
+        ec_addr_street:        r.emerg_contact.address.street,
+        ec_addr_city:          r.emerg_contact.address.city,
+        ec_addr_state:         r.emerg_contact.address.state,
+        ec_addr_zip:           r.emerg_contact.address.zip,
+        ec_addr_phone:         r.emerg_contact.address.phone,
+        ec_addr_email:         r.emerg_contact.address.email,
+        rc_relation:           r.ref_contact.relation,
+        rc_name:               r.ref_contact.name,
+        rc_addr_street:        r.ref_contact.address.street,
+        rc_addr_city:          r.ref_contact.address.city,
+        rc_addr_state:         r.ref_contact.address.state,
+        rc_addr_zip:           r.ref_contact.address.zip,
+        rc_addr_phone:         r.ref_contact.address.phone,
+        rc_addr_email:         r.ref_contact.address.email,
         medical_limitations:   r.medical.limitations,
         medical_experience:    r.medical.experience,
         medical_release:       r.medical.release,
@@ -89,6 +107,8 @@ function(r) {
     result[selectedGroup] = "selected";
     var selectedSize = "selShrt-" + r.shirt.size;
     result[selectedSize] = "selected";
+    var selectedStatus = "selStatus-" + r.flight.status;
+    result[selectedStatus] = "selected";
 
   } else {
 
