@@ -83,6 +83,7 @@ function(context) {
         doc.flight.seat = "";
         doc.flight.group = "";
         doc.flight.bus = "None";
+        doc.flight.status = "Active";
       }
       if (f.flight_id != doc.flight.id) {
         doc.flight.history.push({
@@ -114,6 +115,14 @@ function(context) {
           change: "changed group from: " + doc.flight.group + " to: " + f.flight_group + " by: " + user
         });
         doc.flight.group = f.flight_group;
+        hasChanged = true;
+      }
+      if (f.flight_status != doc.flight.status) {
+        doc.flight.history.push({
+          id: timestamp,
+          change: "changed status from: " + doc.flight.status + " to: " + f.flight_status + " by: " + user
+        });
+        doc.flight.status = f.flight_status;
         hasChanged = true;
       }
 
@@ -169,6 +178,87 @@ function(context) {
         doc.service.activity = f.notes_service;
         hasChanged = true;
       }
+
+
+      if (!doc.emerg_contact) {
+        doc.emerg_contact = {};
+      }
+      if (doc.emerg_contact.relation != f.ec_relation) {
+        doc.emerg_contact.relation = f.ec_relation;
+        hasChanged = true;
+      }
+      if (doc.emerg_contact.name != f.ec_name) {
+        doc.emerg_contact.name = f.ec_name;
+        hasChanged = true;
+      }
+      if (!doc.emerg_contact.address) {
+        doc.emerg_contact.address = {};
+      }
+      if (doc.emerg_contact.address.street != f.ec_street) {
+        doc.emerg_contact.address.street = f.ec_street;
+        hasChanged = true;
+      }
+      if (doc.emerg_contact.address.city != f.ec_city) {
+        doc.emerg_contact.address.city = f.ec_city;
+        hasChanged = true;
+      }
+      if (doc.emerg_contact.address.state != f.ec_state.toUpperCase()) {
+        doc.emerg_contact.address.state = f.ec_state.toUpperCase();
+        hasChanged = true;
+      }
+      if (doc.emerg_contact.address.zip != f.ec_zip) {
+        doc.emerg_contact.address.zip = f.ec_zip;
+        hasChanged = true;
+      }
+      if (doc.emerg_contact.address.phone != f.ec_phone) {
+        doc.emerg_contact.address.phone = f.ec_phone;
+        hasChanged = true;
+      }
+      if (doc.emerg_contact.address.email != f.ec_email) {
+        doc.emerg_contact.address.email = f.ec_email;
+        hasChanged = true;
+      }
+
+
+      if (!doc.alt_contact) {
+        doc.alt_contact = {};
+      }
+      if (doc.alt_contact.relation != f.ac_relation) {
+        doc.alt_contact.relation = f.ac_relation;
+        hasChanged = true;
+      }
+      if (doc.alt_contact.name != f.ac_name) {
+        doc.alt_contact.name = f.ac_name;
+        hasChanged = true;
+      }
+      if (!doc.alt_contact.address) {
+        doc.alt_contact.address = {};
+      }
+      if (doc.alt_contact.address.street != f.ac_street) {
+        doc.alt_contact.address.street = f.ac_street;
+        hasChanged = true;
+      }
+      if (doc.alt_contact.address.city != f.ac_city) {
+        doc.alt_contact.address.city = f.ac_city;
+        hasChanged = true;
+      }
+      if (doc.alt_contact.address.state != f.ac_state.toUpperCase()) {
+        doc.alt_contact.address.state = f.ac_state.toUpperCase();
+        hasChanged = true;
+      }
+      if (doc.alt_contact.address.zip != f.ac_zip) {
+        doc.alt_contact.address.zip = f.ac_zip;
+        hasChanged = true;
+      }
+      if (doc.alt_contact.address.phone != f.ac_phone) {
+        doc.alt_contact.address.phone = f.ac_phone;
+        hasChanged = true;
+      }
+      if (doc.alt_contact.address.email != f.ac_email) {
+        doc.alt_contact.address.email = f.ac_email;
+        hasChanged = true;
+      }
+
 
       if (!doc.medical) {
         doc.medical = {};
