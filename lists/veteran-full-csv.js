@@ -47,7 +47,7 @@ function(head, req) {
     send("\",\"");
     send(row.value.address.zip);
     send("\",\"");
-    send(row.value.address.phone);
+    send(row.value.address.phone_day);
     send("\",\"");
     send(row.value.address.email);
 

@@ -58,8 +58,8 @@ function(context) {
         doc.address.zip = f.zip;
         hasChanged = true;
       }
-      if (doc.address.phone != f.phone) {
-        doc.address.phone = f.phone;
+      if (doc.address.phone_day != f.phone_day) {
+        doc.address.phone_day = f.phone_day;
         hasChanged = true;
       }
       if (doc.address.phone_eve != f.phone_eve) {
