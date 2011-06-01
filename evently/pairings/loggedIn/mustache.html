@@ -1,38 +1,4 @@
 <div>
-  <span class="grey-note">
-    Flight Doc ID: {{id}} 
-    <a target="_blank" href="/_utils/document.html?{{db_name}}/{{id}}">{{raw_data_lnk}}</a>
-  </span>
-  <p>
-    <label for="flight_name">flight</label>
-    <input type="text" name="flight_name" readonly="readonly" value="{{flight_name}}" style="width: 15em" /> 
-    <label for="capacity">capacity</label>
-    <input type="text" name="capacity" readonly="readonly" value="{{capacity}}" style="width: 5em" /> 
-    <label for="flight_date">flight date</label>
-    <input type="text" name="flight_date" readonly="readonly" value="{{flight_date}}" style="width: 15em" />
-  </p>
-  <table class="addPeople">
-    <tr>
-      <td>
-        <label for="add_vets">number of veterans to add:</label>
-      </td>
-      <td>
-        <input type="number" name="add_vets" min="0" max="100" maxlength="3" value="0" style="width: 4em" /> 
-        <button id="addVets">Add</button> Unassigned Vets with earliest application date will be picked first. (max 100 per add)
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <label for="add_grds">number of guardians to add:</label>
-      </td>
-      <td>
-        <input type="number" name="add_grds" min="0" max="100" maxlength="3" value="0" style="width: 4em" /> 
-        <button id="addGrds">Add</button> Unassigned Guardians with earliest application date will be picked first. (max 100 per add)
-      </td>
-    </tr>
-  </table>
-  <br />
-
   <table>
     <tr>
       <th colspan="7">Veteran</th>
@@ -40,32 +6,30 @@
       <th colspan="6">Guardian</th>
     </tr>
     <tr>
-      <th></th>
       <th>Name</th>
       <th>City</th>
-      <th>App Date</th>
+      <th>Flight</th>
       <th>Preference</th>
       <th>Bus</th>
       <th>Seat</th>
       <th>Seat</th>
       <th>Bus</th>
       <th>Preference</th>
-      <th>App Date</th>
+      <th>Flight</th>
       <th>City</th>
       <th>Name</th>
     </tr> 
   {{#pairs}}
     <tr class="DataRow{{invalid_row}}" vetid="{{vet_id}}" grdid="{{grd_id}}">
-      <td class="Veteran"><button>Del</button></td>
       <td class="Veteran" name="vet_name">{{vet_name_first}} {{vet_name_last}}</td>
       <td class="Veteran">{{vet_city}}</td>
       <td class="Veteran">{{vet_appdate}}</td>
       <td class="Veteran" name="vet_pref" style="width: 4em">{{vet_pairPref}}</td>
-      <td class="Veteran" name="vet_bus">{{vet_bus}}</td>
+      <td class="Veteran" name="vet_group">{{vet_group}}</td>
       <td class="Veteran"><input type="text" value="{{vet_seat}}" style="width: 2em" /></td>
       <td class="Veteran"><button class="modalInput" rel="#{{vet_id}}">&gt;</button></td>
       <td class="Guardian"><input type="text" value="{{grd_seat}}" style="width: 2em" /></td>
-      <td class="Guardian">{{grd_bus}}</td>
+      <td class="Guardian">{{grd_group}}</td>
       <td class="Guardian" style="width: 4em">{{grd_pairPref}}</td>
       <td class="Guardian">{{grd_appdate}}</td>
       <td class="Guardian">{{grd_city}}</td>
@@ -115,26 +79,26 @@
     <br />
   </div>
 
-  <div id="bus_trigger" rel="#bus"></div>
-  <div class="modal vet_bus" id="bus">
-    <h2 id="vet_name_bus"></h2>
-    <input id="vet_id_bus" type="hidden" />
-    <input id="grd_id_bus" type="hidden" />
+  <div id="group_trigger" rel="#group"></div>
+  <div class="modal vet_group" id="group">
+    <h2 id="vet_name_group"></h2>
+    <input id="vet_id_group" type="hidden" />
+    <input id="grd_id_group" type="hidden" />
 
     <p>
-      Select a tour bus.
+      Select a tour group.
     </p>
 
     <table>
-      <tr class="DataRow"><td class="BusPick close" value="None">None</td></tr>
-      <tr class="DataRow"><td class="BusPick close" value="Alpha1">Alpha 1</td></tr>
-      <tr class="DataRow"><td class="BusPick close" value="Alpha2">Alpha 2</td></tr>
-      <tr class="DataRow"><td class="BusPick close" value="Alpha3">Alpha 3</td></tr>
-      <tr class="DataRow"><td class="BusPick close" value="Alpha4">Alpha 4</td></tr>
-      <tr class="DataRow"><td class="BusPick close" value="Beta1">Bravo 1</td></tr>
-      <tr class="DataRow"><td class="BusPick close" value="Beta2">Bravo 2</td></tr>
-      <tr class="DataRow"><td class="BusPick close" value="Beta3">Bravo 3</td></tr>
-      <tr class="DataRow"><td class="BusPick close" value="Beta4">Bravo 4</td></tr>
+      <tr class="DataRow"><td class="GroupPick close" value="None">None</td></tr>
+      <tr class="DataRow"><td class="GroupPick close" value="Alpha1">Alpha 1</td></tr>
+      <tr class="DataRow"><td class="GroupPick close" value="Alpha2">Alpha 2</td></tr>
+      <tr class="DataRow"><td class="GroupPick close" value="Alpha3">Alpha 3</td></tr>
+      <tr class="DataRow"><td class="GroupPick close" value="Alpha4">Alpha 4</td></tr>
+      <tr class="DataRow"><td class="GroupPick close" value="Beta1">Bravo 1</td></tr>
+      <tr class="DataRow"><td class="GroupPick close" value="Beta2">Bravo 2</td></tr>
+      <tr class="DataRow"><td class="GroupPick close" value="Beta3">Bravo 3</td></tr>
+      <tr class="DataRow"><td class="GroupPick close" value="Beta4">Bravo 4</td></tr>
     </table>
     <br />
     <button type="button" class="close"> Cancel </button> 

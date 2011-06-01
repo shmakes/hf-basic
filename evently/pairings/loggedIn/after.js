@@ -13,7 +13,7 @@ function() {
     top: '1'
   });
 
-  $("#bus_trigger").overlay({
+  $("#group_trigger").overlay({
     mask: {
       color: '#ebecff',
       loadSpeed: 200,
@@ -38,4 +38,4 @@ function() {
   $(this).show();
 };
 
-//@ sourceURL=/flight_detail/after.js
+//@ sourceURL=/pairings/after.js

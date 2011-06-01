@@ -103,8 +103,8 @@ function(r) {
     // to propper value.
     var selectedFlight = "selFlt-" + r.flight.id;
     result[selectedFlight] = "selected";
-    var selectedGroup = "selGrp-" + r.flight.group;
-    result[selectedGroup] = "selected";
+    var selectedBus = "selBus-" + r.flight.bus;
+    result[selectedBus] = "selected";
     var selectedSize = "selShrt-" + r.shirt.size;
     result[selectedSize] = "selected";
     var selectedStatus = "selStatus-" + r.flight.status;

@@ -4,7 +4,7 @@ function(r) {
   var dbname = app.db.name;
   var pairList = [];
 
-  if (r._rev) {
+  if (r.pairs) {
     for (idx in r.pairs) {
       entry = {};
       pair = r.pairs[idx];
@@ -15,8 +15,8 @@ function(r) {
         entry["vet_name_first"] = vet.name_first;
         entry["vet_name_last"]  = vet.name_last;
         entry["vet_city"]       = vet.city;
-        entry["vet_appdate"]    = vet.appdate;
-        entry["vet_bus"]        = vet.bus;
+        entry["vet_appdate"]    = vet.flight;
+        entry["vet_group"]      = vet.group;
         entry["vet_seat"]       = vet.seat;
         entry["vet_pairing"]    = vet.pairing;
         entry["vet_pairName"]   = vet.pairName;
@@ -34,8 +34,8 @@ function(r) {
         entry["grd_name_first"] = grd.name_first;
         entry["grd_name_last"]  = grd.name_last;
         entry["grd_city"]       = grd.city;
-        entry["grd_appdate"]    = grd.appdate;
-        entry["grd_bus"]        = grd.bus;
+        entry["grd_appdate"]    = grd.flight;
+        entry["grd_group"]      = grd.group;
         entry["grd_seat"]       = grd.seat;
         entry["grd_pairing"]    = grd.pairing;
         entry["grd_pairName"]   = grd.pairName;
@@ -46,13 +46,13 @@ function(r) {
 
     var result = {
         db_name:               dbname,
-        id:                    r._id,
-        raw_data_lnk:          "(raw data)",
-        rev:                   r._rev,
-        type:                  r.type,
-        flight_name:           r.name,
-        capacity:              r.capacity,
-        flight_date:           r.flight_date,
+        id:                    "",
+        raw_data_lnk:          "",
+        rev:                   "",
+        type:                  "Flight",
+        flight_name:           "",
+        capacity:              "",
+        flight_date:           "",
         pairs:                 pairList
     }
 
@@ -74,4 +74,4 @@ function(r) {
   return result;
 }
 
-//@ sourceURL=/flight_detail/data.js
+//@ sourceURL=/pairings/data.js

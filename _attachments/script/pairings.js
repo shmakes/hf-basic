@@ -1,6 +1,6 @@
 $.couch.app(function(app) {  
-  $("#flight_detail").evently("flight_detail", app);
-  $.evently.connect($("#account"), $("#flight_detail"), ["loggedIn", "loggedOut"]);
+  $("#pairings").evently("pairings", app);
+  $.evently.connect($("#account"), $("#pairings"), ["loggedIn", "loggedOut"]);
 });
 
 function UpdateGuardianDataGrid(vetId, grd) {

@@ -1,5 +1,6 @@
 function(doc) {
-  if (doc.name.last) {
+  if ((doc.type == "Veteran") || ((doc.type == "Guardian") && (doc.veteran.name.length > 0)))
+  {
     var ptype = doc.type;
     var pairing = "N/A";
     if (ptype == "Veteran") {
@@ -16,7 +17,7 @@ function(doc) {
       pairName = (doc.veteran.name || "");
       pairPref = (doc.veteran.pref_notes || "");
     }
-    emit([(doc.flight.id || "None"), 
+    emit([(doc.flight.status || "None"), 
            listing, pt],
          {"type": ptype,
            "id": doc._id, 
@@ -25,7 +26,7 @@ function(doc) {
            "city": doc.address.city + ", " + doc.address.state, 
            "appdate": doc.app_date,
            "flight": (doc.flight.id || "None"),
-           "bus": (doc.flight.bus || "N/A"),
+           "group": (doc.flight.group || "N/A"),
            "seat": (doc.flight.seat || ""),
            "pairing": pairing,
            "pairName": pairName,
