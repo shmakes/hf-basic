@@ -163,10 +163,6 @@ function(context) {
         doc.gender = f.gender.toUpperCase();
         hasChanged = true;
       }
-      if (doc.weight != f.weight) {
-        doc.weight = f.weight;
-        hasChanged = true;
-      }
       if (!doc.shirt) {
         doc.shirt = {};
       }

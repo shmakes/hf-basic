@@ -69,7 +69,6 @@ function(r) {
         birth_date:            birthDate,
         birth_date_string:     birthDateString,
         gender:                r.gender,
-        weight:                r.weight,
         shirt_size:            r.shirt.size,
         notes_other:           r.notes.other,
         notes_previous_hf:     r.notes.previous_hf,
