@@ -62,8 +62,16 @@
           <input type="text" name="zip" pattern="[0-9 -]{5,}" maxlength="10" value="{{addr_zip}}" style="width: 8em" required="required" />
         </li>
         <li>
-          <label for="phone_day">phone<em><img src="images/required_star.gif" alt="required" /></em></label>
+          <label for="phone_day">phone day<em><img src="images/required_star.gif" alt="required" /></em></label>
           <input type="text" name="phone_day" pattern="[0-9 -]{12,}" maxlength="20" value="{{addr_phone_day}}" style="width: 10em" required="required" />
+        </li>
+        <li>
+          <label for="phone_eve">phone eve</label>
+          <input type="text" name="phone_eve" pattern="[0-9 -]{0,}" maxlength="20" value="{{addr_phone_eve}}" style="width: 10em" />
+        </li>
+        <li>
+          <label for="phone_mbl">phone mbl</label>
+          <input type="text" name="phone_mbl" pattern="[0-9 -]{0,}" maxlength="20" value="{{addr_phone_mbl}}" style="width: 10em" />
         </li>
         <li>
           <label for="email">email</label>

@@ -62,6 +62,14 @@ function(context) {
         doc.address.phone_day = f.phone_day;
         hasChanged = true;
       }
+      if (doc.address.phone_eve != f.phone_eve) {
+        doc.address.phone_eve = f.phone_eve;
+        hasChanged = true;
+      }
+      if (doc.address.phone_mbl != f.phone_mbl) {
+        doc.address.phone_mbl = f.phone_mbl;
+        hasChanged = true;
+      }
       if (doc.address.email != f.email) {
         doc.address.email = f.email;
         hasChanged = true;
