@@ -242,22 +242,6 @@ function(context) {
       if (!doc.alt_contact.address) {
         doc.alt_contact.address = {};
       }
-      if (doc.alt_contact.address.street != f.ac_street) {
-        doc.alt_contact.address.street = f.ac_street;
-        hasChanged = true;
-      }
-      if (doc.alt_contact.address.city != f.ac_city) {
-        doc.alt_contact.address.city = f.ac_city;
-        hasChanged = true;
-      }
-      if (doc.alt_contact.address.state != f.ac_state.toUpperCase()) {
-        doc.alt_contact.address.state = f.ac_state.toUpperCase();
-        hasChanged = true;
-      }
-      if (doc.alt_contact.address.zip != f.ac_zip) {
-        doc.alt_contact.address.zip = f.ac_zip;
-        hasChanged = true;
-      }
       if (doc.alt_contact.address.phone != f.ac_phone) {
         doc.alt_contact.address.phone = f.ac_phone;
         hasChanged = true;
@@ -296,12 +280,12 @@ function(context) {
       if (hasChanged) {
         app.db.saveDoc(doc, {
           success : function() {
-            window.location = "vet_edit.html?vetid=" + doc._id;
+            // Pop-up the save confirmation.
+            $("#saved_trigger").click();
           }
         });
       } else {
         return false;
-        //window.location = "index.html";
       }
     };
 
@@ -314,17 +298,9 @@ function(context) {
       }); 
     } else {
       // create a new page
-    /*
-      saveDoc({
-        _id : f._id,
-        "jquery.couch.attachPrevRev" : true
-      });
-    */
       saveDoc({});
-        
     }
     return false;
-
   }
   return true;
 };

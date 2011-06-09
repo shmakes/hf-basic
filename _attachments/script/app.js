@@ -45,3 +45,8 @@ function ISODateString(d){
       + pad(d.getUTCMinutes())+':'
       + pad(d.getUTCSeconds())+'Z'
 }
+
+function closeW() {
+  window.opener = self;
+  window.close();
+} 
