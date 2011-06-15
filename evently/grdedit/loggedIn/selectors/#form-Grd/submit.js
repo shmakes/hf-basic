@@ -295,12 +295,12 @@ function(context) {
       if (hasChanged) {
         app.db.saveDoc(doc, {
           success : function() {
-            window.location = "grd_edit.html?grdid=" + doc._id;
+            // Pop-up the save confirmation.
+            $("#saved_trigger").click();
           }
         });
       } else {
         return false;
-        //window.location = "index.html";
       }
     };
 
