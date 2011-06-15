@@ -47,6 +47,8 @@ function() {
           anchor = "<a href='vet_edit.html?vetid=" + id + "' target='_blank'>";
         } else if (person.type == 'Guardian') {
           anchor = "<a href='grd_edit.html?grdid=" + id + "' target='_blank'>";
+        } else if (person.type == 'Volunteer') {
+          anchor = "<a href='vol_edit.html?volid=" + id + "' target='_blank'>";
         }
 
 

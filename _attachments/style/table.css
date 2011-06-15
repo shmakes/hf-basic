@@ -22,6 +22,7 @@ tr.Guardian {
 }
 tr.Veteran:hover,
 tr.Guardian:hover,
+tr.Volunteer:hover,
 tr.DataRow td:hover {
   background-color: #9c9;
 }

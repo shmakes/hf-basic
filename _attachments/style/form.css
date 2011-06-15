@@ -1,6 +1,7 @@
 /* simple css-based tooltip */
 #form-Flight .tooltip,
 #form-Grd .tooltip,
+#form-Vol .tooltip,
 #form-Vet .tooltip {
   background-color:#000;
   border:1px solid #fff;
@@ -18,6 +19,7 @@
 
 #form-Flight fieldset,
 #form-Grd fieldset,
+#form-Vol fieldset,
 #form-Vet fieldset { 
   position: relative;      
   float: left;      
@@ -31,6 +33,7 @@
 
 #form-Flight legend,
 #form-Grd legend,
+#form-Vol legend,
 #form-Vet legend { 
   padding: 0;      
   color: #545351;      
@@ -39,6 +42,7 @@
 
 #form-Flight fieldset ol,
 #form-Grd fieldset ol,
+#form-Vol fieldset ol,
 #form-Vet fieldset ol {      
   padding: 1.5em 1em 0 1em;      
   list-style: none;     
@@ -46,6 +50,7 @@
 
 #form-Flight legend span,
 #form-Grd legend span,
+#form-Vol legend span,
 #form-Vet legend span {      
   position: absolute;      
   left: 0.74em;      
@@ -78,8 +83,17 @@
   background-color: #E6E3ED;     
 }
 
+#form-Vol fieldset{
+  background-color: #EEEEEE;     
+}
+
+#form-Vol fieldset.alt{
+  background-color: #CCCCCC;     
+}
+
 #form-Flight fieldset.submit,
 #form-Grd fieldset.submit,
+#form-Vol fieldset.submit,
 #form-Vet fieldset.submit {      
   float: none;      
   width: auto;      
@@ -90,6 +104,7 @@
 
 #form-Flight label,
 #form-Grd label,
+#form-Vol label,
 #form-Vet label {    
   position: relative;        
   float: left;    
@@ -100,6 +115,7 @@
 
 #form-Flight label em,
 #form-Grd label em,
+#form-Vol label em,
 #form-Vet label em {        
   position: absolute;        
   left: 10.4em;        
@@ -107,6 +123,7 @@
 }
 
 #form-Grd span.grey-note,
+#form-Vol span.grey-note,
 #form-Vet span.grey-note {
   font-size: 75%;     
   color: #555;
