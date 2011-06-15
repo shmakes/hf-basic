@@ -179,11 +179,11 @@ function(context) {
         hasChanged = true;
       }
       if (doc.notes.previous_hf != f.notes_previous_hf) {
-        doc.notes.previous_hf = f.notes_previous_hf;
+        doc.notes.previous_hf = f.notes_previous_hf.toUpperCase();
         hasChanged = true;
       }
       if (doc.notes.service != f.notes_service) {
-        doc.notes.service = f.notes_service;
+        doc.notes.service = f.notes_service.toUpperCase();
         hasChanged = true;
       }
 
