@@ -1,6 +1,14 @@
 <div class="filter_controls">
   <div class="line">
     <span class="left">
+      <label>Status: </label>
+      <select id="status">
+        <option>Active</option>
+        <option>Removed</option>
+        <option>Deceased</option>
+        <option>Flown</option>
+      </select>
+      <br />
       <label>Selected Flight: </label>
       <select id="flight">
         {{#flights}}

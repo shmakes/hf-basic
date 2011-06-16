@@ -8,7 +8,10 @@ function(doc) {
     if (ptype == "Guardian") {
       pairing = (doc.veteran.name || "None");
     }
-    emit([(doc.flight.id || ""), doc.name.last], 
+    emit([(doc.flight.status || ""), 
+          (doc.flight.id || ""), 
+          doc.name.last
+         ], 
          {"type": ptype,
            "name": doc.name.first + " " + doc.name.last, 
            "city": doc.address.city + ", " + doc.address.state, 

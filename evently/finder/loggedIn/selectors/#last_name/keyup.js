@@ -1,5 +1,6 @@
 function() {
   var value = $(this).val();
+  var sts = $("#status").val();
   var flt = $("#flight").val();
   
   if (value.match(/[^a-zA-Z ]/g)) {
@@ -10,6 +11,9 @@ function() {
   var startKey = [];
   var endKey = [];
   var viewName = "basic/all_by_name";
+
+  startKey.push(sts);
+  endKey.push(sts);
 
   if (flt != "All") {
     startKey.push(flt);
