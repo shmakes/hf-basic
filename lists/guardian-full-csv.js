@@ -3,7 +3,7 @@ function(head, req) {
   start({
     "headers": {
       "Content-Type": "text/csv",
-      "Content-disposition": "attachment;filename=VeteranInfo.csv"
+      "Content-disposition": "attachment;filename=GuardianInfo.csv"
      }
   });
 
@@ -28,10 +28,10 @@ function(head, req) {
         age:                   r.age,
         birth_date:            r.birth_date,
         gender:                r.gender,
-        weight:                r.weight,
         shirt_size:            r.shirt.size,
-        notes_other:           r.service.branch,
-        notes_service:         r.service.activity,
+        notes_other:           r.notes.other,
+        notes_previous_hf:     r.notes.previous_hf,
+        notes_service:         r.notes.service,
         ec_relation:           r.emerg_contact.relation,
         ec_name:               r.emerg_contact.name,
         ec_addr_street:        r.emerg_contact.address.street,
@@ -40,28 +40,26 @@ function(head, req) {
         ec_addr_zip:           r.emerg_contact.address.zip,
         ec_addr_phone:         r.emerg_contact.address.phone,
         ec_addr_email:         r.emerg_contact.address.email,
-        ac_relation:           r.alt_contact.relation,
-        ac_name:               r.alt_contact.name,
-        ac_addr_street:        r.alt_contact.address.street,
-        ac_addr_city:          r.alt_contact.address.city,
-        ac_addr_state:         r.alt_contact.address.state,
-        ac_addr_zip:           r.alt_contact.address.zip,
-        ac_addr_phone:         r.alt_contact.address.phone,
-        ac_addr_email:         r.alt_contact.address.email,
+        rc_relation:           r.ref_contact.relation,
+        rc_name:               r.ref_contact.name,
+        rc_addr_street:        r.ref_contact.address.street,
+        rc_addr_city:          r.ref_contact.address.city,
+        rc_addr_state:         r.ref_contact.address.state,
+        rc_addr_zip:           r.ref_contact.address.zip,
+        rc_addr_phone:         r.ref_contact.address.phone,
+        rc_addr_email:         r.ref_contact.address.email,
         medical_limitations:   r.medical.limitations,
-        medical_perscriptions: r.medical.perscriptions,
-        medical_review:        r.medical.review,
-        medical_category:      r.medical.category,
+        medical_experience:    r.medical.experience,
+        medical_release:       r.medical.release,
         preferred_airport:     r.preferred_airport,
-        flights:               r.availableFlights,
         flight_status:         r.flight.status,
         flight_group:          r.flight.group,
         flight_id:             r.flight.id,
         flight_seat:           r.flight.seat,
         flight_bus:            r.flight.bus,
-        guardian_id:           r.guardian.id,
-        guardian_name:         r.guardian.name,
-        guardian_pref_notes:   r.guardian.pref_notes,
+        veteran_id:            r.veteran.id,
+        veteran_name:          r.veteran.name,
+        veteran_pref_notes:    r.veteran.pref_notes,
         id:                    r._id,
         rev:                   r._rev,
         created_at:            r.metadata.created_at,
@@ -91,4 +89,3 @@ function(head, req) {
     send("\n");
   }
 }
-

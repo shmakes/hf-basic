@@ -3,7 +3,7 @@ function(head, req) {
   start({
     "headers": {
       "Content-Type": "text/csv",
-      "Content-disposition": "attachment;filename=VeteranInfo.csv"
+      "Content-disposition": "attachment;filename=VolunteerInfo.csv"
      }
   });
 
@@ -18,50 +18,22 @@ function(head, req) {
         nick_name:             r.name.nickname,
         addr_street:           r.address.street,
         addr_city:             r.address.city,
-        addr_county:           r.address.county,
         addr_state:            r.address.state,
         addr_zip:              r.address.zip,
         addr_phone_day:        r.address.phone_day,
         addr_phone_eve:        r.address.phone_eve,
         addr_phone_mbl:        r.address.phone_mbl,
         addr_email:            r.address.email,
-        age:                   r.age,
         birth_date:            r.birth_date,
-        gender:                r.gender,
-        weight:                r.weight,
-        shirt_size:            r.shirt.size,
-        notes_other:           r.service.branch,
-        notes_service:         r.service.activity,
-        ec_relation:           r.emerg_contact.relation,
-        ec_name:               r.emerg_contact.name,
-        ec_addr_street:        r.emerg_contact.address.street,
-        ec_addr_city:          r.emerg_contact.address.city,
-        ec_addr_state:         r.emerg_contact.address.state,
-        ec_addr_zip:           r.emerg_contact.address.zip,
-        ec_addr_phone:         r.emerg_contact.address.phone,
-        ec_addr_email:         r.emerg_contact.address.email,
-        ac_relation:           r.alt_contact.relation,
-        ac_name:               r.alt_contact.name,
-        ac_addr_street:        r.alt_contact.address.street,
-        ac_addr_city:          r.alt_contact.address.city,
-        ac_addr_state:         r.alt_contact.address.state,
-        ac_addr_zip:           r.alt_contact.address.zip,
-        ac_addr_phone:         r.alt_contact.address.phone,
-        ac_addr_email:         r.alt_contact.address.email,
-        medical_limitations:   r.medical.limitations,
-        medical_perscriptions: r.medical.perscriptions,
-        medical_review:        r.medical.review,
-        medical_category:      r.medical.category,
-        preferred_airport:     r.preferred_airport,
+        shirt_size:            (r.shirt) ? r.shirt.size : "",
+        notes_other:           r.notes.other,
         flights:               r.availableFlights,
         flight_status:         r.flight.status,
         flight_group:          r.flight.group,
         flight_id:             r.flight.id,
         flight_seat:           r.flight.seat,
         flight_bus:            r.flight.bus,
-        guardian_id:           r.guardian.id,
-        guardian_name:         r.guardian.name,
-        guardian_pref_notes:   r.guardian.pref_notes,
+        flight_history:        r.flight.history,
         id:                    r._id,
         rev:                   r._rev,
         created_at:            r.metadata.created_at,
@@ -91,4 +63,3 @@ function(head, req) {
     send("\n");
   }
 }
-
