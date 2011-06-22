@@ -255,16 +255,20 @@ function(context) {
       if (!doc.medical) {
         doc.medical = {};
       }
+      if (doc.medical.limitations != f.medical_limitations) {
+        doc.medical.limitations = f.medical_limitations;
+        hasChanged = true;
+      }
+      if (doc.medical.category != f.medical_category) {
+        doc.medical.category = f.medical_category;
+        hasChanged = true;
+      }
       if (doc.medical.perscriptions != f.medical_perscriptions) {
         doc.medical.perscriptions = f.medical_perscriptions;
         hasChanged = true;
       }
       if (doc.medical.review != f.medical_review) {
         doc.medical.review = f.medical_review;
-        hasChanged = true;
-      }
-      if (doc.medical.category != f.medical_category) {
-        doc.medical.category = f.medical_category;
         hasChanged = true;
       }
 
