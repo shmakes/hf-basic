@@ -14,8 +14,9 @@ function(context) {
     if (ampPos > -1) {
       url = url.substr(0, ampPos);
     }
-    if (url.length == 32) {
-      app.db.openDoc(url, {
+    guid = url.replace(/^\s+|\s+$/g,"");
+    if (guid.length == 32) {
+      app.db.openDoc(guid, {
         success: function(doc) {
           if (doc.type) {
             if (doc.type == 'Veteran') {
