@@ -12,13 +12,14 @@ function() {
   var endKey = [];
   var viewName = "basic/all_by_name";
 
-  startKey.push(sts);
-  endKey.push(sts);
-
-  if (flt != "All") {
-    startKey.push(flt);
-    endKey.push(flt);
-    viewName = "basic/all_by_flight_and_name";
+  if ((sts != "All") && (flt == "All")) {
+    startKey.push(sts);
+    endKey.push(sts);
+    viewName = "basic/all_by_status_and_name";
+  } else if ((flt != "All") && (sts == "All")) {
+      startKey.push(flt);
+      endKey.push(flt);
+      viewName = "basic/all_by_flight_and_name";
   }
 
   if (value.length > 0) {
