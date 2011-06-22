@@ -6,6 +6,10 @@ function(context) {
     if (idPos > -1) {
       url = url.substr(idPos + 3);
     }
+    lastSlash = url.lastIndexOf("/");
+    if (lastSlash > -1) {
+      url = url.substr(lastSlash + 1);
+    }
     ampPos = url.indexOf("&");
     if (ampPos > -1) {
       url = url.substr(0, ampPos);
