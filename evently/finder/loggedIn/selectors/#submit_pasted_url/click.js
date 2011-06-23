@@ -26,6 +26,7 @@ function(context) {
             } else if (doc.type == 'Volunteer') {
               window.open("vol_edit.html?volid=" + doc._id, '_blank')
             }
+            $("#pasted_url").val("");
           }
         }
       });
