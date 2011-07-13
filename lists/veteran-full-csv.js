@@ -49,7 +49,6 @@ function(head, req) {
         ac_addr_phone:         r.alt_contact.address.phone,
         ac_addr_email:         r.alt_contact.address.email,
         medical_limitations:   r.medical.limitations,
-        medical_perscriptions: r.medical.perscriptions,
         medical_review:        r.medical.review,
         medical_category:      r.medical.category,
         preferred_airport:     r.preferred_airport,
