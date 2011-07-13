@@ -76,56 +76,6 @@ function(context) {
         hasChanged = true;
       }
 
-      if (!doc.flight) {
-        doc.flight = {};
-        doc.flight.history = [];
-        doc.flight.id = "None";
-        doc.flight.seat = "";
-        doc.flight.group = "";
-        doc.flight.bus = "None";
-        doc.flight.status = "Active";
-      }
-      if (f.flight_id != doc.flight.id) {
-        doc.flight.history.push({
-          id: timestamp,
-          change: "changed flight from: " + doc.flight.id + " to: " + f.flight_id + " by: " + user
-        });
-        doc.flight.id = f.flight_id;
-        hasChanged = true;
-      }
-      if (f.flight_seat != doc.flight.seat) {
-        doc.flight.history.push({
-          id: timestamp,
-          change: "changed seat from: " + doc.flight.seat + " to: " + f.flight_seat + " by: " + user
-        });
-        doc.flight.seat = f.flight_seat;
-        hasChanged = true;
-      }
-      if (f.flight_bus != doc.flight.bus) {
-        doc.flight.history.push({
-          id: timestamp,
-          change: "changed bus from: " + doc.flight.bus + " to: " + f.flight_bus + " by: " + user
-        });
-        doc.flight.bus = f.flight_bus;
-        hasChanged = true;
-      }
-      if (f.flight_group != doc.flight.group) {
-        doc.flight.history.push({
-          id: timestamp,
-          change: "changed group from: " + doc.flight.group + " to: " + f.flight_group + " by: " + user
-        });
-        doc.flight.group = f.flight_group;
-        hasChanged = true;
-      }
-      if (f.flight_status != doc.flight.status) {
-        doc.flight.history.push({
-          id: timestamp,
-          change: "changed status from: " + doc.flight.status + " to: " + f.flight_status + " by: " + user
-        });
-        doc.flight.status = f.flight_status;
-        hasChanged = true;
-      }
-
 
       if (doc.birth_date != f.birth_date) {
         doc.birth_date = f.birth_date;

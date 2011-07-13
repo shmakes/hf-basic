@@ -9,6 +9,9 @@
           <a target="_blank" href="/_utils/document.html?{{db_name}}/{{id}}">{{raw_data_lnk}}</a>
         </span>
       </legend>
+      <input type="hidden" name="_id" value="{{id}}" />
+      <input type="hidden" name="_rev" value="{{rev}}" />
+      <input type="hidden" name="type" value="{{type}}" />
       <ol>
         <li>
           <label for="app_date">appl date<em><img src="images/required_star.gif" alt="required" /></em></label>
@@ -112,58 +115,6 @@
     </fieldset>
 
     <fieldset class="alt">
-      <legend accesskey="S">
-        <span>Status</span>
-      </legend>
-      <input type="hidden" name="_id" value="{{id}}" />
-      <input type="hidden" name="_rev" value="{{rev}}" />
-      <input type="hidden" name="type" value="{{type}}" />
-      <ol>
-        <li>
-          <label for="flight_status">flight status</label>
-          <select name="flight_status" id="flight_status" >
-            <option {{selStatus-Active}}>Active</option>
-            <option {{selStatus-Flown}}>Flown</option>
-            <option {{selStatus-Medical}}>Medical</option>
-            <option {{selStatus-Deceased}}>Deceased</option>
-            <option {{selStatus-Removed}}>Removed</option>
-          </select>
-        </li>
-        <li>
-          <label for="flight_group">flight group</label>
-          <input type="text" name="flight_group" maxlength="15" value="{{flight_group}}" style="width: 10em" />
-        </li>
-        <li>
-          <label for="flight_id">assigned flight</label>
-          <select name="flight_id" id="flight_id" >
-            <option>None</option>
-            {{#flights}}
-            <option {{selFlt}}>{{flight}}</option>
-            {{/flights}}
-          </select>
-        </li>
-        <li>
-          <label for="flight_seat">assigned seat</label>
-          <input type="text" name="flight_seat" maxlength="10" value="{{flight_seat}}" style="width: 5em" />
-        </li>
-        <li>
-          <label for="flight_bus">assigned bus</label>
-          <select name="flight_bus" id="flight_bus" >
-            <option>None</option>
-            <option {{selBus-Alpha1}}>Alpha1</option>
-            <option {{selBus-Alpha2}}>Alpha2</option>
-            <option {{selBus-Alpha3}}>Alpha3</option>
-            <option {{selBus-Alpha4}}>Alpha4</option>
-            <option {{selBus-Bravo1}}>Bravo1</option>
-            <option {{selBus-Bravo2}}>Bravo2</option>
-            <option {{selBus-Bravo3}}>Bravo3</option>
-            <option {{selBus-Bravo4}}>Bravo4</option>
-          </select>
-        </li>
-      </ol>
-    </fieldset>
-
-    <fieldset>
       <legend accesskey="O">
         <span>Other</span>
       </legend>

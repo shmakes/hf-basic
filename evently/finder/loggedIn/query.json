@@ -1,5 +1,5 @@
 {
-  "view" : "flights_future",
+  "view" : "flights",
   "limit" : 25,
-  "descending" : false
+  "descending" : true
 }

@@ -53,7 +53,6 @@ function(head, req) {
         medical_release:       r.medical.release,
         preferred_airport:     r.preferred_airport,
         flight_status:         r.flight.status,
-        flight_group:          r.flight.group,
         flight_id:             r.flight.id,
         flight_seat:           r.flight.seat,
         flight_bus:            r.flight.bus,
