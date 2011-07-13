@@ -89,7 +89,6 @@ function(context) {
         doc.flight.history = [];
         doc.flight.id = "None";
         doc.flight.seat = "";
-        doc.flight.group = "";
         doc.flight.bus = "None";
         doc.flight.status = "Active";
       }
@@ -115,14 +114,6 @@ function(context) {
           change: "changed bus from: " + doc.flight.bus + " to: " + f.flight_bus + " by: " + user
         });
         doc.flight.bus = f.flight_bus;
-        hasChanged = true;
-      }
-      if (f.flight_group != doc.flight.group) {
-        doc.flight.history.push({
-          id: timestamp,
-          change: "changed group from: " + doc.flight.group + " to: " + f.flight_group + " by: " + user
-        });
-        doc.flight.group = f.flight_group;
         hasChanged = true;
       }
       if (f.flight_status != doc.flight.status) {
@@ -184,85 +175,6 @@ function(context) {
       }
       if (doc.notes.service != f.notes_service) {
         doc.notes.service = f.notes_service.toUpperCase();
-        hasChanged = true;
-      }
-
-      if (!doc.emerg_contact) {
-        doc.emerg_contact = {};
-      }
-      if (doc.emerg_contact.relation != f.ec_relation) {
-        doc.emerg_contact.relation = f.ec_relation;
-        hasChanged = true;
-      }
-      if (doc.emerg_contact.name != f.ec_name) {
-        doc.emerg_contact.name = f.ec_name;
-        hasChanged = true;
-      }
-      if (!doc.emerg_contact.address) {
-        doc.emerg_contact.address = {};
-      }
-      if (doc.emerg_contact.address.street != f.ec_street) {
-        doc.emerg_contact.address.street = f.ec_street;
-        hasChanged = true;
-      }
-      if (doc.emerg_contact.address.city != f.ec_city) {
-        doc.emerg_contact.address.city = f.ec_city;
-        hasChanged = true;
-      }
-      if (doc.emerg_contact.address.state != f.ec_state.toUpperCase()) {
-        doc.emerg_contact.address.state = f.ec_state.toUpperCase();
-        hasChanged = true;
-      }
-      if (doc.emerg_contact.address.zip != f.ec_zip) {
-        doc.emerg_contact.address.zip = f.ec_zip;
-        hasChanged = true;
-      }
-      if (doc.emerg_contact.address.phone != f.ec_phone) {
-        doc.emerg_contact.address.phone = f.ec_phone;
-        hasChanged = true;
-      }
-      if (doc.emerg_contact.address.email != f.ec_email) {
-        doc.emerg_contact.address.email = f.ec_email;
-        hasChanged = true;
-      }
-
-
-      if (!doc.ref_contact) {
-        doc.ref_contact = {};
-      }
-      if (doc.ref_contact.relation != f.rc_relation) {
-        doc.ref_contact.relation = f.rc_relation;
-        hasChanged = true;
-      }
-      if (doc.ref_contact.name != f.rc_name) {
-        doc.ref_contact.name = f.rc_name;
-        hasChanged = true;
-      }
-      if (!doc.ref_contact.address) {
-        doc.ref_contact.address = {};
-      }
-      if (doc.ref_contact.address.street != f.rc_street) {
-        doc.ref_contact.address.street = f.rc_street;
-        hasChanged = true;
-      }
-      if (doc.ref_contact.address.city != f.rc_city) {
-        doc.ref_contact.address.city = f.rc_city;
-        hasChanged = true;
-      }
-      if (doc.ref_contact.address.state != f.rc_state.toUpperCase()) {
-        doc.ref_contact.address.state = f.rc_state.toUpperCase();
-        hasChanged = true;
-      }
-      if (doc.ref_contact.address.zip != f.rc_zip) {
-        doc.ref_contact.address.zip = f.rc_zip;
-        hasChanged = true;
-      }
-      if (doc.ref_contact.address.phone != f.rc_phone) {
-        doc.ref_contact.address.phone = f.rc_phone;
-        hasChanged = true;
-      }
-      if (doc.ref_contact.address.email != f.rc_email) {
-        doc.ref_contact.address.email = f.rc_email;
         hasChanged = true;
       }
 

@@ -136,86 +136,6 @@
     </fieldset>
 
     <fieldset class="alt">
-      <legend accesskey="R">
-        <span>Personal Reference</span>
-      </legend>
-      <ol>
-        <li>
-          <label for="rc_relation">relation</label>
-          <input type="text" name="rc_relation" pattern="[a-zA-Z. ]{0,}" maxlength="30" value="{{rc_relation}}" style="width: 20em" />
-        </li>
-        <li>
-          <label for="rc_name">name</label>
-          <input type="text" name="rc_name" pattern="[a-zA-Z. ]{0,}" maxlength="30" value="{{rc_name}}" style="width: 25em" />
-        </li>
-        <li>
-          <label for="rc_street">street</label>
-          <input type="text" name="rc_street" pattern="[a-zA-Z0-9.,# -]{0,}" maxlength="50" value="{{rc_addr_street}}" style="width: 30em" />
-        </li>
-        <li>
-          <label for="rc_city">city</label>
-          <input type="text" name="rc_city" pattern="[a-zA-Z. -]{0,}" maxlength="20" value="{{rc_addr_city}}" style="width: 10em" />
-        </li>
-        <li>
-          <label for="rc_state">state</label>
-          <input type="text" name="rc_state" pattern="[a-zA-Z]{0,}" maxlength="2" value="{{rc_addr_state}}" style="width: 2em" />
-        </li>
-        <li>
-          <label for="rc_zip">zip</label>
-          <input type="text" name="rc_zip" pattern="[0-9 -]{0,}" maxlength="10" value="{{rc_addr_zip}}" style="width: 8em" />
-        </li>
-        <li>
-          <label for="rc_phone">phone</label>
-          <input type="text" name="rc_phone" pattern="[0-9 -]{0,}" maxlength="20" value="{{rc_addr_phone}}" style="width: 10em" />
-        </li>
-        <li>
-          <label for="rc_email">email</label>
-          <input type="email" name="rc_email" value="{{rc_addr_email}}" style="width: 20em" />
-        </li>
-      </ol>
-    </fieldset>
-
-    <fieldset>
-      <legend accesskey="E">
-        <span>Emergency Contact</span>
-      </legend>
-      <ol>
-        <li>
-          <label for="ec_relation">relation</label>
-          <input type="text" name="ec_relation" pattern="[a-zA-Z. ]{0,}" maxlength="30" value="{{ec_relation}}" style="width: 20em" />
-        </li>
-        <li>
-          <label for="ec_name">name</label>
-          <input type="text" name="ec_name" pattern="[a-zA-Z. ]{0,}" maxlength="30" value="{{ec_name}}" style="width: 25em" />
-        </li>
-        <li>
-          <label for="ec_street">street</label>
-          <input type="text" name="ec_street" pattern="[a-zA-Z0-9.,# -]{0,}" maxlength="50" value="{{ec_addr_street}}" style="width: 30em" />
-        </li>
-        <li>
-          <label for="ec_city">city</label>
-          <input type="text" name="ec_city" pattern="[a-zA-Z. -]{0,}" maxlength="20" value="{{ec_addr_city}}" style="width: 10em" />
-        </li>
-        <li>
-          <label for="ec_state">state</label>
-          <input type="text" name="ec_state" pattern="[a-zA-Z]{0,}" maxlength="2" value="{{ec_addr_state}}" style="width: 2em" />
-        </li>
-        <li>
-          <label for="ec_zip">zip</label>
-          <input type="text" name="ec_zip" pattern="[0-9 -]{0,}" maxlength="10" value="{{ec_addr_zip}}" style="width: 8em" />
-        </li>
-        <li>
-          <label for="ec_phone">phone</label>
-          <input type="text" name="ec_phone" pattern="[0-9 -]{0,}" maxlength="20" value="{{ec_addr_phone}}" style="width: 10em" />
-        </li>
-        <li>
-          <label for="ec_email">email</label>
-          <input type="email" name="ec_email" value="{{ec_addr_email}}" style="width: 20em" />
-        </li>
-      </ol>
-    </fieldset>
-
-    <fieldset class="alt">
       <legend accesskey="M">
         <span>Medical</span>
       </legend>
@@ -256,10 +176,6 @@
             <option {{selStatus-Deceased}}>Deceased</option>
             <option {{selStatus-Removed}}>Removed</option>
           </select>
-        </li>
-        <li>
-          <label for="flight_group">flight group</label>
-          <input type="text" name="flight_group" maxlength="15" value="{{flight_group}}" style="width: 10em" />
         </li>
         <li>
           <label for="flight_id">assigned flight</label>
