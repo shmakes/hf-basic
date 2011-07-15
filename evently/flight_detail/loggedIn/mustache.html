@@ -5,7 +5,7 @@
   </span>
   <p>
     <label for="flight_name">flight</label>
-    <input type="text" name="flight_name" readonly="readonly" value="{{flight_name}}" style="width: 15em" /> 
+    <input id="flightName" type="text" name="flight_name" readonly="readonly" value="{{flight_name}}" style="width: 15em" /> 
     <label for="capacity">capacity</label>
     <input type="text" name="capacity" readonly="readonly" value="{{capacity}}" style="width: 5em" /> 
     <label for="flight_date">flight date</label>
@@ -17,7 +17,7 @@
         <label for="add_vets">number of veterans to add:</label>
       </td>
       <td>
-        <input type="number" name="add_vets" min="0" max="100" maxlength="3" value="0" style="width: 4em" /> 
+        <input id='vetQty' type="number" name="add_vets" min="0" max="100" maxlength="3" value="0" style="width: 4em" /> 
         <button id="addVets">Add</button> Unassigned Vets with earliest application date will be picked first. (max 100 per add)
       </td>
     </tr>
