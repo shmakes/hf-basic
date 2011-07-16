@@ -1,6 +1,5 @@
 function(doc) {
   if (doc.type == "Guardian" 
-	    && doc.flight.id == "None"
       && doc.veteran.id == ""
       && doc.veteran.pref_notes.length > 2
       && doc.veteran.pref_notes.toLowerCase() != "none") 
