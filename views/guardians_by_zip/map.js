@@ -1,9 +1,9 @@
 function(doc) {
   if (doc.type == "Guardian" 
-	    && doc.flight.id == "None"
       && doc.veteran.id == "") 
   {
-    emit([doc.address.zip.substr(0, 5),
+    emit([doc.flight.id,
+          doc.address.zip.substr(0, 5),
           doc.app_date], 
          { "name"    : doc.name.first + " " + doc.name.last, 
            "street"  : doc.address.street, 

@@ -1,4 +1,5 @@
 function() {
+  var flightName = $("#flightName").val();
   var vetId = $(this).parent().parent().attr("vetid");
   if (vetId.length == 32) {
     // Add the veteran name.
@@ -12,27 +13,6 @@ function() {
     app.db.openDoc(vetId, {
       success : function(doc) {
 
-        var vetLastName = doc.name.last.toUpperCase();
-        $("#byPref")[0].textContent = doc.name.last;
-        var prefSel = $("select#SelectByPref");
-        prefSel.find('option').remove().end();
-        var prefOpt = prefSel.attr('options');
-        app.db.view("basic/guardians_by_pref", {
-          descending : false,
-          limit: 10,
-          startkey : [ vetLastName ],
-          endkey : [ vetLastName + "\ufff0" ],
-          success: function(resp) {
-            selected = true;
-            for (idx in resp.rows) {
-              row = resp.rows[idx];
-              entry = row.value.name + " | " + row.value.pref;
-              prefOpt[prefOpt.length] = new Option(entry, row.id, selected, selected);
-              selected = false;
-            }
-          }
-        })
-
         var startZip = parseInt(doc.address.zip.substr(0, 5));
         var endZip = startZip + 1;
         $("#byZip")[0].textContent = startZip;
@@ -42,8 +22,8 @@ function() {
         app.db.view("basic/guardians_by_zip", {
           descending : false,
           limit: 10,
-          startkey : [ startZip.toString() ],
-          endkey : [ endZip.toString() ],
+          startkey : [ flightName, startZip.toString() ],
+          endkey : [ flightName, endZip.toString() ],
           success: function(resp) {
             selected = true;
             for (idx in resp.rows) {
@@ -67,8 +47,8 @@ function() {
         app.db.view("basic/guardians_by_city", {
           descending : false,
           limit: 10,
-          startkey : [ state, startCounty, startCity ],
-          endkey : [ state, startCounty, endCity ],
+          startkey : [ flightName, state, startCounty, startCity ],
+          endkey : [ flightName, state, startCounty, endCity ],
           success: function(resp) {
             selected = true;
             for (idx in resp.rows) {
@@ -89,8 +69,8 @@ function() {
         app.db.view("basic/guardians_by_county", {
           descending : false,
           limit: 10,
-          startkey : [ state, startCounty ],
-          endkey : [ state, endCounty ],
+          startkey : [ flightName, state, startCounty ],
+          endkey : [ flightName, state, endCounty ],
           success: function(resp) {
             selected = true;
             for (idx in resp.rows) {
@@ -109,8 +89,8 @@ function() {
         app.db.view("basic/guardians_by_app_date", {
           descending : false,
           limit: 10,
-          startkey : [ "None" ],
-          endkey : [ "None\ufff0" ],
+          startkey : [ flightName ],
+          endkey : [ flightName + "\ufff0" ],
           success: function(resp) {
             selected = true;
             for (idx in resp.rows) {

@@ -26,7 +26,7 @@
         <label for="add_grds">number of guardians to add:</label>
       </td>
       <td>
-        <input type="number" name="add_grds" min="0" max="100" maxlength="3" value="0" style="width: 4em" /> 
+        <input id='grdQty' type="number" name="add_grds" min="0" max="100" maxlength="3" value="0" style="width: 4em" /> 
         <button id="addGrds">Add</button> Unassigned Guardians with earliest application date will be picked first. (max 100 per add)
       </td>
     </tr>
@@ -83,11 +83,6 @@
     <p>
       Select a guardian from the lists arranged below.
     </p>
-
-    <h3>Select by preference name: <span id="byPref" /></h3>
-    <select name="ByPrefSel" id="SelectByPref" size="4" style="width: 40em" >
-    </select>
-    <button id="ByPrefSubmit" class="close"> OK </button>
 
     <h3>Select by same zip code: <span id="byZip" /></h3>
     <select name="ByZipSel" id="SelectByZip" size="4" style="width: 40em" >
