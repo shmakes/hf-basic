@@ -75,6 +75,22 @@ table.MixedList .colPairing {
   width: 250px;
 }
 
+table.MixedList .colSpacer {
+  width: 25px;
+}
+
+table.pairing {
+  border-spacing:0px 10px;
+}
+
+table.MixedList .pairing {
+  padding: 3px;
+  border-width: 2px;
+  border-style: solid;
+  border-spacing:0px 10px;
+  background-color:#fa3;
+}
+
 table.addPeople {
   border-width: 0;
   border-spacing: 0;

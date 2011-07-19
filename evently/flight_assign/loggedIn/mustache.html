@@ -1,0 +1,153 @@
+<div>
+  <span class="grey-note">
+    Flight Doc ID: {{id}} 
+    <a target="_blank" href="/_utils/document.html?{{db_name}}/{{id}}">{{raw_data_lnk}}</a>
+  </span>
+  <p>
+    <label for="flight_name">flight</label>
+    <input id="flightName" type="text" name="flight_name" readonly="readonly" value="{{flight_name}}" style="width: 15em" /> 
+    <label for="capacity">capacity</label>
+    <input type="text" name="capacity" readonly="readonly" value="{{capacity}}" style="width: 5em" /> 
+    <label for="flight_date">flight date</label>
+    <input type="text" name="flight_date" readonly="readonly" value="{{flight_date}}" style="width: 15em" />
+  </p>
+  <table class="addPeople">
+    <tr>
+      <td>
+        <label for="add_vets">number of veterans to add:</label>
+      </td>
+      <td>
+        <input id='vetQty' type="number" name="add_vets" min="0" max="100" maxlength="3" value="0" style="width: 4em" /> 
+        <button id="addVets">Add</button> Unassigned Vets with earliest application date will be picked first. (max 100 per add)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label for="add_grds">number of guardians to add:</label>
+      </td>
+      <td>
+        <input id='grdQty' type="number" name="add_grds" min="0" max="100" maxlength="3" value="0" style="width: 4em" /> 
+        <button id="addGrds">Add</button> Unassigned Guardians with earliest application date will be picked first. (max 100 per add)
+      </td>
+    </tr>
+  </table>
+  <br />
+
+  <div class="flight_list">
+    <table class='MixedList pairing'>
+      <thead>
+        <tr>
+          <th class="colSpacer"> </th>
+          <th class="colName">Name</th>
+          <th class="colCity">City</th>
+          <th class="colAppDate">App. Date</th>
+        </tr>
+      </thead>
+      <tbody id="results">
+      {{#pairs}}
+        <tr id="{{pid}}" class="pairing">
+          <td class="colSpacer"> </td>
+          <td colspan="3" class="pairing">
+          {{#people}}
+            <table class='MixedList'>
+              <tr id="{{id}}" class="{{type}}">
+                <td class="colName">{{name_first}} {{name_last}}</td>
+                <td class="colCity">{{city}}</td>
+                <td class="colAppDate">{{appdate}}</td>
+              </tr>
+            </table>
+          {{/people}}
+          </td>
+        </tr>
+      {{/pairs}}
+      </tbody>
+    </table>
+  </div>
+
+  <div id="chooser_trigger" rel="#chooser"></div>
+  <div class="modal chooser" id="chooser">
+    <h2 id="vet_name"></h2>
+    <input id="vet_id" type="hidden" />
+    <input id="grd_id" type="hidden" />
+
+    <p>
+      Select a guardian from the lists arranged below.
+    </p>
+
+    <h3>Select by same zip code: <span id="byZip" /></h3>
+    <select name="ByZipSel" id="SelectByZip" size="4" style="width: 40em" >
+    </select>
+    <button id="ByZipSubmit" class="close"> OK </button>
+
+    <h3>Select by same city: <span id="byCity" /></h3>
+    <select name="ByCitySel" id="SelectByCity" size="4" style="width: 40em" >
+    </select>
+    <button id="ByCitySubmit" class="close"> OK </button>
+
+    <h3>Select by same county: <span id="byCounty" /></h3>
+    <select name="ByCountySel" id="SelectByCounty" size="4" style="width: 40em" >
+    </select>
+    <button id="ByCountySubmit" class="close"> OK </button>
+
+    <h3>Select by next on waiting list.</h3>
+    <select name="ByAppDateSel" id="SelectByAppDate" size="4" style="width: 40em" >
+    </select>
+    <button id="ByAppDateSubmit" class="close"> OK </button>
+
+    <br />
+    <button type="button" class="close"> Cancel </button> 
+    | Remove existing ==&gt; <button id="RemoveGuardianSubmit" class="close"> None </button>
+    <br />
+  </div>
+
+  <div id="bus_trigger" rel="#bus"></div>
+  <div class="modal vet_bus" id="bus">
+    <h2 id="vet_name_bus"></h2>
+    <input id="vet_id_bus" type="hidden" />
+    <input id="grd_id_bus" type="hidden" />
+
+    <p>
+      Select a tour bus.
+    </p>
+
+    <table>
+      <tr class="DataRow"><td class="BusPick close" value="None">None</td></tr>
+      <tr class="DataRow"><td class="BusPick close" value="Alpha1">Alpha 1</td></tr>
+      <tr class="DataRow"><td class="BusPick close" value="Alpha2">Alpha 2</td></tr>
+      <tr class="DataRow"><td class="BusPick close" value="Alpha3">Alpha 3</td></tr>
+      <tr class="DataRow"><td class="BusPick close" value="Alpha4">Alpha 4</td></tr>
+      <tr class="DataRow"><td class="BusPick close" value="Beta1">Bravo 1</td></tr>
+      <tr class="DataRow"><td class="BusPick close" value="Beta2">Bravo 2</td></tr>
+      <tr class="DataRow"><td class="BusPick close" value="Beta3">Bravo 3</td></tr>
+      <tr class="DataRow"><td class="BusPick close" value="Beta4">Bravo 4</td></tr>
+    </table>
+    <br />
+    <button type="button" class="close"> Cancel </button> 
+    <br />
+  </div>
+
+  <div id="pref_trigger" rel="#pref"></div>
+  <div class="modal vet_pref" id="pref">
+    <h2 id="vet_name_pref"></h2>
+    <input id="vet_id_pref" type="hidden" />
+    <input id="grd_id_pref" type="hidden" />
+    <br />
+
+    <h3>Veteran Preference Notes.</h3>
+    <p id="pref_notes"></p>
+
+    <h3>Search Last Name</h3>
+    <input id="last_name_search" type="text" />
+    <button id="ByLastNameSearchSubmit"> Search </button>
+
+    <h3>Search Results.</h3>
+    <select name="ByLastNameSearchSel" id="SelectByLastNameSearch" size="10" style="width: 40em" >
+    </select>
+    <button id="ByVetPrefSubmit" class="close"> OK </button>
+
+    <br />
+    <button type="button" class="close"> Cancel </button>
+    <br />
+  </div>
+</div>
+
