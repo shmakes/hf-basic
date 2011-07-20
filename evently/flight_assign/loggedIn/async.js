@@ -49,6 +49,11 @@ function(cb) {
               pairing.people.push(person);
 
             }
+
+            if (pairing.pid) {
+              doc.pairs.push(pairing);
+            }
+
             doc.pairs.sort(byAppDate);
             cb(doc);
           }
