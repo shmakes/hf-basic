@@ -133,14 +133,6 @@ function(context) {
         doc.veteran.pref_notes = f.veteran_pref_notes;
         hasChanged = true;
       }
-      if (doc.veteran.id != f.veteran_id) {
-        doc.veteran.id = f.veteran_id;
-        hasChanged = true;
-      }
-      if (doc.veteran.name != f.veteran_name) {
-        doc.veteran.name = f.veteran_name;
-        hasChanged = true;
-      }
 
       if (doc.birth_date != f.birth_date) {
         doc.birth_date = f.birth_date;

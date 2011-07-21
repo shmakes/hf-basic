@@ -1,5 +1,4 @@
 function(r) {
-  //$.log(resp.app_date)  
   var app = $$(this).app;
   var dbname = app.db.name;
 
@@ -31,6 +30,19 @@ function(r) {
       }
     }
 
+    var vetId = "";
+    var vetName = "";
+    if (r.veteran.pairings.length > 0) {
+      vetId = r.veteran.pairings[0].id;
+      vetName = r.veteran.pairings[0].name;
+    }
+
+    var vetId2 = "";
+    var vetName2 = "";
+    if (r.veteran.pairings.length > 1) {
+      vetId2 = r.veteran.pairings[1].id;
+      vetName2 = r.veteran.pairings[1].name;
+    }
 
     var result = {
         db_name:               dbname,
@@ -38,7 +50,7 @@ function(r) {
         raw_data_lnk:          "(raw data)",
         rev:                   r._rev,
         type:                  r.type,
-        app_date:              r.app_date,
+        app_date:              (r.app_date || ""),
         app_date_string:       appDateString,
         preferred_airport:     r.preferred_airport,
         flights:               r.availableFlights,
@@ -47,8 +59,10 @@ function(r) {
         flight_seat:           r.flight.seat,
         flight_bus:            r.flight.bus,
         flight_history:        r.flight.history,
-        veteran_id:            r.veteran.id,
-        veteran_name:          r.veteran.name,
+        veteran_id:            vetId,
+        veteran_name:          vetName,
+        veteran_id2:           vetId2,
+        veteran_name2:         vetName2,
         veteran_pref_notes:    r.veteran.pref_notes,
         first_name:            r.name.first,
         middle_name:           r.name.middle,

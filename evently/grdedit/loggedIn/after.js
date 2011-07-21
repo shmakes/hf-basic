@@ -40,6 +40,11 @@ function() {
     $("#vet_edit_link").hide();
   }
 
+  var vetId2 = $("#veteran_id2");
+  if (vetId2.attr('value').length == 0) {
+    $("#vet_edit_link2").hide();
+  }
+
   $("#saved_trigger").overlay({
     mask: {
       color: '#ebecff',
