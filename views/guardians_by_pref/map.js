@@ -1,9 +1,8 @@
 function(doc) {
-  if (doc.type == "Guardian" 
-      && doc.veteran.id == ""
-      && doc.veteran.pref_notes.length > 2
-      && doc.veteran.pref_notes.toLowerCase() != "none") 
-  {
+  if ((doc.type == "Guardian") 
+      && (doc.veteran.pairings.length < 1)
+      && (doc.veteran.pref_notes.length > 2)
+      && (doc.veteran.pref_notes.toLowerCase() != "none")) {
     var words = doc.veteran.pref_notes.toUpperCase().split(" ");
     for (var w in words) {
       if (words[w].length > 2) {

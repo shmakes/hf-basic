@@ -2,6 +2,7 @@ function(doc) {
   var ptype = 0;
   var pnotes = "";
   if ((doc.type == "Veteran")
+    && (doc.flight.status == "Active")
     && (doc.guardian.id == "")
     && (doc.guardian.pref_notes.length > 2))
   {
@@ -9,7 +10,8 @@ function(doc) {
     pnotes = doc.guardian.pref_notes.toUpperCase();
   }
   else if ((doc.type == "Guardian")
-    && (doc.veteran.id == ""))
+    && (doc.flight.status == "Active")
+    && (doc.veteran.pairings.length < 1))
   {
     ptype = 2;
     pnotes = doc.name.last.toUpperCase();
@@ -18,7 +20,7 @@ function(doc) {
     var words = pnotes.split(" ");
     for (var w in words) {
       if (words[w].length > 2) {
-        emit([doc.flight.id, words[w], doc.app_date, ptype],
+        emit([words[w], ptype],
              {"type": doc.type,
                "id": doc._id, 
                "name_first": doc.name.first, 

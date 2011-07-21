@@ -1,7 +1,6 @@
 function(doc) {
-  if (doc.type == "Guardian" 
-      && doc.veteran.id == "") 
-  {
+  if ((doc.type == "Guardian") 
+      && (doc.veteran.pairings.length < 1)) {
     emit([doc.flight.id,
           doc.address.state.toUpperCase(),
           doc.address.county.toUpperCase(),
