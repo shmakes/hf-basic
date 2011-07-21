@@ -10,6 +10,13 @@ function(head, req) {
   var headerNeeded = true;
   while(row = getRow()) {
     r = row.value;
+
+    vetId = "";
+    vetName = "";
+    for (vetIdx in r.veteran.pairings) {
+      vetId +=   " | " + r.veteran.pairings[vetIdx].id;
+      vetName += " | " + r.veteran.pairings[vetIdx].name;
+    }
     result = {
         app_date:              r.app_date,
         first_name:            r.name.first,
@@ -40,8 +47,8 @@ function(head, req) {
         flight_id:             r.flight.id,
         flight_seat:           r.flight.seat,
         flight_bus:            r.flight.bus,
-        veteran_id:            r.veteran.id,
-        veteran_name:          r.veteran.name,
+        veteran_id:            vetId.substr(2),
+        veteran_name:          vetName.substr(2),
         veteran_pref_notes:    r.veteran.pref_notes,
         id:                    r._id,
         rev:                   r._rev,
