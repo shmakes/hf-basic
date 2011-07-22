@@ -1,8 +1,5 @@
 function(doc) {
-  if (doc.name.last) {
-    if (!doc.flight) {
-      doc.flight = {};
-    }
+  if ((doc.name) && (doc.name.last)) {
     var ptype = doc.type;
     var pairing = "N/A";
     if (ptype == "Veteran") {
@@ -10,22 +7,21 @@ function(doc) {
     } 
     if (ptype == "Guardian") {
       pairing = "None";
-      doc.flight.group = " ";
       if ((doc.veteran.pairings) && (doc.veteran.pairings.length > 0)) {
         pairing = (doc.veteran.pairings[0].name || "None");
       }
     }
-    if (ptype == "Volunteer") {
-      doc.flight.id = " ";
-      doc.flight.group = " ";
-    }
+    var flt = {};
+    if (doc.flight) {
+      var flt = doc.flight;
+    } 
     emit([doc.name.last], 
          {"type": ptype,
            "name": doc.name.first + " " + doc.name.last, 
            "city": doc.address.city + ", " + doc.address.state, 
            "appdate": doc.app_date,
-           "flight": (doc.flight.id || " "),
-           "group": (doc.flight.group || " "),
+           "flight": (flt.id || " "),
+           "group": (flt.group || " "),
            "pairing": pairing
          });
   }
