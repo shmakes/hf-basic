@@ -1,5 +1,30 @@
 function() {
 
+  $("#form-Flight").validator();
+
+  $("#chooser_trigger").overlay({
+    mask: {
+      color: '#ebecff',
+      loadSpeed: 200,
+      opacity: 0.7
+    },
+
+    closeOnClick: false,
+    top: '1'
+  });
+
+
+  $("#progress_trigger").overlay({
+    mask: {
+      color: '#ebecff',
+      loadSpeed: 200,
+      opacity: 0.7
+    },
+
+    closeOnClick: false
+  });
+
+
   numVets = $("tr.Veteran").length;
   $("#vetCount").val(numVets.toString());
   
@@ -10,6 +35,7 @@ function() {
   remaining = capacity - numVets - numGrds;
   $("#remainCount").val(remaining.toString());
   
+
   $(this).show();
 };
 

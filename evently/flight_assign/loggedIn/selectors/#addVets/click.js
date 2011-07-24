@@ -9,6 +9,8 @@ function() {
     return true;
   }
 
+  $("#progress_trigger").click();  
+
   var added = 0;
 
   app.db.view("basic/waitlist_veterans", {
@@ -30,8 +32,8 @@ function() {
         app.db.saveDoc(doc, {
           success : function() {
             added++;
+            $("#prog_added").val(added.toString());
             if (added == rowCount) {
-              //alert("Added " + added.toString());
               window.location.reload();
             }
           }
