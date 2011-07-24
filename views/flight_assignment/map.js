@@ -1,6 +1,10 @@
 function(doc) {
+  flt = {};
+  if (doc.flight) {
+    flt = doc.flight;
+  }
   if (doc.type == "Veteran") {
-    emit([(doc.flight.id || "None"), 
+    emit([(flt.id || "None"), 
            doc._id, 0],
          { "pair": doc._id,
            "type": doc.type,
@@ -13,7 +17,7 @@ function(doc) {
   } else if (doc.type == "Guardian") {
     if ((doc.veteran.pairings) && (doc.veteran.pairings.length > 0)) {
       for (vet in doc.veteran.pairings) {
-        emit([(doc.flight.id || "None"), 
+        emit([(flt.id || "None"), 
                doc.veteran.pairings[vet].id, 1],
              { "pair": doc.veteran.pairings[vet].id,
                "type": doc.type,
@@ -25,7 +29,7 @@ function(doc) {
              });
       }
     } else {
-      emit([(doc.flight.id || "None"), 
+      emit([(flt.id || "None"), 
              doc._id, 1],
            { "pair": doc._id,
              "type": doc.type,

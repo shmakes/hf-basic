@@ -11,10 +11,6 @@ function(doc) {
         pairing = (doc.veteran.pairings[0].name || "None");
       }
     }
-    var flt = {};
-    if (doc.flight) {
-      var flt = doc.flight;
-    } 
     emit([(doc.flight.status || ""), 
           doc.name.last
          ], 
@@ -22,8 +18,8 @@ function(doc) {
            "name": doc.name.first + " " + doc.name.last, 
            "city": doc.address.city + ", " + doc.address.state, 
            "appdate": doc.app_date,
-           "flight": (flt.id || " "),
-           "group": (flt.group || " "),
+           "flight": (doc.flight.id || " "),
+           "group": (doc.flight.group || " "),
            "pairing": pairing
          });
   }

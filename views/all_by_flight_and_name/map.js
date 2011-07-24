@@ -15,7 +15,7 @@ function(doc) {
     if (doc.flight) {
       var flt = doc.flight;
     } 
-    emit([(doc.flight.id || ""), 
+    emit([(flt.id || ""), 
           doc.name.last
          ], 
          {"type": ptype,
