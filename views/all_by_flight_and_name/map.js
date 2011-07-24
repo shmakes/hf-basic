@@ -1,7 +1,7 @@
 function(doc) {
   if ((doc.name) && (doc.name.last)) {
     var ptype = doc.type;
-    var pairing = "N/A";
+    var pairing = "-";
     if (ptype == "Veteran") {
       pairing = (doc.guardian.name || "None");
     } 
@@ -22,8 +22,8 @@ function(doc) {
            "name": doc.name.first + " " + doc.name.last, 
            "city": doc.address.city + ", " + doc.address.state, 
            "appdate": doc.app_date,
-           "flight": (flt.id || " "),
-           "group": (flt.group || " "),
+           "flight": (flt.id || "-"),
+           "status": (flt.status || "-"),
            "pairing": pairing
          });
   }

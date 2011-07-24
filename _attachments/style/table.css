@@ -71,6 +71,10 @@ table.MixedList .colGroup {
   width: 100px;
 }
 
+table.MixedList .colStatus {
+  width: 100px;
+}
+
 table.MixedList .colPairing {
   width: 250px;
 }

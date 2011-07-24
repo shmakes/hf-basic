@@ -62,7 +62,7 @@ function() {
         tr.append("<td>" + anchor + person.city + "</a></td>");
         tr.append("<td>" + anchor + person.appdate + "</a></td>");
         tr.append("<td>" + anchor + person.flight + "</a></td>");
-        tr.append("<td>" + anchor + person.group + "</a></td>");
+        tr.append("<td>" + anchor + person.status + "</a></td>");
         tr.append("<td>" + anchor + person.pairing + "</a></td>");
         rslt.append(tr);     
       }
