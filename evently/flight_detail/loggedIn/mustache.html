@@ -5,51 +5,72 @@
   </span>
   <p>
     <label for="flight_name">flight</label>
-    <input id="flightName" type="text" name="flight_name" readonly="readonly" value="{{flight_name}}" style="width: 15em" /> 
+    <input id="flightName" type="text" name="flight_name" readonly="readonly" value="{{flight_name}}" style="width: 10em" /> 
     <label for="capacity">capacity</label>
-    <input type="text" name="capacity" readonly="readonly" value="{{capacity}}" style="width: 5em" /> 
+    <input id="flightCap" type="text" name="capacity" readonly="readonly" value="{{capacity}}" style="width: 5em" /> 
     <label for="flight_date">flight date</label>
-    <input type="text" name="flight_date" readonly="readonly" value="{{flight_date}}" style="width: 15em" />
+    <input type="text" name="flight_date" readonly="readonly" value="{{flight_date}}" style="width: 10em" /> 
+    | <b>Total Flight Count:</b> 
+    <label for="alpha_count">alpha</label>
+    <input id="alphaCount" type="text" name="alpha_count" readonly="readonly" value="" style="width: 3em" />
+    <label for="bravo_count">bravo</label>
+    <input id="bravoCount" type="text" name="bravo_count" readonly="readonly" value="" style="width: 3em" />
+    <br />
+    <label for="a1_count">alpha 1</label>
+    <input id="a1Count" type="text" name="a1_count" readonly="readonly" value="" style="width: 3em" />
+    <label for="a2_count">alpha 2</label>
+    <input id="a2Count" type="text" name="a2_count" readonly="readonly" value="" style="width: 3em" />
+    <label for="a3_count">alpha 3</label>
+    <input id="a3Count" type="text" name="a3_count" readonly="readonly" value="" style="width: 3em" />
+    <label for="a4_count">alpha 4</label>
+    <input id="a4Count" type="text" name="a4_count" readonly="readonly" value="" style="width: 3em" />
+    <label for="a5_count">alpha 5</label>
+    <input id="a5Count" type="text" name="a5_count" readonly="readonly" value="" style="width: 3em" />
+    <br />
+    <label for="b1_count">bravo 1</label>
+    <input id="b1Count" type="text" name="b1_count" readonly="readonly" value="" style="width: 3em" />
+    <label for="b2_count">bravo 2</label>
+    <input id="b2Count" type="text" name="b2_count" readonly="readonly" value="" style="width: 3em" />
+    <label for="b3_count">bravo 3</label>
+    <input id="b3Count" type="text" name="b3_count" readonly="readonly" value="" style="width: 3em" />
+    <label for="b4_count">bravo 4</label>
+    <input id="b4Count" type="text" name="b4_count" readonly="readonly" value="" style="width: 3em" />
+    <label for="b5_count">bravo 5</label>
+    <input id="b5Count" type="text" name="b5_count" readonly="readonly" value="" style="width: 3em" />
   </p>
   <br />
 
-  <table>
+  <table class="Pairs">
     <tr>
-      <th colspan="7">Veteran</th>
+      <th colspan="5">Veteran</th>
       <th rowspan="2"> - </th>
-      <th colspan="6">Guardian</th>
+      <th colspan="5">Guardian</th>
     </tr>
     <tr>
-      <th></th>
       <th>Name</th>
       <th>City</th>
-      <th>App Date</th>
-      <th>Preference</th>
+      <th>Limitations</th>
       <th>Bus</th>
       <th>Seat</th>
       <th>Seat</th>
       <th>Bus</th>
-      <th>Preference</th>
-      <th>App Date</th>
+      <th>Experience</th>
       <th>City</th>
       <th>Name</th>
     </tr> 
   {{#pairs}}
     <tr class="DataRow{{invalid_row}}" vetid="{{vet_id}}" grdid="{{grd_id}}">
-      <td class="Veteran"><button class="removeVet">Del</button></td>
-      <td class="Veteran" name="vet_name">{{vet_name_first}} {{vet_name_last}}</td>
-      <td class="Veteran">{{vet_city}}</td>
-      <td class="Veteran">{{vet_appdate}}</td>
-      <td class="Veteran" name="vet_pref" style="width: 4em">{{vet_pairPref}}</td>
-      <td class="Veteran" name="vet_bus">{{vet_bus}}</td>
-      <td class="Veteran"><input type="text" value="{{vet_seat}}" style="width: 2em" /></td>
+      <td class="Veteran colName" name="vet_name">{{vet_name_first}} {{vet_name_last}}</td>
+      <td class="Veteran colCity">{{vet_city}}</td>
+      <td class="Veteran colLimitations">{{vet_limitations}}</td>
+      <td class="Veteran colBus" name="vet_bus">{{vet_bus}}</td>
+      <td class="Veteran colSeat"><input type="text" value="{{vet_seat}}" style="width: 2em" /></td>
       <td class="Veteran"><button class="modalInput">&gt;</button></td>
-      <td class="Guardian"><input type="text" value="{{grd_seat}}" style="width: 2em" /></td>
-      <td class="Guardian">{{grd_bus}}</td>
-      <td class="Guardian" style="width: 4em">{{grd_pairPref}}</td>
-      <td class="Guardian">{{grd_appdate}}</td>
-      <td class="Guardian">{{grd_city}}</td>
-      <td class="Guardian" name="grd_name">{{grd_name_first}} {{grd_name_last}}</td>
+      <td class="Guardian colSeat"><input type="text" value="{{grd_seat}}" style="width: 2em" /></td>
+      <td class="Guardian colBus">{{grd_bus}}</td>
+      <td class="Guardian colLimitations">{{grd_experience}}</td>
+      <td class="Guardian colCity">{{grd_city}}</td>
+      <td class="Guardian colName" name="grd_name">{{grd_name_first}} {{grd_name_last}}</td>
     </tr>
   {{/pairs}}
   </table>
@@ -118,28 +139,5 @@
     <br />
   </div>
 
-  <div id="pref_trigger" rel="#pref"></div>
-  <div class="modal vet_pref" id="pref">
-    <h2 id="vet_name_pref"></h2>
-    <input id="vet_id_pref" type="hidden" />
-    <input id="grd_id_pref" type="hidden" />
-    <br />
-
-    <h3>Veteran Preference Notes.</h3>
-    <p id="pref_notes"></p>
-
-    <h3>Search Last Name</h3>
-    <input id="last_name_search" type="text" />
-    <button id="ByLastNameSearchSubmit"> Search </button>
-
-    <h3>Search Results.</h3>
-    <select name="ByLastNameSearchSel" id="SelectByLastNameSearch" size="10" style="width: 40em" >
-    </select>
-    <button id="ByVetPrefSubmit" class="close"> OK </button>
-
-    <br />
-    <button type="button" class="close"> Cancel </button>
-    <br />
-  </div>
 </div>
 

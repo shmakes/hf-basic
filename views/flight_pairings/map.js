@@ -11,11 +11,10 @@ function(doc) {
            "name_first": doc.name.first, 
            "name_last": doc.name.last, 
            "city": doc.address.city + ", " + doc.address.state, 
-           "appdate": (doc.app_date || ""),
+           "med_limits": (doc.medical.limitations || ""),
            "bus": (flt.bus || "None"),
            "seat": (flt.seat || ""),
-           "pairing": (doc.guardian.id || ""),
-           "pairPref": (doc.guardian.pref_notes || "")
+           "pairing": (doc.guardian.id || "")
          });
   } else if (doc.type == "Guardian") {
     if (doc.veteran.pairings) {
@@ -27,11 +26,10 @@ function(doc) {
                "name_first": doc.name.first, 
                "name_last": doc.name.last, 
                "city": doc.address.city + ", " + doc.address.state, 
-               "appdate": (doc.app_date || ""),
+               "med_exprnc": (doc.medical.experience || ""),
                "bus": (flt.bus || "None"),
                "seat": (flt.seat || ""),
-               "pairing": (doc.veteran.pairings[vet].id || ""),
-               "pairPref": (doc.veteran.pref_notes || "")
+               "pairing": (doc.veteran.pairings[vet].id || "")
              });
       }
     }

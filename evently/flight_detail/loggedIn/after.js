@@ -24,17 +24,6 @@ function() {
   });
 
 
-  $("#pref_trigger").overlay({
-    mask: {
-      color: '#ebecff',
-      loadSpeed: 200,
-      opacity: 0.7
-    },
-
-    closeOnClick: false
-  });
-
-
   $(this).show();
 };
 

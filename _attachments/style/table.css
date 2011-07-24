@@ -83,6 +83,26 @@ table.MixedList .colSpacer {
   width: 25px;
 }
 
+table.Pairs .colName {
+  width: 150px;
+}
+
+table.Pairs .colCity {
+  width: 150px;
+}
+
+table.Pairs .colLimitations {
+  width: 100px;
+}
+
+table.Pairs .colBus {
+  width: 50px;
+}
+
+table.Pairs .colSeat {
+  width: 30px;
+}
+
 table.pairing {
   border-spacing:0px 10px;
 }
