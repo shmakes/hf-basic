@@ -44,6 +44,7 @@
       <thead>
         <tr>
           <th class="colSpacer"> </th>
+          <th class="colSpacer"> </th>
           <th class="colName">Name</th>
           <th class="colCity">City</th>
           <th class="colAppDate">App. Date</th>
@@ -53,10 +54,11 @@
       {{#pairs}}
         <tr id="{{pid}}" class="pairing">
           <td class="colSpacer"> </td>
-          <td colspan="3" class="pairing">
+          <td colspan="4" class="pairing">
           {{#people}}
             <table class='MixedList'>
               <tr id="{{id}}" class="{{type}}">
+                <td><button class="remove">x</button></td>
                 <td class="colName" name="{{type}}">{{name_first}} {{name_last}}</td>
                 <td class="colCity">{{city}}</td>
                 <td class="colAppDate">{{appdate}}</td>
