@@ -4,7 +4,7 @@ function() {
   var grdIdNew = $("select#SelectByCity").val();
   var user = $("#user_name").text();
 
-  var results = PairGuardianToVeteran(app, vetId, grdIdNew, user);
+  PairGuardianToVeteran(app, vetId, grdIdNew, user, UpdateGuardianDataGrid);
 
   return true;
 };

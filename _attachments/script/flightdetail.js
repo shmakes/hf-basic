@@ -12,100 +12,13 @@ function UpdateGuardianDataGrid(vetId, grd) {
     vetData[9].textContent = grd.address.city + ", " + grd.address.state;
     vetData[8].textContent = grd.medical.experience;
     vetData[7].textContent  = grd.flight.bus;
-    vetData[6].children("input").val(grd.flight.seat);
+    vetData[6].firstChild.value = grd.flight.seat;
   } else {
     vetData[10].textContent = "";
     vetData[9].textContent = "";
     vetData[8].textContent = "";
     vetData[7].textContent  = "";
-    vetData[6].children("input").val("");
+    vetData[6].firstChild.value = "";
   }
-}
-
-function PairGuardianToVeteran(app, vetId, grdIdNew, user) {
-  var timestamp = ISODateString(new Date());
-  var grdIdOld;
-  var vetName;
-
-  app.db.openDoc(vetId, {
-    success : function(vetdoc) {
-      vetName = vetdoc.name.first + " " + vetdoc.name.last;
-      grdIdOld = vetdoc.guardian.id;
-
-      // If an old guardian exists, unpair and log.
-      if (grdIdOld.length === 32) {
-        app.db.openDoc(grdIdOld, {
-          success : function(oldgrd) {
-            for (vetIdx in oldgrd.veteran.pairings) {
-              if (oldgrd.veteran.pairings[vetIdx].id === vetId) {
-                oldgrd.veteran.history.push({
-                  id: timestamp,
-                  change: "unpaired from: " + vetName + " by: " + user
-                });
-
-                oldgrd.veteran.pairings.splice(vetIdx, 1);
-                app.db.saveDoc(oldgrd, {
-                  success : function() {}
-                });
-                break;
-              }
-            }
-          }
-        });
-      }
-
-      // Get the new guardian.
-      if (grdIdNew.length === 32) {
-        app.db.openDoc(grdIdNew, {
-          success : function(newgrd) {
-            newgrd.veteran.history.push({
-              id: timestamp,
-              change: "paired to: " + vetName + " by: " + user
-            });
-            newgrd.veteran.pairings.push({
-              id: vetId,
-              name: vetName
-            });
-
-            app.db.saveDoc(newgrd, {
-              success : function() {}
-            });
-
-            // Update veteran history.
-            grdName = newgrd.name.first + " " + newgrd.name.last;
-            vetdoc.guardian.history.push({
-              id: timestamp,
-              change: "paired to: " + grdName + " by: " + user
-            });
-            vetdoc.guardian.id = grdIdNew;
-            vetdoc.guardian.name = grdName;
-
-            app.db.saveDoc(vetdoc, {
-              success : function() {}
-            });
-
-            UpdateGuardianDataGrid(vetId, newgrd);
-
-          }
-        });
-      } else {
-            // Update veteran history.
-            vetdoc.guardian.history.push({
-              id: timestamp,
-              change: "unpaired from: " + vetdoc.guardian.name + " by: " + user
-            });
-            vetdoc.guardian.id = "";
-            vetdoc.guardian.name = "";
-
-            app.db.saveDoc(vetdoc, {
-              success : function() {
-              }
-            });
-
-            UpdateGuardianDataGrid(vetId, {});
-
-      }
-    }
-  });
 }
 
