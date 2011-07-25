@@ -55,16 +55,16 @@
         <tr id="{{pid}}" class="pairing">
           <td class="colSpacer"> </td>
           <td colspan="4" class="pairing">
-          {{#people}}
             <table class='MixedList'>
+            {{#people}}
               <tr id="{{id}}" class="{{type}}">
                 <td><button class="remove">x</button></td>
                 <td class="colName select" name="{{type}}">{{name_first}} {{name_last}}</td>
                 <td class="colCity select">{{city}}</td>
                 <td class="colAppDate select">{{appdate}}</td>
               </tr>
+            {{/people}}
             </table>
-          {{/people}}
           </td>
         </tr>
       {{/pairs}}
