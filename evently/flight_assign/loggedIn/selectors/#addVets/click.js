@@ -22,6 +22,26 @@ function() {
       rowCount = resp.rows.length;
       for (row in resp.rows) {
         doc = resp.rows[row].doc;
+        if (doc.guardian.id.length === 32) {
+          // Check if the guardian is on this flight.
+          app.db.openDoc(doc.guardian.id, {
+              success : function(docGrd) {
+                grdOldFlight = docGrd.flight.id;
+                if (grdOldFlight != flightName) {
+                  docGrd.flight.id = flightName;
+                  docGrd.flight.history.push({
+                    id: timestamp,
+                    change: "changed flight from: " + grdOldFlight + " to: " + flightName + " by: " + user
+                  });
+
+                  app.db.saveDoc(docGrd, {
+                    success : function() {
+                    }
+                  });
+                }
+              }
+          });
+        }
         oldFlight = doc.flight.id;
         doc.flight.id = flightName;
         doc.flight.history.push({
@@ -33,7 +53,7 @@ function() {
           success : function() {
             added++;
             $("#prog_added").val(added.toString());
-            if (added == rowCount) {
+            if (added >= rowCount) {
               window.location.reload();
             }
           }
