@@ -6,7 +6,6 @@ function couchapp_load(scripts) {
 };
 
 couchapp_load([
-//  "/_utils/script/sha1.js",
   "/_utils/script/json2.js",
   "/_utils/script/jquery.js",
   "/_utils/script/jquery.couch.js",
@@ -15,9 +14,5 @@ couchapp_load([
   "vendor/couchapp/jquery.mustache.js",
   "vendor/couchapp/jquery.pathbinder.js",
   "vendor/couchapp/jquery.evently.js",
-  "vendor/jQueryTools/jquery.tools.min.js",
-  "vendor/jQueryTools/dateinput.js",
-  "vendor/jQueryTools/validator.js",
-//  "script/md5.js",
   "script/app.js"
 ]);
