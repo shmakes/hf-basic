@@ -16,12 +16,8 @@ function(r) {
     }
 
     var birthDate = "";
-    var ageFromBirthDate = "";
     if ((r.birth_date) && (r.birth_date.length > 0)) {
       birthDate = r.birth_date;
-      var birthYear = new Date(birthDate).getFullYear();
-      var thisYear = new Date().getFullYear();
-      ageFromBirthDate = "(Age based on birth date: " + (thisYear - birthYear) + ")";
     }
 
     var shirtSize = "";
