@@ -74,41 +74,7 @@
     </table>
   </div>
 
-  <div id="chooser_trigger" rel="#chooser"></div>
-  <div class="modal chooser" id="chooser">
-    <h2 id="vet_name"></h2>
-    <input id="vet_id" type="hidden" />
-    <input id="grd_id" type="hidden" />
 
-    <p>
-      Select a guardian from the lists arranged below.
-    </p>
-
-    <h3>Select by same zip code: <span id="byZip" /></h3>
-    <select name="ByZipSel" id="SelectByZip" size="4" style="width: 40em" >
-    </select>
-    <button id="ByZipSubmit" class="close"> OK </button>
-
-    <h3>Select by same city: <span id="byCity" /></h3>
-    <select name="ByCitySel" id="SelectByCity" size="4" style="width: 40em" >
-    </select>
-    <button id="ByCitySubmit" class="close"> OK </button>
-
-    <h3>Select by same county: <span id="byCounty" /></h3>
-    <select name="ByCountySel" id="SelectByCounty" size="4" style="width: 40em" >
-    </select>
-    <button id="ByCountySubmit" class="close"> OK </button>
-
-    <h3>Select by next on waiting list.</h3>
-    <select name="ByAppDateSel" id="SelectByAppDate" size="4" style="width: 40em" >
-    </select>
-    <button id="ByAppDateSubmit" class="close"> OK </button>
-
-    <br />
-    <button type="button" class="close"> Cancel </button> 
-    | Remove existing ==&gt; <button id="RemoveGuardianSubmit" class="close"> None </button>
-    <br />
-  </div>
 
   <div id="bus_trigger" rel="#bus"></div>
   <div class="modal vet_bus" id="bus">
@@ -135,30 +101,6 @@
     </table>
     <br />
     <button type="button" class="close"> Cancel </button> 
-    <br />
-  </div>
-
-  <div id="pref_trigger" rel="#pref"></div>
-  <div class="modal vet_pref" id="pref">
-    <h2 id="vet_name_pref"></h2>
-    <input id="vet_id_pref" type="hidden" />
-    <input id="grd_id_pref" type="hidden" />
-    <br />
-
-    <h3>Veteran Preference Notes.</h3>
-    <p id="pref_notes"></p>
-
-    <h3>Search Last Name</h3>
-    <input id="last_name_search" type="text" />
-    <button id="ByLastNameSearchSubmit"> Search </button>
-
-    <h3>Search Results.</h3>
-    <select name="ByLastNameSearchSel" id="SelectByLastNameSearch" size="10" style="width: 40em" >
-    </select>
-    <button id="ByVetPrefSubmit" class="close"> OK </button>
-
-    <br />
-    <button type="button" class="close"> Cancel </button>
     <br />
   </div>
 

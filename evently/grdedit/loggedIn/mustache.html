@@ -213,13 +213,15 @@
         <li>
           <input type="hidden" id="veteran_id" name="veteran_id" value="{{veteran_id}}" />
           <label for="veteran_assigned">veteran assigned</label>
-          <input type="text" name="veteran_name" readonly="readonly" value="{{veteran_name}}" style="width: 15em" /> 
+          <input type="text" id="veteran_name" name="veteran_name" readonly="readonly" value="{{veteran_name}}" style="width: 15em" /> 
           <a id="vet_edit_link" target="_blank" href="vet_edit.html?vetid={{veteran_id}}">edit</a>
+          <button id="pair_add" type="button">Pair</button> 
+          <button id="pair_rem" type="button">Unpair</button>
         </li>
         <li>
           <input type="hidden" id="veteran_id2" name="veteran_id2" value="{{veteran_id2}}" />
           <label for="veteran_assigned2">veteran assigned</label>
-          <input type="text" name="veteran_name2" readonly="readonly" value="{{veteran_name2}}" style="width: 15em" /> 
+          <input type="text" id="veteran_name2" name="veteran_name2" readonly="readonly" value="{{veteran_name2}}" style="width: 15em" /> 
           <a id="vet_edit_link2" target="_blank" href="vet_edit.html?vetid={{veteran_id2}}">edit</a>
         </li>
       </ol>
@@ -254,6 +256,27 @@
       <button type="reset">Reset</button>
     </fieldset>
   </form>
+
+  <div id="pair_trigger" rel="#pair"></div>
+  <div class="modal" id="pair">
+    <h2>Pair with Veteran</h2>
+    <input id="vet_id_pref" type="hidden" />
+    <input id="grd_id_pref" type="hidden" />
+    <br />
+
+    <h3>Search Last Name</h3>
+    <input id="last_name_search" type="text" />
+    <button id="ByLastNameSearchSubmit"> Search </button>
+
+    <h3>Search Results.</h3>
+    <select name="ByLastNameSearchSel" id="SelectByLastNameSearch" size="10" style="width: 40em" >
+    </select>
+    <button id="ByLastNameAssign" class="close"> OK </button>
+
+    <br />
+    <button type="button" class="close"> Cancel </button>
+    <br />
+  </div>
 
   <div id="saved_trigger" rel="#saved"></div>
   <div class="modal saved" id="saved">
