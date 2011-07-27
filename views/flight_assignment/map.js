@@ -12,7 +12,9 @@ function(doc) {
            "name_first": doc.name.first, 
            "name_last": doc.name.last, 
            "city": doc.address.city + ", " + doc.address.state, 
-           "appdate": (doc.app_date || "")
+           "appdate": (doc.app_date || ""),
+           "preference": (doc.guardian.pref_notes || ""),
+           "paired_with": (doc.guardian.id || "")
          });
   } else if (doc.type == "Guardian") {
     if ((doc.veteran.pairings) && (doc.veteran.pairings.length > 0)) {
@@ -25,7 +27,9 @@ function(doc) {
                "name_first": doc.name.first, 
                "name_last": doc.name.last, 
                "city": doc.address.city + ", " + doc.address.state, 
-               "appdate": (doc.app_date || "")
+               "appdate": (doc.app_date || ""),
+               "preference": (doc.veteran.pref_notes || ""),
+               "paired_with": (doc.veteran.pairings[vet].id || "")
              });
       }
     } else {
@@ -37,7 +41,9 @@ function(doc) {
              "name_first": doc.name.first, 
              "name_last": doc.name.last, 
              "city": doc.address.city + ", " + doc.address.state, 
-             "appdate": (doc.app_date || "")
+             "appdate": (doc.app_date || ""),
+             "preference": (doc.veteran.pref_notes || ""),
+             "paired_with": ""
            });
     }
   }

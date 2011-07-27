@@ -63,6 +63,10 @@ table.MixedList .colAppDate {
   width: 100px;
 }
 
+table.MixedList .colPreferance {
+  width: 150px;
+}
+
 table.MixedList .colFlight {
   width: 150px;
 }
@@ -113,6 +117,10 @@ table.MixedList .pairing {
   border-style: solid;
   border-spacing:0px 10px;
   background-color:#fa3;
+}
+
+table.MixedList .problem {
+  background-color:#f00;
 }
 
 table.addPeople {

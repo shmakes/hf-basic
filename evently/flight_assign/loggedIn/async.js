@@ -28,10 +28,17 @@ function(cb) {
 
               if (p.pair != lastId) {
                 if (pairing.pid) {
+                  if (pairing.people.length < 2) 
+                  {
+                    if (pairing.people[0].paired_with.length != 0) {
+                      pairing.missing_person = "problem";
+                    }
+                  }
                   doc.pairs.push(pairing);
                 }
                 pairing = {};
                 pairing.pid = p.pair;
+                pairing.missing_person = "";
                 if (typeof pairing.appDate === 'undefined') {
                   pairing.appDate = p.appdate;
                 }
@@ -46,11 +53,19 @@ function(cb) {
               person.name_last = p.name_last;
               person.city = p.city;
               person.appdate = p.appdate;
+              person.preference = p.preference;
+              person.paired_with = p.paired_with;
               pairing.people.push(person);
 
             }
 
             if (pairing.pid) {
+              if (pairing.people.length < 2) 
+              {
+                if (pairing.people[0].paired_with.length != 0) {
+                  pairing.missing_person = "problem";
+                }
+              }
               doc.pairs.push(pairing);
             }
 
