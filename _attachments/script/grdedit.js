@@ -20,7 +20,26 @@ function UpdateVeteranLinks() {
 }
 
 function UpdateGuardianPairingFields(vet, grd) {
-  window.location.reload();
+  var vetId1 = vetId2 = vetName1 = vetName2 = "";
+  if ((grd.veteran) && (grd.veteran.pairings)) {
+    if (grd.veteran.pairings.length > 0) {
+      vetId1 = grd.veteran.pairings[0].id;
+      vetName1 = grd.veteran.pairings[0].name;
+    }
+    if (grd.veteran.pairings.length > 1) {
+      vetId2 = grd.veteran.pairings[1].id;
+      vetName2 = grd.veteran.pairings[1].name;
+    }
+  }
+
+  $("input#veteran_id").val(vetId1);
+  $("input#veteran_name").val(vetName1);
+  $("input#veteran_id2").val(vetId2);
+  $("input#veteran_name2").val(vetName2);
+
+  $("input#docrev").val(grd._rev);
+
+  UpdateVeteranLinks();
 }
 
 function PairGuardianToVeteran(app, vetId, grdIdNew, user) {
@@ -47,7 +66,7 @@ function PairGuardianToVeteran(app, vetId, grdIdNew, user) {
                 oldgrd.veteran.pairings.splice(vetIdx, 1);
                 app.db.saveDoc(oldgrd, {
                   success : function() {
-                      PairGuardianToVeteran2(app, vetdoc, vetName, grdIdNew, user)
+                      PairGuardianToVeteran2(app, vetdoc, vetName, grdIdNew, oldgrd, user)
                     }
                 });
                 break;
@@ -56,14 +75,14 @@ function PairGuardianToVeteran(app, vetId, grdIdNew, user) {
           }
         });
       } else {
-        PairGuardianToVeteran2(app, vetdoc, vetName, grdIdNew, user)
+        PairGuardianToVeteran2(app, vetdoc, vetName, grdIdNew, {}, user)
       }
     }
   });
 }
 
 
-function PairGuardianToVeteran2(app, vetdoc, vetName, grdIdNew, user) {
+function PairGuardianToVeteran2(app, vetdoc, vetName, grdIdNew, oldgrd, user) {
   var timestamp = ISODateString(new Date());
 
   // Get the new guardian.
@@ -110,7 +129,7 @@ function PairGuardianToVeteran2(app, vetdoc, vetName, grdIdNew, user) {
 
         app.db.saveDoc(vetdoc, {
           success : function() {
-            UpdateGuardianPairingFields(vetdoc._id, {});
+            UpdateGuardianPairingFields(vetdoc._id, oldgrd);
           }
         });
   }

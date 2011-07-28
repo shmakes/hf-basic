@@ -160,7 +160,7 @@
         <span>Status</span>
       </legend>
       <input type="hidden" name="_id" value="{{id}}" />
-      <input type="hidden" name="_rev" value="{{rev}}" />
+      <input id ="docrev" type="hidden" name="_rev" value="{{rev}}" />
       <input type="hidden" name="type" value="{{type}}" />
       <ol>
         <li>
@@ -261,8 +261,6 @@
   <div class="modal" id="pair">
     <h2>Pair with Veteran</h2>
     <p>Search for unpaired veterans that are active on the waitlist.</p>
-    <p><font color="red">WARNING: For now, make sure all edits to the form are saved 
-    <br /> before pairing or you will loose your changes on the form.</font></p>
 
     <h3>Search Last Name</h3>
     <input id="last_name_search" type="text" />
@@ -282,8 +280,6 @@
   <div class="modal" id="unpair">
     <h2>Unpair from Veteran</h2>
     <p>This will unpair the latest veteran.  If two are assigned, the 2nd will be removed.</p>
-    <p><font color="red">WARNING: For now, make sure all edits to the form are saved 
-    <br /> before unpairing or you will loose your changes on the form.</font></p>
 
     <button id="UnassignVet" class="close"> OK </button>
     <p>NOTE: This will unpair the veteran and guardian immediately
