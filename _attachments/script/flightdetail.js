@@ -3,9 +3,9 @@ $.couch.app(function(app) {
   $.evently.connect($("#account"), $("#flight_detail"), ["loggedIn", "loggedOut"]);
 });
 
-function UpdateGuardianDataGrid(vetId, grd) {
+function UpdateGuardianDataGrid(vet, grd, args) {
   // Update the grid.
-  var vetRow = $("tr.DataRow[vetid='" + vetId + "']");
+  var vetRow = $("tr.DataRow[vetid='" + vet._id + "']");
   var vetData = vetRow.children("td");
   if (grd.name) {
     vetData[10].textContent = grd.name.first + " " + grd.name.last;

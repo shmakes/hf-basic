@@ -35,15 +35,7 @@ function() {
     return (jQuery.inArray(value, validShirtSizes) >= 0);
   });
 
-  var vetId = $("#veteran_id");
-  if (vetId.attr('value').length == 0) {
-    $("#vet_edit_link").hide();
-  }
-
-  var vetId2 = $("#veteran_id2");
-  if (vetId2.attr('value').length == 0) {
-    $("#vet_edit_link2").hide();
-  }
+  UpdateVeteranLinks();
 
   $("#saved_trigger").overlay({
     mask: {
@@ -66,6 +58,18 @@ function() {
     closeOnClick: false,
     top: '1'
   });
+
+  $("#unpair_trigger").overlay({
+    mask: {
+      color: '#ebecff',
+      loadSpeed: 200,
+      opacity: 0.7
+    },
+
+    closeOnClick: false,
+    top: '1'
+  });
+
   $(this).show();
 };
 

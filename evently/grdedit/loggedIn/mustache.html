@@ -260,9 +260,9 @@
   <div id="pair_trigger" rel="#pair"></div>
   <div class="modal" id="pair">
     <h2>Pair with Veteran</h2>
-    <input id="vet_id_pref" type="hidden" />
-    <input id="grd_id_pref" type="hidden" />
-    <br />
+    <p>Search for unpaired veterans that are active on the waitlist.</p>
+    <p><font color="red">WARNING: For now, make sure all edits to the form are saved 
+    <br /> before pairing or you will loose your changes on the form.</font></p>
 
     <h3>Search Last Name</h3>
     <input id="last_name_search" type="text" />
@@ -272,8 +272,22 @@
     <select name="ByLastNameSearchSel" id="SelectByLastNameSearch" size="10" style="width: 40em" >
     </select>
     <button id="ByLastNameAssign" class="close"> OK </button>
-
+    <p>NOTE: This will pair the veteran and guardian immediately
+    <br />even if you do not save your changes on this form.</p>
+    <button type="button" class="close"> Cancel </button>
     <br />
+  </div>
+
+  <div id="unpair_trigger" rel="#unpair"></div>
+  <div class="modal" id="unpair">
+    <h2>Unpair from Veteran</h2>
+    <p>This will unpair the latest veteran.  If two are assigned, the 2nd will be removed.</p>
+    <p><font color="red">WARNING: For now, make sure all edits to the form are saved 
+    <br /> before unpairing or you will loose your changes on the form.</font></p>
+
+    <button id="UnassignVet" class="close"> OK </button>
+    <p>NOTE: This will unpair the veteran and guardian immediately
+    <br />even if you do not save your changes on this form.</p>
     <button type="button" class="close"> Cancel </button>
     <br />
   </div>

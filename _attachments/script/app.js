@@ -51,7 +51,7 @@ function closeW() {
   window.close();
 } 
 
-function PairGuardianToVeteran(app, vetId, grdIdNew, user, grdUpdateFunc) {
+function PairGuardianToVeteran(app, vetId, grdIdNew, user, updateFunc, updateFuncArgs) {
   var timestamp = ISODateString(new Date());
   var grdIdOld;
   var vetName;
@@ -112,7 +112,9 @@ function PairGuardianToVeteran(app, vetId, grdIdNew, user, grdUpdateFunc) {
             app.db.saveDoc(vetdoc, {
               success : function() {}
             });
-            grdUpdateFunc(vetId, newgrd);
+            if (updateFunc) {
+              updateFunc(vetdoc, newgrd, updateFuncArgs);
+            }
           }
         });
       } else {
@@ -128,7 +130,9 @@ function PairGuardianToVeteran(app, vetId, grdIdNew, user, grdUpdateFunc) {
               success : function() {
               }
             });
-            grdUpdateFunc(vetId, {});
+            if (updateFunc) {
+              updateFunc(vetdoc, {}, updateFuncArgs);
+            }
       }
     }
   });
