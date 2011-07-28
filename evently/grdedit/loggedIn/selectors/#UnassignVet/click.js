@@ -19,7 +19,7 @@ function() {
     var app = $$(this).app;
     var updateArgs = [ target_id, target_name, target_rev ];
 
-    PairGuardianToVeteran(app, vetId, grdId, user, UpdateGuardianPairingFields, updateArgs);
+    PairGuardianToVeteran(app, vetId, grdId, user);
   }
   return true;
 };
