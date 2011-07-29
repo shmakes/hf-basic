@@ -67,6 +67,10 @@ table.MixedList .colPreferance {
   width: 150px;
 }
 
+table.MixedList .colLongPreferance {
+  width: 350px;
+}
+
 table.MixedList .colFlight {
   width: 150px;
 }

@@ -1,0 +1,67 @@
+<div>
+  <hr />
+  <h2>By Veteran Preference</h2>
+  <div class="by_vet_pref_list">
+    <table class='MixedList pairing'>
+      <thead>
+        <tr>
+          <th class="colSpacer"> </th>
+          <th class="colName">Name</th>
+          <th class="colCity">City</th>
+          <th class="colLongPreferance">Preference</th>
+        </tr>
+      </thead>
+      <tbody id="results">
+      {{#vet_prefs}}
+        <tr id="{{pid}}" class="pairing">
+          <td class="colSpacer"><button class="pair">Pair</button></td>
+          <td colspan="4" class="pairing">
+            <table class='MixedList'>
+            {{#people}}
+              <tr id="{{id}}" class="{{type}}">
+                <td class="colName select" name="{{type}}">{{name_first}} {{name_last}}</td>
+                <td class="colCity select">{{city}}</td>
+                <td class="colLongPreferance select">{{preference}}</td>
+              </tr>
+            {{/people}}
+            </table>
+          </td>
+        </tr>
+      {{/vet_prefs}}
+      </tbody>
+    </table>
+  </div>
+  <hr />
+  <h2>By Guardian Preference</h2>
+  <div class="by_grd_pref_list">
+    <table class='MixedList pairing'>
+      <thead>
+        <tr>
+          <th class="colSpacer"> </th>
+          <th class="colName">Name</th>
+          <th class="colCity">City</th>
+          <th class="colLongPreferance">Preference</th>
+        </tr>
+      </thead>
+      <tbody id="results">
+      {{#grd_prefs}}
+        <tr id="{{pid}}" class="pairing">
+          <td class="colSpacer"><button class="pair">Pair</button></td>
+          <td colspan="4" class="pairing">
+            <table class='MixedList'>
+            {{#people}}
+              <tr id="{{id}}" class="{{type}}">
+                <td class="colName select" name="{{type}}">{{name_first}} {{name_last}}</td>
+                <td class="colCity select">{{city}}</td>
+                <td class="colLongPreferance select">{{preference}}</td>
+              </tr>
+            {{/people}}
+            </table>
+          </td>
+        </tr>
+      {{/grd_prefs}}
+      </tbody>
+    </table>
+  </div>
+</div>
+

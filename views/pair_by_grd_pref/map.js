@@ -1,24 +1,26 @@
 function(doc) {
   var ptype = 0;
-  var pnotes = "";
+  var compare = "";
+  var pref = "";
   if ((doc.type == "Veteran")
     && (doc.flight.status == "Active")
     && (doc.guardian.id == ""))
   {
     ptype = 1;
-    pnotes = doc.name.last.toUpperCase();
+    compare = doc.name.last.toUpperCase();
+    pref = doc.guardian.pref_notes;
   }
   else if ((doc.type == "Guardian")
     && (doc.flight.status == "Active")
     && (doc.veteran.pairings.length < 1)
-    && (doc.veteran.pref_notes.length > 2)
-    && (doc.veteran.pref_notes.toLowerCase() != "none"))
+    && (doc.veteran.pref_notes.length > 2))
   {
     ptype = 2;
-    pnotes = doc.veteran.pref_notes.toUpperCase();
+    compare = doc.veteran.pref_notes.toUpperCase();
+    pref = doc.veteran.pref_notes;
   }
   if (ptype > 0) {
-    var words = pnotes.split(" ");
+    var words = compare.split(" ");
     for (var w in words) {
       if (words[w].length > 2) {
         emit([words[w], ptype],
@@ -26,10 +28,8 @@ function(doc) {
                "id": doc._id, 
                "name_first": doc.name.first, 
                "name_last": doc.name.last, 
-               "street": doc.address.street, 
-               "city": doc.address.city, 
-               "state": doc.address.state, 
-               "county": doc.address.county
+               "city": doc.address.city + ", " + doc.address.state, 
+               "pref": pref
              });
       }
     }
