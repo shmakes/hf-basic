@@ -22,7 +22,7 @@ function UpdateGuardianDataGrid(vetId, grd) {
   }
 }
 
-function PairGuardianToVeteran(app, vetId, grdIdNew, user, updateFunc, updateFuncArgs) {
+function PairGuardianToVeteran(app, vetId, grdIdNew, user) {
   var timestamp = ISODateString(new Date());
   var grdIdOld;
   var vetName;
