@@ -4,18 +4,22 @@ $.couch.app(function(app) {
 });
 
 function UpdateVeteranLinks() {
-  var vetId = $("#veteran_id");
-  if (vetId.attr('value').length == 0) {
+  var vetId = $("#veteran_id").attr('value');
+  if (vetId.length === 0) {
     $("#vet_edit_link").hide();
   } else {
-    $("#vet_edit_link").show();
+    var lnk = $("#vet_edit_link");
+    lnk.show();
+    lnk.attr("href", "vet_edit.html?vetid=" + vetId);
   }
 
-  var vetId2 = $("#veteran_id2");
-  if (vetId2.attr('value').length == 0) {
+  var vetId2 = $("#veteran_id2").attr('value');
+  if (vetId2.length === 0) {
     $("#vet_edit_link2").hide();
   } else {
-    $("#vet_edit_link2").show();
+    var lnk2 = $("#vet_edit_link2");
+    lnk2.show();
+    lnk2.attr("href", "vet_edit.html?vetid=" + vetId2);
   }
 }
 
