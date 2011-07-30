@@ -64,7 +64,7 @@ table.MixedList .colAppDate {
 }
 
 table.MixedList .colPreferance {
-  width: 150px;
+  width: 250px;
 }
 
 table.MixedList .colLongPreferance {
@@ -76,7 +76,7 @@ table.MixedList .colFlight {
 }
 
 table.MixedList .colGroup {
-  width: 100px;
+  width: 80px;
 }
 
 table.MixedList .colStatus {

@@ -3,7 +3,6 @@ function() {
   var user = $("#user_name").text();
   var flightName = $("#flightName").val();
   var vetQty = $("#vetQty").val();
-  var timestamp = ISODateString(new Date());
 
   if ((vetQty < 1) || (vetQty > 100)) {
     return true;
@@ -21,56 +20,48 @@ function() {
     type : "newRows",
     success: function(resp) {
       var rowCount = resp.rows.length;
-      for (row in resp.rows) {
-        var doc = resp.rows[row].doc;
-        if (doc.guardian.id.length === 32) {
-          added--;  // Make sure we wait for the guardian to be saved.
-          app.db.openDoc(doc.guardian.id, {
-              success : function(docGrd) {
-                var grdOldFlight = docGrd.flight.id;
-                // Check if the guardian is on this flight.
-                if (grdOldFlight != flightName) {
-                  docGrd.flight.id = flightName;
-                  docGrd.flight.history.push({
-                    id: timestamp,
-                    change: "changed flight from: " + grdOldFlight + " to: " + flightName + " by: " + user
-                  });
 
-                  app.db.saveDoc(docGrd, {
-                    success : function() {
-                      added++;
-                      if (added >= rowCount) {
-                        window.location.reload();
-                      }
-                    }
-                  });
-                } else {
-                  // The guardian was already on the flight, so don't wait.
-                  added++;
-                  if (added >= rowCount) {
-                    window.location.reload();
-                  }
+      var vetList = {};
+      for (row in resp.rows) {
+        var grp = resp.rows[row].value;
+        if (grp.length > 0) {
+          if (vetList.hasOwnProperty(grp)) {
+            vetList[grp].push(resp.rows[row].id);
+          } else {
+            vetList[grp] = new Array(resp.rows[row].id);
+          }
+        }
+      }
+
+      var grpCount = 0;
+      for (var key in vetList) {
+        if (vetList.hasOwnProperty(key)) grpCount++;
+      }
+
+      if (grpCount > 0) {
+        app.db.view("basic/waitlist_veteran_groups", {
+          descending : false,
+          include_docs: true,
+          type : "newRows",
+          success: function(respGrps) {
+            for (rowGrp in respGrps.rows) {
+              grpName = respGrps.rows[rowGrp].key;
+              // See if the group is one being added to the flight.
+              if (vetList.hasOwnProperty(grpName)) {
+                // Make sure the group member is not already being added to the flight.
+                grpVetId = respGrps.rows[rowGrp].id;
+                var thisGrp = vetList[grpName];
+                var pos = $.inArray(grpVetId, thisGrp);
+                if (pos === -1) {
+                  resp.rows.push({ id: grpVetId, key: grpName, value: "", doc: respGrps.rows[rowGrp].doc });
                 }
               }
-          });
-        }
-        var oldFlight = doc.flight.id;
-        doc.flight.id = flightName;
-        doc.flight.history.push({
-          id: timestamp,
-          change: "changed flight from: " + oldFlight + " to: " + flightName + " by: " + user
-        });
-
-        app.db.saveDoc(doc, {
-          success : function() {
-            added++;
-            vetCount++;
-            $("#prog_added").val(vetCount.toString());
-            if (added >= rowCount) {
-              window.location.reload();
             }
+            addVets(app, user, flightName, resp.rows);
           }
         });
+      } else {
+        addVets(app, user, flightName, resp.rows);
       }
     }
   });

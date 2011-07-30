@@ -53,6 +53,7 @@ function(cb) {
               person.name_last = p.name_last;
               person.city = p.city;
               person.appdate = p.appdate;
+              person.group = p.group;
               person.preference = p.preference;
               person.paired_with = p.paired_with;
               pairing.people.push(person);

@@ -48,6 +48,7 @@
           <th class="colName">Name</th>
           <th class="colCity">City</th>
           <th class="colAppDate">App. Date</th>
+          <th class="colGroup">Group</th>
           <th class="colPreferance">Preference</th>
         </tr>
       </thead>
@@ -55,7 +56,7 @@
       {{#pairs}}
         <tr id="{{pid}}" class="pairing">
           <td class="colSpacer {{missing_person}}"> </td>
-          <td colspan="5" class="pairing {{missing_person}}">
+          <td colspan="6" class="pairing {{missing_person}}">
             <table class='MixedList'>
             {{#people}}
               <tr id="{{id}}" class="{{type}}">
@@ -63,6 +64,7 @@
                 <td class="colName select" name="{{type}}">{{name_first}} {{name_last}}</td>
                 <td class="colCity select">{{city}}</td>
                 <td class="colAppDate select">{{appdate}}</td>
+                <td class="colGroup select">{{group}}</td>
                 <td class="colPreferance select">{{preference}}</td>
               </tr>
             {{/people}}
