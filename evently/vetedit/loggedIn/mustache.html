@@ -244,6 +244,7 @@
         <li>
           <label for="flight_group">flight group</label>
           <input type="text" name="flight_group" maxlength="15" value="{{flight_group}}" style="width: 10em" />
+          <button id="showGroups" type="button">Existing Groups</button>
         </li>
         <li>
           <label for="flight_id">assigned flight</label>
@@ -322,6 +323,13 @@
     <h2 id="Saved">Saved Sucessfully</h2>
     <button type="button" onClick="javascript: closeW()"> Close </button> | 
     <button type="button" class="close" onclick="javascript: window.location.reload()"> Continue Editing </button> 
+  </div>
+
+  <div id="groups_trigger" rel="#grouplist"></div>
+  <div class="modal groupList" id="grouplist">
+    <h2 id="GroupTitle">Groups in use:</h2>
+    <div id="groups_content"></div>
+    <button id="close_groups" type="button" class="close"> Close </button> 
   </div>
 
 </div>
