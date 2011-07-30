@@ -12,6 +12,7 @@ function() {
   $("#progress_trigger").click();  
 
   var added = 0;
+  var vetCount = 0;
 
   app.db.view("basic/waitlist_veterans", {
     limit : vetQty,
@@ -19,14 +20,15 @@ function() {
     include_docs: true,
     type : "newRows",
     success: function(resp) {
-      rowCount = resp.rows.length;
+      var rowCount = resp.rows.length;
       for (row in resp.rows) {
-        doc = resp.rows[row].doc;
+        var doc = resp.rows[row].doc;
         if (doc.guardian.id.length === 32) {
-          // Check if the guardian is on this flight.
+          added--;  // Make sure we wait for the guardian to be saved.
           app.db.openDoc(doc.guardian.id, {
               success : function(docGrd) {
-                grdOldFlight = docGrd.flight.id;
+                var grdOldFlight = docGrd.flight.id;
+                // Check if the guardian is on this flight.
                 if (grdOldFlight != flightName) {
                   docGrd.flight.id = flightName;
                   docGrd.flight.history.push({
@@ -36,13 +38,23 @@ function() {
 
                   app.db.saveDoc(docGrd, {
                     success : function() {
+                      added++;
+                      if (added >= rowCount) {
+                        window.location.reload();
+                      }
                     }
                   });
+                } else {
+                  // The guardian was already on the flight, so don't wait.
+                  added++;
+                  if (added >= rowCount) {
+                    window.location.reload();
+                  }
                 }
               }
           });
         }
-        oldFlight = doc.flight.id;
+        var oldFlight = doc.flight.id;
         doc.flight.id = flightName;
         doc.flight.history.push({
           id: timestamp,
@@ -52,7 +64,8 @@ function() {
         app.db.saveDoc(doc, {
           success : function() {
             added++;
-            $("#prog_added").val(added.toString());
+            vetCount++;
+            $("#prog_added").val(vetCount.toString());
             if (added >= rowCount) {
               window.location.reload();
             }
