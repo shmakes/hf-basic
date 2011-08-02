@@ -128,6 +128,8 @@ function(context) {
 
       if (!doc.veteran) {
         doc.veteran = {};
+        doc.veteran.pairings = [];
+        doc.veteran.history = [];
       }
       if (doc.veteran.pref_notes != f.veteran_pref_notes) {
         doc.veteran.pref_notes = f.veteran_pref_notes;
