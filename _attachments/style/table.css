@@ -14,11 +14,11 @@ table th, td {
 
 td.Veteran,
 tr.Veteran {
-  background-color:#fcc;
+  background-color:#ccf;
 }
 td.Guardian,
 tr.Guardian {
-  background-color:#ccf;
+  background-color:#fcc;
 }
 tr.Veteran:hover,
 tr.Guardian:hover,

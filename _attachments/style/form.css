@@ -68,19 +68,19 @@
 }
 
 #form-Vet fieldset {      
-  background-color: #F4E3DD;     
-}
-
-#form-Vet fieldset.alt {      
-  background-color: #E9E3DD;     
-}
-
-#form-Grd fieldset{
   background-color: #ECEFF9;     
 }
 
-#form-Grd fieldset.alt{
+#form-Vet fieldset.alt {      
   background-color: #E6E3ED;     
+}
+
+#form-Grd fieldset{
+  background-color: #F4E3DD;     
+}
+
+#form-Grd fieldset.alt{
+  background-color: #E9E3DD;     
 }
 
 #form-Vol fieldset{
