@@ -16,7 +16,7 @@ function(doc) {
     && (doc.veteran.pref_notes.length > 2))
   {
     ptype = 2;
-    compare = doc.veteran.pref_notes.toUpperCase();
+    compare = doc.veteran.pref_notes.replace(/,/g, " ").replace(/\./g, " ").replace(/-/g," ").replace(/\//g," ").toUpperCase();
     pref = doc.veteran.pref_notes;
   }
   if (ptype > 0) {

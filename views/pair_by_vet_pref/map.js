@@ -8,7 +8,7 @@ function(doc) {
     && (doc.guardian.pref_notes.length > 2))
   {
     ptype = 1;
-    compare = doc.guardian.pref_notes.toUpperCase();
+    compare = doc.guardian.pref_notes.replace(/,/g, " ").replace(/\./g, " ").replace(/-/g," ").replace(/\//g," ").toUpperCase();
     pref = doc.guardian.pref_notes;
   }
   else if ((doc.type == "Guardian")
