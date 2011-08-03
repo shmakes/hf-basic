@@ -24,6 +24,8 @@ function addVets(app, user, flightName, vets) {
                 id: timestamp,
                 change: "changed flight from: " + grdOldFlight + " to: " + flightName + " by: " + user
               });
+              docGrd.metadata.updated_at = timestamp;
+              docGrd.metadata.updated_by = user;
 
               app.db.saveDoc(docGrd, {
                 success : function() {
@@ -49,6 +51,8 @@ function addVets(app, user, flightName, vets) {
       id: timestamp,
       change: "changed flight from: " + oldFlight + " to: " + flightName + " by: " + user
     });
+    doc.metadata.updated_at = timestamp;
+    doc.metadata.updated_by = user;
 
     app.db.saveDoc(doc, {
       success : function() {

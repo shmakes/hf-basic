@@ -23,6 +23,8 @@ function PairGuardianToVeteran(app, vetId, grdIdNew, user) {
               id: vetId,
               name: vetName
             });
+            newgrd.metadata.updated_at = timestamp;
+            newgrd.metadata.updated_by = user;
 
             app.db.saveDoc(newgrd, {
               success : function() {
@@ -35,6 +37,8 @@ function PairGuardianToVeteran(app, vetId, grdIdNew, user) {
                 });
                 vetdoc.guardian.id = grdIdNew;
                 vetdoc.guardian.name = grdName;
+                vetdoc.metadata.updated_at = timestamp;
+                vetdoc.metadata.updated_by = user;
 
                 app.db.saveDoc(vetdoc, {
                   success : function() {}

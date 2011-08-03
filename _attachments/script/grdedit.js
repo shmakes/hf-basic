@@ -66,6 +66,8 @@ function PairGuardianToVeteran(app, vetId, grdIdNew, user) {
                   id: timestamp,
                   change: "unpaired from: " + vetName + " by: " + user
                 });
+                oldgrd.metadata.updated_at = timestamp;
+                oldgrd.metadata.updated_by = user;
 
                 oldgrd.veteran.pairings.splice(vetIdx, 1);
                 app.db.saveDoc(oldgrd, {
@@ -97,6 +99,9 @@ function PairGuardianToVeteran2(app, vetdoc, vetName, grdIdNew, oldgrd, user) {
           id: timestamp,
           change: "paired to: " + vetName + " by: " + user
         });
+        newgrd.metadata.updated_at = timestamp;
+        newgrd.metadata.updated_by = user;
+
         newgrd.veteran.pairings.push({
           id: vetdoc._id,
           name: vetName
@@ -110,6 +115,9 @@ function PairGuardianToVeteran2(app, vetdoc, vetName, grdIdNew, oldgrd, user) {
               id: timestamp,
               change: "paired to: " + grdName + " by: " + user
             });
+            vetdoc.metadata.updated_at = timestamp;
+            vetdoc.metadata.updated_by = user;
+
             vetdoc.guardian.id = grdIdNew;
             vetdoc.guardian.name = grdName;
 
@@ -130,6 +138,8 @@ function PairGuardianToVeteran2(app, vetdoc, vetName, grdIdNew, oldgrd, user) {
         });
         vetdoc.guardian.id = "";
         vetdoc.guardian.name = "";
+        vetdoc.metadata.updated_at = timestamp;
+        vetdoc.metadata.updated_by = user;
 
         app.db.saveDoc(vetdoc, {
           success : function() {

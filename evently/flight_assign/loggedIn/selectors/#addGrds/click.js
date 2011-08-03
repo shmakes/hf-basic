@@ -28,6 +28,8 @@ function() {
           id: timestamp,
           change: "changed flight from: " + oldFlight + " to: " + flightName + " by: " + user
         });
+        doc.metadata.updated_at = timestamp;
+        doc.metadata.updated_by = user;
 
         app.db.saveDoc(doc, {
           success : function() {
