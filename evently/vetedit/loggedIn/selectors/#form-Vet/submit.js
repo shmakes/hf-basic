@@ -285,6 +285,7 @@ function(context) {
           }
         });
       } else {
+        alert("No information changed since last save.");
         return false;
       }
     };
