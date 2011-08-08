@@ -1,7 +1,11 @@
 function(doc) {
-  flt = {};
+  var flt = {};
+  var confirmed = "unconfirmed";
   if (doc.flight) {
     flt = doc.flight;
+    if (flt.confirmed_date) {
+      confirmed = "";
+    }
   }
   if (doc.type == "Veteran") {
     emit([(flt.id || "None"), 
@@ -14,6 +18,7 @@ function(doc) {
            "med_limits": (doc.medical.limitations || ""),
            "bus": (flt.bus || "None"),
            "seat": (flt.seat || ""),
+           "confirmed": confirmed,
            "pairing": (doc.guardian.id || "")
          });
   } else if (doc.type == "Guardian") {
@@ -29,6 +34,7 @@ function(doc) {
                "med_exprnc": (doc.medical.experience || ""),
                "bus": (flt.bus || "None"),
                "seat": (flt.seat || ""),
+               "confirmed": confirmed,
                "pairing": (doc.veteran.pairings[vet].id || "")
              });
       }

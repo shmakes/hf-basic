@@ -187,6 +187,14 @@
           </select>
         </li>
         <li>
+          <label for="flight_confirmed_date">confirmed date</label>
+          <input type="date" class="date" id="flight_confirmed_date" name="flight_confirmed_date" pattern="[0-9-]{0,10}" maxlength="10" value="{{flight_confirmed_date}}" data-value="{{flight_confirmed_date}}" style="width: 8em" />
+        </li>
+        <li>
+          <label for="flight_confirmed_by">confirmed by</label>
+          <input type="text" name="flight_confirmed_by" maxlength="30" value="{{flight_confirmed_by}}" style="width: 15em" />
+        </li>
+        <li>
           <label for="flight_seat">assigned seat</label>
           <input type="text" name="flight_seat" maxlength="10" value="{{flight_seat}}" style="width: 5em" />
         </li>

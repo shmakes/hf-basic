@@ -111,6 +111,10 @@ table.Pairs .colSeat {
   width: 30px;
 }
 
+table.Pairs .unconfirmed {
+  background-color:#f00;
+}
+
 table.pairing {
   border-spacing:0px 10px;
 }

@@ -19,6 +19,7 @@ function(r) {
         entry["vet_bus"]         = vet.bus;
         entry["vet_seat"]        = vet.seat;
         entry["vet_pairing"]     = vet.pairing;
+        entry["vet_confirmed"]   = vet.confirmed;
         entry["vet_pairName"]    = vet.pairName;
       }
 
@@ -37,6 +38,7 @@ function(r) {
         entry["grd_bus"]        = grd.bus;
         entry["grd_seat"]       = grd.seat;
         entry["grd_pairing"]    = grd.pairing;
+        entry["grd_confirmed"]  = grd.confirmed;
         entry["grd_pairName"]   = grd.pairName;
       }
       pairList.push(entry);

@@ -88,6 +88,8 @@ function(context) {
         doc.flight = {};
         doc.flight.history = [];
         doc.flight.id = "None";
+        doc.flight.confirmed_date = "";
+        doc.flight.confirmed_by = "";
         doc.flight.seat = "";
         doc.flight.bus = "None";
         doc.flight.status = "Active";
@@ -98,6 +100,18 @@ function(context) {
           change: "changed flight from: " + doc.flight.id + " to: " + f.flight_id + " by: " + user
         });
         doc.flight.id = f.flight_id;
+        hasChanged = true;
+      }
+      if (f.flight_confirmed_date != doc.flight.confirmed_date) {
+        doc.flight.history.push({
+          id: timestamp,
+          change: "changed confirmed date from: " + doc.flight.confirmed_date + " to: " + f.flight_confirmed_date + " by: " + user
+        });
+        doc.flight.confirmed_date = f.flight_confirmed_date;
+        hasChanged = true;
+      }
+      if (f.flight_confirmed_by != doc.flight.confirmed_by) {
+        doc.flight.confirmed_by = f.flight_confirmed_by;
         hasChanged = true;
       }
       if (f.flight_seat != doc.flight.seat) {
