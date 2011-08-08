@@ -94,6 +94,7 @@ function(context) {
         doc.flight.group = "";
         doc.flight.bus = "None";
         doc.flight.status = "Active";
+        doc.flight.status_note = "";
       }
       if (f.flight_id != doc.flight.id) {
         doc.flight.history.push({
@@ -147,6 +148,10 @@ function(context) {
         doc.flight.status = f.flight_status;
         hasChanged = true;
       }
+      if (f.flight_status_note != doc.flight.status_note) {
+        doc.flight.status_note = f.flight_status_note;
+        hasChanged = true;
+      }
 
 
       if (!doc.guardian) {
@@ -192,12 +197,28 @@ function(context) {
       if (!doc.service) {
         doc.service = {};
       }
-      if (doc.service.branch != f.notes_other) {
-        doc.service.branch = f.notes_other;
+      var branch = f.service_branch; //.split(' ').join('_');
+      if (branch === "Unknown") {
+        branch = "";
+      }
+      if (doc.service.branch != branch) {
+        doc.service.branch = branch;
         hasChanged = true;
       }
-      if (doc.service.activity != f.notes_service) {
-        doc.service.activity = f.notes_service;
+      if (doc.service.dates != f.service_dates) {
+        doc.service.dates = f.service_dates;
+        hasChanged = true;
+      }
+      if (doc.service.rank != f.service_rank) {
+        doc.service.rank = f.service_rank;
+        hasChanged = true;
+      }
+      if (doc.service.service_number != f.service_number) {
+        doc.service.service_number = f.service_number;
+        hasChanged = true;
+      }
+      if (doc.service.activity != f.service_activity) {
+        doc.service.activity = f.service_activity;
         hasChanged = true;
       }
 

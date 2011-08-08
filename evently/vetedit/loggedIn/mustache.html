@@ -124,18 +124,45 @@
           </select>
           <input type="hidden" id="raw_shirt_size" value="{{shirt_size}}" />
         </li>
-        <li>
-          <label for="notes_service">service notes</label>
-          <input type="text" name="notes_service" value="{{notes_service}}" style="width: 35em" />
-        </li>
-        <li>
-          <label for="notes_other">other notes</label>
-          <input type="text" name="notes_other" value="{{notes_other}}" style="width: 35em" />
-        </li>
       </ol>
     </fieldset>
 
     <fieldset class="alt">
+      <legend accesskey="B">
+        <span>Service</span>
+      </legend>
+      <ol>
+        <li>
+          <label for="service_branch">branch</label>
+          <select name="service_branch" id="service_branch" value="{{service_branch}}" >
+            <option>Unknown</option>
+            <option {{selBranch-Army}}>Army</option>
+            <option {{selBranch-Navy}}>Navy</option>
+            <option {{selBranch-Air_Force}}>Air Force</option>
+            <option {{selBranch-Marines}}>Marines</option>
+            <option {{selBranch-Coast_Guard}}>Coast Guard</option>
+          </select>
+        </li>
+        <li>
+          <label for="service_dates">service dates</label>
+          <input type="text" name="service_dates" value="{{service_dates}}" style="width: 20em" />
+        </li>
+        <li>
+          <label for="service_rank">rank</label>
+          <input type="text" name="service_rank" value="{{service_rank}}" style="width: 10em" />
+        </li>
+        <li>
+          <label for="service_number">service number</label>
+          <input type="text" name="service_number" value="{{service_number}}" style="width: 15em" />
+        </li>
+        <li>
+          <label for="service_activity">activity</label>
+          <input type="text" name="service_activity" value="{{service_activity}}" style="width: 35em" />
+        </li>
+      </ol>
+    </fieldset>
+
+    <fieldset>
       <legend accesskey="C">
         <span>Alternate Contact</span>
       </legend>
@@ -159,7 +186,7 @@
       </ol>
     </fieldset>
 
-    <fieldset>
+    <fieldset class="alt">
       <legend accesskey="E">
         <span>Emergency Contact</span>
       </legend>
@@ -199,7 +226,7 @@
       </ol>
     </fieldset>
 
-    <fieldset class="alt">
+    <fieldset>
       <legend accesskey="M">
         <span>Medical</span>
       </legend>
@@ -219,7 +246,7 @@
       </ol>
     </fieldset>
 
-    <fieldset>
+    <fieldset class="alt">
       <legend accesskey="S">
         <span>Status</span>
       </legend>
@@ -240,6 +267,10 @@
             <option {{selStatus-Deceased}}>Deceased</option>
             <option {{selStatus-Removed}}>Removed</option>
           </select>
+        </li>
+        <li>
+          <label for="flight_status_note">status note</label>
+          <input type="text" name="flight_status_note" value="{{flight_status_note}}" style="width: 35em" />
         </li>
         <li>
           <label for="flight_group">flight group</label>
@@ -296,7 +327,7 @@
       </ol>
     </fieldset>
 
-    <fieldset class="alt">
+    <fieldset>
       <legend accesskey="O">
         <span>Other</span>
       </legend>

@@ -43,6 +43,7 @@ function(r) {
         preferred_airport:     r.preferred_airport,
         flights:               r.availableFlights,
         flight_status:         r.flight.status,
+        flight_status_note:    r.flight.status_note,
         flight_group:          r.flight.group,
         flight_id:             r.flight.id,
         flight_confirmed_date: (r.flight.confirmed_date || ""),
@@ -73,8 +74,11 @@ function(r) {
         gender:                r.gender,
         weight:                r.weight,
         shirt_size:            r.shirt.size,
-        notes_other:           r.service.branch,
-        notes_service:         r.service.activity,
+        service_branch:        r.service.branch,
+        service_dates:         r.service.dates,
+        service_rank:          r.service.rank,
+        service_number:        r.service.service_number,
+        service_activity:      r.service.activity,
         ec_relation:           r.emerg_contact.relation,
         ec_name:               r.emerg_contact.name,
         ec_addr_street:        r.emerg_contact.address.street,
@@ -110,6 +114,8 @@ function(r) {
     result[selectedSize] = "selected";
     var selectedStatus = "selStatus-" + r.flight.status;
     result[selectedStatus] = "selected";
+    var selectedBranch = "selBranch-" + r.service.branch.split(' ').join('_');
+    result[selectedBranch] = "selected";
 
   } else {
 
@@ -124,6 +130,7 @@ function(r) {
         preferred_airport:     "",
         flights:               r.availableFlights,
         flight_status:         "",
+        flight_status_note:    "",
         flight_group:          "",
         flight_id:             "",
         flight_confirmed_date: "",
@@ -154,8 +161,11 @@ function(r) {
         gender:                "",
         weight:                "",
         shirt_size:            "",
-        notes_other:           "",
-        notes_service:         "",
+        service_branch:        "",
+        service_dates:         "",
+        service_rank:          "",
+        service_number:        "",
+        service_activity:      "",
         ec_relation:           "",
         ec_name:               "",
         ec_addr_street:        "",
