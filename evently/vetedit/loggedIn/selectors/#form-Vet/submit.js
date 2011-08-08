@@ -314,7 +314,9 @@ function(context) {
 
       if (hasChanged) {
         app.db.saveDoc(doc, {
-          success : function() {
+          success : function(resp) {
+            $("input[name='_id']").val(resp.id);
+            $("input[name='_rev']").val(resp.rev);
             // Pop-up the save confirmation.
             $("#saved_trigger").click();
           }
