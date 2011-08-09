@@ -117,6 +117,22 @@ function(r) {
     var selectedBranch = "selBranch-" + r.service.branch.split(' ').join('_');
     result[selectedBranch] = "selected";
 
+    if (r.medical.usesCane === 1) {
+      result["selMed-cane"] = "checked='yes'";
+    }
+    if (r.medical.usesWalker === 1) {
+      result["selMed-walker"] = "checked='yes'";
+    }
+    if (r.medical.usesWheelchair === 1) {
+      result["selMed-wc"] = "checked='yes'";
+    }
+    if (r.medical.isWheelchairBound === 1) {
+      result["selMed-wcb"] = "checked='yes'";
+    }
+    if (r.medical.requiresOxygen === 1) {
+      result["selMed-oxygen"] = "checked='yes'";
+    }
+
   } else {
 
     var result = {

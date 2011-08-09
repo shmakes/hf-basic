@@ -232,7 +232,15 @@
       </legend>
       <ol>
         <li>
-          <label for="medical_limitations">limitations</label>
+          <label>limitations</label>
+          <input type="checkbox" name="medical_uses_cane" value="1" {{selMed-cane}} />cane 
+          <input type="checkbox" name="medical_uses_walker" value="1" {{selMed-walker}} />walker 
+          <input type="checkbox" name="medical_uses_wheelchair" value="1" {{selMed-wc}} />wheelchair 
+          <input type="checkbox" name="medical_wheelchair_bound" value="1" {{selMed-wcb}} />wheelchair bound 
+          <input type="checkbox" name="medical_requires_oxygen" value="1" {{selMed-oxygen}} />requires oxygen 
+        </li>
+        <li>
+          <label for="medical_limitations">description</label>
           <input type="text" name="medical_limitations" value="{{medical_limitations}}" style="width: 35em" />
         </li>
         <li>

@@ -290,6 +290,46 @@ function(context) {
       if (!doc.medical) {
         doc.medical = {};
       }
+      var usesCane = 0;
+      if (f.medical_uses_cane) {
+        usesCane = 1;
+      }
+      if (doc.medical.usesCane != usesCane) {
+        doc.medical.usesCane = usesCane;
+        hasChanged = true;
+      }
+      var usesWalker = 0;
+      if (f.medical_uses_walker) {
+        usesWalker = 1;
+      }
+      if (doc.medical.usesWalker != usesWalker) {
+        doc.medical.usesWalker = usesWalker;
+        hasChanged = true;
+      }
+      var usesWheelchair = 0;
+      if (f.medical_uses_wheelchair) {
+        usesWheelchair = 1;
+      }
+      if (doc.medical.usesWheelchair != usesWheelchair) {
+        doc.medical.usesWheelchair = usesWheelchair;
+        hasChanged = true;
+      }
+      var isWheelchairBound = 0;
+      if (f.medical_wheelchair_bound) {
+        isWheelchairBound = 1;
+      }
+      if (doc.medical.isWheelchairBound != isWheelchairBound) {
+        doc.medical.isWheelchairBound = isWheelchairBound;
+        hasChanged = true;
+      }
+      var requiresOxygen = 0;
+      if (f.medical_requires_oxygen) {
+        requiresOxygen = 1;
+      }
+      if (doc.medical.requiresOxygen != requiresOxygen) {
+        doc.medical.requiresOxygen = requiresOxygen;
+        hasChanged = true;
+      }
       if (doc.medical.limitations != f.medical_limitations) {
         doc.medical.limitations = f.medical_limitations;
         hasChanged = true;
