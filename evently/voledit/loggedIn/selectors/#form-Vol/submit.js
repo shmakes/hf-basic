@@ -114,6 +114,7 @@ function(context) {
             $("input[name='_rev']").val(resp.rev);
             // Pop-up the save confirmation.
             $("#saved_trigger").click();
+            $("#continue_edit").focus();            
           }
         });
       } else {
