@@ -16,7 +16,7 @@ function(doc) {
       var flt = doc.flight;
     } 
     emit([(flt.id || ""), 
-          doc.name.last
+          doc.name.last.replace(/['\. ]/g, '')
          ], 
          {"type": ptype,
            "name": doc.name.first + " " + doc.name.last, 

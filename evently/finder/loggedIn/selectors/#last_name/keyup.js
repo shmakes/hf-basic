@@ -3,11 +3,12 @@ function() {
   var sts = $("#status").val();
   var flt = $("#flight").val();
   
-  if (value.match(/[^a-zA-Z' ]/g)) {
-    this.value = this.value.replace(/[^a-zA-Z' ]/g, '');
+  if (value.match(/[^a-zA-Z'\. ]/g)) {
+    this.value = this.value.replace(/[^a-zA-Z'\. ]/g, '');
     return false;
   }
 
+  value = value.replace(/['\. ]/g, '');
   var startKey = [];
   var endKey = [];
   var viewName = "basic/all_by_name";

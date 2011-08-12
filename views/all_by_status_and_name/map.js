@@ -12,7 +12,7 @@ function(doc) {
       }
     }
     emit([(doc.flight.status || ""), 
-          doc.name.last
+          doc.name.last.replace(/['\. ]/g, '')
          ], 
          {"type": ptype,
            "name": doc.name.first + " " + doc.name.last, 

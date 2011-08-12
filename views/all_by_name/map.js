@@ -15,7 +15,7 @@ function(doc) {
     if (doc.flight) {
       var flt = doc.flight;
     } 
-    emit([doc.name.last], 
+    emit([doc.name.last.replace(/['\. ]/g, '')], 
          {"type": ptype,
            "name": doc.name.first + " " + doc.name.last, 
            "city": doc.address.city + ", " + doc.address.state, 
