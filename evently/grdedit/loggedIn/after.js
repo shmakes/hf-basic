@@ -11,7 +11,7 @@ function() {
   $("#birth_date").dateinput({
     format: 'yyyy-mm-dd',
     selectors: true,
-    yearRange: [-70,-18],
+    yearRange: [-70,-13],
     speed: 100
   });
 
