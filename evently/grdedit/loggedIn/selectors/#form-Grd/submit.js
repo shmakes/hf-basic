@@ -142,6 +142,7 @@ function(context) {
 
       if (!doc.veteran) {
         doc.veteran = {};
+        doc.veteran.pref_notes = "";
         doc.veteran.pairings = [];
         doc.veteran.history = [];
       }

@@ -156,19 +156,16 @@ function(context) {
 
       if (!doc.guardian) {
         doc.guardian = {};
+        doc.guardian.pref_notes = "";
+        doc.guardian.id = "";
+        doc.guardian.name = "";
+        doc.guardian.history = [];
       }
       if (doc.guardian.pref_notes != f.guardian_pref_notes) {
         doc.guardian.pref_notes = f.guardian_pref_notes;
         hasChanged = true;
       }
-      if (doc.guardian.id != f.guardian_id) {
-        doc.guardian.id = f.guardian_id;
-        hasChanged = true;
-      }
-      if (doc.guardian.name != f.guardian_name) {
-        doc.guardian.name = f.guardian_name;
-        hasChanged = true;
-      }
+
 
       if (doc.birth_date != f.birth_date) {
         doc.birth_date = f.birth_date;
