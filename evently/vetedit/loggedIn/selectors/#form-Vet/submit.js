@@ -254,6 +254,14 @@ function(context) {
         doc.emerg_contact.address.phone = f.ec_phone;
         hasChanged = true;
       }
+      if (doc.emerg_contact.address.phone_eve != f.ec_phone_eve) {
+        doc.emerg_contact.address.phone_eve = f.ec_phone_eve;
+        hasChanged = true;
+      }
+      if (doc.emerg_contact.address.phone_mbl != f.ec_phone_mbl) {
+        doc.emerg_contact.address.phone_mbl = f.ec_phone_mbl;
+        hasChanged = true;
+      }
       if (doc.emerg_contact.address.email != f.ec_email) {
         doc.emerg_contact.address.email = f.ec_email;
         hasChanged = true;
