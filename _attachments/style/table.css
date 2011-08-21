@@ -127,6 +127,10 @@ table.MixedList .pairing {
   background-color:#fa3;
 }
 
+table.MixedList td.confirmed {
+  background-color:#0f0;
+}
+
 table.MixedList .problem {
   background-color:#f00;
 }

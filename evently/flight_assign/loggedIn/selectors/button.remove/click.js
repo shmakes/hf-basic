@@ -1,4 +1,9 @@
 function() {
+  var cell = $(this).parent();
+  if (cell.hasClass("confirmed")) {
+    alert("Already confirmed.  Must remove from edit form.");
+    return false;
+  }
   var row = $(this).parent().parent();
   var docId = row.attr("id");
   var docType = row.attr("class");

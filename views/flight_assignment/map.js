@@ -1,7 +1,12 @@
 function(doc) {
-  flt = {};
+  var flt = {};
+  var confirmed = "";
+
   if (doc.flight) {
     flt = doc.flight;
+    if ((flt.confirmed_date) && (flt.confirmed_date.length > 0)) {
+      confirmed = "confirmed";
+    }
   }
   if (doc.type == "Veteran") {
     emit([(flt.id || "None"), 
@@ -15,7 +20,8 @@ function(doc) {
            "appdate": (doc.app_date || ""),
            "group": (doc.flight.group || ""),
            "preference": (doc.guardian.pref_notes || ""),
-           "paired_with": (doc.guardian.id || "")
+           "paired_with": (doc.guardian.id || ""),
+           "confirmed": confirmed
          });
   } else if (doc.type == "Guardian") {
     if ((doc.veteran.pairings) && (doc.veteran.pairings.length > 0)) {
@@ -31,7 +37,8 @@ function(doc) {
                "appdate": (doc.app_date || ""),
                "group": (doc.flight.group || ""),
                "preference": (doc.veteran.pref_notes || ""),
-               "paired_with": (doc.veteran.pairings[vet].id || "")
+               "paired_with": (doc.veteran.pairings[vet].id || ""),
+               "confirmed": confirmed
              });
       }
     } else {
@@ -46,7 +53,8 @@ function(doc) {
              "appdate": (doc.app_date || ""),
              "group": (doc.flight.group || ""),
              "preference": (doc.veteran.pref_notes || ""),
-             "paired_with": ""
+             "paired_with": "",
+             "confirmed": confirmed
            });
     }
   }

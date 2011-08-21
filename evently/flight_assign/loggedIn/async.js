@@ -55,6 +55,7 @@ function(cb) {
               person.appdate = p.appdate;
               person.group = p.group;
               person.preference = p.preference;
+              person.confirmed = p.confirmed;
               person.paired_with = p.paired_with;
               pairing.people.push(person);
 
