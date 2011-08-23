@@ -93,6 +93,7 @@ function(context) {
         doc.flight.seat = "";
         doc.flight.bus = "None";
         doc.flight.status = "Active";
+        doc.flight.status_note = "";
       }
       if (f.flight_id != doc.flight.id) {
         doc.flight.history.push({
@@ -136,6 +137,10 @@ function(context) {
           change: "changed status from: " + doc.flight.status + " to: " + f.flight_status + " by: " + user
         });
         doc.flight.status = f.flight_status;
+        hasChanged = true;
+      }
+      if (f.flight_status_note != doc.flight.status_note) {
+        doc.flight.status_note = f.flight_status_note;
         hasChanged = true;
       }
 
