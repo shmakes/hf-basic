@@ -1,6 +1,12 @@
 function(doc) {
   if ((doc.name) && (doc.name.last)) {
     emit(doc.metadata.updated_at, 
-    [doc.type, doc.name.first + ' ' + doc.name.last, doc.metadata.updated_by]);
+       { "type":    doc.type,
+         "name":    doc.name.first + " " + doc.name.last, 
+         "city":    doc.address.city + ", " + doc.address.state, 
+         "appdate": doc.app_date,
+         "recdate": doc.metadata.updated_at,
+         "recby":   doc.metadata.updated_by
+       });
   }
 }
