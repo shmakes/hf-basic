@@ -8,27 +8,43 @@ function(cb) {
       success : function(doc) {
 
         app.db.view("basic/flight_pairings", {
-          descending : true,
-          //group: true,
-          endkey : [ doc.name ],
-          startkey : [ doc.name + "\ufff0" ],
+          descending : false,
+          startkey : [ doc.name ],
+          endkey : [ doc.name + "\ufff0" ],
           success: function(resp) {
             doc.pairs = [];
+            var lastId = "";
             var pairing = {};
             for (row in resp.rows) {
-              p = resp.rows[row].value;
-              if (p.type == "Guardian") {
-                if (typeof pairing.grd === 'undefined') {
-                  pairing.grd = [];
+              var p = resp.rows[row].value;
+              var pid = resp.rows[row].key[1];
+              var ptype = resp.rows[row].key[2];
+              if (pid != lastId) {
+                if (pairing.pid) {
+                  doc.pairs.push(pairing);
                 }
-                pairing.grd.push(p);
+                pairing = {};
+                pairing.pid = pid;
+                lastId = pid;
+              }
+
+              if (p.type == "Guardian") {
+                if (pairing.grd) {
+                  pairing.grd.push(p);
+                } else {
+                  pairing.grd = [];
+                  pairing.grd.push(p);
+                }
               }
               if (p.type == "Veteran") {
                 pairing.vet = p;
-                doc.pairs.push(pairing);
-                pairing = {};
               }
+
             }
+            if (pairing.pid) {
+              doc.pairs.push(pairing);
+            }
+
             cb(doc);
           }
         })

@@ -24,7 +24,7 @@ function(cb) {
             var lastId = "";
             var pairing = {};
             for (row in resp.rows) {
-              p = resp.rows[row].value;
+              var p = resp.rows[row].value;
 
               if (p.pair != lastId) {
                 if (pairing.pid) {
