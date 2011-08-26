@@ -112,3 +112,22 @@ function PairGuardianToVeteran(app, vetId, grdIdNew, user) {
     }
   });
 }
+
+function assignToBus(app, docId, newBus, user) {
+  app.db.openDoc(docId, {
+    success : function(doc) {
+      if ((doc.flight) && (doc.flight.bus)) {
+        if (doc.flight.history) {
+          doc.flight.history.push({
+            id: ISODateString(new Date()),
+            change: "changed bus from: " + doc.flight.bus + " to: " + newBus + " by: " + user
+          });
+        }
+        doc.flight.bus = newBus;
+        app.db.saveDoc(doc, {
+          success : function() {}
+        });
+      }
+    }
+  });
+}
