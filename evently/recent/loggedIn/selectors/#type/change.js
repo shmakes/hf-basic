@@ -2,10 +2,21 @@ function() {
   var value = $(this).val();
   var lstType = $("#type").val();
 
-  var viewName = "basic/admin_recent_additions";
+  var viewName = "basic/admin_recent_changes";
 
-  if (lstType === "Modified") {
-    viewName = "basic/admin_recent_changes";
+  switch (lstType) {
+    case "Added":
+      viewName = "basic/admin_recent_additions";
+      break;
+    case "Modified":
+      viewName = "basic/admin_recent_changes";
+      break;
+    case "Flight":
+      viewName = "basic/admin_recent_flight_changes";
+      break;
+    case "Pairing":
+      viewName = "basic/admin_recent_pairing_changes";
+      break;
   }
 
   // Clear the result area.
