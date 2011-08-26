@@ -6,7 +6,8 @@ function(doc) {
          "city":    doc.address.city + ", " + doc.address.state, 
          "appdate": doc.app_date,
          "recdate": doc.metadata.updated_at,
-         "recby":   doc.metadata.updated_by
+         "recby":   doc.metadata.updated_by,
+         "change":  ""
        });
   }
 }

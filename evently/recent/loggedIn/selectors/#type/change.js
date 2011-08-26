@@ -50,6 +50,7 @@ function() {
         tr.append("<td>" + anchor + person.appdate + "</a></td>");
         tr.append("<td>" + anchor + person.recdate + "</a></td>");
         tr.append("<td>" + anchor + person.recby + "</a></td>");
+        tr.append("<td>" + anchor + person.change + "</a></td>");
         rslt.append(tr);     
       }
     }
