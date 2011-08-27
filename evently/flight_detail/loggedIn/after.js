@@ -23,7 +23,7 @@ function() {
     closeOnClick: false
   });
 
-
+  updateCounts();
   $(this).show();
 };
 

@@ -154,12 +154,40 @@ function changeSeat(app, docId, newSeat, user) {
 function updateCounts() {
   var buses = $("td.colBus");
   var busCount = 0;
+  var busTally = {
+    "Alpha1": 0,
+    "Alpha2": 0,
+    "Alpha3": 0,
+    "Alpha4": 0,
+    "Alpha5": 0,
+    "Bravo1": 0,
+    "Bravo2": 0,
+    "Bravo3": 0,
+    "Bravo4": 0,
+    "Bravo5": 0
+  };
+    
   $.each(buses, function() {
-    if ($(this).text().length > 4) {
+    var bus = $(this);
+    var busName = bus.text();
+    if (busName.length > 4) {
       busCount += 1;
+      busTally[busName] = busTally[busName] + 1;
       //var vetId = bus.parent().attr("vetid");
       //var grdId = bus.parent().attr("grdid");
     }
   });
-  alert(busCount);
+
+  var alphaCount = 0;
+  var bravoCount = 0;
+  for (var busKey in busTally) {
+    $("#" + busKey).val(busTally[busKey]);
+    if (busKey.substr(0, 5) === "Alpha") {
+      alphaCount += busTally[busKey];
+    } else {
+      bravoCount += busTally[busKey];
+    }
+  }
+  $("#alphaCount").val(alphaCount);
+  $("#bravoCount").val(bravoCount);
 }
