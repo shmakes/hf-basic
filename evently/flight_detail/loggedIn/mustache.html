@@ -17,26 +17,26 @@
     <input id="bravoCount" type="text" name="bravo_count" readonly="readonly" value="" style="width: 3em" />
     <br />
     <label for="a1_count">alpha 1</label>
-    <input id="a1Count" type="text" name="a1_count" readonly="readonly" value="" style="width: 3em" />
+    <input id="Alpha1" type="text" name="a1_count" readonly="readonly" value="" style="width: 3em" />
     <label for="a2_count">alpha 2</label>
-    <input id="a2Count" type="text" name="a2_count" readonly="readonly" value="" style="width: 3em" />
+    <input id="Alpha2" type="text" name="a2_count" readonly="readonly" value="" style="width: 3em" />
     <label for="a3_count">alpha 3</label>
-    <input id="a3Count" type="text" name="a3_count" readonly="readonly" value="" style="width: 3em" />
+    <input id="Alpha3" type="text" name="a3_count" readonly="readonly" value="" style="width: 3em" />
     <label for="a4_count">alpha 4</label>
-    <input id="a4Count" type="text" name="a4_count" readonly="readonly" value="" style="width: 3em" />
+    <input id="Alpha4" type="text" name="a4_count" readonly="readonly" value="" style="width: 3em" />
     <label for="a5_count">alpha 5</label>
-    <input id="a5Count" type="text" name="a5_count" readonly="readonly" value="" style="width: 3em" />
+    <input id="Alpha5" type="text" name="a5_count" readonly="readonly" value="" style="width: 3em" />
     <br />
     <label for="b1_count">bravo 1</label>
-    <input id="b1Count" type="text" name="b1_count" readonly="readonly" value="" style="width: 3em" />
+    <input id="Bravo1" type="text" name="b1_count" readonly="readonly" value="" style="width: 3em" />
     <label for="b2_count">bravo 2</label>
-    <input id="b2Count" type="text" name="b2_count" readonly="readonly" value="" style="width: 3em" />
+    <input id="Bravo2" type="text" name="b2_count" readonly="readonly" value="" style="width: 3em" />
     <label for="b3_count">bravo 3</label>
-    <input id="b3Count" type="text" name="b3_count" readonly="readonly" value="" style="width: 3em" />
+    <input id="Bravo3" type="text" name="b3_count" readonly="readonly" value="" style="width: 3em" />
     <label for="b4_count">bravo 4</label>
-    <input id="b4Count" type="text" name="b4_count" readonly="readonly" value="" style="width: 3em" />
+    <input id="Bravo4" type="text" name="b4_count" readonly="readonly" value="" style="width: 3em" />
     <label for="b5_count">bravo 5</label>
-    <input id="b5Count" type="text" name="b5_count" readonly="readonly" value="" style="width: 3em" />
+    <input id="Bravo5" type="text" name="b5_count" readonly="readonly" value="" style="width: 3em" />
   </p>
   <br />
 
@@ -64,10 +64,10 @@
       <td class="Veteran colCity">{{vet_city}}</td>
       <td class="Veteran colLimitations">{{vet_limitations}}</td>
       <td class="Veteran colBus" name="vet_bus">{{vet_bus}}</td>
-      <td class="Veteran colSeat {{vet_confirmed}}"><input type="text" value="{{vet_seat}}" style="width: 2em" /></td>
+      <td class="Veteran colSeat {{vet_confirmed}}"><input id="vetSeat" type="text" value="{{vet_seat}}" style="width: 2em" /></td>
       <td class="Veteran"><button class="modalInput">&gt;</button></td>
-      <td class="Guardian colSeat {{grd_confirmed}}"><input type="text" value="{{grd_seat}}" style="width: 2em" /></td>
-      <td class="Guardian colBus">{{grd_bus}}</td>
+      <td class="Guardian colSeat {{grd_confirmed}}"><input id="grdSeat" type="text" value="{{grd_seat}}" style="width: 2em" /></td>
+      <td class="Guardian colBus" name="grd_bus">{{grd_bus}}</td>
       <td class="Guardian colLimitations">{{grd_experience}}</td>
       <td class="Guardian colCity">{{grd_city}}</td>
       <td class="Guardian colName" name="grd_name">{{grd_name_first}} {{grd_name_last}}</td>

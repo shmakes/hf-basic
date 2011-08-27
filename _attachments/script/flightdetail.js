@@ -112,3 +112,85 @@ function PairGuardianToVeteran(app, vetId, grdIdNew, user) {
     }
   });
 }
+
+function assignToBus(app, docId, newBus, user) {
+  app.db.openDoc(docId, {
+    success : function(doc) {
+      if (doc.flight) {
+        if (doc.flight.history) {
+          doc.flight.history.push({
+            id: ISODateString(new Date()),
+            change: "changed bus from: " + doc.flight.bus + " to: " + newBus + " by: " + user
+          });
+        }
+        doc.flight.bus = newBus;
+        app.db.saveDoc(doc, {
+          success : function() {}
+        });
+      }
+    }
+  });
+}
+
+function changeSeat(app, docId, newSeat, user) {
+  app.db.openDoc(docId, {
+    success : function(doc) {
+      if (doc.flight) {
+        if (doc.flight.history) {
+          doc.flight.history.push({
+            id: ISODateString(new Date()),
+            change: "changed seat from: " + doc.flight.seat + " to: " + newSeat + " by: " + user
+          });
+        }
+        doc.flight.seat = newSeat;
+        app.db.saveDoc(doc, {
+          success : function() {}
+        });
+      }
+    }
+  });
+}
+
+function updateCounts() {
+  var buses = $("td.colBus");
+  var busTally = {
+    "Alpha1": [],
+    "Alpha2": [],
+    "Alpha3": [],
+    "Alpha4": [],
+    "Alpha5": [],
+    "Bravo1": [],
+    "Bravo2": [],
+    "Bravo3": [],
+    "Bravo4": [],
+    "Bravo5": []
+  };
+    
+  $.each(buses, function() {
+    var bus = $(this);
+    var busName = bus.text();
+    if (busName.length > 4) {
+      var pType = bus.attr("name"), pId = "";
+      if (pType === "vet_bus") {
+        pId = bus.parent().attr("vetid");
+      }
+      if (pType === "grd_bus") {
+        pId = bus.parent().attr("grdid");
+      }
+      if (pId.length > 0) busTally[busName].push(pId);
+    }
+  });
+
+  var alphaCount = 0, bravoCount = 0;
+  for (var busKey in busTally) {
+    var cnt = strUnique(busTally[busKey]).length;
+    $("#" + busKey).val(cnt);
+    if (busKey.substr(0, 5) === "Alpha") {
+      alphaCount += cnt;
+    } else {
+      bravoCount += cnt;
+    }
+  }
+  $("#alphaCount").val(alphaCount);
+  $("#bravoCount").val(bravoCount);
+}
