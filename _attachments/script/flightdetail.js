@@ -150,3 +150,16 @@ function changeSeat(app, docId, newSeat, user) {
     }
   });
 }
+
+function updateCounts() {
+  var buses = $("td.colBus");
+  var busCount = 0;
+  $.each(buses, function() {
+    if ($(this).text().length > 4) {
+      busCount += 1;
+      //var vetId = bus.parent().attr("vetid");
+      //var grdId = bus.parent().attr("grdid");
+    }
+  });
+  alert(busCount);
+}

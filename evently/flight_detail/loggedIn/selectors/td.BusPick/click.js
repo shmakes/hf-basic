@@ -15,6 +15,7 @@ function() {
     vetBusCell.text(busId);
   }
 
+  updateCounts();
   return true;
 };
 
