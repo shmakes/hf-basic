@@ -116,7 +116,7 @@ function PairGuardianToVeteran(app, vetId, grdIdNew, user) {
 function assignToBus(app, docId, newBus, user) {
   app.db.openDoc(docId, {
     success : function(doc) {
-      if ((doc.flight) && (doc.flight.bus)) {
+      if (doc.flight) {
         if (doc.flight.history) {
           doc.flight.history.push({
             id: ISODateString(new Date()),
@@ -124,6 +124,25 @@ function assignToBus(app, docId, newBus, user) {
           });
         }
         doc.flight.bus = newBus;
+        app.db.saveDoc(doc, {
+          success : function() {}
+        });
+      }
+    }
+  });
+}
+
+function changeSeat(app, docId, newSeat, user) {
+  app.db.openDoc(docId, {
+    success : function(doc) {
+      if (doc.flight) {
+        if (doc.flight.history) {
+          doc.flight.history.push({
+            id: ISODateString(new Date()),
+            change: "changed seat from: " + doc.flight.seat + " to: " + newSeat + " by: " + user
+          });
+        }
+        doc.flight.seat = newSeat;
         app.db.saveDoc(doc, {
           success : function() {}
         });
