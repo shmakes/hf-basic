@@ -153,39 +153,42 @@ function changeSeat(app, docId, newSeat, user) {
 
 function updateCounts() {
   var buses = $("td.colBus");
-  var busCount = 0;
   var busTally = {
-    "Alpha1": 0,
-    "Alpha2": 0,
-    "Alpha3": 0,
-    "Alpha4": 0,
-    "Alpha5": 0,
-    "Bravo1": 0,
-    "Bravo2": 0,
-    "Bravo3": 0,
-    "Bravo4": 0,
-    "Bravo5": 0
+    "Alpha1": [],
+    "Alpha2": [],
+    "Alpha3": [],
+    "Alpha4": [],
+    "Alpha5": [],
+    "Bravo1": [],
+    "Bravo2": [],
+    "Bravo3": [],
+    "Bravo4": [],
+    "Bravo5": []
   };
     
   $.each(buses, function() {
     var bus = $(this);
     var busName = bus.text();
     if (busName.length > 4) {
-      busCount += 1;
-      busTally[busName] = busTally[busName] + 1;
-      //var vetId = bus.parent().attr("vetid");
-      //var grdId = bus.parent().attr("grdid");
+      var pType = bus.attr("name"), pId = "";
+      if (pType === "vet_bus") {
+        pId = bus.parent().attr("vetid");
+      }
+      if (pType === "grd_bus") {
+        pId = bus.parent().attr("grdid");
+      }
+      if (pId.length > 0) busTally[busName].push(pId);
     }
   });
 
-  var alphaCount = 0;
-  var bravoCount = 0;
+  var alphaCount = 0, bravoCount = 0;
   for (var busKey in busTally) {
-    $("#" + busKey).val(busTally[busKey]);
+    var cnt = strUnique(busTally[busKey]).length;
+    $("#" + busKey).val(cnt);
     if (busKey.substr(0, 5) === "Alpha") {
-      alphaCount += busTally[busKey];
+      alphaCount += cnt;
     } else {
-      bravoCount += busTally[busKey];
+      bravoCount += cnt;
     }
   }
   $("#alphaCount").val(alphaCount);

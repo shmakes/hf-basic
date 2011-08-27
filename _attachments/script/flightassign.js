@@ -66,3 +66,24 @@ function addVets(app, user, flightName, vets) {
     });
   }
 }
+
+function updateCounts() {
+  var vets = [], grds = [], vetCnt = 0, grdCnt = 0;
+  $("tr.Veteran").each(function() {
+    var vetId = $(this).attr("id");
+    if (vetId.length > 0) vets.push(vetId);
+  });
+  vetCnt = strUnique(vets).length;
+  $("#vetCount").val(vetCnt);
+
+  $("tr.Guardian").each(function() {
+    var grdId = $(this).attr("id");
+    if (grdId.length > 0) grds.push(grdId);
+  });
+  grdCnt = strUnique(grds).length;
+  $("#grdCount").val(grdCnt);
+
+  capacity = parseInt($("#flightCap").val());
+  remaining = capacity - vetCnt - grdCnt;
+  $("#remainCount").val(remaining.toString());
+}
