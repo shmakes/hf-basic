@@ -1,6 +1,6 @@
 function() {
   var grdId = $(this).parent().parent().attr("grdid");
-  var newSeat = $(this).val();
+  var newSeat = $(this).val().replace('"', '').replace("\\", "");
   var user = $("#user_name").text();
   var app = $$(this).app;
 

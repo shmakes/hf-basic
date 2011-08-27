@@ -130,7 +130,7 @@
         </li>
         <li>
           <label for="notes_other">other notes</label>
-          <input type="text" name="notes_other" value="{{notes_other}}" style="width: 35em" />
+          <input type="text" name="notes_other" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{notes_other}}" style="width: 35em" />
         </li>
       </ol>
     </fieldset>
@@ -142,15 +142,15 @@
       <ol>
         <li>
           <label for="medical_limitations">limitations</label>
-          <input type="text" name="medical_limitations" value="{{medical_limitations}}" style="width: 35em" />
+          <input type="text" name="medical_limitations" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{medical_limitations}}" style="width: 35em" />
         </li>
         <li>
           <label for="medical_experience">experience</label>
-          <input type="text" name="medical_experience" value="{{medical_experience}}" style="width: 35em" />
+          <input type="text" name="medical_experience" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{medical_experience}}" style="width: 35em" />
         </li>
         <li>
           <label for="medical_release">release</label>
-          <input type="text" name="medical_release" value="{{medical_release}}" style="width: 35em" />
+          <input type="text" name="medical_release" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{medical_release}}" style="width: 35em" />
         </li>
       </ol>
     </fieldset>
@@ -165,7 +165,7 @@
       <ol>
         <li>
           <label for="preferred_airport">preferred airport</label>
-          <input type="text" name="preferred_airport" maxlength="15" value="{{preferred_airport}}" style="width: 25em" />
+          <input type="text" name="preferred_airport" maxlength="15" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{preferred_airport}}" style="width: 25em" />
         </li>
         <li>
           <label for="flight_status">flight status</label>
@@ -179,7 +179,7 @@
         </li>
         <li>
           <label for="flight_status_note">status note</label>
-          <input type="text" name="flight_status_note" value="{{flight_status_note}}" style="width: 35em" />
+          <input type="text" name="flight_status_note" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{flight_status_note}}" style="width: 35em" />
         </li>
         <li>
           <label for="flight_id">assigned flight</label>
@@ -196,11 +196,11 @@
         </li>
         <li>
           <label for="flight_confirmed_by">confirmed by</label>
-          <input type="text" name="flight_confirmed_by" maxlength="30" value="{{flight_confirmed_by}}" style="width: 15em" />
+          <input type="text" name="flight_confirmed_by" maxlength="30" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{flight_confirmed_by}}" style="width: 15em" />
         </li>
         <li>
           <label for="flight_seat">assigned seat</label>
-          <input type="text" name="flight_seat" maxlength="10" value="{{flight_seat}}" style="width: 5em" />
+          <input type="text" name="flight_seat" maxlength="10" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{flight_seat}}" style="width: 5em" />
         </li>
         <li>
           <label for="flight_bus">assigned bus</label>
@@ -220,7 +220,7 @@
         </li>
         <li>
           <label for="veteran_pref_notes">veteran preferance</label>
-          <input type="text" name="veteran_pref_notes" value="{{veteran_pref_notes}}" style="width: 25em" />
+          <input type="text" name="veteran_pref_notes" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{veteran_pref_notes}}" style="width: 25em" />
         </li>
         <li>
           <input type="hidden" id="veteran_id" name="veteran_id" value="{{veteran_id}}" />

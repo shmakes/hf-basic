@@ -43,7 +43,7 @@
       <ol>
         <li>
           <label for="street">street<em><img src="images/required_star.gif" alt="required" /></em></label>
-          <input type="text" name="street" pattern="[a-zA-Z0-9.,# -/]{2,}" maxlength="50" value="{{addr_street}}" style="width: 30em" required="required" title="Full street address." />
+          <input type="text" name="street" pattern="[a-zA-Z0-9.,# /-]{2,}" maxlength="50" value="{{addr_street}}" style="width: 30em" required="required" title="Full street address." />
         </li>
         <li>
           <label for="city">city<em><img src="images/required_star.gif" alt="required" /></em></label>
@@ -145,19 +145,19 @@
         </li>
         <li>
           <label for="service_dates">service dates</label>
-          <input type="text" name="service_dates" value="{{service_dates}}" style="width: 20em" />
+          <input type="text" name="service_dates" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{service_dates}}" style="width: 20em" />
         </li>
         <li>
           <label for="service_rank">rank</label>
-          <input type="text" name="service_rank" value="{{service_rank}}" style="width: 10em" />
+          <input type="text" name="service_rank" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{service_rank}}" style="width: 10em" />
         </li>
         <li>
           <label for="service_number">service number</label>
-          <input type="text" name="service_number" value="{{service_number}}" style="width: 15em" />
+          <input type="text" name="service_number" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{service_number}}" style="width: 15em" />
         </li>
         <li>
           <label for="service_activity">activity</label>
-          <input type="text" name="service_activity" value="{{service_activity}}" style="width: 35em" />
+          <input type="text" name="service_activity" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{service_activity}}" style="width: 35em" />
         </li>
       </ol>
     </fieldset>
@@ -201,7 +201,7 @@
         </li>
         <li>
           <label for="ec_street">street</label>
-          <input type="text" name="ec_street" pattern="[a-zA-Z0-9.,# -/]{0,}" maxlength="50" value="{{ec_addr_street}}" style="width: 30em" />
+          <input type="text" name="ec_street" pattern="[a-zA-Z0-9.,# /-]{0,}" maxlength="50" value="{{ec_addr_street}}" style="width: 30em" />
         </li>
         <li>
           <label for="ec_city">city</label>
@@ -245,15 +245,15 @@
         </li>
         <li>
           <label for="medical_limitations">description</label>
-          <input type="text" name="medical_limitations" value="{{medical_limitations}}" style="width: 35em" />
+          <input type="text" name="medical_limitations" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{medical_limitations}}" style="width: 35em" />
         </li>
         <li>
           <label for="medical_category">category</label>
-          <input type="text" name="medical_category" value="{{medical_category}}" style="width: 5em" />
+          <input type="text" name="medical_category" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{medical_category}}" style="width: 5em" />
         </li>
         <li>
           <label for="medical_review">notes</label>
-          <input type="text" name="medical_review" value="{{medical_review}}" style="width: 35em" />
+          <input type="text" name="medical_review" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{medical_review}}" style="width: 35em" />
         </li>
       </ol>
     </fieldset>
@@ -268,7 +268,7 @@
       <ol>
         <li>
           <label for="preferred_airport">preferred airport</label>
-          <input type="text" name="preferred_airport" maxlength="15" value="{{preferred_airport}}" style="width: 5em" />
+          <input type="text" name="preferred_airport" maxlength="15" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{preferred_airport}}" style="width: 5em" />
         </li>
         <li>
           <label for="flight_status">flight status</label>
@@ -282,11 +282,11 @@
         </li>
         <li>
           <label for="flight_status_note">status note</label>
-          <input type="text" name="flight_status_note" value="{{flight_status_note}}" style="width: 35em" />
+          <input type="text" name="flight_status_note" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{flight_status_note}}" style="width: 35em" />
         </li>
         <li>
           <label for="flight_group">flight group</label>
-          <input type="text" name="flight_group" maxlength="15" value="{{flight_group}}" style="width: 10em" />
+          <input type="text" name="flight_group" maxlength="15" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{flight_group}}" style="width: 10em" />
           <button id="showGroups" type="button">Existing Groups</button>
         </li>
         <li>
@@ -304,11 +304,11 @@
         </li>
         <li>
           <label for="flight_confirmed_by">confirmed by</label>
-          <input type="text" name="flight_confirmed_by" maxlength="30" value="{{flight_confirmed_by}}" style="width: 15em" />
+          <input type="text" name="flight_confirmed_by" maxlength="30" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{flight_confirmed_by}}" style="width: 15em" />
         </li>
         <li>
           <label for="flight_seat">assigned seat</label>
-          <input type="text" name="flight_seat" maxlength="10" value="{{flight_seat}}" style="width: 5em" />
+          <input type="text" name="flight_seat" maxlength="10" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{flight_seat}}" style="width: 5em" />
         </li>
         <li>
           <label for="flight_bus">assigned bus</label>
@@ -328,7 +328,7 @@
         </li>
         <li>
           <label for="guardian_pref_notes">guardian preferance</label>
-          <input type="text" name="guardian_pref_notes" value="{{guardian_pref_notes}}" style="width: 25em" />
+          <input type="text" name="guardian_pref_notes" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{guardian_pref_notes}}" style="width: 25em" />
         </li>
         <li>
           <input type="hidden" id="guardian_id" name="guardian_id" value="{{guardian_id}}" />
