@@ -87,14 +87,14 @@ div#profile {
 }
 
 #filter_controls {
-  width: 850px;
+  width: 90%;
   margin:10px;
 }
 
 div.line {
   position: relative;
   text-align: center;
-  width: 850px;
+  width: 90%;
   margin:10px;
 }
 
@@ -112,7 +112,7 @@ span.right {
 }
 
 #result_list {
-  width: 850px;
+  width: 90%;
   margin:10px;
 }
 
