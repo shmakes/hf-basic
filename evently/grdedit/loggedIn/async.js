@@ -28,7 +28,7 @@ function(cb) {
       success: function(resp) {
         doc.availableFlights = [];
         for (row in resp.rows) {
-          doc.availableFlights.push({ "flight": resp.rows[row].key[0] });
+          doc.availableFlights.push({ "flight": resp.rows[row].key[1] });
         }
         cb(doc);
       }
