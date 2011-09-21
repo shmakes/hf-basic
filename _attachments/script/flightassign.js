@@ -68,22 +68,28 @@ function addVets(app, user, flightName, vets) {
 }
 
 function updateCounts() {
-  var vets = [], grds = [], vetCnt = 0, grdCnt = 0;
+  var vets = [], grds = [], vetCnt = 0, grdCnt = 0, vetCnf = 0, grdCnf = 0;
   $("tr.Veteran").each(function() {
     var vetId = $(this).attr("id");
     if (vetId.length > 0) vets.push(vetId);
+    var vetConfirmed = $(this).children("td.confirmed");
+    if (vetConfirmed.length > 0) vetCnf += 1;
   });
   vetCnt = strUnique(vets).length;
   $("#vetCount").val(vetCnt);
+  $("#vetConfirm").val(vetCnf);
 
   $("tr.Guardian").each(function() {
     var grdId = $(this).attr("id");
     if (grdId.length > 0) grds.push(grdId);
+    var grdConfirmed = $(this).children("td.confirmed");
+    if (grdConfirmed.length > 0) grdCnf += 1;
   });
   grdCnt = strUnique(grds).length;
   $("#grdCount").val(grdCnt);
+  $("#grdConfirm").val(grdCnf);
 
-  capacity = parseInt($("#flightCap").val());
-  remaining = capacity - vetCnt - grdCnt;
-  $("#remainCount").val(remaining.toString());
+  var capacity = parseInt($("#flightCap").val());
+  $("#remainCount").val(capacity - vetCnt - grdCnt);
+  $("#ttlConfirm").val(vetCnf + grdCnf);
 }
