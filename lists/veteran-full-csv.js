@@ -45,10 +45,6 @@ function(head, req) {
         ec_addr_email:         r.emerg_contact.address.email,
         ac_relation:           r.alt_contact.relation,
         ac_name:               r.alt_contact.name,
-        ac_addr_street:        r.alt_contact.address.street,
-        ac_addr_city:          r.alt_contact.address.city,
-        ac_addr_state:         r.alt_contact.address.state,
-        ac_addr_zip:           r.alt_contact.address.zip,
         ac_addr_phone:         r.alt_contact.address.phone,
         ac_addr_email:         r.alt_contact.address.email,
         medical_uses_cane:     r.medical.usesCane,
@@ -60,7 +56,6 @@ function(head, req) {
         medical_review:        r.medical.review,
         medical_category:      r.medical.category,
         preferred_airport:     r.preferred_airport,
-        flights:               r.availableFlights,
         flight_status:         r.flight.status,
         flight_status_note:    r.flight.status_note,
         flight_confirmed_date: r.flight.confirmed_date,
@@ -91,10 +86,16 @@ function(head, req) {
     }
 
     for (key in result) {
-      if ((result[key]) && (result[key].length > 0)) {
-        send("\"");
-        send(result[key]);
-        send("\"");
+      if (result[key]) {
+        if (result[key].length > 0) {
+          send("\"");
+          send(result[key]);
+          send("\"");
+        } else {
+          if (!isNaN(result[key])) {
+            send(result[key].toString());
+          }
+        }
       }
       send(",");
     }
