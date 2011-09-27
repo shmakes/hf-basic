@@ -49,11 +49,15 @@ function() {
               // See if the group is one being added to the flight.
               if (vetList.hasOwnProperty(grpName)) {
                 // Make sure the group member is not already being added to the flight.
-                grpVetId = respGrps.rows[rowGrp].id;
+                var grpVetId = respGrps.rows[rowGrp].id;
                 var thisGrp = vetList[grpName];
                 var pos = $.inArray(grpVetId, thisGrp);
                 if (pos === -1) {
-                  resp.rows.push({ id: grpVetId, key: grpName, value: "", doc: respGrps.rows[rowGrp].doc });
+                  // Make sure the group member is not already on another flight.
+                  var fltId = respGrps.rows[rowGrp].doc.flight.id;
+                  if ((fltId === "None") || (fltId.length === 0)) {
+                    resp.rows.push({ id: grpVetId, key: grpName, value: "", doc: respGrps.rows[rowGrp].doc });
+                  }
                 }
               }
             }
