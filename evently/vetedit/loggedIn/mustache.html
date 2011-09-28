@@ -91,21 +91,21 @@
       <ol>
         <li>
           <label for="birth_date">birth date</label>
-          <input type="date" class="date" id="birth_date" name="birth_date" pattern="[0-9-]{0,10}" maxlength="10" value="{{birth_date}}" data-value="{{birth_date}}" style="width: 8em" />
+          <input type="text" name="birth_year" maxlength="4" value="{{birth_year}}" style="width: 4em" />
+          <input type="text" name="birth_month" maxlength="2" value="{{birth_month}}" style="width: 2em" />
+          <input type="text" name="birth_day" maxlength="2" value="{{birth_day}}" style="width: 2em" />
           <span class="grey-note">
             {{birth_date_string}}
           </span>
         </li>
         <li>
-          <label for="age">age</label>
-          <input type="number" name="age" min="60" max="110" value="{{age}}" style="width: 4em" />
           <span class="grey-note">
             {{ageFromBirthDate}}
           </span>
         </li>
         <li>
           <label for="gender">gender<em><img src="images/required_star.gif" alt="required" /></em></label>
-          <input type="text" name="gender" pattern="[MFmf]{1,1}" maxlength="1" value="{{gender}}" style="width: 2em" />
+          <input type="text" name="gender" pattern="[MFmf]{1,1}" maxlength="1" value="{{gender}}" style="width: 2em" data-message="M or F" />
         </li>
         <li>
           <label for="weight">weight</label>

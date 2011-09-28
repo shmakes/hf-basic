@@ -8,6 +8,27 @@ function() {
     speed: 100
   });
 
+  $.tools.validator.fn("[name=birth_day]", "A valid date from 1910 - 1960.  YYYY-MM-DD", function(input, value) { 
+    var bYear = $("input[name='birth_year']").val();
+    var bMonth = $("input[name='birth_month']").val();
+
+    var bdateStr = bYear + "-" + bMonth + "-" + value;
+    var birthYear = parseInt(bYear);
+    var birthMonth = parseInt(bMonth) - 1;
+    var birthDay = parseInt(value);
+    var bdate = new Date(birthYear, birthMonth, birthDay);
+    var byr = bdate.getFullYear();
+    var bdateNewStr = ISODateString(bdate).substr(0,10);
+    if ((bdate.getFullYear() === birthYear) 
+        && (bdate.getMonth() === birthMonth) 
+        && (bdate.getDate() === birthDay)) { // was valid
+      if ((byr >= 1910) && (byr <= 1960)) {
+        return true;
+      }
+    }
+    return false;
+  });
+
   $("#birth_date").dateinput({
     format: 'yyyy-mm-dd',
     selectors: true,

@@ -167,14 +167,21 @@ function(context) {
       }
 
 
-      if (doc.birth_date != f.birth_date) {
-        doc.birth_date = f.birth_date;
-        hasChanged = true;
+      var bdateStr = f.birth_year + "-" + f.birth_month + "-" + f.birth_day;
+      var birthYear = parseInt(f.birth_year);
+      var birthMonth = parseInt(f.birth_month) - 1;
+      var birthDay = parseInt(f.birth_day);
+      var bdate = new Date(birthYear, birthMonth, birthDay);
+      var bdateNewStr = ISODateString(bdate).substr(0,10);
+      if ((bdate.getFullYear() === birthYear) 
+          && (bdate.getMonth() === birthMonth) 
+          && (bdate.getDate() === birthDay)) { // was valid
+        if (doc.birth_date != bdateNewStr) {   // was changed
+          doc.birth_date = bdateNewStr;
+          hasChanged = true;
+        }
       }
-      if (doc.age != f.age) {
-        doc.age = f.age;
-        hasChanged = true;
-      }
+
       if (doc.gender != f.gender.toUpperCase()) {
         doc.gender = f.gender.toUpperCase();
         hasChanged = true;
