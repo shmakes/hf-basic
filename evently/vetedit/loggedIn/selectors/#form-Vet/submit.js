@@ -167,18 +167,23 @@ function(context) {
       }
 
 
-      var bdateStr = f.birth_year + "-" + f.birth_month + "-" + f.birth_day;
-      var birthYear = parseInt(f.birth_year);
-      var birthMonth = parseInt(f.birth_month) - 1;
-      var birthDay = parseInt(f.birth_day);
-      var bdate = new Date(birthYear, birthMonth, birthDay);
-      var bdateNewStr = ISODateString(bdate).substr(0,10);
-      if ((bdate.getFullYear() === birthYear) 
-          && (bdate.getMonth() === birthMonth) 
-          && (bdate.getDate() === birthDay)) { // was valid
-        if (doc.birth_date != bdateNewStr) {   // was changed
-          doc.birth_date = bdateNewStr;
-          hasChanged = true;
+      var bdateStr = f.birth_year.trim() + "-" + f.birth_month.trim() + "-" + f.birth_day.trim();
+      if (bdateStr.length === 2) {
+        doc.birth_date = "";
+        hasChanged = true;
+      } else {
+        var birthYear = parseInt(f.birth_year);
+        var birthMonth = parseInt(f.birth_month) - 1;
+        var birthDay = parseInt(f.birth_day);
+        var bdate = new Date(birthYear, birthMonth, birthDay);
+        var bdateNewStr = ISODateString(bdate).substr(0,10);
+        if ((bdate.getFullYear() === birthYear) 
+            && (bdate.getMonth() === birthMonth) 
+            && (bdate.getDate() === birthDay)) { // was valid
+          if (doc.birth_date != bdateNewStr) {   // was changed
+            doc.birth_date = bdateNewStr;
+            hasChanged = true;
+          }
         }
       }
 

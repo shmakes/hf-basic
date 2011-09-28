@@ -90,10 +90,17 @@
       </legend>
       <ol>
         <li>
+          <span class="grey-note">
+            ( YYYY - MM - DD )
+          </span>
+        </li>
+        <li>
           <label for="birth_date">birth date</label>
-          <input type="text" name="birth_year" maxlength="4" value="{{birth_year}}" style="width: 4em" />
-          <input type="text" name="birth_month" maxlength="2" value="{{birth_month}}" style="width: 2em" />
-          <input type="text" name="birth_day" maxlength="2" value="{{birth_day}}" style="width: 2em" />
+          <input type="text" name="birth_year" maxlength="4" value="{{birth_year}}" style="width: 3em" 
+          />-<input type="text" name="birth_month" maxlength="2" value="{{birth_month}}" style="width: 1.5em" 
+          />-<input type="text" name="birth_day" maxlength="2" value="{{birth_day}}" style="width: 1.5em" />
+        </li>
+        <li>
           <span class="grey-note">
             {{birth_date_string}}
           </span>
