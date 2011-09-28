@@ -77,10 +77,26 @@ function(context) {
       }
 
 
-      if (doc.birth_date != f.birth_date) {
-        doc.birth_date = f.birth_date;
+      var bdateStr = f.birth_year.trim() + "-" + f.birth_month.trim() + "-" + f.birth_day.trim();
+      if (bdateStr.length === 2) {
+        doc.birth_date = "";
         hasChanged = true;
+      } else {
+        var birthYear = parseInt(f.birth_year);
+        var birthMonth = parseInt(f.birth_month) - 1;
+        var birthDay = parseInt(f.birth_day);
+        var bdate = new Date(birthYear, birthMonth, birthDay);
+        var bdateNewStr = ISODateString(bdate).substr(0,10);
+        if ((bdate.getFullYear() === birthYear) 
+            && (bdate.getMonth() === birthMonth) 
+            && (bdate.getDate() === birthDay)) { // was valid
+          if (doc.birth_date != bdateNewStr) {   // was changed
+            doc.birth_date = bdateNewStr;
+            hasChanged = true;
+          }
+        }
       }
+
       if (!doc.shirt) {
         doc.shirt = {};
         doc.shirt.size = "";

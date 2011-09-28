@@ -1,5 +1,4 @@
 function(r) {
-  //$.log(resp.app_date)  
   var app = $$(this).app;
   var dbname = app.db.name;
 

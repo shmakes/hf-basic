@@ -166,7 +166,6 @@ function(context) {
         hasChanged = true;
       }
 
-
       var bdateStr = f.birth_year.trim() + "-" + f.birth_month.trim() + "-" + f.birth_day.trim();
       if (bdateStr.length === 2) {
         doc.birth_date = "";

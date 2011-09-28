@@ -32,13 +32,6 @@ function() {
     return false;
   });
 
-  $("#birth_date").dateinput({
-    format: 'yyyy-mm-dd',
-    selectors: true,
-    yearRange: [-100,-60],
-    speed: 100
-  });
-
   $("#flight_confirmed_date").dateinput({
     format: 'yyyy-mm-dd',
     selectors: true,

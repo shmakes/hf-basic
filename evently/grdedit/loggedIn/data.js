@@ -14,10 +14,16 @@ function(r) {
       birthDateString = "(Imported birth date: " + r.birth_date_string + ")";
     }
 
-    var birthDate = "";
+    var birthDate = "", bdy = "", bdm = "", bdd = "";
     var ageFromBirthDate = "";
     if ((r.birth_date) && (r.birth_date.length > 0)) {
       birthDate = r.birth_date;
+      var birthDateParts = birthDate.split('-');
+      if (birthDateParts.length > 2) {
+        bdy = birthDateParts[0];
+        bdm = birthDateParts[1];
+        bdd = birthDateParts[2];
+      }
       var birthYear = new Date(birthDate.replace(/-/g, "/")).getFullYear();
       var thisYear = new Date().getFullYear();
       ageFromBirthDate = "(Age based on birth date: " + (thisYear - birthYear) + ")";
@@ -80,10 +86,11 @@ function(r) {
         addr_phone_eve:        r.address.phone_eve,
         addr_phone_mbl:        r.address.phone_mbl,
         addr_email:            r.address.email,
-        age:                   r.age,
-        ageFromBirthDate:      ageFromBirthDate,
-        birth_date:            birthDate,
+        birth_year:            bdy,
+        birth_month:           bdm,
+        birth_day:             bdd,
         birth_date_string:     birthDateString,
+        ageFromBirthDate:      ageFromBirthDate,
         gender:                r.gender,
         shirt_size:            r.shirt.size,
         notes_other:           r.notes.other,
@@ -145,10 +152,11 @@ function(r) {
         addr_phone_eve:        "",
         addr_phone_mbl:        "",
         addr_email:            "",
-        age:                   "",
-        ageFromBirthDate:      "",
-        birth_date:            "",
+        birth_year:            "",
+        birth_month:           "",
+        birth_day:             "",
         birth_date_string:     "",
+        ageFromBirthDate:      "",
         gender:                "",
         weight:                "",
         shirt_size:            "",
