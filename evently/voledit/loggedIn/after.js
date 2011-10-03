@@ -16,9 +16,9 @@ function() {
     var bdateStr = bYear + "-" + bMonth + "-" + bDay;
     if (bdateStr.length === 2) return true;  // Empty fields.
 
-    var birthYear = parseInt(bYear);
-    var birthMonth = parseInt(bMonth) - 1;
-    var birthDay = parseInt(bDay);
+    var birthYear = parseInt(bYear, 10);
+    var birthMonth = parseInt(bMonth, 10) - 1;
+    var birthDay = parseInt(bDay, 10);
     var bdate = new Date(birthYear, birthMonth, birthDay);
     var byr = bdate.getFullYear();
     var bdateNewStr = ISODateString(bdate).substr(0,10);

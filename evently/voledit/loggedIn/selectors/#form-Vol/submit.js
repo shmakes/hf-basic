@@ -82,9 +82,9 @@ function(context) {
         doc.birth_date = "";
         hasChanged = true;
       } else {
-        var birthYear = parseInt(f.birth_year);
-        var birthMonth = parseInt(f.birth_month) - 1;
-        var birthDay = parseInt(f.birth_day);
+        var birthYear = parseInt(f.birth_year, 10);
+        var birthMonth = parseInt(f.birth_month, 10) - 1;
+        var birthDay = parseInt(f.birth_day, 10);
         var bdate = new Date(birthYear, birthMonth, birthDay);
         var bdateNewStr = ISODateString(bdate).substr(0,10);
         if ((bdate.getFullYear() === birthYear) 
