@@ -24,7 +24,7 @@ function(head, req) {
 
     if (r.type === "Veteran") {
       pair.vet_flight          = r.flight;
-      pair.vet_bus             = r.bus;
+      pair.vet_bus             = r.bus.replace("Alpha", "Alpha ").replace("Bravo", "Bravo ");
       pair.vet_seat            = r.seat;
       pair.vet_first_name      = r.name_first;
       pair.vet_last_name       = r.name_last;
@@ -37,7 +37,7 @@ function(head, req) {
       pair.vet_addr_phone_mbl  = r.phone_mbl;
     } else {
       pair.grd_flight          = r.flight;
-      pair.grd_bus             = r.bus;
+      pair.grd_bus             = r.bus.replace("Alpha", "Alpha ").replace("Bravo", "Bravo ");
       pair.grd_seat            = r.seat;
       pair.grd_first_name      = r.name_first;
       pair.grd_last_name       = r.name_last;
