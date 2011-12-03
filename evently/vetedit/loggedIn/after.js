@@ -9,9 +9,9 @@ function() {
   });
 
   $.tools.validator.fn("[name=birth_day]", "A valid date from 1910 - 1960.  YYYY-MM-DD", function(input, value) { 
-    var bYear = $("input[name='birth_year']").val().trim();
-    var bMonth = $("input[name='birth_month']").val().trim();
-    var bDay = value.trim();
+    var bYear = $("input[name='birth_year']").val().replace(/^\s*|\s*$/g, '');
+    var bMonth = $("input[name='birth_month']").val().replace(/^\s*|\s*$/g, '');
+    var bDay = value.replace(/^\s*|\s*$/g, '');
 
     var bdateStr = bYear + "-" + bMonth + "-" + bDay;
     if (bdateStr.length === 2) return true;  // Empty fields.
