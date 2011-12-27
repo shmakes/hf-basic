@@ -1,5 +1,5 @@
 function() {
-  var value = $("#first_name").val();
+  var value = $("#phone_num").val();
   var sts = $("#status").val();
   var flt = $("#flight").val();
   
@@ -7,17 +7,17 @@ function() {
   var rslt = $("#results");
   rslt.html("");
 
-  if (value.match(/[^a-zA-Z'\. ]/g)) {
-    value = value.replace(/[^a-zA-Z'\. ]/g, '');
-    $("#first_name").val(value);
+  if (value.match(/[^0-9\-]/g)) {
+    value = value.replace(/[^0-9\-]/g, '');
+    $("#phone_num").val(value);
   }
 
-  value = value.replace(/['\. ]/g, '');
+  value = value.replace(/[^0-9]/g, '');
   var startKey = [];
   var endKey = [];
-  var viewName = "basic/all_by_first_name";
+  var viewName = "basic/all_by_phone_number";
 
-  if (value.length > 0) {
+  if (value.length > 2) {
     startKey.push(value);
     endKey.push(value + "\ufff0");
 
@@ -64,4 +64,4 @@ function() {
   return true;
 };
 
-//@ sourceURL=finder/loggedIn/selectors/#first_name_search/click.js
+//@ sourceURL=finder/loggedIn/selectors/#phone_number_search/click.js
