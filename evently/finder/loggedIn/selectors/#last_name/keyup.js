@@ -9,6 +9,9 @@ function() {
     return false;
   }
 
+  $("#first_name").val("");
+  $("#phone_num").val("");
+
   value = value.replace(/['\. ]/g, '');
   var startKey = [];
   var endKey = [];
