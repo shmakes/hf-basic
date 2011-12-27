@@ -31,6 +31,10 @@ tr.invalid_row {
   color: #f00;
 }
 
+tr.Separator {
+  background-color: #ffa;
+}
+
 table a {
   display:block;
 }
