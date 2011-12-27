@@ -18,6 +18,14 @@
           <option>{{flight}}</option>
         {{/flights}}
       </select>
+      <br />
+      <label>Return Count: </label>
+      <select id="return_count">
+          <option>25</option>
+          <option>50</option>
+          <option>100</option>
+          <option>500</option>
+      </select>
     </span>
     <span class="center">
       <label>View: </label>
@@ -43,17 +51,23 @@
     </span>
   </div>
   <br />
-  <br />
+  Search by: <br />
   <div class="line">
     <span class="left">
-      <label>Search (Last Name): </label>
+      <label>Last Name: </label>
       <button id="clearLastName">x</button>
-      <input type="text" id="last_name" pattern="[a-zA-Z ]{2,}" maxlength="30" value="" style="width: 15em"/>
+      <input type="text" id="last_name" pattern="[a-zA-Z ]{2,}" maxlength="30" value="" style="width: 10em"/>
       <button id="refreshData">Refresh</button>
     </span>
+    <span class="center">
+      <label>First Name: </label>
+      <input type="text" id="first_name" pattern="[a-zA-Z ]{2,}" maxlength="30" value="" style="width: 7em"/>
+      <button id="first_name_search">Go</button>
+    </span>
     <span class="right">
-      <label>Pasted URL: </label>
-      <input type="text" id="pasted_url" value="" style="width: 15em"/> <input id="submit_pasted_url" type="submit" value="Go" /> 
+      <label>Phone Number: </label>
+      <input type="text" id="phone_num"  value="" style="width: 7em"/>
+      <button id="phone_number_search">Go</button>
     </span>
   </div>
   <p></p>

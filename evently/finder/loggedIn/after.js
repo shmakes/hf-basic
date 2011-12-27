@@ -7,6 +7,7 @@ function() {
     $('#status').val('All');
     $('#last_name').trigger('keyup');
   });
+  $('#status').val('Active');
   $(this).show();
   $("#last_name").focus();
 };

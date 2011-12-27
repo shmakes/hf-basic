@@ -2,6 +2,7 @@ function() {
   var value = $(this).val();
   var sts = $("#status").val();
   var flt = $("#flight").val();
+  var cnt = $("#return_count").val();
   
   if (value.match(/[^a-zA-Z'\. ]/g)) {
     this.value = this.value.replace(/[^a-zA-Z'\. ]/g, '');
@@ -25,7 +26,7 @@ function() {
 
   if (value.length > 0) {
     startKey.push(value);
-    endKey.push(value + "\ufff0");
+    endKey.push("\ufff0");
   } else {
     startKey.push("a");
     endKey.push("\ufff0");
@@ -38,17 +39,18 @@ function() {
   // Get the data.
   var app = $$(this).app;
   app.db.view(viewName, {
-    limit : 50,
+    limit : cnt,
     startkey : startKey,
     endkey : endKey,
     descending : false,
     type : "newRows",
     success: function(resp) {
+      var id, person, anchor, tr;
       for (row in resp.rows) {
-        var id = resp.rows[row].id;
-        var person = resp.rows[row].value;
+        anchor = "<a href='#'>";
+        id = resp.rows[row].id;
+        person = resp.rows[row].value;
 
-        var anchor = "<a href='#'>";
         if (person.type == 'Veteran') {
           anchor = "<a href='vet_edit.html?vetid=" + id + "' target='_blank'>";
         } else if (person.type == 'Guardian') {
@@ -56,7 +58,6 @@ function() {
         } else if (person.type == 'Volunteer') {
           anchor = "<a href='vol_edit.html?volid=" + id + "' target='_blank'>";
         }
-
 
         tr = $("<tr/>", { class: person.type });
         tr.append("<td>" + anchor + person.name + "</a></td>");
