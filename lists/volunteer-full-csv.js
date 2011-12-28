@@ -9,7 +9,7 @@ function(head, req) {
 
   var headerNeeded = true;
   while(row = getRow()) {
-    r = row.value;
+    r = row.doc;
     result = {
         app_date:              r.app_date,
         first_name:            r.name.first,

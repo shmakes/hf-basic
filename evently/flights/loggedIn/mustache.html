@@ -10,9 +10,9 @@
     <td class="colFlight">{{flight_name}}</td>
     <td class="colFlight"><a href="flight_assign.html?fltid={{{flight_uri}}}">Assign People to Flight</a></td>
     <td class="colFlight"><a href="flight_detail.html?fltid={{{flight_uri}}}">Pair and Assign Seats</a></td>
-    <td class="colStatus"><a href='_list/flight-csv/active_by_flight?startkey=["{{flight_name}}", "a"]&endkey=["{{flight_name}}", "Z"]'>All</a></td>
-    <td class="colStatus"><a href='_list/flight-csv/active_by_flight?startkey=["{{flight_name}}","Veteran"]&endkey=["{{flight_name}}","Veteran"]'>Veterans</a></td>
-    <td class="colStatus"><a href='_list/flight-csv/active_by_flight?startkey=["{{flight_name}}","Guardian"]&endkey=["{{flight_name}}","Guardian"]'>Guardians</a></td>
+    <td class="colStatus"><a href='_list/flight-csv/active_by_flight?startkey=["{{flight_name}}", "a"]&endkey=["{{flight_name}}", "Z"]&include_docs=true'>All</a></td>
+    <td class="colStatus"><a href='_list/flight-csv/active_by_flight?startkey=["{{flight_name}}","Veteran"]&endkey=["{{flight_name}}","Veteran"]&include_docs=true'>Veterans</a></td>
+    <td class="colStatus"><a href='_list/flight-csv/active_by_flight?startkey=["{{flight_name}}","Guardian"]&endkey=["{{flight_name}}","Guardian"]&include_docs=true'>Guardians</a></td>
   </tr>
 {{/flights}}
 </table>
