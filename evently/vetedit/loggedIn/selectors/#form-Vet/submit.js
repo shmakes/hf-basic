@@ -148,8 +148,9 @@ function(context) {
         doc.flight.status = f.flight_status;
         hasChanged = true;
       }
-      if (f.flight_status_note != doc.flight.status_note) {
-        doc.flight.status_note = f.flight_status_note;
+      var fltNote = f.flight_status_note.replace(/"/g, "'").replace(/\\/g, "/");
+      if (fltNote != doc.flight.status_note) {
+        doc.flight.status_note = fltNote;
         hasChanged = true;
       }
 
@@ -354,8 +355,9 @@ function(context) {
         doc.medical.category = f.medical_category;
         hasChanged = true;
       }
-      if (doc.medical.review != f.medical_review) {
-        doc.medical.review = f.medical_review;
+      var medReview = f.medical_review.replace(/"/g, "'").replace(/\\/g, "/");
+      if (doc.medical.review != medReview) {
+        doc.medical.review = medReview;
         hasChanged = true;
       }
 

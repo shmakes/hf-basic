@@ -121,3 +121,7 @@ span.grey-note {
   color: #555;
 }
 
+textarea {
+  font-size: 0.8em;
+  font-family: sans-serif;
+}

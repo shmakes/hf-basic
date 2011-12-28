@@ -139,8 +139,9 @@ function(context) {
         doc.flight.status = f.flight_status;
         hasChanged = true;
       }
-      if (f.flight_status_note != doc.flight.status_note) {
-        doc.flight.status_note = f.flight_status_note;
+      var fltNote = f.flight_status_note.replace(/"/g, "'").replace(/\\/g, "/");
+      if (fltNote != doc.flight.status_note) {
+        doc.flight.status_note = fltNote;
         hasChanged = true;
       }
 
@@ -212,8 +213,9 @@ function(context) {
         doc.medical.limitations = f.medical_limitations;
         hasChanged = true;
       }
-      if (doc.medical.experience != f.medical_experience) {
-        doc.medical.experience = f.medical_experience;
+      var medExperience = f.medical_experience.replace(/"/g, "'").replace(/\\/g, "/");
+      if (doc.medical.experience != medExperience) {
+        doc.medical.experience = medExperience;
         hasChanged = true;
       }
       if (doc.medical.release != f.medical_release) {
