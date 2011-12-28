@@ -1,5 +1,5 @@
 function() {
-  var value = $("#first_name").val();
+  var value = $("#city").val();
   var sts = $("#status").val();
   var flt = $("#flight").val();
   
@@ -9,18 +9,12 @@ function() {
   $("th.colCity").text("City");
   $("th.colAppDate").text("App. Date");
   $("#last_name").val("");
-  $("#city").val("");
+  $("#first_name").val("");
   $("#phone_num").val("");
 
-  if (value.match(/[^a-zA-Z'\. ]/g)) {
-    value = value.replace(/[^a-zA-Z'\. ]/g, '');
-    $("#first_name").val(value);
-  }
-
-  value = value.replace(/['\. ]/g, '');
   var startKey = [];
   var endKey = [];
-  var viewName = "basic/all_by_first_name";
+  var viewName = "basic/all_by_city";
 
   if (value.length > 0) {
     startKey.push(value);
@@ -69,4 +63,4 @@ function() {
   return true;
 };
 
-//@ sourceURL=finder/loggedIn/selectors/#first_name_search/click.js
+//@ sourceURL=finder/loggedIn/selectors/#city_search/click.js

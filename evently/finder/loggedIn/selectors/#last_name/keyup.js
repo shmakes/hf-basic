@@ -12,6 +12,7 @@ function() {
   $("th.colCity").text("City");
   $("th.colAppDate").text("App. Date");
   $("#first_name").val("");
+  $("#city").val("");
   $("#phone_num").val("");
 
   value = value.replace(/['\. ]/g, '');

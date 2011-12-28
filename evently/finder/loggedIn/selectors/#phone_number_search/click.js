@@ -8,6 +8,9 @@ function() {
   rslt.html("");
   $("th.colCity").text("Phone Number");
   $("th.colAppDate").text("Phone Type");
+  $("#last_name").val("");
+  $("#first_name").val("");
+  $("#city").val("");
 
   if (value.match(/[^0-9\-]/g)) {
     value = value.replace(/[^0-9\-]/g, '');

@@ -153,14 +153,8 @@ table.addPeople td {
   text-align: left;
 }
 
-table.searchControls {
-  border-width: 0;
-  border-spacing: 0;
-  border-style: none;
-}
-
 table.searchControls .searchLastName{
-  width: 300px;
+  width: 308px;
 }
 
 table.searchControls .searchFirstName{
@@ -176,12 +170,10 @@ table.searchControls .searchPhone{
 }
 
 table.headerControls {
-  border-width: 0;
-  border-spacing: 0;
   border-style: none;
 }
 
 table.headerControls td {
-  border: 0;
-  width: 350px;
+  border-style: none;
+  width: 356px;
 }
