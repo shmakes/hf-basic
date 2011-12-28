@@ -6,6 +6,8 @@ function() {
   // Clear the result area.
   var rslt = $("#results");
   rslt.html("");
+  $("th.colCity").text("City");
+  $("th.colAppDate").text("App. Date");
 
   if (value.match(/[^a-zA-Z'\. ]/g)) {
     value = value.replace(/[^a-zA-Z'\. ]/g, '');

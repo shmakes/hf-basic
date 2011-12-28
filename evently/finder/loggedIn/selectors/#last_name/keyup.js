@@ -9,6 +9,8 @@ function() {
     return false;
   }
 
+  $("th.colCity").text("City");
+  $("th.colAppDate").text("App. Date");
   $("#first_name").val("");
   $("#phone_num").val("");
 

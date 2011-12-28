@@ -6,6 +6,8 @@ function() {
   // Clear the result area.
   var rslt = $("#results");
   rslt.html("");
+  $("th.colCity").text("Phone Number");
+  $("th.colAppDate").text("Phone Type");
 
   if (value.match(/[^0-9\-]/g)) {
     value = value.replace(/[^0-9\-]/g, '');
