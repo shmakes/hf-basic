@@ -1,76 +1,86 @@
 <div class="filter_controls">
-  <div class="line">
-    <span class="left">
-      <label>Status: </label>
-      <select id="status">
-        <option>All</option>
-        <option>Active</option>
-        <option>Flown</option>
-        <option>Deceased</option>
-        <option>Removed</option>
-        <option>Future-Spring</option>
-        <option>Future-Fall</option>
-      </select>
-      <br />
-      <label>Selected Flight: </label>
-      <select id="flight">
-        {{#flights}}
-          <option>{{flight}}</option>
-        {{/flights}}
-      </select>
-      <br />
-      <label>Return Count: </label>
-      <select id="return_count">
-          <option>25</option>
-          <option>50</option>
-          <option>100</option>
-          <option>500</option>
-      </select>
-    </span>
-    <span class="center">
-      <label>View: </label>
-      <a href="flights.html" target="_blank">Flights</a> - 
-      <a href="pairing.html" target="_blank">Pre-Flight Pairing</a>
-      <br />
-      <a href="recent.html" target="_blank">Recent Changes</a>
-    </span>
-    <span class="right">
-      <label>Download: </label>
-      <a href='_list/veteran-full-csv/all_by_type?startkey=["Veteran"]&endkey=["Veteran", {}]&include_docs=true'>All Veterans</a>, 
-      <a href='_list/guardian-full-csv/all_by_type?startkey=["Guardian"]&endkey=["Guardian", {}]&include_docs=true'>All Guardians</a>, 
-      <br />
-      <a href='_list/volunteer-full-csv/all_by_type?startkey=["Volunteer"]&endkey=["Volunteer", {}]&include_docs=true'>All Volunteers</a>, 
-      <a href="_list/guardian-mailing-csv/guardians_assigned_veterans">Guardian Mailing</a>
-    </span>
-    <span class="center">
-      <br />
-      <label>Add new: </label>
-      <a href="vet_edit.html?vetid=New" target="_blank">Veteran</a>, 
-      <a href="grd_edit.html?grdid=New" target="_blank">Guardian</a>, 
-      <a href="vol_edit.html?volid=New" target="_blank">Volunteer</a> 
-    </span>
-  </div>
+  <table class="headerControls">
+    <tr>
+      <td>
+        <label>Status: </label>
+        <select id="status">
+          <option>All</option>
+          <option>Active</option>
+          <option>Flown</option>
+          <option>Deceased</option>
+          <option>Removed</option>
+          <option>Future-Spring</option>
+          <option>Future-Fall</option>
+        </select>
+        <br />
+        <label>Selected Flight: </label>
+        <select id="flight">
+          {{#flights}}
+            <option>{{flight}}</option>
+          {{/flights}}
+        </select>
+        <br />
+        <label>Return Count: </label>
+        <select id="return_count">
+            <option>25</option>
+            <option>50</option>
+            <option>100</option>
+            <option>500</option>
+        </select>
+      </td>
+      <td>
+        <label>View: </label>
+        <a href="flights.html" target="_blank">Flights</a> - 
+        <a href="pairing.html" target="_blank">Pre-Flight Pairing</a>
+        <br />
+        <a href="recent.html" target="_blank">Recent Changes</a>
+        <br />
+        <label>Add new: </label>
+        <a href="vet_edit.html?vetid=New" target="_blank">Veteran</a>, 
+        <a href="grd_edit.html?grdid=New" target="_blank">Guardian</a>, 
+        <a href="vol_edit.html?volid=New" target="_blank">Volunteer</a> 
+      </td>
+      <td>
+        <label>Download: </label>
+        <a href='_list/veteran-full-csv/all_by_type?startkey=["Veteran"]&endkey=["Veteran", {}]&include_docs=true'>All Veterans</a>, 
+        <a href='_list/guardian-full-csv/all_by_type?startkey=["Guardian"]&endkey=["Guardian", {}]&include_docs=true'>All Guardians</a>, 
+        <br />
+        <a href='_list/volunteer-full-csv/all_by_type?startkey=["Volunteer"]&endkey=["Volunteer", {}]&include_docs=true'>All Volunteers</a>, 
+        <a href="_list/guardian-mailing-csv/guardians_assigned_veterans">Guardian Mailing</a>
+      </td>
+    </tr>
+  </table>
   <br />
-  Search by: <br />
-  <div class="line">
-    <span class="left">
-      <label>Last Name: </label>
-      <button id="clearLastName">x</button>
-      <input type="text" id="last_name" pattern="[a-zA-Z ]{2,}" maxlength="30" value="" style="width: 10em"/>
-      <button id="refreshData">Refresh</button>
-    </span>
-    <span class="center">
-      <label>First Name: </label>
-      <input type="text" id="first_name" pattern="[a-zA-Z ]{2,}" maxlength="30" value="" style="width: 7em"/>
-      <button id="first_name_search">Go</button>
-    </span>
-    <span class="right">
-      <label>Phone Number: </label>
-      <input type="text" id="phone_num"  value="" style="width: 7em"/>
-      <button id="phone_number_search">Go</button>
-    </span>
-  </div>
-  <p></p>
+  <table class="searchControls">
+    <tr>
+      <th colspan=4>Search</th>
+    </tr>
+    <tr>
+      <th>Last Name</th>
+      <th>First Name</th>
+      <th>City</th>
+      <th>Phone Number</th>
+    </tr>
+    <tr>
+      <td class="searchLastName">
+        <button id="clearLastName">x</button>
+        <input type="text" id="last_name" pattern="[a-zA-Z ]{2,}" maxlength="30" value="" style="width: 10em"/>
+        <button id="refreshData">Refresh</button>
+      </td>
+      <td class="searchFirstName">
+        <input type="text" id="first_name" pattern="[a-zA-Z ]{2,}" maxlength="30" value="" style="width: 10em"/>
+        <button id="first_name_search">Go</button>
+      </td>
+      <td class="searchCity">
+        <input type="text" id="city"  value="" style="width: 10em"/>
+        <button id="city_search">Go</button>
+      </td>
+      <td class="searchPhone">
+        <input type="text" id="phone_num"  value="" style="width: 10em"/>
+        <button id="phone_number_search">Go</button>
+      </td>
+    </tr>
+  </table>
 </div>
 <br />
 <br />

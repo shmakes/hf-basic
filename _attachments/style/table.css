@@ -35,22 +35,22 @@ tr.Separator {
   background-color: #ffa;
 }
 
-table a {
+table.MixedList a {
   display:block;
 }
-table a:link {
+table.MixedList a:link {
   color:#000000;
   text-decoration: none;
 }
-table a:visited {
+table.MixedList a:visited {
   color:#000000;
   text-decoration: none;
 }
-table a:hover {
+table.MixedList a:hover {
   color:#000000;
   text-decoration: none;
 }
-table a:active {
+table.MixedList a:active {
   color:#0000FF;
   text-decoration: none;
 }
@@ -151,4 +151,37 @@ table.addPeople td {
   margin: 0;
   padding: 1px;
   text-align: left;
+}
+
+table.searchControls {
+  border-width: 0;
+  border-spacing: 0;
+  border-style: none;
+}
+
+table.searchControls .searchLastName{
+  width: 300px;
+}
+
+table.searchControls .searchFirstName{
+  width: 250px;
+}
+
+table.searchControls .searchCity{
+  width: 250px;
+}
+
+table.searchControls .searchPhone{
+  width: 250px;
+}
+
+table.headerControls {
+  border-width: 0;
+  border-spacing: 0;
+  border-style: none;
+}
+
+table.headerControls td {
+  border: 0;
+  width: 350px;
 }
