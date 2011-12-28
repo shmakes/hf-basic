@@ -7,7 +7,7 @@ function(cb) {
     app.db.openDoc(docid, {
       success : function(doc) {
 
-        app.db.view("basic/flights_future", {
+        app.db.view("basic/flights", {
           descending : false,
           success: function(resp) {
             doc.availableFlights = [];
@@ -23,7 +23,7 @@ function(cb) {
   } else if (docid == 'New') {
     doc = {};
 
-    app.db.view("basic/flights_future", {
+    app.db.view("basic/flights", {
       descending : false,
       success: function(resp) {
         doc.availableFlights = [];

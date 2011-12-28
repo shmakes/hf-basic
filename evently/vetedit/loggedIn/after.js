@@ -87,6 +87,8 @@ function() {
     top: '1'
   });
 
+  update_status_ctrl_states();
+
   $(this).show();
 };
 

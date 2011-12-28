@@ -150,3 +150,10 @@ function PairGuardianToVeteran2(app, vetdoc, vetName, grdIdNew, oldgrd, user) {
 
 }
 
+function update_status_ctrl_states() {
+  if($("#flight_status").val() !== "Active") {
+    $("#flight_id").attr('disabled', 'disabled')
+  } else {
+    $("#flight_id").removeAttr("disabled");
+  }
+}
