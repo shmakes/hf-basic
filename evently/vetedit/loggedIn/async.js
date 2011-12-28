@@ -8,7 +8,7 @@ function(cb) {
       success : function(doc) {
 
         app.db.view("basic/flights", {
-          descending : false,
+          descending : true,
           success: function(resp) {
             doc.availableFlights = [];
             for (row in resp.rows) {
