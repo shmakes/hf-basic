@@ -7,7 +7,6 @@ function renderWaitlist(db, viewName, startPos, renderFunction, targetElement) {
   db.view(viewName, {
     descending : false,
     include_docs: false,
-    stale: "ok",
     type : "newRows",
     success: function(resp) {
       var rowCount = resp.rows.length;
@@ -21,7 +20,6 @@ function renderWaitlist(db, viewName, startPos, renderFunction, targetElement) {
           include_docs: true,
           startkey: startKey,
           startkey_docid: startId,
-          stale: "ok",
           type : "newRows",
           success: function(respDocs) {
             var relPos = 0;
