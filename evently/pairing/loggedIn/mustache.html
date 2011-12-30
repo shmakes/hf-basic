@@ -63,5 +63,34 @@
       </tbody>
     </table>
   </div>
+  <h2>By Unmatched Guardian Preference</h2>
+  <div class="by_grd_pref_list">
+    <table class='MixedList pairing'>
+      <thead>
+        <tr>
+          <th class="colSpacer"> </th>
+          <th class="colName">Name</th>
+          <th class="colCity">City</th>
+          <th class="colLongPreferance">Preference</th>
+        </tr>
+      </thead>
+      <tbody id="results">
+        <tr id="loaners" class="pairing">
+          <td class="colSpacer"> </td>
+          <td colspan="4" class="pairing">
+            <table class='MixedList'>
+              {{#lone_grds}}
+              <tr id="{{id}}" class="{{type}}">
+                <td class="colName select" name="{{type}}">{{name_first}} {{name_last}}</td>
+                <td class="colCity select">{{city}}</td>
+                <td class="colLongPreferance select">{{preference}}</td>
+              </tr>
+              {{/lone_grds}}
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 

@@ -3,6 +3,9 @@ function(cb) {
   var results = {};
   results.grd_prefs = [];
   results.vet_prefs = [];
+  results.uniqueIds = {};
+  results.lone_grds_tmp = [];
+  results.lone_grd_prefs = [];
 
   // Add the guardian preference matches to the results.
   app.db.view("basic/pair_by_grd_pref", {
@@ -17,6 +20,11 @@ function(cb) {
         if (m != lastMatch) {
           if ((pairing.hasVet) && (pairing.hasGrd)) {
             results.grd_prefs.push(pairing);
+            for (pTmp in pairing.people) {
+              results.uniqueIds[pairing.people[pTmp].id] = 1
+            }
+          } else if (pairing.hasGrd) {
+            results.lone_grds_tmp.push(pairing);
           }
           pairing = {};
           pairing.pid = m;
@@ -43,6 +51,11 @@ function(cb) {
       }
       if ((pairing.hasVet) && (pairing.hasGrd)) {
         results.grd_prefs.push(pairing);
+        for (pTmp in pairing.people) {
+          results.uniqueIds[pairing.people[pTmp].id] = 1
+        }
+      } else if (pairing.hasGrd) {
+        results.lone_grds_tmp.push(pairing);
       }
 
       // Add the vet preference matches to the results.
@@ -58,6 +71,9 @@ function(cb) {
             if (m != lastMatch) {
               if ((pairing.hasVet) && (pairing.hasGrd)) {
                 results.vet_prefs.push(pairing);
+                for (pTmp in pairing.people) {
+                  results.uniqueIds[pairing.people[pTmp].id] = 1
+                }
               }
               pairing = {};
               pairing.pid = m;
@@ -84,7 +100,24 @@ function(cb) {
           }
           if ((pairing.hasVet) && (pairing.hasGrd)) {
             results.vet_prefs.push(pairing);
+            for (pTmp in pairing.people) {
+              results.uniqueIds[pairing.people[pTmp].id] = 1;
+            }
           }
+          // Remove duplicate lone guardian entries.
+          var loneGrdId;
+          var uniqueEntries = {};
+          for (mpair in results.lone_grds_tmp) {
+            for (mper in results.lone_grds_tmp[mpair].people) {
+              loneGrdId = results.lone_grds_tmp[mpair].people[mper].id;
+              if ((!results.uniqueIds[loneGrdId]) && (!uniqueEntries[loneGrdId])) {
+                results.lone_grd_prefs.push(results.lone_grds_tmp[mpair].people[mper]);
+                uniqueEntries[loneGrdId] = 1;
+              }
+            }
+          }
+          delete results.uniqueIds;
+          delete results.lone_grds_tmp;
           cb(results);
         }
       });
