@@ -4,6 +4,7 @@ function() {
               + " " + 
               $("input[name='last_name']").val()
   var user = $("#user_name").text();
+  var timestamp = ISODateString(new Date());
 
   if (id.length == 32) {
     var app = $$(this).app;
@@ -13,6 +14,11 @@ function() {
           "name" : name,
           "added_by" : user
         };
+        if (!doc.metadata) {
+          doc.metadata = {};
+        }
+        doc.metadata.updated_at = timestamp;
+        doc.metadata.updated_by = user;
         app.db.saveDoc(doc, {
           success : function(doc) {
             alert("Added " + name + " to presenters list.");
