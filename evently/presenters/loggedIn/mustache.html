@@ -1,0 +1,15 @@
+<br/>
+<table class='MixedList'>
+  <tr>
+    <th>Name</th>
+    <th>Added by</th>
+    <th>Remove</th>
+  </tr>
+{{#presenters}}
+  <tr id="{{id}}" class="Veteran">
+    <td class="colName"><a href="./vet_edit.html?vetid={{id}}" target="_blank">{{name}}</a></td>
+    <td>{{added_by}}</td>
+    <td><button class="remove">Remove</button></td>
+  </tr>
+{{/presenters}}
+</table>
