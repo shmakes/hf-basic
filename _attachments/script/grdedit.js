@@ -152,8 +152,27 @@ function PairGuardianToVeteran2(app, vetdoc, vetName, grdIdNew, oldgrd, user) {
 
 function update_status_ctrl_states() {
   if($("#flight_status").val() !== "Active") {
-    $("#flight_id").attr('disabled', 'disabled')
+    $("#flight_id").attr('disabled', 'disabled');
+    $("input[name='flight_group']").attr('disabled', 'disabled');
+    $("#pair_add").attr('disabled', 'disabled');
+    $("#pair_rem").attr('disabled', 'disabled');
+    $("#flight_confirmed_date").attr('disabled', 'disabled');
+    $("input[name='flight_confirmed_by']").attr('disabled', 'disabled');
+    $("input[name='flight_seat']").attr('disabled', 'disabled');
+    $("input[name='preferred_airport']").attr('disabled', 'disabled');
+    $("#flight_bus").attr('disabled', 'disabled');
+    $("input[name='veteran_pref_notes']").attr('disabled', 'disabled');
   } else {
     $("#flight_id").removeAttr("disabled");
+    $("input[name='flight_group']").removeAttr("disabled");
+    $("#pair_add").removeAttr("disabled");
+    $("#pair_rem").removeAttr("disabled");
+    $("#flight_confirmed_date").removeAttr("disabled");
+    $("input[name='flight_confirmed_by']").removeAttr("disabled");
+    $("input[name='flight_seat']").removeAttr("disabled");
+    $("input[name='preferred_airport']").removeAttr("disabled");
+    $("#flight_bus").removeAttr("disabled");
+    $("input[name='veteran_pref_notes']").removeAttr("disabled");
   }
-}
+} 
+
