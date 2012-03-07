@@ -1,5 +1,10 @@
 function(head, req) {
   var row;
+  var headerNeeded = true;
+  var pairName = [];
+  var pairFirstName = "";
+  var pairLastName = "";
+
   start({
     "headers": {
       "Content-Type": "text/csv",
@@ -7,9 +12,25 @@ function(head, req) {
      }
   });
 
-  var headerNeeded = true;
   while(row = getRow()) {
+    pairName = [];
+    pairFirstName = "";
+    pairLastName = "";
     r = row.doc;
+    if (r.type === "Veteran") {
+      pairName = r.guardian.name.split(" ");
+    } else if (r.type === "Guardian") {
+      if ((r.veteran) && (r.veteran.pairings) && (r.veteran.pairings.length > 0)) {
+        pairName = r.veteran.pairings[0].name.split(" ");
+      }
+    }
+    if (pairName.length > 1) {
+      pairFirstName = pairName.slice(0,1);
+      pairLastName = pairName.slice(1).join(" ");
+    } else if (pairName.length === 1) {
+      pairLastName = pairName.slice(0,1);
+    }
+
     result = {
         flight_id:             r.flight.id,
         type:                  r.type,
@@ -34,6 +55,8 @@ function(head, req) {
         flight_confirmed_date: r.flight.confirmed_date,
         flight_confirmed_by:   r.flight.confirmed_by,
         flight_seat:           r.flight.seat,
+        pair_first_name:       pairFirstName,
+        pair_last_name:        pairLastName,
         flight_bus:            r.flight.bus.replace("Alpha", "Alpha ").replace("Bravo", "Bravo "),
         id:                    r._id,
         rev:                   r._rev,
