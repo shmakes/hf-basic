@@ -63,7 +63,7 @@ function(head, req) {
         flight_group:          r.flight.group,
         flight_id:             r.flight.id,
         flight_seat:           r.flight.seat,
-        flight_bus:            r.flight.bus.replace("Alpha", "Alpha ").replace("Bravo", "Bravo "),
+        flight_bus:            (r.flight.bus ? r.flight.bus.replace("Alpha", "Alpha ").replace("Bravo", "Bravo ") : ""),
         guardian_id:           r.guardian.id,
         guardian_name:         r.guardian.name,
         guardian_pref_notes:   r.guardian.pref_notes,

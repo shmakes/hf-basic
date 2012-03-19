@@ -49,7 +49,7 @@ function(head, req) {
         flight_confirmed_by:   r.flight.confirmed_by,
         flight_id:             r.flight.id,
         flight_seat:           r.flight.seat,
-        flight_bus:            r.flight.bus.replace("Alpha", "Alpha ").replace("Bravo", "Bravo "),
+        flight_bus:            (r.flight.bus ? r.flight.bus.replace("Alpha", "Alpha ").replace("Bravo", "Bravo ") : ""),
         veteran_id:            vetId.substr(2),
         veteran_name:          vetName.substr(2),
         veteran_pref_notes:    r.veteran.pref_notes,
