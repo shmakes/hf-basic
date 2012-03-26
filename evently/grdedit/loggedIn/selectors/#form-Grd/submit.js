@@ -95,6 +95,11 @@ function(context) {
         doc.flight.status = "Active";
         doc.flight.status_note = "";
       }
+      if (!doc.flight.training) {
+        doc.flight.training = "None";
+        doc.flight.training_notes = "";
+      }
+
       if (f.flight_id != doc.flight.id) {
         doc.flight.history.push({
           id: timestamp,
@@ -144,7 +149,19 @@ function(context) {
         doc.flight.status_note = fltNote;
         hasChanged = true;
       }
-
+      if (f.flight_training != doc.flight.training) {
+        doc.flight.history.push({
+          id: timestamp,
+          change: "changed training from: " + doc.flight.training + " to: " + f.flight_training + " by: " + user
+        });
+        doc.flight.training = f.flight_training;
+        hasChanged = true;
+      }
+      var fltTrainingNotes = f.flight_training_notes.replace(/"/g, "'").replace(/\\/g, "/");
+      if (fltTrainingNotes != doc.flight.training_notes) {
+        doc.flight.training_notes = fltTrainingNotes;
+        hasChanged = true;
+      }
 
       if (!doc.veteran) {
         doc.veteran = {};

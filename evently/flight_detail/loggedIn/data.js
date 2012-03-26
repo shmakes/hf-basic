@@ -35,6 +35,7 @@ function(r) {
         entry["grd_name_last"]  = grd.name_last;
         entry["grd_city"]       = grd.city;
         entry["grd_experience"] = grd.med_exprnc;
+        entry["grd_training"]   = grd.training;
         entry["grd_bus"]        = grd.bus;
         entry["grd_seat"]       = grd.seat;
         entry["grd_pairing"]    = grd.pairing;

@@ -54,6 +54,7 @@ function(head, req) {
         flight_status_note:    r.flight.status_note,
         flight_confirmed_date: r.flight.confirmed_date,
         flight_confirmed_by:   r.flight.confirmed_by,
+        flight_training:       (r.flight.training || ""),
         flight_seat:           r.flight.seat,
         pair_first_name:       pairFirstName,
         pair_last_name:        pairLastName,

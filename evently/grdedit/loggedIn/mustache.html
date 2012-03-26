@@ -207,6 +207,19 @@
           <input type="text" name="flight_confirmed_by" maxlength="30" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{flight_confirmed_by}}" style="width: 15em" />
         </li>
         <li>
+          <label for="flight_training">guardian training</label>
+          <select name="flight_training" id="flight_training" >
+            <option>None</option>
+            <option {{selTraining-RSVP}}>RSVP</option>
+            <option {{selTraining-Alternate}}>Alternate</option>
+            <option {{selTraining-Complete}}>Complete</option>
+          </select>
+        </li>
+        <li>
+          <label for="flight_training_notes">training notes</label>
+          <textarea rows="3" cols="70" name="flight_training_notes">{{flight_training_notes}}</textarea>
+        </li>
+        <li>
           <label for="flight_seat">assigned seat</label>
           <input type="text" name="flight_seat" maxlength="10" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{flight_seat}}" style="width: 5em" />
         </li>

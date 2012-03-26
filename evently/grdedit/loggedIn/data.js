@@ -68,6 +68,8 @@ function(r) {
         flight_seat:           r.flight.seat,
         flight_bus:            r.flight.bus,
         flight_history:        r.flight.history,
+        flight_training:       (r.flight.training || ""),
+        flight_training_notes: (r.flight.training_notes || ""),
         veteran_id:            vetId,
         veteran_name:          vetName,
         veteran_id2:           vetId2,
@@ -115,6 +117,10 @@ function(r) {
     result[selectedSize] = "selected";
     var selectedStatus = "selStatus-" + r.flight.status;
     result[selectedStatus] = "selected";
+    if (r.flight.training) {
+      var selectedTraining = "selTraining-" + r.flight.training;
+      result[selectedTraining] = "selected";
+    }
 
   } else {
 
@@ -136,6 +142,8 @@ function(r) {
         flight_seat:           "",
         flight_bus:            "",
         flight_history:        [],
+        flight_training:       "",
+        flight_training_notes: "",
         veteran_id:            "",
         veteran_name:          "",
         veteran_pref_notes:    "",

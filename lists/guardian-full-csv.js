@@ -47,6 +47,8 @@ function(head, req) {
         flight_status_note:    r.flight.status_note,
         flight_confirmed_date: r.flight.confirmed_date,
         flight_confirmed_by:   r.flight.confirmed_by,
+        flight_training:       (r.flight.training || ""),
+        flight_training_notes: (r.flight.training_notes || ""),
         flight_id:             r.flight.id,
         flight_seat:           r.flight.seat,
         flight_bus:            (r.flight.bus ? r.flight.bus.replace("Alpha", "Alpha ").replace("Bravo", "Bravo ") : ""),
