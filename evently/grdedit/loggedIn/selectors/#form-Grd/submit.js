@@ -94,6 +94,7 @@ function(context) {
         doc.flight.bus = "None";
         doc.flight.status = "Active";
         doc.flight.status_note = "";
+        doc.flight.training_complete = false;
       }
       if (!doc.flight.training) {
         doc.flight.training = "None";
@@ -160,6 +161,16 @@ function(context) {
       var fltTrainingNotes = f.flight_training_notes.replace(/"/g, "'").replace(/\\/g, "/");
       if (fltTrainingNotes != doc.flight.training_notes) {
         doc.flight.training_notes = fltTrainingNotes;
+        hasChanged = true;
+      }
+      var isTrainingCompleteForm = (f.flight_training_complete === "true");
+      var isTrainingCompleteDoc = (doc.flight.training_complete === true);
+      if (isTrainingCompleteForm != isTrainingCompleteDoc) {
+        doc.flight.history.push({
+          id: timestamp,
+          change: "changed training complete from: " + doc.flight.training_complete + " to: " + isTrainingCompleteForm + " by: " + user
+        });
+        doc.flight.training_complete = isTrainingCompleteForm;
         hasChanged = true;
       }
 

@@ -210,14 +210,18 @@
           <label for="flight_training">guardian training</label>
           <select name="flight_training" id="flight_training" >
             <option>None</option>
-            <option {{selTraining-RSVP}}>RSVP</option>
+            <option {{selTraining-Main}}>Main</option>
+            <option {{selTraining-Make-up}}>Make-up</option>
             <option {{selTraining-Alternate}}>Alternate</option>
-            <option {{selTraining-Complete}}>Complete</option>
           </select>
         </li>
         <li>
           <label for="flight_training_notes">training notes</label>
           <textarea rows="3" cols="70" name="flight_training_notes">{{flight_training_notes}}</textarea>
+        </li>
+        <li>
+          <label for="flight_training_complete">training complete</label>
+          <input type="checkbox" name="flight_training_complete" {{selFlightTrainingComplete}} value="true" />
         </li>
         <li>
           <label for="flight_seat">assigned seat</label>
