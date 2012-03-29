@@ -5,6 +5,7 @@ function() {
   var app = $$(this).app;
 
   changeSeat(app, grdId, newSeat, user);
+  $("#fltdetail").trigger("update");   
   return false;
 };
 

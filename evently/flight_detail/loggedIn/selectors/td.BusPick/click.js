@@ -16,6 +16,7 @@ function() {
   }
 
   updateCounts();
+  $("#fltdetail").trigger("update"); 
   return true;
 };
 
