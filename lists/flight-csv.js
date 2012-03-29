@@ -4,6 +4,7 @@ function(head, req) {
   var pairName = [];
   var pairFirstName = "";
   var pairLastName = "";
+  var training = "";
 
   start({
     "headers": {
@@ -16,6 +17,7 @@ function(head, req) {
     pairName = [];
     pairFirstName = "";
     pairLastName = "";
+    training = "";    
     r = row.doc;
     if (r.type === "Veteran") {
       pairName = r.guardian.name.split(" ");
@@ -23,7 +25,17 @@ function(head, req) {
       if ((r.veteran) && (r.veteran.pairings) && (r.veteran.pairings.length > 0)) {
         pairName = r.veteran.pairings[0].name.split(" ");
       }
+
+      // Training status
+      if (r.flight.training) {
+        if (r.flight.training_complete) {
+          training = "* ";
+        }
+        training += r.flight.training;
+      }      
     }
+
+    // Split the pair name.
     if (pairName.length > 1) {
       pairFirstName = pairName.slice(0,1);
       pairLastName = pairName.slice(1).join(" ");
@@ -54,7 +66,7 @@ function(head, req) {
         flight_status_note:    r.flight.status_note,
         flight_confirmed_date: r.flight.confirmed_date,
         flight_confirmed_by:   r.flight.confirmed_by,
-        flight_training:       (r.flight.training || ""),
+        flight_training:       training,
         flight_seat:           r.flight.seat,
         pair_first_name:       pairFirstName,
         pair_last_name:        pairLastName,

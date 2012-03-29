@@ -3,11 +3,13 @@ function(r) {
   var app = $$(this).app;
   var dbname = app.db.name;
   var pairList = [];
+  var training = "";
 
   if (r._rev) {
     for (idx in r.pairs) {
       entry = {};
       pair = r.pairs[idx];
+      training = "";
 
       if (pair.vet) {
         vet = pair.vet;
@@ -30,12 +32,18 @@ function(r) {
           entry["invalid_row"] = "";
         }
         grd = pair.grd[0];
+        if (grd.training) {
+          if (grd.training_complete) {
+            training = "* ";
+          }
+          training += grd.training;
+        }
         entry["grd_id"]         = grd.id;
         entry["grd_name_first"] = grd.name_first;
         entry["grd_name_last"]  = grd.name_last;
         entry["grd_city"]       = grd.city;
         entry["grd_experience"] = grd.med_exprnc;
-        entry["grd_training"]   = grd.training;
+        entry["grd_training"]   = training;
         entry["grd_bus"]        = grd.bus;
         entry["grd_seat"]       = grd.seat;
         entry["grd_pairing"]    = grd.pairing;
