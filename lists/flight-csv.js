@@ -5,6 +5,7 @@ function(head, req) {
   var pairFirstName = "";
   var pairLastName = "";
   var training = "";
+  var paid = "";
 
   start({
     "headers": {
@@ -18,6 +19,7 @@ function(head, req) {
     pairFirstName = "";
     pairLastName = "";
     training = "";    
+    paid = "";    
     r = row.doc;
     if (r.type === "Veteran") {
       pairName = r.guardian.name.split(" ");
@@ -33,6 +35,12 @@ function(head, req) {
         }
         training += r.flight.training;
       }      
+      // Paid status
+      if (r.flight.paid) {
+        paid = "Y";
+      } else {
+        paid = "N";
+      }
     }
 
     // Split the pair name.
@@ -67,6 +75,7 @@ function(head, req) {
         flight_confirmed_date: r.flight.confirmed_date,
         flight_confirmed_by:   r.flight.confirmed_by,
         flight_training:       training,
+        flight_paid:           paid,
         flight_seat:           r.flight.seat,
         pair_first_name:       pairFirstName,
         pair_last_name:        pairLastName,

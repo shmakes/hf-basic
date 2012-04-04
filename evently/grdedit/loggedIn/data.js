@@ -71,6 +71,7 @@ function(r) {
         flight_training:           (r.flight.training || ""),
         flight_training_notes:     (r.flight.training_notes || ""),
         flight_training_complete:  (r.flight.training_complete || false),
+        flight_paid:               (r.flight.paid || false),
         veteran_id:                vetId,
         veteran_name:              vetName,
         veteran_id2:               vetId2,
@@ -125,6 +126,9 @@ function(r) {
     if (r.flight.training_complete) {
       result["selFlightTrainingComplete"] = "checked=yes";
     }
+    if (r.flight.paid) {
+      result["selFlightPaid"] = "checked=yes";
+    }
 
   } else {
 
@@ -149,6 +153,7 @@ function(r) {
         flight_training:           "",
         flight_training_notes:     "",
         flight_training_complete:  "false",
+        flight_paid:               "false",
         veteran_id:                "",
         veteran_name:              "",
         veteran_pref_notes:        "",

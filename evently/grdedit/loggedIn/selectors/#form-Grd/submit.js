@@ -95,6 +95,7 @@ function(context) {
         doc.flight.status = "Active";
         doc.flight.status_note = "";
         doc.flight.training_complete = false;
+        doc.flight.paid = false;
       }
       if (!doc.flight.training) {
         doc.flight.training = "None";
@@ -171,6 +172,16 @@ function(context) {
           change: "changed training complete from: " + doc.flight.training_complete + " to: " + isTrainingCompleteForm + " by: " + user
         });
         doc.flight.training_complete = isTrainingCompleteForm;
+        hasChanged = true;
+      }
+      var isPaidForm = (f.flight_paid === "true");
+      var isPaidDoc = (doc.flight.paid === true);
+      if (isPaidForm != isPaidDoc) {
+        doc.flight.history.push({
+          id: timestamp,
+          change: "changed paid from: " + doc.flight.paid + " to: " + isPaidForm + " by: " + user
+        });
+        doc.flight.paid = isPaidForm;
         hasChanged = true;
       }
 
