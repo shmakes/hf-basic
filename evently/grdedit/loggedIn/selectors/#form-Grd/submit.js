@@ -79,7 +79,7 @@ function(context) {
         doc.app_date = f.app_date;
         hasChanged = true;
       }
-      if (doc.preferred_airport != f.preferred_airport) {
+      if (f.preferred_airport && doc.preferred_airport != f.preferred_airport) {
         doc.preferred_airport = f.preferred_airport;
         hasChanged = true;
       }
@@ -102,7 +102,7 @@ function(context) {
         doc.flight.training_notes = "";
       }
 
-      if (f.flight_id != doc.flight.id) {
+      if (f.flight_id && f.flight_id != doc.flight.id) {
         doc.flight.history.push({
           id: timestamp,
           change: "changed flight from: " + doc.flight.id + " to: " + f.flight_id + " by: " + user
@@ -110,7 +110,7 @@ function(context) {
         doc.flight.id = f.flight_id;
         hasChanged = true;
       }
-      if (f.flight_confirmed_date != doc.flight.confirmed_date) {
+      if (f.flight_confirmed_date && f.flight_confirmed_date != doc.flight.confirmed_date) {
         doc.flight.history.push({
           id: timestamp,
           change: "changed confirmed date from: " + doc.flight.confirmed_date + " to: " + f.flight_confirmed_date + " by: " + user
@@ -118,11 +118,11 @@ function(context) {
         doc.flight.confirmed_date = f.flight_confirmed_date;
         hasChanged = true;
       }
-      if (f.flight_confirmed_by != doc.flight.confirmed_by) {
+      if (f.flight_confirmed_by && f.flight_confirmed_by != doc.flight.confirmed_by) {
         doc.flight.confirmed_by = f.flight_confirmed_by;
         hasChanged = true;
       }
-      if (f.flight_seat != doc.flight.seat) {
+      if (f.flight_seat && f.flight_seat != doc.flight.seat) {
         doc.flight.history.push({
           id: timestamp,
           change: "changed seat from: " + doc.flight.seat + " to: " + f.flight_seat + " by: " + user
@@ -130,7 +130,7 @@ function(context) {
         doc.flight.seat = f.flight_seat;
         hasChanged = true;
       }
-      if (f.flight_bus != doc.flight.bus) {
+      if (f.flight_bus && f.flight_bus != doc.flight.bus) {
         doc.flight.history.push({
           id: timestamp,
           change: "changed bus from: " + doc.flight.bus + " to: " + f.flight_bus + " by: " + user
@@ -138,7 +138,7 @@ function(context) {
         doc.flight.bus = f.flight_bus;
         hasChanged = true;
       }
-      if (f.flight_status != doc.flight.status) {
+      if (f.flight_status && f.flight_status != doc.flight.status) {
         doc.flight.history.push({
           id: timestamp,
           change: "changed status from: " + doc.flight.status + " to: " + f.flight_status + " by: " + user
@@ -147,11 +147,11 @@ function(context) {
         hasChanged = true;
       }
       var fltNote = f.flight_status_note.replace(/"/g, "'").replace(/\\/g, "/");
-      if (fltNote != doc.flight.status_note) {
+      if (fltNote && fltNote != doc.flight.status_note) {
         doc.flight.status_note = fltNote;
         hasChanged = true;
       }
-      if (f.flight_training != doc.flight.training) {
+      if (f.flight_training && f.flight_training != doc.flight.training) {
         doc.flight.history.push({
           id: timestamp,
           change: "changed training from: " + doc.flight.training + " to: " + f.flight_training + " by: " + user
@@ -160,7 +160,7 @@ function(context) {
         hasChanged = true;
       }
       var fltTrainingNotes = f.flight_training_notes.replace(/"/g, "'").replace(/\\/g, "/");
-      if (fltTrainingNotes != doc.flight.training_notes) {
+      if (fltTrainingNotes && fltTrainingNotes != doc.flight.training_notes) {
         doc.flight.training_notes = fltTrainingNotes;
         hasChanged = true;
       }
@@ -191,7 +191,7 @@ function(context) {
         doc.veteran.pairings = [];
         doc.veteran.history = [];
       }
-      if (doc.veteran.pref_notes != f.veteran_pref_notes) {
+      if (f.veteran_pref_notes && doc.veteran.pref_notes != f.veteran_pref_notes) {
         doc.veteran.pref_notes = f.veteran_pref_notes;
         hasChanged = true;
       }
