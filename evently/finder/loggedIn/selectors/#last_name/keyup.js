@@ -59,7 +59,7 @@ function() {
         person = resp.rows[row].value;
         lastName = resp.rows[row].key.pop().toLowerCase();
 
-        if ((endMarker) && (lastName > (value + "\ufff0"))) {
+        if ((endMarker) && (lastName > (value.toLowerCase() + "\ufff0"))) {
           tr = $("<tr/>", { class: "Separator" });
           tr.append("<td colspan=6 > ***** End of direct matches ***** </td>");
           rslt.append(tr);  
