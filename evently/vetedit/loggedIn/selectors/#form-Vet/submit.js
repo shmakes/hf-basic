@@ -79,7 +79,7 @@ function(context) {
         doc.app_date = f.app_date;
         hasChanged = true;
       }
-      if (f.preferred_airport && doc.preferred_airport != f.preferred_airport) {
+      if ('preferred_airport' in f && doc.preferred_airport != f.preferred_airport) {
         doc.preferred_airport = f.preferred_airport;
         hasChanged = true;
       }
@@ -96,7 +96,7 @@ function(context) {
         doc.flight.status = "Active";
         doc.flight.status_note = "";
       }
-      if (f.flight_id && f.flight_id != doc.flight.id) {
+      if ('flight_id' in f && f.flight_id != doc.flight.id) {
         doc.flight.history.push({
           id: timestamp,
           change: "changed flight from: " + doc.flight.id + " to: " + f.flight_id + " by: " + user
@@ -104,7 +104,7 @@ function(context) {
         doc.flight.id = f.flight_id;
         hasChanged = true;
       }
-      if (f.flight_confirmed_date && f.flight_confirmed_date != doc.flight.confirmed_date) {
+      if ('flight_confirmed_date' in f && f.flight_confirmed_date != doc.flight.confirmed_date) {
         doc.flight.history.push({
           id: timestamp,
           change: "changed confirmed date from: " + doc.flight.confirmed_date + " to: " + f.flight_confirmed_date + " by: " + user
@@ -112,11 +112,11 @@ function(context) {
         doc.flight.confirmed_date = f.flight_confirmed_date;
         hasChanged = true;
       }
-      if (f.flight_confirmed_by && f.flight_confirmed_by != doc.flight.confirmed_by) {
+      if ('flight_confirmed_by' in f && f.flight_confirmed_by != doc.flight.confirmed_by) {
         doc.flight.confirmed_by = f.flight_confirmed_by;
         hasChanged = true;
       }
-      if (f.flight_seat && f.flight_seat != doc.flight.seat) {
+      if ('flight_seat' in f && f.flight_seat != doc.flight.seat) {
         doc.flight.history.push({
           id: timestamp,
           change: "changed seat from: " + doc.flight.seat + " to: " + f.flight_seat + " by: " + user
@@ -124,7 +124,7 @@ function(context) {
         doc.flight.seat = f.flight_seat;
         hasChanged = true;
       }
-      if (f.flight_bus && f.flight_bus != doc.flight.bus) {
+      if ('flight_bus' in f && f.flight_bus != doc.flight.bus) {
         doc.flight.history.push({
           id: timestamp,
           change: "changed bus from: " + doc.flight.bus + " to: " + f.flight_bus + " by: " + user
@@ -132,7 +132,7 @@ function(context) {
         doc.flight.bus = f.flight_bus;
         hasChanged = true;
       }
-      if (f.flight_group && f.flight_group != doc.flight.group) {
+      if ('flight_group' in f && f.flight_group != doc.flight.group) {
         doc.flight.history.push({
           id: timestamp,
           change: "changed group from: " + doc.flight.group + " to: " + f.flight_group + " by: " + user
@@ -140,7 +140,7 @@ function(context) {
         doc.flight.group = f.flight_group;
         hasChanged = true;
       }
-      if (f.flight_status && f.flight_status != doc.flight.status) {
+      if ('flight_status' in f && f.flight_status != doc.flight.status) {
         doc.flight.history.push({
           id: timestamp,
           change: "changed status from: " + doc.flight.status + " to: " + f.flight_status + " by: " + user
@@ -148,12 +148,13 @@ function(context) {
         doc.flight.status = f.flight_status;
         hasChanged = true;
       }
-      var fltNote = f.flight_status_note.replace(/"/g, "'").replace(/\\/g, "/");
-      if (fltNote && fltNote != doc.flight.status_note) {
-        doc.flight.status_note = fltNote;
-        hasChanged = true;
+      if ('flight_status_note' in f) {
+        var fltNote = f.flight_status_note.replace(/"/g, "'").replace(/\\/g, "/");
+        if (fltNote != doc.flight.status_note) {
+          doc.flight.status_note = fltNote;
+          hasChanged = true;
+        }
       }
-
 
       if (!doc.guardian) {
         doc.guardian = {};
@@ -162,7 +163,7 @@ function(context) {
         doc.guardian.name = "";
         doc.guardian.history = [];
       }
-      if (doc.guardian.pref_notes && doc.guardian.pref_notes != f.guardian_pref_notes) {
+      if ('guardian_pref_notes' in f && f.guardian_pref_notes != doc.guardian.pref_notes) {
         doc.guardian.pref_notes = f.guardian_pref_notes;
         hasChanged = true;
       }

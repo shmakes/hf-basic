@@ -102,7 +102,7 @@ function(context) {
         doc.flight.training_notes = "";
       }
 
-      if (f.flight_id && f.flight_id != doc.flight.id) {
+      if ('flight_id' in f && f.flight_id != doc.flight.id) {
         doc.flight.history.push({
           id: timestamp,
           change: "changed flight from: " + doc.flight.id + " to: " + f.flight_id + " by: " + user
@@ -110,7 +110,7 @@ function(context) {
         doc.flight.id = f.flight_id;
         hasChanged = true;
       }
-      if (f.flight_confirmed_date && f.flight_confirmed_date != doc.flight.confirmed_date) {
+      if ('flight_confirmed_date' in f && f.flight_confirmed_date != doc.flight.confirmed_date) {
         doc.flight.history.push({
           id: timestamp,
           change: "changed confirmed date from: " + doc.flight.confirmed_date + " to: " + f.flight_confirmed_date + " by: " + user
@@ -118,11 +118,11 @@ function(context) {
         doc.flight.confirmed_date = f.flight_confirmed_date;
         hasChanged = true;
       }
-      if (f.flight_confirmed_by && f.flight_confirmed_by != doc.flight.confirmed_by) {
+      if ('flight_confirmed_by' in f && f.flight_confirmed_by != doc.flight.confirmed_by) {
         doc.flight.confirmed_by = f.flight_confirmed_by;
         hasChanged = true;
       }
-      if (f.flight_seat && f.flight_seat != doc.flight.seat) {
+      if ('flight_seat' in f && f.flight_seat != doc.flight.seat) {
         doc.flight.history.push({
           id: timestamp,
           change: "changed seat from: " + doc.flight.seat + " to: " + f.flight_seat + " by: " + user
@@ -130,7 +130,7 @@ function(context) {
         doc.flight.seat = f.flight_seat;
         hasChanged = true;
       }
-      if (f.flight_bus && f.flight_bus != doc.flight.bus) {
+      if ('flight_bus' in f && f.flight_bus != doc.flight.bus) {
         doc.flight.history.push({
           id: timestamp,
           change: "changed bus from: " + doc.flight.bus + " to: " + f.flight_bus + " by: " + user
@@ -138,7 +138,7 @@ function(context) {
         doc.flight.bus = f.flight_bus;
         hasChanged = true;
       }
-      if (f.flight_status && f.flight_status != doc.flight.status) {
+      if ('flight_status' in f && f.flight_status != doc.flight.status) {
         doc.flight.history.push({
           id: timestamp,
           change: "changed status from: " + doc.flight.status + " to: " + f.flight_status + " by: " + user
@@ -151,7 +151,7 @@ function(context) {
         doc.flight.status_note = fltNote;
         hasChanged = true;
       }
-      if (f.flight_training && f.flight_training != doc.flight.training) {
+      if ('flight_training' in f && f.flight_training != doc.flight.training) {
         doc.flight.history.push({
           id: timestamp,
           change: "changed training from: " + doc.flight.training + " to: " + f.flight_training + " by: " + user
@@ -159,10 +159,12 @@ function(context) {
         doc.flight.training = f.flight_training;
         hasChanged = true;
       }
-      var fltTrainingNotes = f.flight_training_notes.replace(/"/g, "'").replace(/\\/g, "/");
-      if (fltTrainingNotes && fltTrainingNotes != doc.flight.training_notes) {
-        doc.flight.training_notes = fltTrainingNotes;
-        hasChanged = true;
+      if ('flight_training_notes' in f) {
+        var fltTrainingNotes = f.flight_training_notes.replace(/"/g, "'").replace(/\\/g, "/");
+        if (fltTrainingNotes != doc.flight.training_notes) {
+          doc.flight.training_notes = fltTrainingNotes;
+          hasChanged = true;
+        }
       }
       var isTrainingCompleteForm = (f.flight_training_complete === "true");
       var isTrainingCompleteDoc = (doc.flight.training_complete === true);
@@ -184,14 +186,13 @@ function(context) {
         doc.flight.paid = isPaidForm;
         hasChanged = true;
       }
-
       if (!doc.veteran) {
         doc.veteran = {};
         doc.veteran.pref_notes = "";
         doc.veteran.pairings = [];
         doc.veteran.history = [];
       }
-      if (f.veteran_pref_notes && doc.veteran.pref_notes != f.veteran_pref_notes) {
+      if ('veteran_pref_notes' in f && doc.veteran.pref_notes != f.veteran_pref_notes) {
         doc.veteran.pref_notes = f.veteran_pref_notes;
         hasChanged = true;
       }
