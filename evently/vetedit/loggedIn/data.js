@@ -43,6 +43,7 @@ function(r) {
         raw_data_lnk:          "(raw data)",
         rev:                   r._rev,
         type:                  r.type,
+        vet_type:              (r.vet_type || "WWII"),
         app_date:              r.app_date,
         app_date_string:       appDateString,
         preferred_airport:     r.preferred_airport,
@@ -124,6 +125,8 @@ function(r) {
     result[selectedStatus] = "selected";
     var selectedBranch = "selBranch-" + r.service.branch.split(' ').join('_');
     result[selectedBranch] = "selected";
+    var selectedVetType = "selVetType-" + (r.vet_type || "WWII");
+    result[selectedVetType] = "selected";
 
     if (r.medical.usesCane === 1) {
       result["selMed-cane"] = "checked='yes'";
@@ -149,6 +152,7 @@ function(r) {
         raw_data_lnk:          "",
         rev:                   "",
         type:                  "Veteran",
+        vet_type:              "WWII",
         app_date:              ISODateString(new Date()),
         app_date_string:       "",
         preferred_airport:     "",
