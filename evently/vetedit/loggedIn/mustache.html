@@ -11,6 +11,14 @@
       </legend>
       <ol>
         <li>
+          <label for="vet_type">veteran type</label>
+          <select name="vet_type" id="vet_type" value="{{vet_type}}" >
+            <option {{selVetType-WWII}}>WWII</option>
+            <option {{selVetType-Korea}}>Korea</option>
+            <option {{selVetType-Vietnam}}>Vietnam</option>
+          </select>
+        </li>
+        <li>
           <label for="app_date">appl date<em><img src="images/required_star.gif" alt="required" /></em></label>
           <input type="date" class="date" id="app_date" name="app_date" pattern="[0-9-]{10,10}" maxlength="10" value="{{app_date}}" style="width: 8em" required="required" />
           <span class="grey-note">

@@ -204,6 +204,11 @@ function(context) {
         hasChanged = true;
       }
 
+      if (doc.vet_type != f.vet_type) {
+        doc.vet_type = f.vet_type;
+        hasChanged = true;
+      }
+
       if (!doc.service) {
         doc.service = {};
       }
