@@ -40,7 +40,7 @@ function() {
     speed: 100
   });
 
-  $("#form-Vet").validator();
+  $("#form-Vet").validator({ position: 'bottom center' });
 
   document.title = $("input[name='first_name']").val() + " " + $("input[name='last_name']").val();
 

@@ -353,6 +353,14 @@ function(context) {
         doc.medical.usesWheelchair = usesWheelchair;
         hasChanged = true;
       }
+      var usesScooter = 0;
+      if (f.medical_uses_scooter) {
+        usesScooter = 1;
+      }
+      if (doc.medical.usesScooter != usesScooter) {
+        doc.medical.usesScooter = usesScooter;
+        hasChanged = true;
+      }
       var isWheelchairBound = 0;
       if (f.medical_wheelchair_bound) {
         isWheelchairBound = 1;

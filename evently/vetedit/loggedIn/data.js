@@ -26,7 +26,7 @@ function(r) {
       }
       var birthYear = new Date(birthDate.replace(/-/g, "/")).getFullYear();
       var thisYear = new Date().getFullYear();
-      ageFromBirthDate = "(Age based on birth date: " + (thisYear - birthYear) + ")";
+      ageFromBirthDate = "(Age: " + (thisYear - birthYear) + ")";
     }
 
     for (fltIdx in r.availableFlights) {
@@ -134,6 +134,9 @@ function(r) {
     }
     if (r.medical.usesWheelchair === 1) {
       result["selMed-wc"] = "checked='yes'";
+    }
+    if (r.medical.usesScooter === 1) {
+      result["selMed-scooter"] = "checked='yes'";
     }
     if (r.medical.isWheelchairBound === 1) {
       result["selMed-wcb"] = "checked='yes'";

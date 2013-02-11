@@ -2,77 +2,84 @@
   <form id="form-Vet" novalidate>
 
   <br />
-  <p class="P13"><span class="T1">FOR HONOR FLIGHT USE ONLY</span> L N:
-  _________________________ &nbsp;D R: 
-    <input type="date" class="date" id="app_date" name="app_date" pattern="[0-9-]{10,10}" maxlength="10" value="{{app_date}}" style="width: 8em" required="required" />    
+  <p class="P13">Doc ID: {{id}} 
+      <a target="_blank" href="/_utils/document.html?{{db_name}}/{{id}}">{{raw_data_lnk}}</a>
+    <span class="c9">D R: 
+      <input type="date" class="date" id="app_date" name="app_date" pattern="[0-9-]{10,10}" maxlength="10" value="{{app_date}}" style="width: 8em" required="required" />    
+    </span>
   </p>
 
   <br />
 
-  <p class="P14"><span class="T8">YOUR NAME</span><span class="T1">:</span>
-  _<input type="text" name="first_name" pattern="[a-zA-Z'. ]{2,}" maxlength="30" value="{{first_name}}" style="width: 12em" required="required" />
-  _<input type="text" name="middle_name" pattern="[a-zA-Z'. ]{0,}" maxlength="20" value="{{middle_name}}" style="width: 3em" />
-  _<input type="text" name="last_name" pattern="[a-zA-Z'. -]{2,}" maxlength="30" value="{{last_name}}" style="width: 12em" required="required" />
-  _
+  <p class="P14"><span class="T8">YOUR NAME</span><span class="T1">:</span>&nbsp;&nbsp;&nbsp;
+  <input type="text" name="first_name" pattern="[a-zA-Z'. ]{2,}" maxlength="30" value="{{first_name}}" style="width: 12em" required="required" />
+  <input type="text" name="middle_name" pattern="[a-zA-Z'. ]{0,}" maxlength="20" value="{{middle_name}}" style="width: 3em" />
+  <input type="text" name="last_name" pattern="[a-zA-Z'. -]{2,}" maxlength="30" value="{{last_name}}" style="width: 12em" required="required" />
+  
   
   <span class="c5"><span class="T8">NICK NAME</span><span class="T1">:</span>
-  _<input type="text" name="nick_name" pattern="[a-zA-Z'. ]{0,}" maxlength="20" value="{{nick_name}}" style="width: 10em" />
-  _
+  <input type="text" name="nick_name" pattern="[a-zA-Z'. ]{0,}" maxlength="20" value="{{nick_name}}" style="width: 10em" />
+  
   </span></p>
 
   <p class="P20"><span class="c6">(Please List Your First, Middle &amp; Last Name as it
   appears on your I.D.)</span><span class="c7">(If Applicable)</span></p>
 
-  <p class="P28"><span class="T8">ADDRESS</span><span class="T1">:</span><br />
-  _<input type="text" name="street" pattern="[a-zA-Z0-9.,# /-]{2,}" maxlength="50" value="{{addr_street}}" style="width: 56em" required="required" title="Full street address." />
-  _</p>
+  <p class="P28">
+    <br />
+    <span class="T8">ADDRESS</span>
+    <span class="T1">:</span>
+    <button id="mapAddress" type="button">get map</button>
+    <br />
+    <input type="text" name="street" pattern="[a-zA-Z0-9.,# /-]{2,}" maxlength="50" value="{{addr_street}}" style="width: 56em" required="required" title="Full street address." />
+  </p>
 
   <p class="P29"><span class="T8">CITY</span><span class="T1">:</span>
-  _<input type="text" name="city" pattern="[a-zA-Z. -]{2,}" maxlength="20" value="{{addr_city}}" style="width: 12em" required="required" />
-  _
+  <input type="text" name="city" pattern="[a-zA-Z. -]{2,}" maxlength="20" value="{{addr_city}}" style="width: 12em" required="required" />
+  
   <span class="c8"><span class="T8">COUNTY</span><span class="T1">:</span> 
-  _<input type="text" name="county" pattern="[a-zA-Z. ]{2,}" maxlength="20" value="{{addr_county}}" style="width: 8em" required="required" />
-  _
+  <input type="text" name="county" pattern="[a-zA-Z. ]{2,}" maxlength="20" value="{{addr_county}}" style="width: 8em" required="required" />
+  
   </span>
   <span class="c9"><span class="T8">STATE</span><span class="T1">:</span> 
-  _<input type="text" name="state" pattern="[a-zA-Z]{2,}" maxlength="2" value="{{addr_state}}" style="width: 2em" required="required" />
-  _
+  <input type="text" name="state" pattern="[a-zA-Z]{2,}" maxlength="2" value="{{addr_state}}" style="width: 2em" required="required" />
+  
   &nbsp; <span class="T8">ZIP</span><span class="T1">:</span> 
-  _<input type="text" name="zip" pattern="[0-9 -]{5,}" maxlength="10" value="{{addr_zip}}" style="width: 8em" required="required" />
-  _ <button id="zipFill" type="button">auto fill</button> <button id="mapAddress" type="button">get map</button>
-  </span></p>
+  <input type="text" name="zip" pattern="[0-9 -]{5,}" maxlength="10" value="{{addr_zip}}" style="width: 8em" required="required" />
+   <button id="zipFill" type="button">auto fill</button>   </span></p>
   <br />
 
   <p class="P15"><span class="T8">PHONE</span><span class="T1">:</span> &nbsp;Day:
-  _<input type="text" name="phone_day" pattern="[0-9 -]{12,}" maxlength="20" value="{{addr_phone_day}}" style="width: 10em" required="required" />
-  _<span class="c10">Evening:
-  _<input type="text" name="phone_eve" pattern="[0-9 -]{0,}" maxlength="20" value="{{addr_phone_eve}}" style="width: 10em" />
-  _</span><span class="c5">Cell Phone:
-  _<input type="text" name="phone_mbl" pattern="[0-9 -]{0,}" maxlength="20" value="{{addr_phone_mbl}}" style="width: 10em" />
-  _</span></p>
+  <input type="text" name="phone_day" pattern="[0-9 -]{12,}" maxlength="20" value="{{addr_phone_day}}" style="width: 10em" required="required" />
+  <span class="c10">Evening:
+  <input type="text" name="phone_eve" pattern="[0-9 -]{0,}" maxlength="20" value="{{addr_phone_eve}}" style="width: 10em" />
+  </span><span class="c5">Cell Phone:
+  <input type="text" name="phone_mbl" pattern="[0-9 -]{0,}" maxlength="20" value="{{addr_phone_mbl}}" style="width: 10em" />
+  </span></p>
+  <br />
 
   <p class="P21"><span class="T9">E-MAIL ADDRESS</span><span class="T10">:</span>
   <span class="T11">
-  _<input type="email" name="email" value="{{addr_email}}" style="width: 17em" />
-  _&nbsp;</span>
+  <input type="email" name="email" value="{{addr_email}}" style="width: 17em" />
+  &nbsp;</span>
 
   <span class="T9">WEIGHT</span><span class="T10">:</span> <span class="T11">
-  _<input type="number" name="weight" min="60" max="450" value="{{weight}}" style="width: 4em" />
-  _&nbsp;</span>
+  <input type="number" name="weight" min="60" max="450" value="{{weight}}" style="width: 4em" />
+  &nbsp;</span>
 
   <span class="T9">DATE OF BIRTH</span><span class="T10">:</span> <span class="T11">
-  _<input type="text" name="birth_year" maxlength="4" value="{{birth_year}}" style="width: 3em" />
+  <input type="text" name="birth_year" maxlength="4" value="{{birth_year}}" style="width: 3em" />
    -<input type="text" name="birth_month" maxlength="2" value="{{birth_month}}" style="width: 1.5em" />
    -<input type="text" name="birth_day" maxlength="2" value="{{birth_day}}" style="width: 1.5em" />
-  _</span> 
+  </span> 
   
   <br />
   <span class="T9">GENDER</span><span class="T10">:</span> <span class="T11">
-  _<input type="text" name="gender" pattern="[MFmf]{1,1}" maxlength="1" value="{{gender}}" style="width: 2em" data-message="M or F" />
-  _</span> 
+  <input type="text" name="gender" pattern="[MFmf]{1,1}" maxlength="1" value="{{gender}}" style="width: 2em" data-message="M or F" />
+  </span> 
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <span class="T9">SHIRT SIZE</span><span class="T10">:</span> <span class="T11">
-  _<select name="shirt_size" id="shirt_size" value="{{shirt_size}}" >
+  <select name="shirt_size" id="shirt_size" value="{{shirt_size}}" >
       <option>None</option>
       <option {{selShrt-S}}>S</option>
       <option {{selShrt-M}}>M</option>
@@ -82,15 +89,15 @@
       <option {{selShrt-XXXL}}>XXXL</option>
     </select>
     <input type="hidden" id="raw_shirt_size" value="{{shirt_size}}" />
-  _</span> 
+  </span> 
 
    <span class="c7">
      {{ageFromBirthDate}}
     </span>
- 
   </p>
 
-  <br />
+  <br /><hr /><br />
+
   <p class="P22"><span class="T9">PRIMARY EMERGENCY CONTACT INFORMATION</span>
   <span class="T13">(someone available the day you travel)</span><span class=
   "T10">:</span>
@@ -98,79 +105,79 @@
   </p>
 
   <p class="P16">Name:
-    _<input type="text" name="ec_name" pattern="[a-zA-Z'. ]{0,}" maxlength="30" value="{{ec_name}}" style="width: 25em" />
-    _ Relationship:
-    _<input type="text" name="ec_relation" pattern="[a-zA-Z. ]{0,}" maxlength="30" value="{{ec_relation}}" style="width: 20em" />
-    _
+    <input type="text" name="ec_name" pattern="[a-zA-Z'. ]{0,}" maxlength="30" value="{{ec_name}}" style="width: 25em" />
+     Relationship:
+    <input type="text" name="ec_relation" pattern="[a-zA-Z. ]{0,}" maxlength="30" value="{{ec_relation}}" style="width: 20em" />
   </p>
 
   <p class="P16">Address:
-    _<input type="text" name="ec_street" pattern="[a-zA-Z0-9.,# /-]{0,}" maxlength="50" value="{{ec_addr_street}}" style="width: 50em" />
-    _   </p>
+    <input type="text" name="ec_street" pattern="[a-zA-Z0-9.,# /-]{0,}" maxlength="50" value="{{ec_addr_street}}" style="width: 50em" />
+  </p>
 
   <p class="P16">City:
-  _<input type="text" name="ec_city" pattern="[a-zA-Z. -]{0,}" maxlength="20" value="{{ec_addr_city}}" style="width: 12em" />
-  _ &nbsp;
-  State: 
-  _<input type="text" name="ec_state" pattern="[a-zA-Z]{0,}" maxlength="2" value="{{ec_addr_state}}" style="width: 2em" />
-  _ &nbsp;
-  Zip: 
-  _<input type="text" name="ec_zip" pattern="[0-9 -]{0,}" maxlength="10" value="{{ec_addr_zip}}" style="width: 8em" />
-  _
+    <input type="text" name="ec_city" pattern="[a-zA-Z. -]{0,}" maxlength="20" value="{{ec_addr_city}}" style="width: 12em" />
+    &nbsp;
+    State: 
+    <input type="text" name="ec_state" pattern="[a-zA-Z]{0,}" maxlength="2" value="{{ec_addr_state}}" style="width: 2em" />
+    &nbsp;
+    Zip: 
+    <input type="text" name="ec_zip" pattern="[0-9 -]{0,}" maxlength="10" value="{{ec_addr_zip}}" style="width: 8em" />
   </p>
 
   <p class="P17"><span class="T8">PHONE</span><span class="T1">:</span> &nbsp;
-  Day:
-  _<input type="text" name="ec_phone" pattern="[0-9 -]{0,}" maxlength="20" value="{{ec_addr_phone}}" style="width: 10em" />
-  _<span class="c10">Evening:
-  _<input type="text" name="ec_phone_eve" pattern="[0-9 -]{0,}" maxlength="20" value="{{ec_addr_phone_eve}}" style="width: 10em" />
-  _</span>
-  <span class="c11">Mobile:
-  _<input type="text" name="ec_phone_mbl" pattern="[0-9 -]{0,}" maxlength="20" value="{{ec_addr_phone_mbl}}" style="width: 10em" />
-  _</span></p>
+    Day:
+    <input type="text" name="ec_phone" pattern="[0-9 -]{0,}" maxlength="20" value="{{ec_addr_phone}}" style="width: 10em" />
+    <span class="c10">Evening:
+    <input type="text" name="ec_phone_eve" pattern="[0-9 -]{0,}" maxlength="20" value="{{ec_addr_phone_eve}}" style="width: 10em" />
+    </span>
+    <span class="c11">Mobile:
+    <input type="text" name="ec_phone_mbl" pattern="[0-9 -]{0,}" maxlength="20" value="{{ec_addr_phone_mbl}}" style="width: 10em" />
+    </span>
+  </p>
 
-  <br />
+  <br /><hr /><br />
+
   <p class="P22"><span class="T9">NON-SPOUSE ALTERNATE EMERGENCY CONTACT</span>
-  <span class="T13">(son, daughter, etc)</span><span class="T10">:</span>
+    <span class="T13">(son, daughter, etc)</span><span class="T10">:</span>
     <button id="copyAContact_VAddress" type="button">copy vet addr</button>
     <button id="copyAContact_EAddress" type="button">copy e-contact</button>
   </p>
 
   <p class="P18">Name:
-    _<input type="text" name="ac_name" pattern="[a-zA-Z'. ]{0,}" maxlength="30" value="{{ac_name}}" style="width: 25em" />
-    _ Relationship:
-    _<input type="text" name="ac_relation" pattern="[a-zA-Z. ]{0,}" maxlength="30" value="{{ac_relation}}" style="width: 20em" />
-    _
+    <input type="text" name="ac_name" pattern="[a-zA-Z'. ]{0,}" maxlength="30" value="{{ac_name}}" style="width: 25em" />
+     Relationship:
+    <input type="text" name="ac_relation" pattern="[a-zA-Z. ]{0,}" maxlength="30" value="{{ac_relation}}" style="width: 20em" />
   </p>
 
   <p class="P16">Address:
-    _<input type="text" name="ac_street" pattern="[a-zA-Z0-9.,# /-]{0,}" maxlength="50" value="{{ac_addr_street}}" style="width: 50em" />
-    _   </p>
+    <input type="text" name="ac_street" pattern="[a-zA-Z0-9.,# /-]{0,}" maxlength="50" value="{{ac_addr_street}}" style="width: 50em" />
+  </p>
 
   <p class="P16">City:
-  _<input type="text" name="ac_city" pattern="[a-zA-Z. -]{0,}" maxlength="20" value="{{ac_addr_city}}" style="width: 12em" />
-  _ &nbsp;
-  State: 
-  _<input type="text" name="ac_state" pattern="[a-zA-Z]{0,}" maxlength="2" value="{{ac_addr_state}}" style="width: 2em" />
-  _ &nbsp;
-  Zip: 
-  _<input type="text" name="ac_zip" pattern="[0-9 -]{0,}" maxlength="10" value="{{ac_addr_zip}}" style="width: 8em" />
-   
+    <input type="text" name="ac_city" pattern="[a-zA-Z. -]{0,}" maxlength="20" value="{{ac_addr_city}}" style="width: 12em" />
+     &nbsp;
+    State: 
+    <input type="text" name="ac_state" pattern="[a-zA-Z]{0,}" maxlength="2" value="{{ac_addr_state}}" style="width: 2em" />
+     &nbsp;
+    Zip: 
+    <input type="text" name="ac_zip" pattern="[0-9 -]{0,}" maxlength="10" value="{{ac_addr_zip}}" style="width: 8em" />
   </p>
 
   <p class="P17"><span class="T8">PHONE</span><span class="T1">:</span> &nbsp;
-  Day:
-  _<input type="text" name="ac_phone" pattern="[0-9 -]{0,}" maxlength="20" value="{{ac_addr_phone}}" style="width: 10em" />
-  _<span class="c10">Evening:
-  _<input type="text" name="ac_phone_eve" pattern="[0-9 -]{0,}" maxlength="20" value="{{ac_addr_phone_eve}}" style="width: 10em" />
-  _</span>
-  <span class="c11">Mobile:
-  _<input type="text" name="ac_phone_mbl" pattern="[0-9 -]{0,}" maxlength="20" value="{{ac_addr_phone_mbl}}" style="width: 10em" />
-  _</span></p>
+    Day:
+    <input type="text" name="ac_phone" pattern="[0-9 -]{0,}" maxlength="20" value="{{ac_addr_phone}}" style="width: 10em" />
+    <span class="c10">Evening:
+    <input type="text" name="ac_phone_eve" pattern="[0-9 -]{0,}" maxlength="20" value="{{ac_addr_phone_eve}}" style="width: 10em" />
+    </span>
+    <span class="c11">Mobile:
+    <input type="text" name="ac_phone_mbl" pattern="[0-9 -]{0,}" maxlength="20" value="{{ac_addr_phone_mbl}}" style="width: 10em" />
+    </span>
+  </p>
 
-  <br />
+  <br /><hr /><br />
+
   <p class="P23"><span class="T9">SERVICE HISTORY</span><span class="T10">:</span>
-  <span class="T11">&nbsp;Branch of Service: </span> 
+    <span class="T11">&nbsp;Branch of Service: </span> 
     <select name="service_branch" id="service_branch" value="{{service_branch}}" >
       <option>Unknown</option>
       <option {{selBranch-Army}}>Army</option>
@@ -181,9 +188,14 @@
     </select>
   </p>
 
-  <p class="P24"><span class="T9">RANK</span><span class="T10">:</span> <span class=
-    "T11">_<input type="text" name="service_rank" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{service_rank}}" style="width: 10em" />
-    _&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;</span> 
+  <br />
+  <p class="P24">
+    <span class="T9">RANK</span>
+    <span class="T10">:</span>
+    <span class="T11">
+      <input type="text" name="service_rank" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{service_rank}}" style="width: 10em" />
+      &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+    </span> 
     <span class="T9">WAR CONFLICT: </span>
     <select name="vet_type" id="vet_type" value="{{vet_type}}" >
       <option {{selVetType-WWII}}>WWII</option>
@@ -192,21 +204,29 @@
     </select>
   </p>
 
-  <p class="P25"><span class="T9">DATES YOU SERVED IN THE MILITARY</span><span class=
-    "T10">:</span> 
-    <span class="T11">_<input type="text" name="service_dates" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{service_dates}}" style="width: 15em" />
-    
-    _&nbsp;&nbsp;</span> <span class="T9">SERVICE #</span> <span class="T13">(if
-    known)</span>    <span class="T11">_<input type="text" name="service_number" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{service_number}}" style="width: 10em" />
-    _
+  <br />
+  <p class="P25">
+    <span class="T9">DATES YOU SERVED IN THE MILITARY</span>
+    <span class="T10">:</span> 
+    <span class="T11">
+      <input type="text" name="service_dates" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{service_dates}}" style="width: 15em" />
+      &nbsp;&nbsp;
+    </span>
+    <span class="T9">SERVICE #</span>
+    <span class="T13">(if known)</span>
+    <span class="T11">
+      <input type="text" name="service_number" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{service_number}}" style="width: 10em" />
+    </span>
   </p>
 
-  <p class="P16"><span class="T8">ACTIVITIES DURING MILITARY SERVICE</span><span class=
-  "T1">:</span><br />
-     <textarea rows="3" cols="100" name="service_activity">{{service_activity}}</textarea>
+  <p class="P16">
+    <span class="T8">ACTIVITIES DURING MILITARY SERVICE</span>
+    <span class="T1">:</span>
+    <br />
+    <textarea rows="3" cols="95" name="service_activity">{{service_activity}}</textarea>
   </p>
 
-  <hr />
+  <br /><hr /><br />
 
   <p class="P7"><span class="T1">Please circle any mobility equipment used: &nbsp; &nbsp;</span>
     <input type="checkbox" name="medical_uses_cane" value="1" {{selMed-cane}} />cane &nbsp; &nbsp;
