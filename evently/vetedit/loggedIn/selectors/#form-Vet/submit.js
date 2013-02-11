@@ -280,10 +280,6 @@ function(context) {
         doc.emerg_contact.address.phone_mbl = f.ec_phone_mbl;
         hasChanged = true;
       }
-      if (doc.emerg_contact.address.email != f.ec_email) {
-        doc.emerg_contact.address.email = f.ec_email;
-        hasChanged = true;
-      }
 
 
       if (!doc.alt_contact) {
@@ -300,12 +296,32 @@ function(context) {
       if (!doc.alt_contact.address) {
         doc.alt_contact.address = {};
       }
+      if (doc.alt_contact.address.street != f.ac_street) {
+        doc.alt_contact.address.street = f.ac_street;
+        hasChanged = true;
+      }
+      if (doc.alt_contact.address.city != f.ac_city) {
+        doc.alt_contact.address.city = f.ac_city;
+        hasChanged = true;
+      }
+      if (doc.alt_contact.address.state != f.ac_state.toUpperCase()) {
+        doc.alt_contact.address.state = f.ac_state.toUpperCase();
+        hasChanged = true;
+      }
+      if (doc.alt_contact.address.zip != f.ac_zip) {
+        doc.alt_contact.address.zip = f.ac_zip;
+        hasChanged = true;
+      }
       if (doc.alt_contact.address.phone != f.ac_phone) {
         doc.alt_contact.address.phone = f.ac_phone;
         hasChanged = true;
       }
-      if (doc.alt_contact.address.email != f.ac_email) {
-        doc.alt_contact.address.email = f.ac_email;
+      if (doc.alt_contact.address.phone_eve != f.ac_phone_eve) {
+        doc.alt_contact.address.phone_eve = f.ac_phone_eve;
+        hasChanged = true;
+      }
+      if (doc.alt_contact.address.phone_mbl != f.ac_phone_mbl) {
+        doc.alt_contact.address.phone_mbl = f.ac_phone_mbl;
         hasChanged = true;
       }
 
