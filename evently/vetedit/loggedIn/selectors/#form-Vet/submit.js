@@ -79,10 +79,6 @@ function(context) {
         doc.app_date = f.app_date;
         hasChanged = true;
       }
-      if ('preferred_airport' in f && doc.preferred_airport != f.preferred_airport) {
-        doc.preferred_airport = f.preferred_airport;
-        hasChanged = true;
-      }
 
       if (!doc.flight) {
         doc.flight = {};
@@ -188,8 +184,8 @@ function(context) {
         }
       }
 
-      if (doc.gender != f.gender.toUpperCase()) {
-        doc.gender = f.gender.toUpperCase();
+      if (doc.gender != f.gender.charAt(0).toUpperCase()) {
+        doc.gender = f.gender.charAt(0).toUpperCase();
         hasChanged = true;
       }
       if (doc.weight != f.weight) {
@@ -375,6 +371,14 @@ function(context) {
       }
       if (doc.medical.requiresOxygen != requiresOxygen) {
         doc.medical.requiresOxygen = requiresOxygen;
+        hasChanged = true;
+      }
+      var examRequired = 0;
+      if (f.medical_exam_required) {
+        examRequired = 1;
+      }
+      if (doc.medical.examRequired != examRequired) {
+        doc.medical.examRequired = examRequired;
         hasChanged = true;
       }
       if (doc.medical.limitations != f.medical_limitations) {

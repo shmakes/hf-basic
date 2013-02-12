@@ -46,7 +46,6 @@ function(r) {
         vet_type:              (r.vet_type || "WWII"),
         app_date:              r.app_date,
         app_date_string:       appDateString,
-        preferred_airport:     r.preferred_airport,
         flights:               r.availableFlights,
         flight_status:         r.flight.status,
         flight_status_note:    r.flight.status_note,
@@ -125,6 +124,8 @@ function(r) {
     result[selectedBranch] = "selected";
     var selectedVetType = "selVetType-" + (r.vet_type || "WWII");
     result[selectedVetType] = "selected";
+    var selectedGender = "selGender-" + (r.gender || "M");
+    result[selectedGender] = "selected";
 
     if (r.medical.usesCane === 1) {
       result["selMed-cane"] = "checked='yes'";
@@ -144,6 +145,9 @@ function(r) {
     if (r.medical.requiresOxygen === 1) {
       result["selMed-oxygen"] = "checked='yes'";
     }
+    if (r.medical.examRequired === 1) {
+      result["selMed-exam"] = "checked='yes'";
+    }
 
   } else {
 
@@ -156,7 +160,6 @@ function(r) {
         vet_type:              "WWII",
         app_date:              ISODateString(new Date()),
         app_date_string:       "",
-        preferred_airport:     "",
         flights:               r.availableFlights,
         flight_status:         "",
         flight_status_note:    "",

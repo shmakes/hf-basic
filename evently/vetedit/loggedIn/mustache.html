@@ -69,30 +69,38 @@
 
   <span class="T9">DATE OF BIRTH</span><span class="T10">:</span> <span class="T11">
   <input type="text" name="birth_year" maxlength="4" value="{{birth_year}}" style="width: 3em" />
-   -<input type="text" name="birth_month" maxlength="2" value="{{birth_month}}" style="width: 1.5em" />
-   -<input type="text" name="birth_day" maxlength="2" value="{{birth_day}}" style="width: 1.5em" />
+   - <input type="text" name="birth_month" maxlength="2" value="{{birth_month}}" style="width: 1.5em" />
+   - <input type="text" name="birth_day" maxlength="2" value="{{birth_day}}" style="width: 1.5em" />
   </span> 
   
   <br />
-  <span class="T9">GENDER</span><span class="T10">:</span> <span class="T11">
-  <input type="text" name="gender" pattern="[MFmf]{1,1}" maxlength="1" value="{{gender}}" style="width: 2em" data-message="M or F" />
+  <span class="T9">GENDER</span>
+  <span class="T10">:</span>
+  <span class="T11">
+    <select name="gender" id="gender" value="{{gender}}" >
+      <option {{selGender-M}}>Male</option>
+      <option {{selGender-F}}>Female</option>
+    </select>
   </span> 
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <span class="T9">SHIRT SIZE</span><span class="T10">:</span> <span class="T11">
-  <select name="shirt_size" id="shirt_size" value="{{shirt_size}}" >
-      <option>None</option>
-      <option {{selShrt-S}}>S</option>
-      <option {{selShrt-M}}>M</option>
-      <option {{selShrt-L}}>L</option>
-      <option {{selShrt-XL}}>XL</option>
-      <option {{selShrt-XXL}}>XXL</option>
-      <option {{selShrt-XXXL}}>XXXL</option>
+    <select name="shirt_size" id="shirt_size" value="{{shirt_size}}" >
+        <option>None</option>
+        <option {{selShrt-S}}>S</option>
+        <option {{selShrt-M}}>M</option>
+        <option {{selShrt-L}}>L</option>
+        <option {{selShrt-XL}}>XL</option>
+        <option {{selShrt-XXL}}>XXL</option>
+        <option {{selShrt-XXXL}}>XXXL</option>
     </select>
     <input type="hidden" id="raw_shirt_size" value="{{shirt_size}}" />
   </span> 
 
-   <span class="c7">
+   <span class="c16">
      {{ageFromBirthDate}}
+    </span>
+   <span class="c17">
+     YYYY &nbsp;&nbsp; - MM &nbsp;&nbsp; - DD
     </span>
   </p>
 
@@ -201,6 +209,8 @@
       <option {{selVetType-WWII}}>WWII</option>
       <option {{selVetType-Korea}}>Korea</option>
       <option {{selVetType-Vietnam}}>Vietnam</option>
+      <option {{selVetType-Afghanistan}}>Afghanistan</option>
+      <option {{selVetType-Iraq}}>Iraq</option>
     </select>
   </p>
 
@@ -244,6 +254,7 @@
   <p class="P16">Do you use <span class="T1">oxygen</span> at any time?
     <input type="checkbox" name="medical_requires_oxygen" value="1" {{selMed-oxygen}} /> 
   </p>
+  <br />
 
     <fieldset>
       <legend accesskey="M">
@@ -251,8 +262,12 @@
       </legend>
       <ol>
         <li>
-          <label for="medical_limitations">description</label>
+          <label for="medical_limitations">limitations</label>
           <input type="text" name="medical_limitations" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{medical_limitations}}" style="width: 35em" />
+        </li>
+        <li>
+          <label for="medical_exam_required">exam required</label>
+          <input type="checkbox" name="medical_exam_required" value="1" {{selMed-exam}} /> 
         </li>
         <li>
           <label for="medical_category">category</label>
@@ -273,10 +288,6 @@
       <input type="hidden" name="_rev" value="{{rev}}" />
       <input type="hidden" name="type" value="{{type}}" />
       <ol>
-        <li>
-          <label for="preferred_airport">preferred airport</label>
-          <input type="text" name="preferred_airport" maxlength="15" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{preferred_airport}}" style="width: 5em" />
-        </li>
         <li>
           <label for="flight_status">flight status</label>
           <select name="flight_status" id="flight_status" >
