@@ -1,166 +1,204 @@
 <div>
   <form id="form-Grd" novalidate>
 
-    <fieldset>
-      <legend accesskey="N">
-        <span>Name</span>
-        <span class="grey-note">
-          Doc ID: {{id}} 
-          <a target="_blank" href="/_utils/document.html?{{db_name}}/{{id}}">{{raw_data_lnk}}</a>
-        </span>
-      </legend>
-      <ol>
-        <li>
-          <label for="app_date">appl date<em><img src="images/required_star.gif" alt="required" /></em></label>
-          <input type="date" class="date" id="app_date" name="app_date" pattern="[0-9-]{10,10}" maxlength="10" value="{{app_date}}" style="width: 8em" required="required" />
-          <span class="grey-note">
-            {{app_date_string}}
-          </span>
-        </li>
-        <li>
-          <label for="first_name">first<em><img src="images/required_star.gif" alt="required" /></em></label>
-          <input type="text" name="first_name" pattern="[a-zA-Z'. ]{2,}" maxlength="30" value="{{first_name}}" style="width: 15em" required="required" />
-        </li>
-        <li>
-          <label for="middle_name">middle</label>
-          <input type="text" name="middle_name" pattern="[a-zA-Z'. ]{0,}" maxlength="20" value="{{middle_name}}" style="width: 5em" />
-        </li>
-        <li>
-          <label for="last_name">last<em><img src="images/required_star.gif" alt="required" /></em></label>
-          <input type="text" name="last_name" pattern="[a-zA-Z'. -]{2,}" maxlength="30" value="{{last_name}}" style="width: 15em" required="required" />
-        </li>
-        <li>
-          <label for="nick_name">nickname</label>
-          <input type="text" name="nick_name" pattern="[a-zA-Z'. ]{0,}" maxlength="20" value="{{nick_name}}" style="width: 10em" />
-        </li>
-      </ol>
-    </fieldset>
+  <br />
+  <p class="P13">Doc ID: {{id}} 
+      <a target="_blank" href="/_utils/document.html?{{db_name}}/{{id}}">{{raw_data_lnk}}</a>
+    <span class="c9">D R: 
+      <input type="date" class="date" id="app_date" name="app_date" pattern="[0-9-]{10,10}" maxlength="10" value="{{app_date}}" style="width: 8em" required="required" />    
+    </span>
+  </p>
 
-    <fieldset class="alt">
-      <legend accesskey="A">
-        <span>Address</span>
-      </legend>
-      <ol>
-        <li>
-          <label for="street">street<em><img src="images/required_star.gif" alt="required" /></em></label>
-          <input type="text" name="street" pattern="[a-zA-Z0-9.,# -/]{2,}" maxlength="50" value="{{addr_street}}" style="width: 30em" required="required" title="Full street address." />
-        </li>
-        <li>
-          <label for="city">city<em><img src="images/required_star.gif" alt="required" /></em></label>
-          <input type="text" name="city" pattern="[a-zA-Z. -]{2,}" maxlength="20" value="{{addr_city}}" style="width: 10em" required="required" />
-        </li>
-        <li>
-          <label for="county">county<em><img src="images/required_star.gif" alt="required" /></em></label>
-          <input type="text" name="county" pattern="[a-zA-Z. ]{2,}" maxlength="20" value="{{addr_county}}" style="width: 10em" required="required" />
-        </li>
-        <li>
-          <label for="state">state<em><img src="images/required_star.gif" alt="required" /></em></label>
-          <input type="text" name="state" pattern="[a-zA-Z]{2,}" maxlength="2" value="{{addr_state}}" style="width: 2em" required="required" />
-        </li>
-        <li>
-          <label for="zip">zip<em><img src="images/required_star.gif" alt="required" /></em></label>
-          <input type="text" name="zip" pattern="[0-9 -]{5,}" maxlength="10" value="{{addr_zip}}" style="width: 8em" required="required" /> 
-          <button id="zipFill" type="button">auto fill</button>
-        </li>
-        <li>
-          <button id="mapAddress" type="button">get map</button>
-        </li>
-        <li>
-          <label for="phone_day">phone day<em><img src="images/required_star.gif" alt="required" /></em></label>
-          <input type="text" name="phone_day" pattern="[0-9 -]{12,}" maxlength="20" value="{{addr_phone_day}}" style="width: 10em" required="required" />
-        </li>
-        <li>
-          <label for="phone_eve">phone eve</label>
-          <input type="text" name="phone_eve" pattern="[0-9 -]{0,}" maxlength="20" value="{{addr_phone_eve}}" style="width: 10em" />
-        </li>
-        <li>
-          <label for="phone_mbl">phone mbl</label>
-          <input type="text" name="phone_mbl" pattern="[0-9 -]{0,}" maxlength="20" value="{{addr_phone_mbl}}" style="width: 10em" />
-        </li>
-        <li>
-          <label for="email">email</label>
-          <input type="email" name="email" value="{{addr_email}}" style="width: 20em" />
-        </li>
-      </ol>
-    </fieldset>
+  <br />
 
-    <fieldset>
-      <legend accesskey="P">
-        <span>Personal</span>
-      </legend>
-      <ol>
-        <li>
-          <span class="grey-note">
-            ( YYYY - MM - DD )
-          </span>
-        </li>
-        <li>
-          <label for="birth_date">birth date<em><img src="images/required_star.gif" alt="required" /></em></label>
-          <input type="text" name="birth_year" maxlength="4" value="{{birth_year}}" style="width: 3em" 
-          />-<input type="text" name="birth_month" maxlength="2" value="{{birth_month}}" style="width: 1.5em" 
-          />-<input type="text" name="birth_day" maxlength="2" value="{{birth_day}}" style="width: 1.5em" />
-        </li>
-        <li>
-          <span class="grey-note">
-            {{birth_date_string}}
-          </span>
-        </li>
-        <li>
-          <span class="grey-note">
-            {{ageFromBirthDate}}
-          </span>
-        </li>
-        <li>
-          <label for="gender">gender<em><img src="images/required_star.gif" alt="required" /></em></label>
-          <input type="text" name="gender" pattern="[MFmf]{1,1}" maxlength="1" value="{{gender}}" style="width: 2em" />
-        </li>
-        <li>
-          <label for="shirt_size">shirt</label>
-          <select name="shirt_size" id="shirt_size" value="{{shirt_size}}" >
-            <option>None</option>
-            <option {{selShrt-S}}>S</option>
-            <option {{selShrt-M}}>M</option>
-            <option {{selShrt-L}}>L</option>
-            <option {{selShrt-XL}}>XL</option>
-            <option {{selShrt-XXL}}>XXL</option>
-            <option {{selShrt-XXXL}}>XXXL</option>
-          </select>
-          <input type="hidden" id="raw_shirt_size" value="{{shirt_size}}" />
-        </li>
-        <li>
-          <label for="notes_service">is veteran<em><img src="images/required_star.gif" alt="required" /></em></label>
-          <input type="text" name="notes_service" pattern="[YNyn]{1,1}" maxlength="1" value="{{notes_service}}" style="width: 2em" />
-        </li>
-        <li>
-          <label for="notes_previous_hf">previous hf</label>
-          <input type="text" name="notes_previous_hf" pattern="[YNyn]{0,1}" maxlength="1" value="{{notes_previous_hf}}" style="width: 2em" />
-        </li>
-        <li>
-          <label for="notes_other">other notes</label>
-          <input type="text" name="notes_other" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{notes_other}}" style="width: 35em" />
-        </li>
-      </ol>
-    </fieldset>
+  <p class="P14"><span class="T8">NAME</span><span class="T1">:</span>&nbsp;&nbsp;&nbsp;
+  <input type="text" name="first_name" pattern="[a-zA-Z'. ]{2,}" maxlength="30" value="{{first_name}}" style="width: 12em" required="required" />
+  <input type="text" name="middle_name" pattern="[a-zA-Z'. ]{0,}" maxlength="20" value="{{middle_name}}" style="width: 3em" />
+  <input type="text" name="last_name" pattern="[a-zA-Z'. -]{2,}" maxlength="30" value="{{last_name}}" style="width: 12em" required="required" />
+  
+  
+  <span class="c5"><span class="T8">NICK NAME</span><span class="T1">:</span>
+  <input type="text" name="nick_name" pattern="[a-zA-Z'. ]{0,}" maxlength="20" value="{{nick_name}}" style="width: 10em" />
+  
+  </span></p>
 
-    <fieldset class="alt">
-      <legend accesskey="M">
-        <span>Medical</span>
-      </legend>
-      <ol>
-        <li>
-          <label for="medical_limitations">limitations</label>
-          <input type="text" name="medical_limitations" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{medical_limitations}}" style="width: 35em" />
-        </li>
-        <li>
-          <label for="medical_experience">experience</label>
-          <textarea rows="3" cols="70" name="medical_experience">{{medical_experience}}</textarea>
-        </li>
-        <li>
-          <label for="medical_release">release</label>
-          <input type="text" name="medical_release" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{medical_release}}" style="width: 35em" />
-        </li>
-      </ol>
-    </fieldset>
+  <p class="P20"><span class="c6">First 
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Middle 
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Last</span>
+    <span class="c7">(If Applicable)</span></p>
+
+  <p class="P28">
+    <br />
+    <span class="T8">ADDRESS</span>
+    <span class="T1">:</span>
+    <button id="mapAddress" type="button">get map</button>
+    <br />
+    <input type="text" name="street" pattern="[a-zA-Z0-9.,# /-]{2,}" maxlength="50" value="{{addr_street}}" style="width: 56em" required="required" title="Full street address." />
+  </p>
+
+  <p class="P29"><span class="T8">CITY</span><span class="T1">:</span>
+  <input type="text" name="city" pattern="[a-zA-Z. -]{2,}" maxlength="20" value="{{addr_city}}" style="width: 12em" required="required" />
+  
+  <span class="c8"><span class="T8">COUNTY</span><span class="T1">:</span> 
+  <input type="text" name="county" pattern="[a-zA-Z. ]{2,}" maxlength="20" value="{{addr_county}}" style="width: 8em" required="required" />
+  
+  </span>
+  <span class="c9"><span class="T8">STATE</span><span class="T1">:</span> 
+  <input type="text" name="state" pattern="[a-zA-Z]{2,}" maxlength="2" value="{{addr_state}}" style="width: 2em" required="required" />
+  
+  &nbsp; <span class="T8">ZIP</span><span class="T1">:</span> 
+  <input type="text" name="zip" pattern="[0-9 -]{5,}" maxlength="10" value="{{addr_zip}}" style="width: 8em" required="required" />
+   <button id="zipFill" type="button">auto fill</button>   </span></p>
+  <br />
+
+  <p class="P15"><span class="T8">PHONE</span><span class="T1">:</span> &nbsp;Day:
+  <input type="text" name="phone_day" pattern="[0-9 -]{12,}" maxlength="20" value="{{addr_phone_day}}" style="width: 10em" required="required" />
+  <span class="c10">Evening:
+  <input type="text" name="phone_eve" pattern="[0-9 -]{0,}" maxlength="20" value="{{addr_phone_eve}}" style="width: 10em" />
+  </span><span class="c5">Cell Phone:
+  <input type="text" name="phone_mbl" pattern="[0-9 -]{0,}" maxlength="20" value="{{addr_phone_mbl}}" style="width: 10em" />
+  </span></p>
+  <br />
+
+  <p class="P21"><span class="T9">E-MAIL ADDRESS</span><span class="T10">:</span>
+  <span class="T11">
+  <input type="email" name="email" value="{{addr_email}}" style="width: 17em" />
+  &nbsp;</span>
+
+  <span class="T9">DATE OF BIRTH</span><span class="T10">:</span> <span class="T11">
+  <input type="text" name="birth_year" maxlength="4" value="{{birth_year}}" style="width: 3em" />
+   - <input type="text" name="birth_month" maxlength="2" value="{{birth_month}}" style="width: 1.5em" />
+   - <input type="text" name="birth_day" maxlength="2" value="{{birth_day}}" style="width: 1.5em" />
+  </span> </p>
+  <br />
+
+  <p class="P21"><span class="T9">OCCUPATION</span><span class="T10">:</span>
+  <span class="T11">
+  <input type="text" name="occupation" value="{{occupation}}" style="width: 17em" />
+  &nbsp;</span>
+
+  <span class="T9">ARE YOU A VETERAN?</span><span class="T10"> </span>
+  <span class="T11">
+    <select name="notes_service" id="notes_service" value="{{notes_service}}" >
+      <option {{selNotesService-Y}}>Yes</option>
+      <option {{selNotesService-N}}>No</option>
+    </select>
+  </span> 
+  </p>
+  <br />
+
+
+
+    <p class="P11">If a veteran, please indicate BRANCH of service, and WHEN and WHERE
+    you served: &nbsp;_________________________________</p>
+
+    <p class="P11">
+    ________________________________________________________________________________________________________</p>
+
+    <p class="P10">1.<span>&nbsp;Please list any prior volunteer experience:
+    &nbsp;_______________________________________________________________</span></p>
+
+    <p class="P10">
+    <span>&nbsp;_________________________________________________________________________________________________</span></p>
+
+    <p class="P10">2.<span>&nbsp;Please list one (1) personal
+    reference:</span></p>
+
+    <p class="P10">
+    <span>&nbsp;Name:</span><span>&nbsp;____________________________________________________
+    &nbsp;Relationship to applicant: &nbsp;_________________</span></p>
+
+    <p class="P10">
+    <span>&nbsp;Address:___________________________________________________________________________________________</span></p>
+
+    <p class="P10"><span>&nbsp;City/State/Zip:
+    &nbsp;_____________________________________________________________________________________</span></p>
+
+    <p class="P10"><span>&nbsp;E-Mail Address:
+    ____________________________________________________________________________________</span></p>
+
+    <p class="P10"><span>&nbsp;Phone Numbers:
+    &nbsp;Day:_______________________________________ &nbsp;Evening:
+    ________________________________</span></p>
+
+    <p class="P10">3.<span>&nbsp;Please list one (1) emergency contact:</span></p>
+
+    <p class="P10">
+    <span>&nbsp;Name:</span><span>&nbsp;____________________________________________________
+    &nbsp;Relationship to applicant: &nbsp;_________________</span></p>
+
+    <p class="P10">
+    <span>&nbsp;Address:___________________________________________________________________________________________</span></p>
+
+    <p class="P10"><span>&nbsp;City/State/Zip:
+    &nbsp;_____________________________________________________________________________________</span></p>
+
+    <p class="P10"><span>&nbsp;E-Mail Address:
+    ____________________________________________________________________________________</span></p>
+
+    <p class="P10"><span>&nbsp;Phone Numbers:
+    &nbsp;Day:_______________________________________ &nbsp;Evening:
+    ________________________________</span></p>
+
+    <p class="P14">4.&nbsp; &nbsp; &nbsp;
+    &nbsp; What is the name of the veteran you will be traveling with?:
+    &nbsp;(Please note that a completed veteran application must be submitted
+    also)
+    &nbsp;
+      <input type="text" name="veteran_pref_notes" pattern="[a-zA-Z0-9.,()# /-]{0,}" value="{{veteran_pref_notes}}" style="width: 25em" />
+    </p>
+
+    <p class="P10">5.<span>&nbsp;Are you able to push a veteran in a wheelchair up
+    a slight incline? &nbsp;_____ Yes &nbsp;_____ No.</span></p>
+
+    <p class="P10">6. &nbsp; &nbsp; &nbsp; &nbsp;
+    &nbsp; Can you lift 100 pounds? &nbsp;_____Yes ______No</p>
+
+    <p class="P1">7. &nbsp;<span>&nbsp;Please identify any physical
+    disabilities, restrictions and/or medical conditions that would limit your ability to
+    fulfill the duties of a guardian. &nbsp; Also, please list any medications
+    being taken and how often.     
+      <input type="text" name="medical_limitations" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{medical_limitations}}" style="width: 35em" />
+    </span></p>
+
+  <br />
+  <span class="T9">GENDER</span>
+  <span class="T10">:</span>
+  <span class="T11">
+    <select name="gender" id="gender" value="{{gender}}" >
+      <option {{selGender-M}}>Male</option>
+      <option {{selGender-F}}>Female</option>
+    </select>
+  </span> 
+  <span class="T9">WEIGHT</span><span class="T10">:</span> <span class="T11">
+  <input type="number" name="weight" min="60" max="450" value="{{weight}}" style="width: 4em" />
+  &nbsp;</span>
+
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <span class="T9">SHIRT SIZE</span><span class="T10">:</span> <span class="T11">
+    <select name="shirt_size" id="shirt_size" value="{{shirt_size}}" >
+        <option>None</option>
+        <option {{selShrt-S}}>S</option>
+        <option {{selShrt-M}}>M</option>
+        <option {{selShrt-L}}>L</option>
+        <option {{selShrt-XL}}>XL</option>
+        <option {{selShrt-XXL}}>XXL</option>
+        <option {{selShrt-XXXL}}>XXXL</option>
+    </select>
+    <input type="hidden" id="raw_shirt_size" value="{{shirt_size}}" />
+  </span> 
+
+    <p class="P1">9.<span>&nbsp;Please note any medical experience you may have (e.g., EMT, CPR, Paramedics),
+      <textarea rows="3" cols="70" name="medical_experience">{{medical_experience}}</textarea>
+    </span></p>
+
+   <span class="c16">
+     {{ageFromBirthDate}}
+    </span>
+   <span class="c17">
+     YYYY &nbsp;&nbsp; - MM &nbsp;&nbsp; - DD
+    </span>
 
     <fieldset>
       <legend accesskey="S">
@@ -170,10 +208,6 @@
       <input id ="docrev" type="hidden" name="_rev" value="{{rev}}" />
       <input type="hidden" name="type" value="{{type}}" />
       <ol>
-        <li>
-          <label for="preferred_airport">preferred airport</label>
-          <input type="text" name="preferred_airport" maxlength="15" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{preferred_airport}}" style="width: 25em" />
-        </li>
         <li>
           <label for="flight_status">flight status</label>
           <select name="flight_status" id="flight_status" >
@@ -205,6 +239,10 @@
         <li>
           <label for="flight_confirmed_by">confirmed by</label>
           <input type="text" name="flight_confirmed_by" maxlength="30" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{flight_confirmed_by}}" style="width: 15em" />
+        </li>
+        <li>
+          <label for="medical_release">release</label>
+          <input type="text" name="medical_release" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{medical_release}}" style="width: 35em" />
         </li>
         <li>
           <label for="flight_training">guardian training</label>
@@ -250,7 +288,7 @@
         </li>
         <li>
           <label for="veteran_pref_notes">veteran preferance</label>
-          <input type="text" name="veteran_pref_notes" pattern="[a-zA-Z0-9.,()# /-]{0,}" value="{{veteran_pref_notes}}" style="width: 25em" />
+          <input type="text" readonly="readonly" value="{{veteran_pref_notes}}" style="width: 25em" />
         </li>
         <li>
           <input type="hidden" id="veteran_id" name="veteran_id" value="{{veteran_id}}" />
@@ -338,4 +376,3 @@
   </div>
 
 </div>
-

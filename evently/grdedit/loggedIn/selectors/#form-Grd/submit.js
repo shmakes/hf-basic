@@ -79,10 +79,6 @@ function(context) {
         doc.app_date = f.app_date;
         hasChanged = true;
       }
-      if (f.preferred_airport && doc.preferred_airport != f.preferred_airport) {
-        doc.preferred_airport = f.preferred_airport;
-        hasChanged = true;
-      }
 
       if (!doc.flight) {
         doc.flight = {};
@@ -234,10 +230,6 @@ function(context) {
       }
       if (doc.notes.other != f.notes_other) {
         doc.notes.other = f.notes_other;
-        hasChanged = true;
-      }
-      if (doc.notes.previous_hf != f.notes_previous_hf) {
-        doc.notes.previous_hf = f.notes_previous_hf.toUpperCase();
         hasChanged = true;
       }
       if (doc.notes.service != f.notes_service) {

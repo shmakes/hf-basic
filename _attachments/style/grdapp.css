@@ -1,0 +1,112 @@
+@page {  }
+input {margin-top: 0.3em; margin-bottom: 0.3em; }
+table { border-collapse:collapse; border-spacing:0; empty-cells:show }
+td, th { vertical-align:top; font-size:12pt;}
+h1, h2, h3, h4, h5, h6 { clear:both }
+ol, ul { margin:0; padding:0;}
+li { list-style: none; margin:0; padding:0;}
+<!-- "li span.odfLiEnd" - IE 7 issue-->
+li span. { clear: both; line-height:0; width:0; height:0; margin:0; padding:0; }
+span.footnodeNumber { padding-right:1em; }
+span.annotation_style_by_filter { font-size:95%; font-family:Arial; background-color:#fff000;  margin:0; border:0; padding:0;  }
+* { margin:0;}
+.fr1 { font-size:12pt; text-align:center; vertical-align:top; writing-mode:lr-tb; margin-left:0in; margin-right:0in; padding-left:0.1102in; padding-right:0.1102in; padding-top:0.0602in; padding-bottom:0.0602in; border-style:none; }
+.P1 { font-size:10pt; font-family:Times New Roman; writing-mode:lr-tb; font-style:italic; font-weight:bold; }
+.P10 { font-size:11pt; font-family:Times New Roman; writing-mode:lr-tb; line-height:150%; font-weight:bold; }
+.P11 { font-size:11pt; font-family:Times New Roman; writing-mode:lr-tb; line-height:150%; text-align:center ! important; font-weight:bold; }
+.P12 { font-size:14pt; font-family:Times New Roman; writing-mode:lr-tb; line-height:150%; text-align:center ! important; font-weight:bold; }
+.P13 { font-size:9pt; font-family:Helv, Arial; writing-mode:lr-tb; margin-left:0in; margin-right:0.3126in; text-indent:0in; color:#000000; font-style:italic; }
+.P14 { font-size:11pt; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0in; margin-right:0.0098in; text-indent:0in; }
+.P15 { font-size:11pt; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0in; margin-right:0.0098in; line-height:150%; text-indent:0in; }
+.P16 { font-size:11pt; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0in; margin-right:0.0098in; line-height:150%; text-indent:0in; }
+.P17 { font-size:11pt; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0in; margin-right:0.0098in; line-height:150%; text-indent:0in; }
+.P18 { font-size:11pt; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0in; margin-right:0.0098in; line-height:150%; text-indent:0in; }
+.P19 { font-size:11pt; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0in; margin-right:0.0098in; line-height:150%; text-indent:0in; font-weight:bold; }
+.P2 { font-size:8pt; font-family:Helv, Arial; writing-mode:lr-tb; color:#000000; }
+.P20 { font-size:9pt; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0in; margin-right:0.0098in; text-indent:0in; font-style:italic; }
+.P21 { font-size:10pt; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0in; margin-right:0.0098in; line-height:150%; text-indent:0in; }
+.P22 { font-size:10pt; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0in; margin-right:0.0098in; line-height:150%; text-indent:0in; }
+.P23 { font-size:10pt; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0in; margin-right:0.0098in; line-height:150%; text-indent:0in; }
+.P24 { font-size:10pt; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0in; margin-right:0.0098in; line-height:150%; text-indent:0in; }
+.P25 { font-size:10pt; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0in; margin-right:0.0098in; line-height:150%; text-indent:0in; }
+.P26 { font-size:10pt; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0in; margin-right:0.0098in; text-indent:0in; }
+.P27 { font-size:12pt; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0in; margin-right:0.0098in; text-indent:0in; font-weight:bold; }
+.P28 { font-size:11pt; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0in; margin-right:0.0126in; line-height:150%; text-indent:0in; }
+.P29 { font-size:11pt; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0in; margin-right:0.0126in; line-height:150%; text-indent:0in; }
+.P3 { font-size:9pt; font-family:Times New Roman; writing-mode:lr-tb; }
+.P30 { font-size:11pt; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0in; margin-right:-0.1252in; line-height:150%; text-indent:0in; }
+.P31 { font-size:10pt; font-family:Times New Roman; writing-mode:lr-tb; margin-left:1in; margin-right:0.0098in; text-indent:-0.5in; }
+.P32 { font-size:11pt; font-family:Times New Roman; writing-mode:lr-tb; margin-left:0.5in; margin-right:0.0098in; text-indent:0in; }
+.P4 { font-size:10pt; font-family:Times New Roman; writing-mode:lr-tb; line-height:150%; Post Title Example One
+By CSS-Tricks
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse aliquet arcu a ipsum. Nunc arcu est, pulvinar vitae, consectetuer ac, pellentesque interdum, augue. Fusce iaculis nulla et sapien. Aliquam erat volutpat. Etiam iaculis turpis nec libero. Nam adipiscing ullamcorper quam. Pellentesque erat. Sed hendrerit. Duis id nisl. Cras arcu mauris, mollis vel, convallis non, elementum a, tortor. Donec ac est eget elit consequat sollicitudin. In id odio quis tortor volutpat mollis. Nulla iaculis lobortis est. Pellentesque in elit vitae nulla tempus euismod. Nam non erat in lacus rutrum malesuada. Donec commodo purus sed quam posuere eleifend. Nam accumsan.Cras arcu mauris, mollis vel, convallis non, elementum a, tortor. Donec ac est eget elit consequat sollicitudin. In id odio quis tortor volutpat mollis. Nulla iaculis lobortis est. Pellentesque in elit vitae nulla tempus euismod. Nam non erat in lacus rutrum malesuada. Donec commodo purus sed quam posuere eleifend. Nam accumsan.
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse aliquet arcu a ipsum. Nunc arcu est, pulvinar vitae, consectetuer ac, pellentesque interdum, augue. Fusce iaculis nulla et sapien. Aliquam erat volutpat. Etiam iaculis turpis nec libero. Nam adipiscing ullamcorper quam. Pellentesque erat. Sed hendrerit. Duis id nisl. Cras arcu mauris, mollis vel, convallis non, elementum a, tortor. Donec ac est eget elit consequat sollicitudin. In id odio quis tortor volutpat mollis. Nulla iaculis lobortis est. Pellentesque in elit vitae nulla tempus euismod. Nam non erat in lacus rutrum malesuada. Donec commodo purus sed quam posuere eleifend. Nam accumsan.
+
+Post Title Example Two
+By CSS-Tricks
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse aliquet arcu a ipsum. Nunc arcu est, pulvinar vitae, consectetuer ac, pellentesque interdum, augue. Fusce iaculis nulla et sapien. Aliquam erat volutpat. Etiam iaculis turpis nec libero. Nam adipiscing ullamcorper quam. Pellentesque erat. Sed hendrerit. Duis id nisl. Cras arcu mauris, mollis vel, convallis non, elementum a, tortor. Donec ac est eget elit consequat sollicitudin. In id odio quis tortor volutpat mollis. Nulla iaculis lobortis est. Pellentesque in elit vitae nulla tempus euismod. Nam non erat in lacus rutrum malesuada. Donec commodo purus sed quam posuere eleifend. Nam accumsan.Post Title Example One
+By CSS-Tricks
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse aliquet arcu a ipsum. Nunc arcu est, pulvinar vitae, consectetuer ac, pellentesque interdum, augue. Fusce iaculis nulla et sapien. Aliquam erat volutpat. Etiam iaculis turpis nec libero. Nam adipiscing ullamcorper quam. Pellentesque erat. Sed hendrerit. Duis id nisl. Cras arcu mauris, mollis vel, convallis non, elementum a, tortor. Donec ac est eget elit consequat sollicitudin. In id odio quis tortor volutpat mollis. Nulla iaculis lobortis est. Pellentesque in elit vitae nulla tempus euismod. Nam non erat in lacus rutrum malesuada. Donec commodo purus sed quam posuere eleifend. Nam accumsan.Cras arcu mauris, mollis vel, convallis non, elementum a, tortor. Donec ac est eget elit consequat sollicitudin. In id odio quis tortor volutpat mollis. Nulla iaculis lobortis est. Pellentesque in elit vitae nulla tempus euismod. Nam non erat in lacus rutrum malesuada. Donec commodo purus sed quam posuere eleifend. Nam accumsan.
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse aliquet arcu a ipsum. Nunc arcu est, pulvinar vitae, consectetuer ac, pellentesque interdum, augue. Fusce iaculis nulla et sapien. Aliquam erat volutpat. Etiam iaculis turpis nec libero. Nam adipiscing ullamcorper quam. Pellentesque erat. Sed hendrerit. Duis id nisl. Cras arcu mauris, mollis vel, convallis non, elementum a, tortor. Donec ac est eget elit consequat sollicitudin. In id odio quis tortor volutpat mollis. Nulla iaculis lobortis est. Pellentesque in elit vitae nulla tempus euismod. Nam non erat in lacus rutrum malesuada. Donec commodo purus sed quam posuere eleifend. Nam accumsan.
+
+Post Title Example Two
+By CSS-Tricks
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse aliquet arcu a ipsum. Nunc arcu est, pulvinar vitae, consectetuer ac, pellentesque interdum, augue. Fusce iaculis nulla et sapien. Aliquam erat volutpat. Etiam iaculis turpis nec libero. Nam adipiscing ullamcorper quam. Pellentesque erat. Sed hendrerit. Duis id nisl. Cras arcu mauris, mollis vel, convallis non, elementum a, tortor. Donec ac est eget elit consequat sollicitudin. In id odio quis tortor volutpat mollis. Nulla iaculis lobortis est. Pellentesque in elit vitae nulla tempus euismod. Nam non erat in lacus rutrum malesuada. Donec commodo purus sed quam posuere eleifend. Nam accumsan.}
+.P5 { font-size:10pt; font-family:Times New Roman; writing-mode:lr-tb; }
+.P6 { font-size:11pt; font-family:Times New Roman; writing-mode:lr-tb; }
+.P7 { font-size:11pt; font-family:Times New Roman; writing-mode:lr-tb; line-height:150%; }
+.P8 { font-size:11pt; font-family:Times New Roman; writing-mode:lr-tb; line-height:150%; }
+.P9 { font-size:11pt; font-family:Times New Roman; writing-mode:lr-tb; line-height:150%; text-align:center ! important; }
+.T1 { font-weight:bold; }
+.T10 { font-size:11pt; font-weight:bold; }
+.T11 { font-size:11pt; }
+.T12 { font-size:9pt; text-decoration:underline; font-weight:bold; }
+.T13 { font-size:9pt; font-style:italic; }
+.T14 { font-size:9pt; font-weight:bold; }
+.T15 { font-size:12pt; font-weight:bold; }
+.T16 { font-size:12pt; }
+.T17 { font-size:14pt; }
+.T2 { font-family:Mona Lisa Recut; }
+.T3 { font-family:Mona Lisa Recut; font-size:22pt; }
+.T4 { color:#000000; font-family:Helv, Arial; font-size:20pt; }
+.T5 { font-style:italic; font-weight:bold; }
+.T6 { font-style:italic; text-decoration:underline; }
+.T7 { text-decoration:underline; }
+.T8 { text-decoration:underline; font-weight:bold; }
+.T9 { font-size:11pt; text-decoration:underline; font-weight:bold; }
+.WW8Num11z0 { color:#000000; }
+.WW8Num12z0 { font-family:Helv, Arial; }
+.WW8Num12z1 { font-family:Courier New; }
+.WW8Num12z2 { font-family:Wingdings; }
+.WW8Num12z3 { font-family:Symbol; }
+.WW8Num15z0 { font-weight:bold; }
+.WW8Num4z0 { font-family:Helv, Arial; }
+.WW8Num4z1 { font-family:Courier New; }
+.WW8Num4z2 { font-family:Wingdings; }
+.WW8Num4z3 { font-family:Symbol; }
+.WW8Num6z0 { font-family:Mona Lisa Recut; }
+body{background-color: #F4E3DD;}
+body.c15 {margin:0.25in; margin-top:0.25in; margin-bottom:0.25in; margin-left:0.25in; margin-right:0.25in; writing-mode:lr-tb;}
+p.c14 {margin-left:2.54cm;}
+span.c17 {position:absolute;left:17.9cm;}
+span.c16 {position:absolute;left:15.5cm;}
+span.c13 {display:block;float:left;min-width:0cm}
+span.c12 {position:absolute;left:14.923cm;}
+span.c11 {position:absolute;left:14.764cm;}
+span.c10 {position:absolute;left:7.938cm;}
+span.c9 {position:absolute;left:12.7cm;}
+span.c8 {position:absolute;left:7.144cm;}
+span.c7 {position:absolute;left:17.939cm;}
+span.c6 {position:absolute;left:4.045cm;}
+span.c5 {position:absolute;left:14.605cm;}
+span.c4 {height:0.8929in;width:0.9134in; padding:0;}
+img.c3 {height:2.268cm;width:2.32cm;}
+span.c2 {height:0.8528in;width:1.1709in; padding:0;}
+img.c1 {height:2.1661cm;width:2.9741cm;}
+
