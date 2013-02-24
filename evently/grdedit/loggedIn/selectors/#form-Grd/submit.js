@@ -241,8 +241,9 @@ function(context) {
       if (!doc.medical) {
         doc.medical = {};
       }
-      if (doc.medical.limitations != f.medical_limitations) {
-        doc.medical.limitations = f.medical_limitations;
+      var medLimitations = f.medical_limitations.replace(/"/g, "'").replace(/\\/g, "/");
+      if (doc.medical.limitations != medLimitations) {
+        doc.medical.limitations = medLimitations;
         hasChanged = true;
       }
       var medExperience = f.medical_experience.replace(/"/g, "'").replace(/\\/g, "/");
