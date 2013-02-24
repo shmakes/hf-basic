@@ -3,7 +3,7 @@ function() {
   $("#app_date").dateinput({
     format: 'yyyy-mm-dd',
     selectors: true,
-    min: -300,
+    min: -3000,
     max: 1,
     speed: 100
   });

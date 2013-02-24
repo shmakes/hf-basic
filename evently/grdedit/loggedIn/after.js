@@ -3,7 +3,7 @@ function() {
   $("#app_date").dateinput({
     format: 'yyyy-mm-dd',
     selectors: true,
-    min: -300,
+    min: -3000,
     max: 1,
     speed: 100
   });
@@ -40,7 +40,7 @@ function() {
     speed: 100
   });
 
-  $("#form-Grd").validator();
+  $("#form-Grd").validator({ position: 'bottom center' });
 
   document.title = $("input[name='first_name']").val() + " " + $("input[name='last_name']").val();
 

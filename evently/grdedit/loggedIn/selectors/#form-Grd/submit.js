@@ -75,6 +75,11 @@ function(context) {
         hasChanged = true;
       }
 
+      if (doc.occupation != f.occupation) {
+        doc.occupation = f.occupation;
+        hasChanged = true;
+      }
+
       if (doc.app_date != f.app_date) {
         doc.app_date = f.app_date;
         hasChanged = true;
@@ -212,9 +217,12 @@ function(context) {
           }
         }
       }
-
-      if (doc.gender != f.gender.toUpperCase()) {
-        doc.gender = f.gender.toUpperCase();
+      if (doc.gender != f.gender.charAt(0).toUpperCase()) {
+        doc.gender = f.gender.charAt(0).toUpperCase();
+        hasChanged = true;
+      }
+      if (doc.weight != f.weight) {
+        doc.weight = f.weight;
         hasChanged = true;
       }
       if (!doc.shirt) {
@@ -228,12 +236,13 @@ function(context) {
       if (!doc.notes) {
         doc.notes = {};
       }
-      if (doc.notes.other != f.notes_other) {
-        doc.notes.other = f.notes_other;
+      var notesOther = f.notes_other.replace(/"/g, "'").replace(/\\/g, "/");
+      if (doc.notes.other != notesOther) {
+        doc.notes.other = notesOther;
         hasChanged = true;
       }
-      if (doc.notes.service != f.notes_service) {
-        doc.notes.service = f.notes_service.toUpperCase();
+      if (doc.notes.service != f.notes_service.charAt(0).toUpperCase()) {
+        doc.notes.service = f.notes_service.charAt(0).toUpperCase();
         hasChanged = true;
       }
 

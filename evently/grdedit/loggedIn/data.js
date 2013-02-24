@@ -94,7 +94,9 @@ function(r) {
         birth_day:                 bdd,
         birth_date_string:         birthDateString,
         ageFromBirthDate:          ageFromBirthDate,
+        occupation:                r.occupation,
         gender:                    r.gender,
+        weight:                    r.weight,
         shirt_size:                r.shirt.size,
         notes_other:               r.notes.other,
         notes_service:             r.notes.service,
@@ -127,6 +129,10 @@ function(r) {
     if (r.flight.paid) {
       result["selFlightPaid"] = "checked=yes";
     }
+    var selectedGender = "selGender-" + (r.gender || "M");
+    result[selectedGender] = "selected";
+    var selectedNotesService = "selNotesService-" + (r.notes.service || "N");
+    result[selectedNotesService] = "selected";
 
   } else {
 
@@ -172,11 +178,12 @@ function(r) {
         birth_day:                 "",
         birth_date_string:         "",
         ageFromBirthDate:          "",
+        occupation:                "",
         gender:                    "",
         weight:                    "",
         shirt_size:                "",
         notes_other:               "",
-        notes_service:             "",
+        notes_service:             "N",
         medical_limitations:       "",
         medical_experience:        "",
         medical_release:           "",

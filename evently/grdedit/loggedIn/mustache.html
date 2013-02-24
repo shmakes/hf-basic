@@ -85,26 +85,26 @@
 
   <p class="P21"><span class="T9">OCCUPATION</span><span class="T10">:</span>
   <span class="T11">
-  <input type="text" name="occupation" value="{{occupation}}" style="width: 17em" />
+  <input type="text" name="occupation" pattern="[a-zA-Z0-9.,# /-]{0,}" maxlength="40" value="{{occupation}}" style="width: 17em" />
   &nbsp;</span>
 
   <span class="T9">ARE YOU A VETERAN?</span><span class="T10"> </span>
   <span class="T11">
     <select name="notes_service" id="notes_service" value="{{notes_service}}" >
-      <option {{selNotesService-Y}}>Yes</option>
       <option {{selNotesService-N}}>No</option>
+      <option {{selNotesService-Y}}>Yes</option>
     </select>
   </span> 
   </p>
   <br />
 
+    <p class="P10">If a veteran, please indicate BRANCH of service, and WHEN and WHERE you served: <br />
+      &nbsp;<textarea rows="3" cols="90" name="notes_other">{{notes_other}}</textarea>
+    </p>
 
-
-    <p class="P10">If a veteran, please indicate BRANCH of service, and WHEN and WHERE
-    you served: &nbsp;__________________________</p>
-
-    <p class="P10">
-    __________________________________________________________________________________________________</p>
+  <br />
+  <hr />
+  <br />
 
     <p class="P10">1.<span>&nbsp;Please list any prior volunteer experience:
     &nbsp;_____________________________________________________________</span></p>
@@ -293,6 +293,7 @@
         <li>
           <label for="veteran_pref_notes">veteran preferance</label>
           <input type="text" readonly="readonly" value="{{veteran_pref_notes}}" style="width: 25em" />
+          (Edit at #4 above.)
         </li>
         <li>
           <input type="hidden" id="veteran_id" name="veteran_id" value="{{veteran_id}}" />
