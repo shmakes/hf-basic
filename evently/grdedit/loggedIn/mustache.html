@@ -62,15 +62,25 @@
   <br />
 
   <p class="P21"><span class="T9">E-MAIL ADDRESS</span><span class="T10">:</span>
-  <span class="T11">
-  <input type="email" name="email" value="{{addr_email}}" style="width: 17em" />
-  &nbsp;</span>
+    <span class="T11">
+    <input type="email" name="email" value="{{addr_email}}" style="width: 17em" />
+    &nbsp;</span>
 
-  <span class="T9">DATE OF BIRTH</span><span class="T10">:</span> <span class="T11">
-  <input type="text" name="birth_year" maxlength="4" value="{{birth_year}}" style="width: 3em" />
-   - <input type="text" name="birth_month" maxlength="2" value="{{birth_month}}" style="width: 1.5em" />
-   - <input type="text" name="birth_day" maxlength="2" value="{{birth_day}}" style="width: 1.5em" />
-  </span> </p>
+    <span class="T9">DATE OF BIRTH</span><span class="T10">:</span> <span class="T11">
+    <input type="text" name="birth_year" maxlength="4" value="{{birth_year}}" style="width: 3em" />
+     - <input type="text" name="birth_month" maxlength="2" value="{{birth_month}}" style="width: 1.5em" />
+     - <input type="text" name="birth_day" maxlength="2" value="{{birth_day}}" style="width: 1.5em" />
+    </span> 
+    <br />
+    <span class="P21">
+     <span class="c16">
+       {{ageFromBirthDate}}
+      </span>
+     <span class="c17">
+       YYYY &nbsp;&nbsp; - MM &nbsp;&nbsp; - DD
+      </span>
+    </span>
+  </p>
   <br />
 
   <p class="P21"><span class="T9">OCCUPATION</span><span class="T10">:</span>
@@ -141,40 +151,36 @@
     &nbsp;Day:_______________________________________ &nbsp;Evening:
     ________________________________</span></p>
 
-    <p class="P14">4.&nbsp; &nbsp; &nbsp;
-    &nbsp; What is the name of the veteran you will be traveling with?:
-    &nbsp;(Please note that a completed veteran application must be submitted
-    also)
-    &nbsp;
-      <input type="text" name="veteran_pref_notes" pattern="[a-zA-Z0-9.,()# /-]{0,}" value="{{veteran_pref_notes}}" style="width: 25em" />
+    <p class="P10">4.
+      <span>&nbsp;What is the name of the veteran you will be traveling with?:<br />
+        &nbsp;<input type="text" name="veteran_pref_notes" pattern="[a-zA-Z0-9.,()# /-]{0,}" value="{{veteran_pref_notes}}" style="width: 45em" />
+      </span>
     </p>
 
-    <p class="P10">5.<span>&nbsp;Are you able to push a veteran in a wheelchair up
+    <p class="P10">5. <span>&nbsp;Are you able to push a veteran in a wheelchair up
     a slight incline? &nbsp;_____ Yes &nbsp;_____ No.</span></p>
 
     <p class="P10">6. &nbsp; &nbsp; &nbsp; &nbsp;
     &nbsp; Can you lift 100 pounds? &nbsp;_____Yes ______No</p>
 
-    <p class="P1">7. &nbsp;<span>&nbsp;Please identify any physical
-    disabilities, restrictions and/or medical conditions that would limit your ability to
-    fulfill the duties of a guardian. &nbsp; Also, please list any medications
-    being taken and how often.     
-      <input type="text" name="medical_limitations" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{medical_limitations}}" style="width: 35em" />
+    <p class="P10">7. <span>&nbsp;Please identify any physical disabilities, restrictions and/or medical conditions that would limit<br />
+      &nbsp;your ability to fulfill the duties of a guardian.<br />
+      &nbsp;Also, please list any medications being taken and how often.<br />
+      &nbsp;<input type="text" name="medical_limitations" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{medical_limitations}}" style="width: 55em" />
     </span></p>
 
   <br />
-  <span class="T9">GENDER</span>
+  <p class="P10">8.<span>&nbsp;GENDER</span>
   <span class="T10">:</span>
   <span class="T11">
     <select name="gender" id="gender" value="{{gender}}" >
       <option {{selGender-M}}>Male</option>
       <option {{selGender-F}}>Female</option>
     </select>
-  </span> 
+  </span> &nbsp;&nbsp;&nbsp;
   <span class="T9">WEIGHT</span><span class="T10">:</span> <span class="T11">
   <input type="number" name="weight" min="60" max="450" value="{{weight}}" style="width: 4em" />
   &nbsp;</span>
-
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <span class="T9">SHIRT SIZE</span><span class="T10">:</span> <span class="T11">
     <select name="shirt_size" id="shirt_size" value="{{shirt_size}}" >
@@ -188,17 +194,15 @@
     </select>
     <input type="hidden" id="raw_shirt_size" value="{{shirt_size}}" />
   </span> 
+  </p>
+  <br />
 
-    <p class="P1">9.<span>&nbsp;Please note any medical experience you may have (e.g., EMT, CPR, Paramedics),
-      <textarea rows="3" cols="70" name="medical_experience">{{medical_experience}}</textarea>
+    <p class="P10">9.<span>&nbsp;Please note any medical experience you may have (e.g., EMT, CPR, Paramedics):<br />
+      &nbsp;<textarea rows="3" cols="70" name="medical_experience">{{medical_experience}}</textarea>
     </span></p>
 
-   <span class="c16">
-     {{ageFromBirthDate}}
-    </span>
-   <span class="c17">
-     YYYY &nbsp;&nbsp; - MM &nbsp;&nbsp; - DD
-    </span>
+
+  <br />
 
     <fieldset>
       <legend accesskey="S">
@@ -241,7 +245,7 @@
           <input type="text" name="flight_confirmed_by" maxlength="30" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{flight_confirmed_by}}" style="width: 15em" />
         </li>
         <li>
-          <label for="medical_release">release</label>
+          <label for="medical_release">medical release</label>
           <input type="text" name="medical_release" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{medical_release}}" style="width: 35em" />
         </li>
         <li>
