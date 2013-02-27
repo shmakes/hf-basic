@@ -6,6 +6,7 @@ function(head, req) {
   var pairLastName = "";
   var training = "";
   var paid = "";
+  var conflict = "";
 
   start({
     "headers": {
@@ -23,6 +24,7 @@ function(head, req) {
     r = row.doc;
     if (r.type === "Veteran") {
       pairName = r.guardian.name.split(" ");
+      conflict = (r.vet_type || "WWII");
     } else if (r.type === "Guardian") {
       if ((r.veteran) && (r.veteran.pairings) && (r.veteran.pairings.length > 0)) {
         pairName = r.veteran.pairings[0].name.split(" ");
@@ -55,6 +57,7 @@ function(head, req) {
         flight_id:             r.flight.id,
         type:                  r.type,
         app_date:              r.app_date,
+        conflict:              conflict,
         first_name:            r.name.first,
         middle_name:           r.name.middle,
         last_name:             r.name.last,

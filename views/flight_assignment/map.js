@@ -18,7 +18,7 @@ function(doc) {
            "name_last": doc.name.last, 
            "city": doc.address.city + ", " + doc.address.state, 
            "appdate": (doc.app_date || ""),
-           "group": (doc.flight.group || ""),
+           "group": (doc.flight.group || "") + " (" + (doc.vet_type || "WWII") + ")",
            "preference": (doc.guardian.pref_notes || ""),
            "paired_with": (doc.guardian.id || ""),
            "confirmed": confirmed
@@ -35,7 +35,7 @@ function(doc) {
                "name_last": doc.name.last, 
                "city": doc.address.city + ", " + doc.address.state, 
                "appdate": (doc.app_date || ""),
-               "group": (doc.flight.group || ""),
+               "group": (doc.flight.group || "") + " (" + (doc.vet_type || "WWII") + ")",
                "preference": (doc.veteran.pref_notes || ""),
                "paired_with": (doc.veteran.pairings[vet].id || ""),
                "confirmed": confirmed

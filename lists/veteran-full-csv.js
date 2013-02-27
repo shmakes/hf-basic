@@ -12,6 +12,7 @@ function(head, req) {
     r = row.doc;
     result = {
         app_date:              r.app_date,
+        conflict:              (r.vet_type || "WWII"),
         first_name:            r.name.first,
         middle_name:           r.name.middle,
         last_name:             r.name.last,

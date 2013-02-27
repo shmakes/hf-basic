@@ -59,10 +59,11 @@ function addVetRow(tbody, doc, position) {
     age = thisYear - birthYear;
   }
   var anchor = "<a href='vet_edit.html?vetid=" + doc._id + "' target='_blank'>";
+  var conflict =" (" + (doc.vet_type || "WWII") + ")";
 
   var tr = $("<tr class='Veteran'/>");
   tr.append("<td>" + anchor + position + "</a></td>");
-  tr.append("<td>" + anchor + doc.app_date + "</a></td>");
+  tr.append("<td>" + anchor + doc.app_date + conflict + "</a></td>");
   tr.append("<td>" + anchor + doc.name.first + " " + doc.name.last + "</a></td>");
   tr.append("<td>" + anchor + age + "</a></td>");
   tr.append("<td>" + anchor + (doc.medical.isWheelchairBound ? "Yes" : "") + "</a></td>");
