@@ -320,7 +320,10 @@ function(context) {
         doc.alt_contact.address.phone_mbl = f.ac_phone_mbl;
         hasChanged = true;
       }
-
+      if (doc.alt_contact.address.email != f.ac_email) {
+        doc.alt_contact.address.email = f.ac_email;
+        hasChanged = true;
+      }
 
       if (!doc.medical) {
         doc.medical = {};
