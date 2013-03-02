@@ -7,13 +7,23 @@ function UpdateGuardianDataGrid(vetId, grd) {
   // Update the grid.
   var vetRow = $("tr.DataRow[vetid='" + vetId + "']");
   var vetData = vetRow.children("td");
+  var training = "";  
+  if (grd.flight.training) {
+    if (grd.flight.training_complete) {
+      training = "* ";
+    }
+    training += grd.flight.training;
+  }
+  
   if (grd.name) {
-    vetData[10].textContent = grd.name.first + " " + grd.name.last;
-    vetData[9].textContent = grd.address.city + ", " + grd.address.state;
+    vetData[11].textContent = grd.name.first + " " + grd.name.last;
+    vetData[10].textContent = grd.address.city + ", " + grd.address.state;
+    vetData[9].textContent = training;
     vetData[8].textContent = grd.medical.experience;
     vetData[7].textContent  = grd.flight.bus;
     vetData[6].firstChild.value = grd.flight.seat;
   } else {
+    vetData[11].textContent = "";
     vetData[10].textContent = "";
     vetData[9].textContent = "";
     vetData[8].textContent = "";

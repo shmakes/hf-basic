@@ -17,8 +17,7 @@ function() {
         var endZip = startZip + 1;
         $("#byZip")[0].textContent = startZip;
         var zipSel = $("select#SelectByZip");
-        zipSel.find('option').remove().end();
-        var zipOpt = zipSel.attr('options');
+        zipSel.empty();
         app.db.view("basic/guardians_by_zip", {
           descending : false,
           limit: 10,
@@ -29,7 +28,12 @@ function() {
             for (idx in resp.rows) {
               row = resp.rows[idx];
               entry = row.value.name + " | " + row.value.street + " | " + row.value.city;
-              zipOpt[zipOpt.length] = new Option(entry, row.id, selected, selected);
+              if (selected) {
+                zipSel.append($("<option></option>").attr('selected', 'selected').attr("value", row.id).text(entry));
+              }
+              else {
+                zipSel.append($("<option></option>").attr("value", row.id).text(entry));
+              }
               selected = false;
             }
           }
@@ -42,8 +46,7 @@ function() {
 
         $("#byCity")[0].textContent = doc.address.city;
         var citySel = $("select#SelectByCity");
-        citySel.find('option').remove().end();
-        var cityOpt = citySel.attr('options');
+        citySel.empty();
         app.db.view("basic/guardians_by_city", {
           descending : false,
           limit: 10,
@@ -54,7 +57,12 @@ function() {
             for (idx in resp.rows) {
               row = resp.rows[idx];
               entry = row.value.name + " | " + row.value.street + " | " + row.value.zip;
-              cityOpt[cityOpt.length] = new Option(entry, row.id, selected, selected);
+              if (selected) {
+                citySel.append($("<option></option>").attr('selected', 'selected').attr("value", row.id).text(entry));
+              }
+              else {
+                citySel.append($("<option></option>").attr("value", row.id).text(entry));
+              }
               selected = false;
             }
           }
@@ -64,8 +72,7 @@ function() {
         var endCounty = startCounty.toUpperCase() + "\ufff0";
         $("#byCounty")[0].textContent = doc.address.county;
         var countySel = $("select#SelectByCounty");
-        countySel.find('option').remove().end();
-        var countyOpt = countySel.attr('options');
+        countySel.empty();
         app.db.view("basic/guardians_by_county", {
           descending : false,
           limit: 10,
@@ -76,7 +83,12 @@ function() {
             for (idx in resp.rows) {
               row = resp.rows[idx];
               entry = row.value.name + " | " + row.value.street + " | " + row.value.city;
-              countyOpt[countyOpt.length] = new Option(entry, row.id, selected, selected);
+              if (selected) {
+                countySel.append($("<option></option>").attr('selected', 'selected').attr("value", row.id).text(entry));
+              }
+              else {
+                countySel.append($("<option></option>").attr("value", row.id).text(entry));
+              }
               selected = false;
             }
           }
@@ -84,8 +96,7 @@ function() {
 
 
         var app_dateSel = $("select#SelectByAppDate");
-        app_dateSel.find('option').remove().end();
-        var app_dateOpt = app_dateSel.attr('options');
+        app_dateSel.empty();
         app.db.view("basic/guardians_by_app_date", {
           descending : false,
           limit: 10,
@@ -96,7 +107,12 @@ function() {
             for (idx in resp.rows) {
               row = resp.rows[idx];
               entry = row.value.name + " | " + row.value.street + " | " + row.value.city;
-              app_dateOpt[app_dateOpt.length] = new Option(entry, row.id, selected, selected);
+              if (selected) {
+                app_dateSel.append($("<option></option>").attr('selected', 'selected').attr("value", row.id).text(entry));
+              }
+              else {
+                app_dateSel.append($("<option></option>").attr("value", row.id).text(entry));
+              }
               selected = false;
             }
           }
