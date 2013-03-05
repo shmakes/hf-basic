@@ -35,7 +35,7 @@ function(doc) {
                "name_last": doc.name.last, 
                "city": doc.address.city + ", " + doc.address.state, 
                "appdate": (doc.app_date || ""),
-               "group": (doc.flight.group || "") + " (" + (doc.vet_type || "WWII") + ")",
+               "group": (doc.flight.group || ""),
                "preference": (doc.veteran.pref_notes || ""),
                "paired_with": (doc.veteran.pairings[vet].id || ""),
                "confirmed": confirmed
