@@ -15,7 +15,7 @@ function renderWaitlist(db, viewName, startPos, renderFunction, targetElement) {
         var startId = resp.rows[(startPos - 1)].id;
 
         db.view(viewName, {
-          limit : 100,
+          limit : 200,
           descending : false,
           include_docs: true,
           startkey: startKey,
