@@ -8,7 +8,7 @@ function() {
     speed: 100
   });
 
-  $.tools.validator.fn("[name=birth_day]", "A valid date from 1910 - 1960.  YYYY-MM-DD", function(input, value) { 
+  $.tools.validator.fn("[name=birth_day]", "A valid date from 1910 - 1990.  YYYY-MM-DD", function(input, value) { 
     var bYear = $("input[name='birth_year']").val().replace(/^\s*|\s*$/g, '');
     var bMonth = $("input[name='birth_month']").val().replace(/^\s*|\s*$/g, '');
     var bDay = value.replace(/^\s*|\s*$/g, '');
@@ -25,7 +25,7 @@ function() {
     if ((bdate.getFullYear() === birthYear) 
         && (bdate.getMonth() === birthMonth) 
         && (bdate.getDate() === birthDay)) { // was valid
-      if ((byr >= 1910) && (byr <= 1960)) {  // in range
+      if ((byr >= 1910) && (byr <= 1990)) {  // in range
         return true;
       }
     }
