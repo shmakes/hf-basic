@@ -97,6 +97,12 @@ function() {
 
   update_status_ctrl_states();
 
+  $("input[name=middle_name]").keydown(function(event) {
+    if (event.which == 190) {
+       event.preventDefault();
+     }
+  });
+
   $(this).show();
 };
 

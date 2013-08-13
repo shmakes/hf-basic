@@ -56,6 +56,12 @@ function() {
     top: '1'
   });
 
+  $("input[name=middle_name]").keydown(function(event) {
+    if (event.which == 190) {
+       event.preventDefault();
+     }
+  });
+
   $(this).show();
 };
 
