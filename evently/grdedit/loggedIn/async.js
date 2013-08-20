@@ -9,15 +9,17 @@ function(cb) {
 
         app.db.view("basic/flights", {
           descending : true,
+          include_docs: true,
           success: function(resp) {
             doc.availableFlights = [];
             for (row in resp.rows) {
-              doc.availableFlights.push({ "flight": resp.rows[row].key[1] });
+              if (!resp.rows[row].doc.completed || doc.flight.status !== "Active") {
+                doc.availableFlights.push({ "flight": resp.rows[row].key[1] });
+              }
             }
             cb(doc);
           }
         })
-
       }
     });
   } else if (docid == 'New') {
@@ -25,15 +27,17 @@ function(cb) {
 
     app.db.view("basic/flights", {
       descending : false,
+      include_docs: true,
       success: function(resp) {
         doc.availableFlights = [];
         for (row in resp.rows) {
-          doc.availableFlights.push({ "flight": resp.rows[row].key[1] });
+          if (!resp.rows[row].doc.completed) {
+            doc.availableFlights.push({ "flight": resp.rows[row].key[1] });
+          }
         }
         cb(doc);
       }
     })
-
   }
 };
 
