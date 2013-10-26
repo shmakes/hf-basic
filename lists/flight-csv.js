@@ -7,6 +7,7 @@ function(head, req) {
   var training = "";
   var paid = "";
   var conflict = "";
+  var medNotesExp = "";
 
   start({
     "headers": {
@@ -25,6 +26,7 @@ function(head, req) {
     if (r.type === "Veteran") {
       pairName = r.guardian.name.split(" ");
       conflict = (r.vet_type || "WWII");
+      medNotesExp = (r.medical.review || "");
     } else if (r.type === "Guardian") {
       if ((r.veteran) && (r.veteran.pairings) && (r.veteran.pairings.length > 0)) {
         pairName = r.veteran.pairings[0].name.split(" ");
@@ -43,6 +45,7 @@ function(head, req) {
       } else {
         paid = "N";
       }
+      medNotesExp = (r.medical.experience || "");
     }
 
     // Split the pair name.
@@ -82,6 +85,9 @@ function(head, req) {
         flight_training_notes: r.flight.training_notes,
         flight_paid:           paid,
         flight_seat:           r.flight.seat,
+        flight_group:          (r.flight.group || ""),
+        medical_limitations:   (r.medical.limitations || ""),
+        medical_notes_exp:     medNotesExp,
         pair_first_name:       pairFirstName,
         pair_last_name:        pairLastName,
         flight_bus:            r.flight.bus.replace("Alpha", "Alpha ").replace("Bravo", "Bravo "),
