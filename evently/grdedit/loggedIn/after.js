@@ -25,7 +25,7 @@ function() {
     if ((bdate.getFullYear() === birthYear) 
         && (bdate.getMonth() === birthMonth) 
         && (bdate.getDate() === birthDay)) { // was valid
-      if ((byr >= 1930) && (byr <= 2000)) {  // in range
+      if ((byr >= 1930) && (byr <= 2001)) {  // in range
         return true;
       }
     }
