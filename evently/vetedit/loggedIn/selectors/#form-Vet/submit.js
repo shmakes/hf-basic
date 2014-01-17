@@ -80,6 +80,19 @@ function(context) {
         hasChanged = true;
       }
 
+      if ('app_qualified_date' in f && f.app_qualified_date != doc.app_qualified_date) {
+        doc.flight.history.push({
+          id: timestamp,
+          change: "changed qualified date from: " + doc.app_qualified_date + " to: " + f.app_qualified_date + " by: " + user
+        });
+        doc.app_qualified_date = f.app_qualified_date;
+        hasChanged = true;
+      }
+      if ('app_qualified_by' in f && f.app_qualified_by != doc.app_qualified_by) {
+        doc.app_qualified_by = f.app_qualified_by;
+        hasChanged = true;
+      }
+
       if (!doc.flight) {
         doc.flight = {};
         doc.flight.history = [];
