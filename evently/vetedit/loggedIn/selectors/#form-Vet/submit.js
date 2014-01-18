@@ -80,6 +80,19 @@ function(context) {
         hasChanged = true;
       }
 
+      if (!doc.flight) {
+        doc.flight = {};
+        doc.flight.history = [];
+        doc.flight.id = "None";
+        doc.flight.confirmed_date = "";
+        doc.flight.confirmed_by = "";
+        doc.flight.seat = "";
+        doc.flight.group = "";
+        doc.flight.bus = "None";
+        doc.flight.status = "Active";
+        doc.flight.status_note = "";
+      }
+
       if ('app_qualified_date' in f && f.app_qualified_date != doc.app_qualified_date) {
         doc.flight.history.push({
           id: timestamp,
@@ -93,18 +106,6 @@ function(context) {
         hasChanged = true;
       }
 
-      if (!doc.flight) {
-        doc.flight = {};
-        doc.flight.history = [];
-        doc.flight.id = "None";
-        doc.flight.confirmed_date = "";
-        doc.flight.confirmed_by = "";
-        doc.flight.seat = "";
-        doc.flight.group = "";
-        doc.flight.bus = "None";
-        doc.flight.status = "Active";
-        doc.flight.status_note = "";
-      }
       if ('flight_id' in f && f.flight_id != doc.flight.id) {
         doc.flight.history.push({
           id: timestamp,
