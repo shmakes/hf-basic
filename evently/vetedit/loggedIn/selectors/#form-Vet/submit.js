@@ -93,7 +93,7 @@ function(context) {
         doc.flight.status_note = "";
       }
 
-      if ('app_qualified_date' in f && f.app_qualified_date != doc.app_qualified_date) {
+      if ('app_qualified_date' in f && f.app_qualified_date.length > 0 && f.app_qualified_date != doc.app_qualified_date) {
         doc.flight.history.push({
           id: timestamp,
           change: "changed qualified date from: " + doc.app_qualified_date + " to: " + f.app_qualified_date + " by: " + user
@@ -101,7 +101,7 @@ function(context) {
         doc.app_qualified_date = f.app_qualified_date;
         hasChanged = true;
       }
-      if ('app_qualified_by' in f && f.app_qualified_by != doc.app_qualified_by) {
+      if ('app_qualified_by' in f && f.app_qualified_by.length > 0 && f.app_qualified_by != doc.app_qualified_by) {
         doc.app_qualified_by = f.app_qualified_by;
         hasChanged = true;
       }
