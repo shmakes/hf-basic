@@ -238,10 +238,6 @@ function(context) {
         doc.service.rank = f.service_rank;
         hasChanged = true;
       }
-      if (doc.service.service_number != f.service_number) {
-        doc.service.service_number = f.service_number;
-        hasChanged = true;
-      }
       if (doc.service.activity != f.service_activity) {
         doc.service.activity = f.service_activity;
         hasChanged = true;

@@ -85,7 +85,6 @@ function(r) {
         service_branch:        r.service.branch,
         service_dates:         r.service.dates,
         service_rank:          r.service.rank,
-        service_number:        r.service.service_number,
         service_activity:      r.service.activity,
         ec_relation:           r.emerg_contact.relation,
         ec_name:               r.emerg_contact.name,
