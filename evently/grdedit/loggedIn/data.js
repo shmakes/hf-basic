@@ -71,6 +71,7 @@ function(r) {
         flight_training_notes:     (r.flight.training_notes || ""),
         flight_training_complete:  (r.flight.training_complete || false),
         flight_paid:               (r.flight.paid || false),
+        flight_waiver:             (r.flight.waiver || false),
         veteran_id:                vetId,
         veteran_name:              vetName,
         veteran_id2:               vetId2,
@@ -102,7 +103,7 @@ function(r) {
         notes_service:             r.notes.service,
         medical_limitations:       r.medical.limitations,
         medical_experience:        r.medical.experience,
-        medical_release:           r.medical.release,
+        medical_release:           (r.medical.release || false),
         created_at:                r.metadata.created_at,
         updated_at:                r.metadata.updated_at,
         created_by:                r.metadata.created_by,
@@ -122,6 +123,12 @@ function(r) {
     if (r.flight.training) {
       var selectedTraining = "selTraining-" + r.flight.training;
       result[selectedTraining] = "selected";
+    }
+    if (r.medical.release === true || r.medical.release === 'Y' || r.medical.release === 'y' ) {
+      result["selMedicalRelease"] = "checked=yes";
+    }
+    if (r.flight.waiver) {
+      result["selFlightWaiver"] = "checked=yes";
     }
     if (r.flight.training_complete) {
       result["selFlightTrainingComplete"] = "checked=yes";
@@ -155,8 +162,9 @@ function(r) {
         flight_history:            [],
         flight_training:           "",
         flight_training_notes:     "",
-        flight_training_complete:  "false",
-        flight_paid:               "false",
+        flight_training_complete:  false,
+        flight_paid:               false,
+        flight_waiver:             false,
         veteran_id:                "",
         veteran_name:              "",
         veteran_pref_notes:        "",
@@ -183,10 +191,10 @@ function(r) {
         weight:                    "",
         shirt_size:                "",
         notes_other:               "",
-        notes_service:             "N",
+        notes_service:             "",
         medical_limitations:       "",
         medical_experience:        "",
-        medical_release:           "",
+        medical_release:           false,
         created_at:                "",
         updated_at:                "",
         created_by:                "",

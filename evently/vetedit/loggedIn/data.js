@@ -58,6 +58,7 @@ function(r) {
         flight_seat:           r.flight.seat,
         flight_bus:            r.flight.bus,
         flight_history:        r.flight.history,
+        flight_waiver:         (r.flight.waiver || false),        
         guardian_id:           r.guardian.id,
         guardian_name:         r.guardian.name,
         guardian_pref_notes:   r.guardian.pref_notes,
@@ -108,6 +109,7 @@ function(r) {
         medical_limitations:   r.medical.limitations,
         medical_review:        r.medical.review,
         medical_category:      r.medical.category,
+        medical_release:       (r.medical.release || false),        
         created_at:            r.metadata.created_at,
         updated_at:            r.metadata.updated_at,
         created_by:            r.metadata.created_by,
@@ -131,6 +133,12 @@ function(r) {
     var selectedGender = "selGender-" + (r.gender || "M");
     result[selectedGender] = "selected";
 
+    if (r.medical.release) {
+      result["selMedicalRelease"] = "checked=yes";
+    }
+    if (r.flight.waiver) {
+      result["selFlightWaiver"] = "checked=yes";
+    }
     if (r.medical.usesCane === 1) {
       result["selMed-cane"] = "checked='yes'";
     }

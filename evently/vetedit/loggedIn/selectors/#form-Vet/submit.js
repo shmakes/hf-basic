@@ -165,6 +165,27 @@ function(context) {
           hasChanged = true;
         }
       }
+      var isFlightWaiverForm = (f.flight_waiver === "true");
+      var isFlightWaiverDoc = (doc.flight.waiver === true);
+      if (isFlightWaiverForm != isFlightWaiverDoc) {
+        doc.flight.history.push({
+          id: timestamp,
+          change: "changed flight waiver received from: " + doc.flight.waiver + " to: " + isFlightWaiverForm + " by: " + user
+        });
+        doc.flight.waiver = isFlightWaiverForm;
+        hasChanged = true;
+      }
+      var isMedicalReleaseForm = (f.medical_release === "true");
+      var isMedicalReleaseDoc = (doc.medical.release === true);
+      if (isMedicalReleaseForm != isMedicalReleaseDoc) {
+        doc.flight.history.push({
+          id: timestamp,
+          change: "changed medical release received from: " + doc.medical.release + " to: " + isMedicalReleaseForm + " by: " + user
+        });
+        doc.medical.release = isMedicalReleaseForm;
+        hasChanged = true;
+      }
+      
 
       if (!doc.guardian) {
         doc.guardian = {};
