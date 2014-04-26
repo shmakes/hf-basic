@@ -97,6 +97,7 @@ function(context) {
         doc.flight.status_note = "";
         doc.flight.training_complete = false;
         doc.flight.paid = false;
+        doc.flight.waiver = false;
       }
       if (!doc.flight.training) {
         doc.flight.training = "None";
@@ -269,6 +270,7 @@ function(context) {
 
       if (!doc.medical) {
         doc.medical = {};
+        doc.medical.release = false;
       }
       var medLimitations = f.medical_limitations.replace(/"/g, "'").replace(/\\/g, "/");
       if (doc.medical.limitations != medLimitations) {

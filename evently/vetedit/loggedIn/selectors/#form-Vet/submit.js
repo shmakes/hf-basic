@@ -91,6 +91,7 @@ function(context) {
         doc.flight.bus = "None";
         doc.flight.status = "Active";
         doc.flight.status_note = "";
+        doc.flight.waiver = false;
       }
 
       if ('app_qualified_date' in f && f.app_qualified_date.length > 0 && f.app_qualified_date != doc.app_qualified_date) {
@@ -358,6 +359,7 @@ function(context) {
 
       if (!doc.medical) {
         doc.medical = {};
+        doc.medical.release = false;
       }
       var usesCane = 0;
       if (f.medical_uses_cane) {
