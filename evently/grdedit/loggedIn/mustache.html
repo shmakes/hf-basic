@@ -245,10 +245,6 @@
           <input type="text" name="flight_confirmed_by" maxlength="30" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{flight_confirmed_by}}" style="width: 15em" />
         </li>
         <li>
-          <label for="medical_release">medical release</label>
-          <input type="text" name="medical_release" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{medical_release}}" style="width: 35em" />
-        </li>
-        <li>
           <label for="flight_training">guardian training</label>
           <select name="flight_training" id="flight_training" >
             <option>None</option>
@@ -261,6 +257,14 @@
         <li>
           <label for="flight_training_notes">training notes</label>
           <textarea rows="3" cols="70" name="flight_training_notes">{{flight_training_notes}}</textarea>
+        </li>
+        <li>
+          <label for="medical_release">medical release</label>
+          <input type="checkbox" name="medical_release" {{selMedicalRelease}} value="true" />
+        </li>
+        <li>
+          <label for="flight_waiver">waiver received</label>
+          <input type="checkbox" name="flight_waiver" {{selFlightWaiver}} value="true" />
         </li>
         <li>
           <label for="flight_training_complete">training complete</label>
