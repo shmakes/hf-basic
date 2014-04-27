@@ -178,16 +178,6 @@ function(context) {
         doc.flight.waiver = isFlightWaiverForm;
         hasChanged = true;
       }
-      var isMedicalReleaseForm = (f.medical_release === "true");
-      var isMedicalReleaseDoc = (doc.medical.release === true);
-      if (isMedicalReleaseForm != isMedicalReleaseDoc) {
-        doc.flight.history.push({
-          id: timestamp,
-          change: "changed medical release received from: " + doc.medical.release + " to: " + isMedicalReleaseForm + " by: " + user
-        });
-        doc.medical.release = isMedicalReleaseForm;
-        hasChanged = true;
-      }
       var isTrainingCompleteForm = (f.flight_training_complete === "true");
       var isTrainingCompleteDoc = (doc.flight.training_complete === true);
       if (isTrainingCompleteForm != isTrainingCompleteDoc) {
@@ -271,6 +261,18 @@ function(context) {
       if (!doc.medical) {
         doc.medical = {};
         doc.medical.release = false;
+        doc.medical.limitations = false;
+        doc.medical.experience = false;
+      }
+      var isMedicalReleaseForm = (f.medical_release === "true");
+      var isMedicalReleaseDoc = (doc.medical.release === true);
+      if (isMedicalReleaseForm != isMedicalReleaseDoc) {
+        doc.flight.history.push({
+          id: timestamp,
+          change: "changed medical release received from: " + doc.medical.release + " to: " + isMedicalReleaseForm + " by: " + user
+        });
+        doc.medical.release = isMedicalReleaseForm;
+        hasChanged = true;
       }
       var medLimitations = f.medical_limitations.replace(/"/g, "'").replace(/\\/g, "/");
       if (doc.medical.limitations != medLimitations) {
