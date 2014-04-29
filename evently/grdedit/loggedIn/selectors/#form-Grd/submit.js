@@ -98,6 +98,7 @@ function(context) {
         doc.flight.training_complete = false;
         doc.flight.paid = false;
         doc.flight.waiver = false;
+        doc.flight.booksOrdered = 0;
       }
       if (!doc.flight.training) {
         doc.flight.training = "None";
@@ -197,6 +198,17 @@ function(context) {
         });
         doc.flight.paid = isPaidForm;
         hasChanged = true;
+      }
+      if ('flight_books_ordered' in f ) {
+        var numBooks = parseInt(f.flight_books_ordered, 10);
+        if (numBooks != doc.flight.booksOrdered && (!(doc.flight.booksOrdered == undefined && numBooks == 0))) {
+          doc.flight.history.push({
+            id: timestamp,
+            change: "changed books ordered from: " + doc.flight.booksOrdered + " to: " + numBooks + " by: " + user
+          });
+          doc.flight.booksOrdered = numBooks;
+          hasChanged = true;
+        }
       }
       if (!doc.veteran) {
         doc.veteran = {};
