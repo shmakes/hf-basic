@@ -354,9 +354,9 @@ function(context) {
         doc.medical.isWheelchairBound = false;
         doc.medical.requiresOxygen = false;
         doc.medical.examRequired = false;
-        doc.medical.limitations = false;
-        doc.medical.category = false;
-        doc.medical.review = false;
+        doc.medical.limitations = "";
+        doc.medical.category = "";
+        doc.medical.review = "";
       }
       var isMedicalReleaseForm = (f.medical_release === "true");
       var isMedicalReleaseDoc = (doc.medical.release === true);
