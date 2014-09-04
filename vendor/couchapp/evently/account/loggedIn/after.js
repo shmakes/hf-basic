@@ -1,6 +1,6 @@
 function() {
   var pathname = window.location.pathname;
-  if (pathname.indexOf("/test/_design") != -1) {
+  if (pathname.indexOf("test/_design") != -1) {
     var header = $("#header");
     header.css("background-color", "yellow");
     var txt = header.children("h1");
