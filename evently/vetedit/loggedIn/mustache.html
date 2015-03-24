@@ -290,14 +290,6 @@
       <input type="hidden" name="type" value="{{type}}" />
       <ol>
         <li>
-          <label for="app_qualified_date">qualified date</label>
-          <input type="date" class="date" id="app_qualified_date" name="app_qualified_date" pattern="[0-9-]{0,10}" maxlength="10" value="{{app_qualified_date}}" data-value="{{app_qualified_date}}" style="width: 8em" />
-        </li>
-        <li>
-          <label for="app_qualified_by">qualified by</label>
-          <input type="text" name="app_qualified_by" maxlength="30" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{app_qualified_by}}" style="width: 15em" />
-        </li>
-        <li>
           <label for="flight_status">flight status</label>
           <select name="flight_status" id="flight_status" >
             <option {{selStatus-Active}}>Active</option>
@@ -333,6 +325,10 @@
         <li>
           <label for="flight_confirmed_by">confirmed by</label>
           <input type="text" name="flight_confirmed_by" maxlength="30" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{flight_confirmed_by}}" style="width: 15em" />
+        </li>
+        <li>
+          <label for="media_ok">media release</label>
+          <input type="checkbox" name="media_ok" {{selMediaOk}} value="true" />
         </li>
         <li>
           <label for="medical_release">medical release</label>

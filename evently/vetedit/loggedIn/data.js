@@ -46,8 +46,6 @@ function(r) {
         vet_type:              (r.vet_type || "WWII"),
         app_date:              r.app_date,
         app_date_string:       appDateString,
-        app_qualified_date:    (r.app_qualified_date || ""),
-        app_qualified_by:      r.app_qualified_by,
         flights:               r.availableFlights,
         flight_status:         r.flight.status,
         flight_status_note:    r.flight.status_note,
@@ -110,6 +108,7 @@ function(r) {
         medical_review:        r.medical.review,
         medical_category:      r.medical.category,
         medical_release:       (r.medical.release || false),        
+        media_ok:              (r.media_ok || false),
         created_at:            r.metadata.created_at,
         updated_at:            r.metadata.updated_at,
         created_by:            r.metadata.created_by,
@@ -133,6 +132,9 @@ function(r) {
     var selectedGender = "selGender-" + (r.gender || "M");
     result[selectedGender] = "selected";
 
+    if (r.media_ok) {
+      result["selMediaOk"] = "checked=yes";
+    }
     if (r.medical.release) {
       result["selMedicalRelease"] = "checked=yes";
     }

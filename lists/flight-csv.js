@@ -88,6 +88,7 @@ function(head, req) {
         flight_group:                  (r.flight.group || ""),
         flight_waiver:                 (r.flight.waiver || ""),
         flight_books_ordered:          (r.flight.booksOrdered || ""),
+        media_ok:                      (r.media_ok || ""),
         medical_release:               (r.medical.release || ""),
         medical_limitations:           (r.medical.limitations || ""),
         medical_notes_exp:             medNotesExp,
