@@ -90,6 +90,7 @@ function(head, req) {
         flight_books_ordered:          (r.flight.booksOrdered || ""),
         media_ok:                      (r.media_ok || ""),
         medical_release:               (r.medical.release || ""),
+        medical_level:                 (r.medical.level || ""),
         medical_limitations:           (r.medical.limitations || ""),
         medical_notes_exp:             medNotesExp,
         medical_uses_cane:             (r.medical.usesCane || 0),

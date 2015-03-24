@@ -348,7 +348,7 @@ function(context) {
         doc.medical.requiresOxygen = false;
         doc.medical.examRequired = false;
         doc.medical.limitations = "";
-        doc.medical.category = "";
+        doc.medical.level = "";
         doc.medical.review = "";
       }
       var isMedicalReleaseForm = (f.medical_release === "true");
@@ -421,8 +421,8 @@ function(context) {
         doc.medical.limitations = f.medical_limitations;
         hasChanged = true;
       }
-      if (doc.medical.category != f.medical_category) {
-        doc.medical.category = f.medical_category;
+      if (doc.medical.level != f.medical_level) {
+        doc.medical.level = f.medical_level;
         hasChanged = true;
       }
       var medReview = f.medical_review.replace(/"/g, "'").replace(/\\/g, "/");

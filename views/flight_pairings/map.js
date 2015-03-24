@@ -15,7 +15,7 @@ function(doc) {
            "name_first": doc.name.first, 
            "name_last": doc.name.last, 
            "city": doc.address.city + ", " + doc.address.state, 
-           "med_limits": (doc.medical.limitations || ""),
+           "med_limits": "[" + (doc.medical.level || " ") + "] " + (doc.medical.limitations || ""),
            "bus": (flt.bus || "None"),
            "seat": (flt.seat || ""),
            "confirmed": confirmed,

@@ -263,16 +263,16 @@
       </legend>
       <ol>
         <li>
+          <label for="medical_level">level</label>
+          <input type="text" name="medical_level" pattern="[1-5]{0,}" maxlength="1" value="{{medical_level}}" style="width: 5em" />
+        </li>
+        <li>
           <label for="medical_limitations">limitations</label>
           <input type="text" name="medical_limitations" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{medical_limitations}}" style="width: 35em" />
         </li>
         <li>
           <label for="medical_exam_required">exam required</label>
           <input type="checkbox" name="medical_exam_required" value="1" {{selMed-exam}} /> 
-        </li>
-        <li>
-          <label for="medical_category">category</label>
-          <input type="text" name="medical_category" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{medical_category}}" style="width: 5em" />
         </li>
         <li>
           <label for="medical_review">notes</label>
