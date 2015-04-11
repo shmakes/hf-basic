@@ -40,6 +40,14 @@ function() {
     speed: 100
   });
 
+  $("#apparel_date").dateinput({
+    format: 'yyyy-mm-dd',
+    selectors: true,
+    min: -300,
+    max: 1,
+    speed: 100
+  });
+
   $("#form-Grd").validator({ position: 'bottom center' });
 
   document.title = $("input[name='first_name']").val() + " " + $("input[name='last_name']").val();
@@ -48,7 +56,7 @@ function() {
   var storedShirtSize = $("#raw_shirt_size").attr('value').toUpperCase();
   $("#shirt_size").val(storedShirtSize);
 
-  var validShirtSizes = [ "None", "S", "M", "L", "XL", "XXL", "XXXL" ];
+  var validShirtSizes = [ "None", "S", "M", "L", "XL", "XXL", "XXXL", "4XL", "5XL" ];
   $("#shirt_size").validator({inputEvent: "blur"});
   var shirtSizeErr = "Please make a selection.";
   if ($("#raw_shirt_size").attr('value').length > 0) {

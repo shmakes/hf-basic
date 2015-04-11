@@ -2,6 +2,10 @@ function(r) {
   var app = $$(this).app;
   var dbname = app.db.name;
 
+  if (!r.apparel) {
+    r.apparel = {};
+  }
+
   if (r._rev) {
 
     var appDateString = "";
@@ -105,6 +109,11 @@ function(r) {
         medical_limitations:       r.medical.limitations,
         medical_experience:        r.medical.experience,
         medical_release:           (r.medical.release || false),
+        apparel_item:              (r.apparel.item || ""),
+        apparel_date:              (r.apparel.date || ""),
+        apparel_delivery:          (r.apparel.delivery || ""),
+        apparel_by:                (r.apparel.by || ""),
+        apparel_notes:             (r.apparel.notes || ""),
         created_at:                r.metadata.created_at,
         updated_at:                r.metadata.updated_at,
         created_by:                r.metadata.created_by,
@@ -136,6 +145,12 @@ function(r) {
     }
     if (r.flight.paid) {
       result["selFlightPaid"] = "checked=yes";
+    }
+    if (r.apparel.item) {
+      result["selApparel-" + r.apparel.item] = "selected";
+    }
+    if (r.apparel.delivery) {
+      result["selDelivery-" + r.apparel.delivery] = "selected";
     }
     var selectedGender = "selGender-" + (r.gender || "M");
     result[selectedGender] = "selected";
@@ -197,6 +212,11 @@ function(r) {
         medical_limitations:       "",
         medical_experience:        "",
         medical_release:           false,
+        apparel_item:              "",
+        apparel_date:              "",
+        apparel_delivery:          "",
+        apparel_by:                "",
+        apparel_notes:             "",
         created_at:                "",
         updated_at:                "",
         created_by:                "",

@@ -2,6 +2,10 @@ function(r) {
   var app = $$(this).app;
   var dbname = app.db.name;
 
+  if (!r.apparel) {
+    r.apparel = {};
+  }
+
   if (r._rev) {
 
     var appDateString = "";
@@ -109,6 +113,11 @@ function(r) {
         medical_level:         r.medical.level,
         medical_release:       (r.medical.release || false),        
         media_ok:              (r.media_ok || false),
+        apparel_item:          (r.apparel.item || ""),
+        apparel_date:          (r.apparel.date || ""),
+        apparel_delivery:      (r.apparel.delivery || ""),
+        apparel_notes:         (r.apparel.notes || ""),
+        apparel_by:            (r.apparel.by || ""),
         created_at:            r.metadata.created_at,
         updated_at:            r.metadata.updated_at,
         created_by:            r.metadata.created_by,
@@ -161,6 +170,12 @@ function(r) {
     }
     if (r.medical.examRequired === 1) {
       result["selMed-exam"] = "checked='yes'";
+    }
+    if (r.apparel.item) {
+      result["selApparel-" + r.apparel.item] = "selected";
+    }
+    if (r.apparel.delivery) {
+      result["selDelivery-" + r.apparel.delivery] = "selected";
     }
 
   } else {
@@ -235,6 +250,11 @@ function(r) {
         medical_limitations:   "",
         medical_review:        "",
         medical_level:         "",
+        apparel_item:          "",
+        apparel_date:          "",
+        apparel_delivery:      "",
+        apparel_notes:         "",
+        apparel_by:            "",
         created_at:            "",
         updated_at:            "",
         created_by:            "",

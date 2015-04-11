@@ -297,6 +297,38 @@ function(context) {
         hasChanged = true;
       }
 
+
+      if (!doc.apparel) {
+        doc.apparel = {};
+        doc.apparel.item = "None";
+        doc.apparel.date = "";
+        doc.apparel.delivery = "None";
+        doc.apparel.by = "";
+        doc.apparel.notes = "";
+      }
+
+      if ('apparel_item' in f && f.apparel_item != doc.apparel.item) {
+        doc.apparel.item = f.apparel_item;
+        hasChanged = true;
+      }
+      if ('apparel_date' in f && f.apparel_date != doc.apparel.date) {
+        doc.apparel.date = f.apparel_date;
+        hasChanged = true;
+      }
+      if ('apparel_delivery' in f && f.apparel_delivery != doc.apparel.delivery) {
+        doc.apparel.delivery = f.apparel_delivery;
+        hasChanged = true;
+      }
+      if ('apparel_by' in f && f.apparel_by != doc.apparel.by) {
+        doc.apparel.by = f.apparel_by;
+        hasChanged = true;
+      }
+      if ('apparel_notes' in f && f.apparel_notes != doc.apparel.notes) {
+        doc.apparel.notes = f.apparel_notes;
+        hasChanged = true;
+      }
+
+
       if (!doc.metadata) {
         doc.metadata = {};
         doc.metadata.created_at = timestamp;

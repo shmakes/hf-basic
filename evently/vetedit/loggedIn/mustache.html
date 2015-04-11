@@ -92,6 +92,8 @@
         <option {{selShrt-XL}}>XL</option>
         <option {{selShrt-XXL}}>XXL</option>
         <option {{selShrt-XXXL}}>XXXL</option>
+        <option {{selshrt-4XL}}>4XL</option>
+        <option {{selshrt-5XL}}>5XL</option>
     </select>
     <input type="hidden" id="raw_shirt_size" value="{{shirt_size}}" />
   </span> 
@@ -372,6 +374,43 @@
     </fieldset>
 
     <fieldset>
+      <legend accesskey="M">
+        <span>Apparel</span>
+      </legend>
+      <ol>
+        <li>
+          <label for="apparel_item">item</label>
+          <select name="apparel_item" id="apparel_item" >
+            <option>None</option>
+            <option {{selApparel-Jacket}}>Jacket</option>
+            <option {{selApparel-Polo}}>Polo</option>
+          </select>
+        </li>
+        <li>
+          <label for="apparel_date">date sent</label>
+          <input type="date" class="date" id="apparel_date" name="apparel_date" pattern="[0-9-]{0,10}" maxlength="10" value="{{apparel_date}}" data-value="{{apparel_date}}" style="width: 8em" />
+        </li>
+        <li>
+          <label for="apparel_delivery">delivery</label>
+          <select name="apparel_delivery" id="apparel_delivery" >
+            <option>None</option>
+            <option {{selDelivery-Mailed}}>Mailed</option>
+            <option {{selDelivery-Training}}>Training</option>
+            <option {{selDelivery-Home}}>Home</option>
+          </select>
+        </li>
+        <li>
+          <label for="apparel_by">sent by</label>
+          <input type="text" name="apparel_by" maxlength="30" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{apparel_by}}" style="width: 15em" />
+        </li>
+        <li>
+          <label for="apparel_notes">notes</label>
+          <textarea rows="3" cols="70" name="apparel_notes">{{apparel_notes}}</textarea>
+        </li>
+      </ol>
+    </fieldset>
+
+    <fieldset class="alt">
       <legend accesskey="O">
         <span>Other</span>
       </legend>

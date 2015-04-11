@@ -56,6 +56,10 @@ function(head, req) {
       pairLastName = pairName.slice(0,1);
     }
 
+    if (!r.apparel) {
+      r.apparel = {};
+    }
+    
     result = {
         flight_id:                     r.flight.id,
         type:                          r.type,
@@ -102,6 +106,11 @@ function(head, req) {
         pair_first_name:               pairFirstName,
         pair_last_name:                pairLastName,
         flight_bus:                    r.flight.bus.replace("Alpha", "Alpha ").replace("Bravo", "Bravo "),
+        apparel_item:                  (r.apparel.item || ""),
+        apparel_date:                  (r.apparel.date || ""),
+        apparel_delivery:              (r.apparel.delivery || ""),
+        apparel_notes:                 (r.apparel.notes || ""),
+        apparel_by:                    (r.apparel.by || ""),
         id:                            r._id,
         rev:                           r._rev,
         created_at:                    r.metadata.created_at,
