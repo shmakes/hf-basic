@@ -48,6 +48,7 @@ function(head, req) {
         ac_name:               r.alt_contact.name,
         ac_addr_phone:         r.alt_contact.address.phone,
         ac_addr_email:         r.alt_contact.address.email,
+        flight_id:                     r.flight.id,
         flight_status:                 r.flight.status,
         flight_status_note:            r.flight.status_note,
         flight_confirmed_date:         r.flight.confirmed_date,
