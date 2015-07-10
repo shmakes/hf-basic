@@ -60,9 +60,13 @@ function addVetRow(tbody, doc, position) {
   }
   var anchor = "<a href='vet_edit.html?vetid=" + doc._id + "' target='_blank'>";
   var conflict =" (" + (doc.vet_type || "WWII") + ")";
+  var fltStatus = "";
+  if (doc.flight.status !== "Active") {
+    fltStatus = " (" + doc.flight.status + ")";
+  }
 
   var tr = $("<tr class='Veteran'/>");
-  tr.append("<td>" + anchor + position + "</a></td>");
+  tr.append("<td>" + anchor + position + fltStatus + "</a></td>");
   tr.append("<td>" + anchor + doc.app_date + conflict + "</a></td>");
   tr.append("<td>" + anchor + doc.name.first + " " + doc.name.last + "</a></td>");
   tr.append("<td>" + anchor + age + "</a></td>");
@@ -102,8 +106,13 @@ function addGrdRow(tbody, doc, position) {
   }
   var anchor = "<a href='grd_edit.html?grdid=" + doc._id + "' target='_blank'>";
 
+  var fltStatus = "";
+  if (doc.flight.status !== "Active") {
+    fltStatus = " (" + doc.flight.status + ")";
+  }
+
   var tr = $("<tr class='Guardian'/>");
-  tr.append("<td>" + anchor + position + "</a></td>");
+  tr.append("<td>" + anchor + position + fltStatus + "</a></td>");
   tr.append("<td>" + anchor + doc.app_date + "</a></td>");
   tr.append("<td>" + anchor + doc.name.first + " " + doc.name.last + "</a></td>");
   tr.append("<td>" + anchor + age + "</a></td>");
