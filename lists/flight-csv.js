@@ -103,6 +103,8 @@ function(head, req) {
         medical_uses_scooter:          (r.medical.usesScooter || 0),
         medical_is_wheelchair_bound:   (r.medical.isWheelchairBound || 0),
         medical_requires_oxygen:       (r.medical.requiresOxygen || 0),
+        service_branch:                ((r.service && r.service.branch) || ""),
+        service_rank:                  ((r.service && r.service.rank) || ""),
         pair_first_name:               pairFirstName,
         pair_last_name:                pairLastName,
         flight_bus:                    r.flight.bus.replace("Alpha", "Alpha ").replace("Bravo", "Bravo "),
