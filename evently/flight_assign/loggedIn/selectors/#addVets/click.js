@@ -13,7 +13,7 @@ function() {
   var added = 0;
   var vetCount = 0;
 
-  app.db.view("basic/waitlist_veterans", {
+  app.db.view("basic/waitlist_veterans_active", {
     limit : vetQty,
     descending : false,
     include_docs: true,

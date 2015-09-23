@@ -13,7 +13,7 @@ function() {
 
   var added = 0;
 
-  app.db.view("basic/waitlist_guardians", {
+  app.db.view("basic/waitlist_guardians_active", {
     limit : grdQty,
     descending : false,
     include_docs: true,
