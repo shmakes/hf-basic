@@ -56,7 +56,7 @@ function() {
   var storedShirtSize = $("#raw_shirt_size").attr('value').toUpperCase();
   $("#shirt_size").val(storedShirtSize);
 
-  var validShirtSizes = [ "None", "S", "M", "L", "XL", "XXL", "XXXL", "4XL", "5XL" ];
+  var validShirtSizes = [ "None", "S", "M", "L", "XL", "2XL", "3XL", "4XL", "5XL" ];
   $("#shirt_size").validator({inputEvent: "blur"});
   var shirtSizeErr = "Please make a selection.";
   if ($("#raw_shirt_size").attr('value').length > 0) {

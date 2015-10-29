@@ -37,7 +37,7 @@ function() {
   document.title = $("input[name='first_name']").val() + " " + $("input[name='last_name']").val();
 
   // Handle shirt size selection.
-  var validShirtSizes = [ "None", "S", "M", "L", "XL", "XXL", "XXXL" ];
+  var validShirtSizes = [ "None", "S", "M", "L", "XL", "2XL", "3XL", "4XL", "5XL" ];
   $("#shirt_size").validator({inputEvent: "blur"});
   var shirtSizeErr = "Please make a selection.";
   $.tools.validator.fn("#shirt_size", shirtSizeErr,
