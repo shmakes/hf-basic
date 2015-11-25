@@ -8,6 +8,33 @@ function() {
     speed: 100
   });
 
+  $.tools.validator.fn("[name=flight_confirmed_date]", "Confirmation date is required.", function(input, value) { 
+    var confBy = $("input[name='flight_confirmed_by']").val();
+    if (confBy  && !value) {
+      return false;
+    }
+    return true;
+  });
+
+  $.tools.validator.fn("[name=flight_confirmed_by]", "Confirmed by is required.", function(input, value) { 
+    var confDate = $("input[name='flight_confirmed_date']").val();
+    if (confDate  && !value) {
+      return false;
+    }
+    return true;
+  });
+
+  $.tools.validator.fn("[name=medical_level]", "Medical level required for confirmation.", function(input, value) { 
+    var confDate = $("input[name='flight_confirmed_date']").val();
+    var confBy = $("input[name='flight_confirmed_by']").val();
+    if (confDate || confBy) {
+      if (!value) {
+        return false;
+      }
+    }
+    return true;
+  });
+
   $.tools.validator.fn("[name=birth_day]", "A valid date from 1910 - 1990.  YYYY-MM-DD", function(input, value) { 
     var bYear = $("input[name='birth_year']").val().replace(/^\s*|\s*$/g, '');
     var bMonth = $("input[name='birth_month']").val().replace(/^\s*|\s*$/g, '');
