@@ -25,8 +25,18 @@ function() {
 
   updateCounts();
   $(this).show();
-  //$("#fltdetail").tablesorter();
-  $("#fltdetail").tablesorter({ 
+  $.tablesorter.addParser({
+      id: 'surname',
+      is: function(s) { return false; },
+      format: function(s) {
+        var names = s.trim().replace(/  +/g, " ").split(" ");
+        var sortVal = names.length > 1 ? names[1] : s;
+        return sortVal;
+      },
+      type: 'text'
+  });
+  $("#fltdetail").tablesorter({
+    headers: { 0: { sorter:"surname" }, 11: { sorter:"surname" } },
     textExtraction: function(elem) {
       var $input = $("input[type=text]", elem);
 
@@ -34,5 +44,4 @@ function() {
     }
   });
 };
-
 //@ sourceURL=/flight_detail/after.js
