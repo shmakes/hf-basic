@@ -35,6 +35,28 @@ function() {
     return true;
   });
 
+  $.tools.validator.fn("[name=ac_phone]", "Primary mail call contact phone number is required for confirmation.", function(input, value) { 
+    var confDate = $("input[name='flight_confirmed_date']").val();
+    var confBy = $("input[name='flight_confirmed_by']").val();
+    if (confDate || confBy) {
+      if (!value) {
+        return false;
+      }
+    }
+    return true;
+  });
+
+  $.tools.validator.fn("[name=ac_email]", "Primary mail call contact email is required for confirmation.", function(input, value) { 
+    var confDate = $("input[name='flight_confirmed_date']").val();
+    var confBy = $("input[name='flight_confirmed_by']").val();
+    if (confDate || confBy) {
+      if (!value) {
+        return false;
+      }
+    }
+    return true;
+  });
+
   $.tools.validator.fn("[name=birth_day]", "A valid date from 1910 - 1990.  YYYY-MM-DD", function(input, value) { 
     var bYear = $("input[name='birth_year']").val().replace(/^\s*|\s*$/g, '');
     var bMonth = $("input[name='birth_month']").val().replace(/^\s*|\s*$/g, '');
