@@ -60,6 +60,10 @@ function(head, req) {
       r.apparel = {};
     }
     
+    if (!r.call) {
+      r.call = {};
+    }
+    
     result = {
         flight_id:                     r.flight.id,
         type:                          r.type,
@@ -81,6 +85,10 @@ function(head, req) {
         birth_date:                    r.birth_date,
         gender:                        r.gender,
         shirt_size:                    r.shirt.size,
+        call_assigned_to:              (r.call.assigned_to || ""),
+        call_fm_number:                (r.call.fm_number || ""),
+        call_mail_sent:                (r.call.mail_sent  || false),
+        call_email_sent:               (r.call.email_sent || false),
         flight_status:                 r.flight.status,
         flight_status_note:            r.flight.status_note,
         flight_confirmed_date:         r.flight.confirmed_date,
