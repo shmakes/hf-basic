@@ -5,6 +5,12 @@ function(r) {
   if (!r.apparel) {
     r.apparel = {};
   }
+  if (!r.emerg_contact) {
+    r.emerg_contact = {};
+  }
+  if (!r.emerg_contact.address) {
+    r.emerg_contact.address = {};
+  }
 
   if (r._rev) {
 
@@ -104,6 +110,9 @@ function(r) {
         gender:                    r.gender,
         weight:                    r.weight,
         shirt_size:                r.shirt.size,
+        ec_relation:               (r.emerg_contact.relation || ""),
+        ec_name:                   (r.emerg_contact.name || ""),
+        ec_addr_phone:             (r.emerg_contact.address.phone || ""),
         notes_other:               r.notes.other,
         notes_service:             r.notes.service,
         medical_limitations:       r.medical.limitations,
@@ -215,6 +224,9 @@ function(r) {
         gender:                    "",
         weight:                    "",
         shirt_size:                "",
+        ec_relation:               "",
+        ec_name:                   "",
+        ec_addr_phone:             "",
         notes_other:               "",
         notes_service:             "",
         medical_limitations:       "",

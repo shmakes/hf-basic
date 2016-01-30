@@ -270,6 +270,26 @@ function(context) {
       }
 
 
+      if (!doc.emerg_contact) {
+        doc.emerg_contact = {};
+      }
+      if (!doc.emerg_contact.address) {
+        doc.emerg_contact.address = {};
+      }
+      if (doc.emerg_contact.relation != f.ec_relation) {
+        doc.emerg_contact.relation = f.ec_relation;
+        hasChanged = true;
+      }
+      if (doc.emerg_contact.name != f.ec_name) {
+        doc.emerg_contact.name = f.ec_name;
+        hasChanged = true;
+      }
+      if (doc.emerg_contact.address.phone != f.ec_phone) {
+        doc.emerg_contact.address.phone = f.ec_phone;
+        hasChanged = true;
+      }
+
+
       if (!doc.medical) {
         doc.medical = {};
         doc.medical.release = false;
