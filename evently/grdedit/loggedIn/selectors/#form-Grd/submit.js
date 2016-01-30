@@ -273,6 +273,8 @@ function(context) {
       if (!doc.medical) {
         doc.medical = {};
         doc.medical.release = false;
+        doc.medical.can_push = false;
+        doc.medical.can_lift = false;
         doc.medical.limitations = false;
         doc.medical.experience = false;
       }
@@ -296,7 +298,18 @@ function(context) {
         doc.medical.experience = medExperience;
         hasChanged = true;
       }
-
+      var isMedicalCanPushForm = (f.medical_can_push === "true");
+      var isMedicalCanPushDoc = (doc.medical.can_push === true);
+      if (isMedicalCanPushForm != isMedicalCanPushDoc) {
+        doc.medical.can_push = isMedicalCanPushForm;
+        hasChanged = true;
+      }
+      var isMedicalCanLiftForm = (f.medical_can_lift === "true");
+      var isMedicalCanLiftDoc = (doc.medical.can_lift === true);
+      if (isMedicalCanLiftForm != isMedicalCanLiftDoc) {
+        doc.medical.can_lift = isMedicalCanLiftForm;
+        hasChanged = true;
+      }
 
       if (!doc.apparel) {
         doc.apparel = {};
