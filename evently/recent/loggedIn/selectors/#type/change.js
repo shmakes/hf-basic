@@ -11,6 +11,9 @@ function() {
     case "Modified":
       viewName = "basic/admin_recent_changes";
       break;
+    case "Call Center":
+      viewName = "basic/admin_recent_call_changes";
+      break;
     case "Flight":
       viewName = "basic/admin_recent_flight_changes";
       break;

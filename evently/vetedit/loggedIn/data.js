@@ -5,6 +5,9 @@ function(r) {
   if (!r.apparel) {
     r.apparel = {};
   }
+  if (!r.call) {
+    r.call = {};
+  }
 
   if (r._rev) {
 
@@ -59,8 +62,11 @@ function(r) {
         flight_confirmed_by:   r.flight.confirmed_by,
         flight_seat:           r.flight.seat,
         flight_bus:            r.flight.bus,
-        flight_history:        r.flight.history,
-        flight_waiver:         (r.flight.waiver || false),        
+        flight_waiver:         (r.flight.waiver || false),
+        call_assigned_to:      r.call.assigned_to,
+        call_fm_number:        r.call.fm_number,
+        call_mail_sent:        (r.call.mail_sent  || false),
+        call_email_sent:       (r.call.email_sent || false),
         guardian_id:           r.guardian.id,
         guardian_name:         r.guardian.name,
         guardian_pref_notes:   r.guardian.pref_notes,
@@ -111,7 +117,7 @@ function(r) {
         medical_limitations:   r.medical.limitations,
         medical_review:        r.medical.review,
         medical_level:         r.medical.level,
-        medical_release:       (r.medical.release || false),        
+        medical_release:       (r.medical.release || false),
         media_ok:              (r.media_ok || false),
         apparel_item:          (r.apparel.item || ""),
         apparel_date:          (r.apparel.date || ""),
@@ -170,6 +176,12 @@ function(r) {
     }
     if (r.medical.examRequired === 1) {
       result["selMed-exam"] = "checked='yes'";
+    }
+    if (r.call.mail_sent) {
+      result["selCallMailSent"] = "checked=yes";
+    }
+    if (r.call.email_sent) {
+      result["selCallEmailSent"] = "checked=yes";
     }
     if (r.apparel.item) {
       result["selApparel-" + r.apparel.item] = "selected";

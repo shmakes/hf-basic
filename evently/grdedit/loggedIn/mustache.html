@@ -2,10 +2,10 @@
   <form id="form-Grd" novalidate>
 
   <br />
-  <p class="P13">Doc ID: {{id}} 
+  <p class="P13">Doc ID: {{id}}
       <a target="_blank" href="/_utils/document.html?{{db_name}}/{{id}}">{{raw_data_lnk}}</a>
-    <span class="c9">D R: 
-      <input type="date" class="date" id="app_date" name="app_date" pattern="[0-9-]{10,10}" maxlength="10" value="{{app_date}}" style="width: 8em" required="required" />    
+    <span class="c9">D R:
+      <input type="date" class="date" id="app_date" name="app_date" pattern="[0-9-]{10,10}" maxlength="10" value="{{app_date}}" style="width: 8em" required="required" />
     </span>
   </p>
 
@@ -15,16 +15,16 @@
   <input type="text" name="first_name" pattern="[a-zA-Z'. ]{2,}" maxlength="30" value="{{first_name}}" style="width: 12em" required="required" />
   <input type="text" name="middle_name" pattern="[a-zA-Z' ]{0,}" maxlength="20" value="{{middle_name}}" style="width: 3em" data-message="Just the initial or name - no punctuation" />
   <input type="text" name="last_name" pattern="[a-zA-Z'. -]{2,}" maxlength="30" value="{{last_name}}" style="width: 12em" required="required" />
-  
-  
+
+
   <span class="c5"><span class="T8">NICK NAME</span><span class="T1">:</span>
   <input type="text" name="nick_name" pattern="[a-zA-Z'. ]{0,}" maxlength="20" value="{{nick_name}}" style="width: 10em" />
-  
+
   </span></p>
 
-  <p class="P20"><span class="c6">First 
-    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Middle 
+  <p class="P20"><span class="c6">First
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Middle
     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Last</span>
     <span class="c7">(If Applicable)</span></p>
 
@@ -39,15 +39,15 @@
 
   <p class="P29"><span class="T8">CITY</span><span class="T1">:</span>
   <input type="text" name="city" pattern="[a-zA-Z. -]{2,}" maxlength="20" value="{{addr_city}}" style="width: 12em" required="required" />
-  
-  <span class="c8"><span class="T8">COUNTY</span><span class="T1">:</span> 
+
+  <span class="c8"><span class="T8">COUNTY</span><span class="T1">:</span>
   <input type="text" name="county" pattern="[a-zA-Z. ]{2,}" maxlength="20" value="{{addr_county}}" style="width: 8em" required="required" />
-  
+
   </span>
-  <span class="c9"><span class="T8">STATE</span><span class="T1">:</span> 
+  <span class="c9"><span class="T8">STATE</span><span class="T1">:</span>
   <input type="text" name="state" pattern="[a-zA-Z]{2,}" maxlength="2" value="{{addr_state}}" style="width: 2em" required="required" />
-  
-  &nbsp; <span class="T8">ZIP</span><span class="T1">:</span> 
+
+  &nbsp; <span class="T8">ZIP</span><span class="T1">:</span>
   <input type="text" name="zip" pattern="[0-9 -]{5,}" maxlength="10" value="{{addr_zip}}" style="width: 8em" required="required" />
    <button id="zipFill" type="button">auto fill</button>   </span></p>
   <br />
@@ -70,7 +70,7 @@
     <input type="text" name="birth_year" maxlength="4" value="{{birth_year}}" style="width: 3em" />
      - <input type="text" name="birth_month" maxlength="2" value="{{birth_month}}" style="width: 1.5em" />
      - <input type="text" name="birth_day" maxlength="2" value="{{birth_day}}" style="width: 1.5em" />
-    </span> 
+    </span>
     <br />
     <span class="P21">
      <span class="c16">
@@ -94,7 +94,7 @@
       <option {{selNotesService-N}}>No</option>
       <option {{selNotesService-Y}}>Yes</option>
     </select>
-  </span> 
+  </span>
   </p>
   <br />
 
@@ -164,7 +164,7 @@
         <option {{selshrt-5XL}}>5XL</option>
     </select>
     <input type="hidden" id="raw_shirt_size" value="{{shirt_size}}" />
-  </span> 
+  </span>
   </p>
   <br />
 
@@ -174,6 +174,51 @@
 
 
   <br />
+
+    <fieldset class="alt">
+      <legend accesskey="C">
+        <span>Call Center</span>
+      </legend>
+      <br />
+      <ol>
+        <li>
+          <label for="call_assigned_to">call assigned to</label>
+          <input type="text" name="call_assigned_to" maxlength="30" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{call_assigned_to}}" style="width: 15em" />
+        </li>
+        <li>
+          <label for="call_fm_number">FM #</label>
+          <input type="text" name="call_fm_number" maxlength="5" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{call_fm_number}}" style="width: 5em" />
+        </li>
+        <li>
+          <label for="call_email_sent">guardian email sent</label>
+          <input type="checkbox" name="call_email_sent" {{selCallEmailSent}} value="true" />
+        </li>
+        <li>
+          <label for="flight_confirmed_date">confirmed date</label>
+          <input type="date" class="date" id="flight_confirmed_date" name="flight_confirmed_date" pattern="[0-9-]{0,10}" maxlength="10" value="{{flight_confirmed_date}}" data-value="{{flight_confirmed_date}}" style="width: 8em" />
+        </li>
+        <li>
+          <label for="flight_confirmed_by">confirmed by</label>
+          <input type="text" name="flight_confirmed_by" maxlength="30" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{flight_confirmed_by}}" style="width: 15em" />
+        </li>
+        <li>
+          <label for="flight_training">guardian training</label>
+          <select name="flight_training" id="flight_training" >
+            <option>None</option>
+            <option {{selTraining-Main}}>Main</option>
+            <option {{selTraining-Alternate}}>Alternate</option>
+            <option {{selTraining-Previous}}>Previous</option>
+            <option {{selTraining-Make-up}}>Make-up</option>
+            <option {{selTraining-Phone}}>Phone</option>
+            <option {{selTraining-Web}}>Web</option>
+          </select>
+        </li>
+        <li>
+          <label for="flight_training_notes">training notes</label>
+          <textarea rows="3" cols="70" name="flight_training_notes">{{flight_training_notes}}</textarea>
+        </li>
+      </ol>
+    </fieldset>
 
     <fieldset>
       <legend accesskey="S">
@@ -206,30 +251,6 @@
             <option {{selFlt}}>{{flight}}</option>
             {{/flights}}
           </select>
-        </li>
-        <li>
-          <label for="flight_confirmed_date">confirmed date</label>
-          <input type="date" class="date" id="flight_confirmed_date" name="flight_confirmed_date" pattern="[0-9-]{0,10}" maxlength="10" value="{{flight_confirmed_date}}" data-value="{{flight_confirmed_date}}" style="width: 8em" />
-        </li>
-        <li>
-          <label for="flight_confirmed_by">confirmed by</label>
-          <input type="text" name="flight_confirmed_by" maxlength="30" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{flight_confirmed_by}}" style="width: 15em" />
-        </li>
-        <li>
-          <label for="flight_training">guardian training</label>
-          <select name="flight_training" id="flight_training" >
-            <option>None</option>
-            <option {{selTraining-Main}}>Main</option>
-            <option {{selTraining-Alternate}}>Alternate</option>
-            <option {{selTraining-Previous}}>Previous</option>
-            <option {{selTraining-Make-up}}>Make-up</option>
-            <option {{selTraining-Phone}}>Phone</option>
-            <option {{selTraining-Web}}>Web</option>
-          </select>
-        </li>
-        <li>
-          <label for="flight_training_notes">training notes</label>
-          <textarea rows="3" cols="70" name="flight_training_notes">{{flight_training_notes}}</textarea>
         </li>
         <li>
           <label for="medical_release">medical release</label>
@@ -279,22 +300,22 @@
         <li>
           <input type="hidden" id="veteran_id" name="veteran_id" value="{{veteran_id}}" />
           <label for="veteran_assigned">veteran assigned</label>
-          <input type="text" id="veteran_name" name="veteran_name" readonly="readonly" value="{{veteran_name}}" style="width: 15em" /> 
+          <input type="text" id="veteran_name" name="veteran_name" readonly="readonly" value="{{veteran_name}}" style="width: 15em" />
           <a id="vet_edit_link" target="_blank" href="vet_edit.html?vetid={{veteran_id}}">edit</a>
-          <button id="pair_add" type="button">Pair</button> 
+          <button id="pair_add" type="button">Pair</button>
           <button id="pair_rem" type="button">Unpair</button>
         </li>
         <li>
           <input type="hidden" id="veteran_id2" name="veteran_id2" value="{{veteran_id2}}" />
           <label for="veteran_assigned2">veteran assigned</label>
-          <input type="text" id="veteran_name2" name="veteran_name2" readonly="readonly" value="{{veteran_name2}}" style="width: 15em" /> 
+          <input type="text" id="veteran_name2" name="veteran_name2" readonly="readonly" value="{{veteran_name2}}" style="width: 15em" />
           <a id="vet_edit_link2" target="_blank" href="vet_edit.html?vetid={{veteran_id2}}">edit</a>
         </li>
       </ol>
     </fieldset>
 
     <fieldset class="alt">
-      <legend accesskey="M">
+      <legend accesskey="A">
         <span>Apparel</span>
       </legend>
       <ol>
@@ -355,7 +376,7 @@
     </fieldset>
 
     <fieldset class="submit">
-      <button type="submit">Save</button> 
+      <button type="submit">Save</button>
       <button type="reset">Reset</button>
     </fieldset>
   </form>
@@ -394,7 +415,7 @@
   <div id="saved_trigger" rel="#saved"></div>
   <div class="modal saved" id="saved">
     <h2 id="Saved">Saved Sucessfully</h2>
-    <button id="continue_edit" type="button" class="close"> Continue Editing </button> | 
+    <button id="continue_edit" type="button" class="close"> Continue Editing </button> |
     <button type="button" onClick="javascript: closeW()"> Close </button>
   </div>
 

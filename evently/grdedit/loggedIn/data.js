@@ -11,6 +11,9 @@ function(r) {
   if (!r.emerg_contact.address) {
     r.emerg_contact.address = {};
   }
+  if (!r.call) {
+    r.call = {};
+  }
 
   if (r._rev) {
 
@@ -83,6 +86,9 @@ function(r) {
         flight_paid:               (r.flight.paid || false),
         flight_books_ordered:      (r.flight.booksOrdered || 0),
         flight_waiver:             (r.flight.waiver || false),
+        call_assigned_to:          r.call.assigned_to,
+        call_fm_number:            r.call.fm_number,
+        call_email_sent:           (r.call.email_sent || false),
         veteran_id:                vetId,
         veteran_name:              vetName,
         veteran_id2:               vetId2,
@@ -163,6 +169,9 @@ function(r) {
     if (r.flight.paid) {
       result["selFlightPaid"] = "checked=yes";
     }
+    if (r.call.email_sent) {
+      result["selCallEmailSent"] = "checked=yes";
+    }
     if (r.apparel.item) {
       result["selApparel-" + r.apparel.item] = "selected";
     }
@@ -199,6 +208,9 @@ function(r) {
         flight_paid:               false,
         flight_waiver:             false,
         flight_books_ordered:      0,
+        call_assigned_to:          "",
+        call_fm_number:            "",
+        call_email_sent:           false,
         veteran_id:                "",
         veteran_name:              "",
         veteran_pref_notes:        "",

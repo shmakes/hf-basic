@@ -85,6 +85,44 @@ function(context) {
         hasChanged = true;
       }
 
+      if (!doc.call) {
+        doc.call = {};
+        doc.call.history = [];
+        doc.call.assigned_to = "";
+        doc.call.fm_number = "";
+        doc.call.mail_sent = false;
+        doc.call.email_sent = false;
+      }
+
+      if ('call_assigned_to' in f && f.call_assigned_to != doc.call.assigned_to) {
+        doc.call.history.push({
+          id: timestamp,
+          change: "changed assigned caller from: " + doc.call.assigned_to + " to: " + f.call_assigned_to + " by: " + user
+        });
+        doc.call.assigned_to = f.call_assigned_to;
+        hasChanged = true;
+      }
+
+      if ('call_fm_number' in f && f.call_fm_number != doc.call.fm_number) {
+        doc.call.history.push({
+          id: timestamp,
+          change: "changed FM # from: " + doc.call.fm_number + " to: " + f.call_fm_number + " by: " + user
+        });
+        doc.call.fm_number = f.call_fm_number;
+        hasChanged = true;
+      }
+      
+      var isCallEmailSentForm = (f.call_email_sent === "true");
+      var isCallEmailSentDoc = (doc.call.email_sent === true);
+      if (isCallEmailSentForm != isCallEmailSentDoc) {
+        doc.call.history.push({
+          id: timestamp,
+          change: "changed guardian email sent from: " + isCallEmailSentDoc + " to: " + isCallEmailSentForm + " by: " + user
+        });
+        doc.call.email_sent = isCallEmailSentForm;
+        hasChanged = true;
+      }
+
       if (!doc.flight) {
         doc.flight = {};
         doc.flight.history = [];
