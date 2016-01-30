@@ -25,33 +25,42 @@ function() {
   });
 
   $.tools.validator.fn("[name=medical_level]", "Medical level required for confirmation.", function(input, value) { 
-    var confDate = $("input[name='flight_confirmed_date']").val();
-    var confBy = $("input[name='flight_confirmed_by']").val();
-    if (confDate || confBy) {
-      if (!value) {
-        return false;
+    var flightStatus = $("#flight_status").val();
+    if (flightStatus == "Active") {
+      var confDate = $("input[name='flight_confirmed_date']").val();
+      var confBy = $("input[name='flight_confirmed_by']").val();
+      if (confDate || confBy) {
+        if (!value) {
+          return false;
+        }
       }
     }
     return true;
   });
 
   $.tools.validator.fn("[name=ac_phone]", "Primary mail call contact phone number is required for confirmation.", function(input, value) { 
-    var confDate = $("input[name='flight_confirmed_date']").val();
-    var confBy = $("input[name='flight_confirmed_by']").val();
-    if (confDate || confBy) {
-      if (!value) {
-        return false;
+    var flightStatus = $("#flight_status").val();
+    if (flightStatus == "Active") {
+      var confDate = $("input[name='flight_confirmed_date']").val();
+      var confBy = $("input[name='flight_confirmed_by']").val();
+      if (confDate || confBy) {
+        if (!value) {
+          return false;
+        }
       }
     }
     return true;
   });
 
   $.tools.validator.fn("[name=ac_email]", "Primary mail call contact email is required for confirmation.", function(input, value) { 
-    var confDate = $("input[name='flight_confirmed_date']").val();
-    var confBy = $("input[name='flight_confirmed_by']").val();
-    if (confDate || confBy) {
-      if (!value) {
-        return false;
+    var flightStatus = $("#flight_status").val();
+    if (flightStatus == "Active") {
+      var confDate = $("input[name='flight_confirmed_date']").val();
+      var confBy = $("input[name='flight_confirmed_by']").val();
+      if (confDate || confBy) {
+        if (!value) {
+          return false;
+        }
       }
     }
     return true;
