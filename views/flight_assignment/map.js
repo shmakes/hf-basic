@@ -1,6 +1,6 @@
 function(doc) {
   var flt = {};
-  var confirmed = "";
+  var confirmed = " ";
 
   if (doc.flight) {
     flt = doc.flight;
@@ -17,10 +17,13 @@ function(doc) {
            "name_first": doc.name.first, 
            "name_last": doc.name.last, 
            "city": doc.address.city + ", " + doc.address.state, 
-           "appdate": (doc.app_date || ""),
-           "group": (doc.flight.group || "") + " (" + (doc.vet_type || "WWII") + ")",
-           "preference": (doc.guardian.pref_notes || ""),
-           "paired_with": (doc.guardian.id || ""),
+           "appdate": (doc.app_date || " "),
+           "group": (doc.flight.group || " ") + " (" + (doc.vet_type || "WWII") + ")",
+           "fm_number": (doc.call ? (doc.call.fm_number || " ") : " "),
+           "assigned_to": (doc.call ? (doc.call.assigned_to || " ") : " "),
+           "mail_sent": (doc.call ? (doc.call.mail_sent ? "Y" : "N") : "N"),
+           "email_sent": (doc.call ? (doc.call.email_sent ? "Y" : "N") : "N"),
+           "paired_with": (doc.guardian.id || " "),
            "confirmed": confirmed
          });
   } else if (doc.type == "Guardian") {
@@ -34,10 +37,13 @@ function(doc) {
                "name_first": doc.name.first, 
                "name_last": doc.name.last, 
                "city": doc.address.city + ", " + doc.address.state, 
-               "appdate": (doc.app_date || ""),
-               "group": (doc.flight.group || ""),
-               "preference": (doc.veteran.pref_notes || ""),
-               "paired_with": (doc.veteran.pairings[vet].id || ""),
+               "appdate": (doc.app_date || " "),
+               "group": (doc.flight.group || " "),
+               "fm_number": (doc.call ? (doc.call.fm_number || " ") : " "),
+               "assigned_to": (doc.call ? (doc.call.assigned_to || " ") : " "),
+               "mail_sent": (doc.call ? (doc.call.mail_sent ? "Y" : " ") : " "),
+               "email_sent": (doc.call ? (doc.call.email_sent ? "Y" : "N") : "N"),
+               "paired_with": (doc.veteran.pairings[vet].id || " "),
                "confirmed": confirmed
              });
       }
@@ -50,10 +56,13 @@ function(doc) {
              "name_first": doc.name.first, 
              "name_last": doc.name.last, 
              "city": doc.address.city + ", " + doc.address.state, 
-             "appdate": (doc.app_date || ""),
-             "group": (doc.flight.group || ""),
-             "preference": (doc.veteran.pref_notes || ""),
-             "paired_with": "",
+             "appdate": (doc.app_date || " "),
+             "group": (doc.flight.group || " "),
+             "fm_number": (doc.call ? (doc.call.fm_number || " ") : " "),
+             "assigned_to": (doc.call ? (doc.call.assigned_to || " ") : " "),
+             "mail_sent": (doc.call ? (doc.call.mail_sent ? "Y" : " ") : " "),
+             "email_sent": (doc.call ? (doc.call.email_sent ? "Y" : "N") : "N"),
+             "paired_with": " ",
              "confirmed": confirmed
            });
     }

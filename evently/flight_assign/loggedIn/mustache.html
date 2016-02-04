@@ -52,28 +52,32 @@
       <thead>
         <tr>
           <th class="colSpacer"> </th>
-          <th class="colSpacer"> </th>
           <th class="colName">Name</th>
           <th class="colCity">City</th>
           <th class="colAppDate">App. Date</th>
           <th class="colGroup">Group (Conflict)</th>
-          <th class="colPreferance">Preference</th>
+          <th class="colSpacer">FM#</th>
+          <th class="colPreferance">Caller</th>
+          <th class="colSpacer">M</th>
+          <th class="colSpacer">E</th>
         </tr>
       </thead>
       <tbody id="results">
       {{#pairs}}
         <tr id="{{pid}}" class="pairing">
           <td class="colSpacer {{missing_person}}"> </td>
-          <td colspan="6" class="pairing {{missing_person}}">
+          <td colspan="8" class="pairing {{missing_person}}">
             <table class='MixedList'>
             {{#people}}
               <tr id="{{id}}" class="{{type}}">
-                <td class="{{confirmed}}"><button class="remove">x</button></td>
                 <td class="colName select" name="{{type}}">{{name_first}} {{name_last}}</td>
                 <td class="colCity select">{{city}}</td>
                 <td class="colAppDate select">{{appdate}}</td>
                 <td class="colGroup select">{{group}}</td>
-                <td class="colPreferance select">{{preference}}</td>
+                <td class="colSpacer select">{{fm_number}}</td>
+                <td class="colPreferance select">{{assigned_to}}</td>
+                <td class="colSpacer select">{{mail_sent}}</td>
+                <td class="colSpacer select">{{email_sent}}</td>
               </tr>
             {{/people}}
             </table>

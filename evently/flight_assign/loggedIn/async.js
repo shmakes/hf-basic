@@ -54,7 +54,10 @@ function(cb) {
               person.city = p.city;
               person.appdate = p.appdate;
               person.group = p.group;
-              person.preference = p.preference;
+              person.fm_number = p.fm_number;
+              person.assigned_to = p.assigned_to;
+              person.mail_sent = p.mail_sent;
+              person.email_sent = p.email_sent;
               person.confirmed = p.confirmed;
               person.paired_with = p.paired_with;
               pairing.people.push(person);
