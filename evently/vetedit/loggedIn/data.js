@@ -8,6 +8,10 @@ function(r) {
   if (!r.call) {
     r.call = {};
   }
+  if (!r.mail_call) {
+    r.mail_call = {};
+    r.mail_call.address = {};
+  }
 
   if (r._rev) {
 
@@ -67,6 +71,10 @@ function(r) {
         call_fm_number:        r.call.fm_number,
         call_mail_sent:        (r.call.mail_sent  || false),
         call_email_sent:       (r.call.email_sent || false),
+        mc_name:               (r.mail_call.name || ""),
+        mc_relation:           (r.mail_call.relation || ""),
+        mc_addr_phone:         (r.mail_call.address.phone || ""),
+        mc_addr_email:         (r.mail_call.address.email || ""),
         guardian_id:           r.guardian.id,
         guardian_name:         r.guardian.name,
         guardian_pref_notes:   r.guardian.pref_notes,
@@ -213,6 +221,15 @@ function(r) {
         flight_seat:           "",
         flight_bus:            "",
         flight_history:        [],
+        flight_waiver:         false,
+        call_assigned_to:      "",
+        call_fm_number:        "",
+        call_mail_sent:        false,
+        mc_name:               "",
+        mc_relation:           "",
+        mc_addr_phone:         "",
+        mc_addr_email:         "",
+        call_email_sent:       false,
         guardian_id:           "",
         guardian_name:         "",
         guardian_pref_notes:   "",

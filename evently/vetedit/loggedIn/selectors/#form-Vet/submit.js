@@ -129,6 +129,35 @@ function(context) {
         hasChanged = true;
       }
 
+      if (!doc.mail_call) {
+        doc.mail_call = {};
+        doc.mail_call.name = "";
+        doc.mail_call.relation= "";
+        doc.mail_call.address = {};
+        doc.mail_call.address.phone = "";
+        doc.mail_call.address.email = "";
+      }
+
+      if (doc.mail_call.relation != f.mc_relation) {
+        doc.mail_call.relation = f.mc_relation;
+        hasChanged = true;
+      }
+      if (doc.mail_call.name != f.mc_name) {
+        doc.mail_call.name = f.mc_name;
+        hasChanged = true;
+      }
+      if (!doc.mail_call.address) {
+        doc.mail_call.address = {};
+      }
+      if (doc.mail_call.address.phone != f.mc_addr_phone) {
+        doc.mail_call.address.phone = f.mc_addr_phone;
+        hasChanged = true;
+      }
+      if (doc.mail_call.address.email != f.mc_addr_email) {
+        doc.mail_call.address.email = f.mc_addr_email;
+        hasChanged = true;
+      }
+
       if (!doc.flight) {
         doc.flight = {};
         doc.flight.history = [];

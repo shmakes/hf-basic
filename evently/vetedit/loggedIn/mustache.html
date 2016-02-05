@@ -147,7 +147,7 @@
 
   <br /><hr /><br />
 
-  <p class="P22"><span class="T9">MAIL CALL CONTACT</span>
+  <p class="P22"><span class="T9">ALTERNATE EMERGENCY CONTACT</span>
     <span class="T13">(son, daughter, etc)</span><span class="T10">:</span>
     <button id="copyAContact_VAddress" type="button">copy vet addr</button>
     <button id="copyAContact_EAddress" type="button">copy e-contact</button>
@@ -174,7 +174,7 @@
   </p>
 
   <p class="P17"><span class="T8">PHONE</span><span class="T1">:</span> &nbsp;
-    Primary:
+    Day:
     <input type="text" name="ac_phone" pattern="[0-9 -]{0,}" maxlength="20" value="{{ac_addr_phone}}" style="width: 10em" />
     <span class="c10">Evening:
     <input type="text" name="ac_phone_eve" pattern="[0-9 -]{0,}" maxlength="20" value="{{ac_addr_phone_eve}}" style="width: 10em" />
@@ -300,6 +300,22 @@
         <li>
           <label for="call_mail_sent">veteran mail sent</label>
           <input type="checkbox" name="call_mail_sent" {{selCallMailSent}} value="true" />
+        </li>
+        <li>
+          <label for="mc_name">mail call contact</label>
+          <input type="text" name="mc_name" maxlength="30" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{mc_name}}" style="width: 15em" />
+        </li>
+        <li>
+          <label for="mc_relation">mail call relationship</label>
+          <input type="text" name="mc_relation" maxlength="20" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{mc_relation}}" style="width: 10em" />
+        </li>
+        <li>
+          <label for="mc_addr_phone">mail call phone</label>
+          <input type="text" name="mc_addr_phone" pattern="[0-9 -]{0,}" maxlength="20" value="{{mc_addr_phone}}" style="width: 10em" />
+        </li>
+        <li>
+          <label for="mc_addr_email">mail call email</label>
+          <input type="email" name="mc_addr_email" value="{{mc_addr_email}}" style="width: 17em" />
         </li>
         <li>
           <label for="call_email_sent">mail call email sent</label>

@@ -38,7 +38,7 @@ function() {
     return true;
   });
 
-  $.tools.validator.fn("[name=ac_phone]", "Primary mail call contact phone number is required for confirmation.", function(input, value) { 
+  $.tools.validator.fn("[name=mc_addr_phone]", "Primary mail call contact phone number is required for confirmation.", function(input, value) { 
     var flightStatus = $("#flight_status").val();
     if (flightStatus == "Active") {
       var confDate = $("input[name='flight_confirmed_date']").val();
@@ -52,7 +52,7 @@ function() {
     return true;
   });
 
-  $.tools.validator.fn("[name=ac_email]", "Primary mail call contact email is required for confirmation.", function(input, value) { 
+  $.tools.validator.fn("[name=mc_addr_email]", "Primary mail call contact email is required for confirmation.", function(input, value) { 
     var flightStatus = $("#flight_status").val();
     if (flightStatus == "Active") {
       var confDate = $("input[name='flight_confirmed_date']").val();
