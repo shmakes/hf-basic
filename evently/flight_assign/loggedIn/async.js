@@ -30,7 +30,7 @@ function(cb) {
                 if (pairing.pid) {
                   if (pairing.people.length < 2) 
                   {
-                    if (pairing.people[0].paired_with.length != 0) {
+                    if (pairing.people[0].paired_with.trim().length != 0) {
                       pairing.missing_person = "problem";
                     }
                   }
@@ -67,7 +67,7 @@ function(cb) {
             if (pairing.pid) {
               if (pairing.people.length < 2) 
               {
-                if (pairing.people[0].paired_with.length != 0) {
+                if (pairing.people[0].paired_with.trim().length != 0) {
                   pairing.missing_person = "problem";
                 }
               }
