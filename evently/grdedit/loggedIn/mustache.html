@@ -187,7 +187,8 @@
         </li>
         <li>
           <label for="call_fm_number">FM #</label>
-          <input type="text" name="call_fm_number" maxlength="5" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{call_fm_number}}" style="width: 5em" />
+          <input type="text" name="call_fm_number" maxlength="5" pattern="[F,M,0-9]{0,}" value="{{call_fm_number}}" style="width: 5em" />
+          <small>(A number or "FM")</small>
         </li>
         <li>
           <label for="call_email_sent">guardian email sent</label>
