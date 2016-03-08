@@ -35,6 +35,17 @@ function() {
     return true;
   });
 
+  $.tools.validator.fn("[name=flight_id]", "Cannot be on a flight unless the status is active or flown.", function(input, value) { 
+    var flightStatus = $("#flight_status").val();
+    if (flightStatus != "Active" && flightStatus != "Flown") {
+      var flightId = $("#flight_id").val();
+      if (flightId != "None") {
+        return false;
+      }
+    }
+    return true;
+  });
+
   $.tools.validator.fn("[name=flight_training_complete]", "If previously trained, must be marked complete.", function(input, value) { 
     var trainingType = $("#flight_training option:selected").text();
     if (trainingType == "Previous" && !input[0].checked ) {

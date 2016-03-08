@@ -66,6 +66,17 @@ function() {
     return true;
   });
 
+  $.tools.validator.fn("[name=flight_id]", "Cannot be on a flight unless the status is active or flown.", function(input, value) { 
+    var flightStatus = $("#flight_status").val();
+    if (flightStatus != "Active" && flightStatus != "Flown") {
+      var flightId = $("#flight_id").val();
+      if (flightId != "None") {
+        return false;
+      }
+    }
+    return true;
+  });
+
   $.tools.validator.fn("[name=birth_day]", "A valid date from 1910 - 1990.  YYYY-MM-DD", function(input, value) { 
     var bYear = $("input[name='birth_year']").val().replace(/^\s*|\s*$/g, '');
     var bMonth = $("input[name='birth_month']").val().replace(/^\s*|\s*$/g, '');
