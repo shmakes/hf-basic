@@ -104,6 +104,7 @@ function(head, req) {
         medical_release:               (r.medical.release || ""),
         medical_level:                 (r.medical.level || ""),
         medical_limitations:           (r.medical.limitations || ""),
+        medical_exam_required:         (r.medical.examRequired || ""),
         medical_notes_exp:             medNotesExp,
         medical_uses_cane:             (r.medical.usesCane || 0),
         medical_uses_walker:           (r.medical.usesWalker || 0),
