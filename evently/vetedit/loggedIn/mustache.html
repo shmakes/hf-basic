@@ -323,6 +323,10 @@
           <input type="checkbox" name="call_email_sent" {{selCallEmailSent}} value="true" />
         </li>
         <li>
+          <label for="media_ok">media release</label>
+          <input type="checkbox" name="media_ok" {{selMediaOk}} value="true" />
+        </li>
+        <li>
           <label for="flight_confirmed_date">confirmed date</label>
           <input type="date" class="date" id="flight_confirmed_date" name="flight_confirmed_date" pattern="[0-9-]{0,10}" maxlength="10" value="{{flight_confirmed_date}}" data-value="{{flight_confirmed_date}}" style="width: 8em" />
         </li>
@@ -369,10 +373,6 @@
             <option {{selFlt}}>{{flight}}</option>
             {{/flights}}
           </select>
-        </li>
-        <li>
-          <label for="media_ok">media release</label>
-          <input type="checkbox" name="media_ok" {{selMediaOk}} value="true" />
         </li>
         <li>
           <label for="medical_release">medical release</label>
