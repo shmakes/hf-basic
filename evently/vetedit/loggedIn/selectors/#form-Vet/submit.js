@@ -427,6 +427,7 @@ function(context) {
         doc.medical.examRequired = false;
         doc.medical.limitations = "";
         doc.medical.level = "";
+        doc.medical.alt_level = "";
         doc.medical.review = "";
       }
       var isMedicalReleaseForm = (f.medical_release === "true");
@@ -501,6 +502,10 @@ function(context) {
       }
       if (doc.medical.level != f.medical_level) {
         doc.medical.level = f.medical_level;
+        hasChanged = true;
+      }
+      if (doc.medical.alt_level != f.medical_alt_level) {
+        doc.medical.alt_level = f.medical_alt_level;
         hasChanged = true;
       }
       var medReview = f.medical_review.replace(/"/g, "'").replace(/\\/g, "/");
