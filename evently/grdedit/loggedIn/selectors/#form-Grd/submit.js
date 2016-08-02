@@ -335,6 +335,7 @@ function(context) {
         doc.medical.can_lift = false;
         doc.medical.limitations = false;
         doc.medical.experience = false;
+        doc.medical.level = "";
       }
       var isMedicalReleaseForm = (f.medical_release === "true");
       var isMedicalReleaseDoc = (doc.medical.release === true);
@@ -366,6 +367,10 @@ function(context) {
       var isMedicalCanLiftDoc = (doc.medical.can_lift === true);
       if (isMedicalCanLiftForm != isMedicalCanLiftDoc) {
         doc.medical.can_lift = isMedicalCanLiftForm;
+        hasChanged = true;
+      }
+      if (doc.medical.level != f.medical_level) {
+        doc.medical.level = f.medical_level;
         hasChanged = true;
       }
 

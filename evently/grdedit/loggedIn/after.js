@@ -35,6 +35,21 @@ function() {
     return true;
   });
 
+  $.tools.validator.fn("[name=medical_level]", "Medical level required for confirmation.", function(input, value) { 
+    var flightStatus = $("#flight_status").val();
+    if (flightStatus == "Active") {
+      var confDate = $("input[name='flight_confirmed_date']").val();
+      var confBy = $("input[name='flight_confirmed_by']").val();
+      if (confDate || confBy) {
+        if (!value) {
+          return false;
+        }
+      }
+    }
+    return true;
+  });
+
+
   $.tools.validator.fn("[name=flight_id]", "Cannot be on a flight unless the status is active or flown.", function(input, value) { 
     var flightStatus = $("#flight_status").val();
     if (flightStatus != "Active" && flightStatus != "Flown") {
