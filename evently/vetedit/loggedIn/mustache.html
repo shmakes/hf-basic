@@ -296,6 +296,7 @@
         <li>
           <label for="call_assigned_to">call assigned to</label>
           <input type="text" name="call_assigned_to" maxlength="30" value="{{call_assigned_to}}" style="width: 15em" />
+          <button id="showCallHistory" type="button">History</button>
         </li>
         <li>
           <label for="call_fm_number">FM #</label>
@@ -359,6 +360,7 @@
             <option {{selStatus-Future-Spring}}>Future-Spring</option>
             <option {{selStatus-Future-Fall}}>Future-Fall</option>
           </select>
+          <button id="showFlightHistory" type="button">History</button>
         </li>
         <li>
           <label for="flight_status_note">status note</label>
@@ -415,6 +417,7 @@
           <label for="guardian_assigned">guardian assigned</label>
           <input type="text" name="guardian_name" readonly="readonly" value="{{guardian_name}}" style="width: 15em" />
           <a id="grd_edit_link" target="_blank" href="grd_edit.html?grdid={{guardian_id}}">edit</a>
+          <button id="showPairingHistory" type="button">History</button>
         </li>
       </ol>
     </fieldset>
@@ -502,6 +505,27 @@
     <h2 id="GroupTitle">Groups in use:</h2>
     <div id="groups_content"></div>
     <button id="close_groups" type="button" class="close"> Close </button>
+  </div>
+
+  <div id="flight_history_trigger" rel="#flighthistorylist"></div>
+  <div class="modal historylist" id="flighthistorylist">
+    <h2 id="FlightHistoryTitle">Flight History:</h2>
+    <div id="flight_history_content"></div>
+    <button id="close_flight_history" type="button" class="close"> Close </button>
+  </div>
+
+  <div id="call_history_trigger" rel="#callhistorylist"></div>
+  <div class="modal historylist" id="callhistorylist">
+    <h2 id="CallHistoryTitle">Call History:</h2>
+    <div id="call_history_content"></div>
+    <button id="close_call_history" type="button" class="close"> Close </button>
+  </div>
+
+  <div id="pairing_history_trigger" rel="#pairinghistorylist"></div>
+  <div class="modal historylist" id="pairinghistorylist">
+    <h2 id="PairingHistoryTitle">Pairing History:</h2>
+    <div id="pairing_history_content"></div>
+    <button id="close_pairing_history" type="button" class="close"> Close </button>
   </div>
 
 </div>

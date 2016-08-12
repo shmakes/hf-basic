@@ -31,3 +31,8 @@
 .groupHeading {
   margin-bottom: 0px;
 }
+
+.historylist {
+  position:relative;
+  width:800px;
+}
