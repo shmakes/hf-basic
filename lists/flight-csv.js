@@ -103,6 +103,7 @@ function(head, req) {
         media_ok:                      (r.media_ok || ""),
         medical_release:               (r.medical.release || ""),
         medical_level:                 (r.medical.level || ""),
+        medical_alt_level:             (r.medical.alt_level || ""),
         medical_limitations:           (r.medical.limitations || ""),
         medical_exam_required:         (r.medical.examRequired || ""),
         medical_notes_exp:             medNotesExp,
