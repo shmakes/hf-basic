@@ -44,6 +44,8 @@ function UpdateGuardianPairingFields(vet, grd) {
   $("input#docrev").val(grd._rev);
 
   UpdateVeteranLinks();
+  $("#pair_trigger").overlay().close();
+  $("#unpair_trigger").overlay().close();
 }
 
 function PairGuardianToVeteran(app, vetId, grdIdNew, user) {

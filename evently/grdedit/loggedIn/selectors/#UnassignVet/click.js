@@ -21,7 +21,7 @@ function() {
 
     PairGuardianToVeteran(app, vetId, grdId, user);
   }
-  return true;
+  return false;
 };
 
 //@ sourceURL=grdedit/loggedIn/selectors/#UnassignVet~click.js
