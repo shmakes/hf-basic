@@ -69,7 +69,7 @@ function() {
     return true;
   });
 
-  $.tools.validator.fn("[name=birth_day]", "A valid date from 1930 - 2000.  YYYY-MM-DD", function(input, value) { 
+  $.tools.validator.fn("[name=birth_day]", "A valid date from 1930 - 2010.  YYYY-MM-DD", function(input, value) { 
     var bYear = $("input[name='birth_year']").val().replace(/^\s*|\s*$/g, '');
     var bMonth = $("input[name='birth_month']").val().replace(/^\s*|\s*$/g, '');
     var bDay = value.replace(/^\s*|\s*$/g, '');
@@ -86,7 +86,7 @@ function() {
     if ((bdate.getFullYear() === birthYear) 
         && (bdate.getMonth() === birthMonth) 
         && (bdate.getDate() === birthDay)) { // was valid
-      if ((byr >= 1930) && (byr <= 2001)) {  // in range
+      if ((byr >= 1930) && (byr <= 2010)) {  // in range
         return true;
       }
     }
