@@ -187,11 +187,13 @@ function(context) {
         doc.flight.status = f.flight_status;
         hasChanged = true;
       }
-      var fltNote = f.flight_status_note.replace(/"/g, "'").replace(/\\/g, "/");
-      if (fltNote && fltNote != doc.flight.status_note) {
-        doc.flight.status_note = fltNote;
-        hasChanged = true;
-      }
+      if ('flight_status_note' in f) {
+        var fltNote = f.flight_status_note.replace(/"/g, "'").replace(/\\/g, "/");
+        if (fltNote != doc.flight.status_note) {
+          doc.flight.status_note = fltNote;
+          hasChanged = true;
+        }
+      }      
       if ('flight_training' in f && f.flight_training != doc.flight.training) {
         doc.flight.history.push({
           id: timestamp,
