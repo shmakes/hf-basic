@@ -1,0 +1,60 @@
+<div>
+  <span class="grey-note">
+    Flight Doc ID: {{id}} 
+    <a target="_blank" href="/_utils/document.html?{{db_name}}/{{id}}">{{raw_data_lnk}}</a>
+  </span>
+  <p>
+    <label for="flight_name">flight</label>
+    <input id="flightName" type="text" name="flight_name" readonly="readonly" value="{{flight_name}}" style="width: 10em" /> 
+    <label for="capacity">capacity</label>
+    <input id="flightCap" type="text" name="capacity" readonly="readonly" value="{{capacity}}" style="width: 5em" /> 
+    <label for="flight_date">flight date</label>
+    <input type="text" name="flight_date" readonly="readonly" value="{{flight_date}}" style="width: 10em" /> 
+  </p>
+  <br />
+
+  <table id="fltdetail" class="tablesorter Pairs">
+    <thead>
+      <tr>
+        <th colspan="4">Veteran</th>
+        <th colspan="7">Guardian</th>
+      </tr>
+      <tr>
+        <th>Name</th>
+        <th>Waiver</th>
+        <th>Release</th>
+        <th>Apparel Notes</th>
+        <th>Apparel Notes</th>
+        <th>Release</th>
+        <th>Waiver</th>
+        <th>Training</th>
+        <th>Paid</th>
+        <th>Books</th>
+        <th>Name</th>
+      </tr> 
+    </thead>
+    <tbody>
+  {{#pairs}}
+      <tr class="DataRow{{invalid_row}}" vetid="{{vet_id}}" grdid="{{grd_id}}">
+        <td class="Veteran colName" name="vet_name">{{vet_name_first}} {{vet_name_last}}</td>
+        <td class="Veteran colSeat  {{vet_confirmed}}"><input type="checkbox"   name="vet_flight_waiver" {{selVetFlightWaiver}} value="{{vet_flight_waiver}}" /></td>
+        <td class="Veteran colSeat  {{vet_confirmed}}"><input type="checkbox"   name="vet_medical_release" {{selVetMedicalRelease}} value="{{vet_medical_release}}" /></td>
+        <td class="Veteran colNote  {{vet_confirmed}}"><textarea rows=3 cols=60 name="vet_apparel_notes">{{vet_apparel_notes}}</textarea></td>
+        <td class="Guardian colNote {{grd_confirmed}}"><textarea rows=3 cols=60 name="grd_apparel_notes">{{grd_apparel_notes}}</textarea></td>
+        <td class="Guardian colSeat {{grd_confirmed}}"><input type="checkbox"   name="grd_flight_waiver" {{selGrdFlightWaiver}} value="{{grd_flight_waiver}}" /></td>
+        <td class="Guardian colSeat {{grd_confirmed}}"><input type="checkbox"   name="grd_medical_release" {{selGrdMedicalRelease}} value="{{grd_medical_release}}" /></td>
+        <td class="Guardian colSeat {{grd_confirmed}}">
+          {{grd_flight_training}}<br />
+          <input type="checkbox"   name="grd_flight_training_complete" {{selGrdFlightTrainingComp}} value="{{grd_flight_training_complete}}" />
+        </td>
+        <td class="Guardian colSeat {{grd_confirmed}}"><input type="checkbox"   name="grd_flight_paid" {{selGrdFlightPaid}} value="{{grd_flight_paid}}" /></td>
+        <td class="Guardian colSeat {{grd_confirmed}}">
+          <input type="number" name="grd_flight_booksOrdered" min="0" max="9" value="{{grd_flight_booksOrdered}}" style="width: 2em" />
+        </td>
+        <td class="Guardian colName" name="grd_name">{{grd_name_first}} {{grd_name_last}}</td>
+      </tr>
+  {{/pairs}}
+    </body>
+  </table>
+</div>
+
