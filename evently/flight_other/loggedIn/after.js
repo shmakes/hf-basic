@@ -34,7 +34,7 @@ function() {
       10: { sorter:"surname" } 
     },
     textExtraction: function(elem) {
-      var $input = $("input[type=text]", elem);
+      var $input = $("input", elem);
 
       return $input.val() || $(elem).text();
     }
