@@ -99,6 +99,7 @@ function(head, req) {
         flight_seat:                   r.flight.seat,
         flight_group:                  (r.flight.group || ""),
         flight_waiver:                 (r.flight.waiver || ""),
+        flight_media_waiver:           (r.flight.mediaWaiver || ""),
         flight_books_ordered:          (r.flight.booksOrdered || ""),
         media_ok:                      (r.media_ok || ""),
         medical_release:               (r.medical.release || ""),

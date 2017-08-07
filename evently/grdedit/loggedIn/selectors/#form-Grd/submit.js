@@ -136,6 +136,7 @@ function(context) {
         doc.flight.training_complete = false;
         doc.flight.paid = false;
         doc.flight.waiver = false;
+        doc.flight.mediaWaiver = false;
         doc.flight.booksOrdered = 0;
       }
       if (!doc.flight.training) {
@@ -217,6 +218,16 @@ function(context) {
           change: "changed flight waiver received from: " + doc.flight.waiver + " to: " + isFlightWaiverForm + " by: " + user
         });
         doc.flight.waiver = isFlightWaiverForm;
+        hasChanged = true;
+      }
+      var isFlightMediaWaiverForm = (f.flight_media_waiver === "true");
+      var isFlightMediaWaiverDoc = (doc.flight.mediaWaiver === true);
+      if (isFlightMediaWaiverForm != isFlightMediaWaiverDoc) {
+        doc.flight.history.push({
+          id: timestamp,
+          change: "changed media waiver received from: " + doc.flight.mediaWaiver + " to: " + isFlightMediaWaiverForm + " by: " + user
+        });
+        doc.flight.mediaWaiver = isFlightMediaWaiverForm;
         hasChanged = true;
       }
       var isTrainingCompleteForm = (f.flight_training_complete === "true");

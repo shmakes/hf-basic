@@ -86,6 +86,7 @@ function(r) {
         flight_paid:               (r.flight.paid || false),
         flight_books_ordered:      (r.flight.booksOrdered || 0),
         flight_waiver:             (r.flight.waiver || false),
+        flight_media_waiver:       (r.flight.mediaWaiver || false),
         call_assigned_to:          r.call.assigned_to,
         call_fm_number:            r.call.fm_number,
         call_email_sent:           (r.call.email_sent || false),
@@ -164,6 +165,9 @@ function(r) {
     if (r.flight.waiver) {
       result["selFlightWaiver"] = "checked=yes";
     }
+    if (r.flight.mediaWaiver) {
+      result["selFlightMediaWaiver"] = "checked=yes";
+    }
     if (r.flight.training_complete) {
       result["selFlightTrainingComplete"] = "checked=yes";
     }
@@ -208,6 +212,7 @@ function(r) {
         flight_training_complete:  false,
         flight_paid:               false,
         flight_waiver:             false,
+        flight_media_waiver:       false,
         flight_books_ordered:      0,
         call_assigned_to:          "",
         call_fm_number:            "",

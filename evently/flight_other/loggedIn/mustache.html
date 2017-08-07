@@ -21,12 +21,14 @@
       </tr>
       <tr>
         <th>Name</th>
-        <th>Waiver</th>
-        <th>Release</th>
+        <th>Liability</th>
+        <th>Media</th>
+        <th>Medical</th>
         <th>Apparel Notes</th>
         <th>Apparel Notes</th>
-        <th>Release</th>
-        <th>Waiver</th>
+        <th>Liability</th>
+        <th>Media</th>
+        <th>Medical</th>
         <th>Training</th>
         <th>Paid</th>
         <th>Books</th>
@@ -38,10 +40,12 @@
       <tr class="DataRow{{invalid_row}}" vetid="{{vet_id}}" grdid="{{grd_id}}">
         <td class="Veteran colName" name="vet_name">{{vet_name_first}} {{vet_name_last}}</td>
         <td class="Veteran colSeat  {{vet_confirmed}}"><input type="checkbox"   name="vet_flight_waiver" {{selVetFlightWaiver}} value="{{vet_flight_waiver}}" /></td>
+        <td class="Veteran colSeat  {{vet_confirmed}}"><input type="checkbox"   name="vet_flight_mediaWaiver" {{selVetFlightMediaWaiver}} value="{{vet_flight_mediaWaiver}}" /></td>
         <td class="Veteran colSeat  {{vet_confirmed}}"><input type="checkbox"   name="vet_medical_release" {{selVetMedicalRelease}} value="{{vet_medical_release}}" /></td>
         <td class="Veteran colNote  {{vet_confirmed}}"><textarea rows=3 cols=60 name="vet_apparel_notes">{{vet_apparel_notes}}</textarea></td>
         <td class="Guardian colNote {{grd_confirmed}}"><textarea rows=3 cols=60 name="grd_apparel_notes">{{grd_apparel_notes}}</textarea></td>
         <td class="Guardian colSeat {{grd_confirmed}}"><input type="checkbox"   name="grd_flight_waiver" {{selGrdFlightWaiver}} value="{{grd_flight_waiver}}" /></td>
+        <td class="Guardian colSeat {{grd_confirmed}}"><input type="checkbox"   name="grd_flight_mediaWaiver" {{selGrdFlightMediaWaiver}} value="{{grd_flight_mediaWaiver}}" /></td>
         <td class="Guardian colSeat {{grd_confirmed}}"><input type="checkbox"   name="grd_medical_release" {{selGrdMedicalRelease}} value="{{grd_medical_release}}" /></td>
         <td class="Guardian colSeat {{grd_confirmed}}">
           {{grd_flight_training}}<br />

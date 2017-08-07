@@ -17,11 +17,15 @@ function(r) {
         entry["vet_name_first"]      = vet.name_first;
         entry["vet_name_last"]       = vet.name_last;
         entry["vet_flight_waiver"]   = vet.doc.flight.waiver;
+        entry["vet_flight_media_waiver"]   = vet.doc.flight.mediaWaiver;
         entry["vet_medical_release"] = vet.doc.medical.release;
         entry["vet_apparel_notes"]   = vet.doc.apparel.notes;
 
         if (vet.doc.flight.waiver) {
           entry["selVetFlightWaiver"] = "checked=yes";
+        }
+        if (vet.doc.flight.mediaWaiver) {
+          entry["selVetFlightMediaWaiver"] = "checked=yes";
         }
         if (vet.doc.medical.release) {
           entry["selVetMedicalRelease"] = "checked=yes";
@@ -47,6 +51,7 @@ function(r) {
         entry["grd_size"]          = grd.doc.shirt.size;
         entry["grd_apparel_notes"] = grd.doc.apparel.notes;
         entry["grd_flight_waiver"]   = grd.doc.flight.waiver;
+        entry["grd_flight_media_waiver"]   = grd.doc.flight.mediaWaiver;
         entry["grd_medical_release"] = grd.doc.medical.release;
         entry["grd_flight_training"] = grd.doc.flight.training;
         entry["grd_flight_training_comp"] = grd.doc.flight.training_complete;
@@ -55,6 +60,9 @@ function(r) {
 
         if (grd.doc.flight.waiver) {
           entry["selGrdFlightWaiver"] = "checked=yes";
+        }
+        if (grd.doc.flight.mediaWaiver) {
+          entry["selGrdFlightMediaWaiver"] = "checked=yes";
         }
         if (grd.doc.medical.release) {
           entry["selGrdMedicalRelease"] = "checked=yes";

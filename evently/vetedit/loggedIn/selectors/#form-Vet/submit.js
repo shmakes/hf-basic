@@ -170,6 +170,7 @@ function(context) {
         doc.flight.status = "Active";
         doc.flight.status_note = "";
         doc.flight.waiver = false;
+        doc.flight.mediaWaiver = false;
       }
 
       if ('flight_id' in f && f.flight_id != doc.flight.id) {
@@ -245,6 +246,16 @@ function(context) {
           change: "changed flight waiver received from: " + doc.flight.waiver + " to: " + isFlightWaiverForm + " by: " + user
         });
         doc.flight.waiver = isFlightWaiverForm;
+        hasChanged = true;
+      }
+      var isFlightMediaWaiverForm = (f.flight_media_waiver === "true");
+      var isFlightMediaWaiverDoc = (doc.flight.mediaWaiver === true);
+      if (isFlightMediaWaiverForm != isFlightMediaWaiverDoc) {
+        doc.flight.history.push({
+          id: timestamp,
+          change: "changed media waiver received from: " + doc.flight.mediaWaiver + " to: " + isFlightMediaWaiverForm + " by: " + user
+        });
+        doc.flight.mediaWaiver = isFlightMediaWaiverForm;
         hasChanged = true;
       }
       if (!doc.guardian) {
