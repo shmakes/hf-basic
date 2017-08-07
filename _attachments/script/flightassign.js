@@ -93,3 +93,24 @@ function updateCounts() {
   $("#remainCount").val(capacity - vetCnt - grdCnt);
   $("#ttlConfirm").val(vetCnf + grdCnf);
 }
+
+function changeCaller(app, docId, newCaller, user) {
+
+
+  app.db.openDoc(docId, {
+    success : function(doc) {
+        if (newCaller != doc.call.assigned_to) {
+          doc.call.history.push({
+            id: ISODateString(new Date()),
+            change: "changed assigned caller from: " + doc.call.assigned_to + " to: " + newCaller + " by: " + user
+          });
+          doc.call.assigned_to = newCaller;
+          app.db.saveDoc(doc, {
+            success : function() {}
+          });
+        }
+    }
+  });
+}
+
+

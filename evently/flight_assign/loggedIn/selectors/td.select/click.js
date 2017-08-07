@@ -1,8 +1,11 @@
-function() {
+function(e) {
   var row = $(this).parent();
+  if (e.srcElement.name == "caller") {
+    return;
+  }
+
   var docId = row.attr("id");
   var docType = row.attr("class");
-
   if (docType == "Veteran") {
     window.open("vet_edit.html?vetid=" + docId, '_blank');
   }
