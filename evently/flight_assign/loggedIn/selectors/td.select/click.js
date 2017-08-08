@@ -1,6 +1,6 @@
 function(e) {
   var row = $(this).parent();
-  if (e.srcElement.name == "caller") {
+  if (e.target.name == "caller") {
     return;
   }
 
