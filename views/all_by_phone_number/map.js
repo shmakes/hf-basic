@@ -2,15 +2,18 @@ function(doc) {
   if (doc.address) {
     var ptype = doc.type;
     var pairing = "-";
+    var pairingId = "";
     var flt = {};
     var num = "";
     if (ptype == "Veteran") {
       pairing = (doc.guardian.name || "None");
+      pairingId = (doc.guardian.id || "");
     } 
     if (ptype == "Guardian") {
       pairing = "None";
       if ((doc.veteran.pairings) && (doc.veteran.pairings.length > 0)) {
         pairing = (doc.veteran.pairings[0].name || "None");
+        pairingId = (doc.veteran.pairings[0].id || "");
       }
     }
     if (doc.flight) {
@@ -26,7 +29,8 @@ function(doc) {
                "appdate": "Daytime",
                "flight": (flt.id || "-"),
                "status": (flt.status || "-"),
-               "pairing": pairing
+               "pairing": pairing,
+               "pairingId": pairingId
              });
       }
     }
@@ -40,7 +44,8 @@ function(doc) {
                "appdate": "Evening",
                "flight": (flt.id || "-"),
                "status": (flt.status || "-"),
-               "pairing": pairing
+               "pairing": pairing,
+               "pairingId": pairingId
              });
       }
     }
@@ -54,7 +59,8 @@ function(doc) {
                "appdate": "Mobile",
                "flight": (flt.id || "-"),
                "status": (flt.status || "-"),
-               "pairing": pairing
+               "pairing": pairing,
+               "pairingId": pairingId
              });
       }
     }

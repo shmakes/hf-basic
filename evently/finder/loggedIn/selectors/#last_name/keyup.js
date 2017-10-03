@@ -51,7 +51,7 @@ function() {
     descending : false,
     type : "newRows",
     success: function(resp) {
-      var id, person, anchor, tr, lastName, endMarker;
+      var id, person, anchor, anchorOther, tr, lastName, endMarker;
       endMarker = true;
       for (row in resp.rows) {
         anchor = "<a href='#'>";
@@ -68,10 +68,13 @@ function() {
 
         if (person.type == 'Veteran') {
           anchor = "<a href='vet_edit.html?vetid=" + id + "' target='_blank'>";
+          anchorOther = person.pairingId ? "<a href='grd_edit.html?grdid=" + person.pairingId + "' target='_blank'>" : anchor;
         } else if (person.type == 'Guardian') {
           anchor = "<a href='grd_edit.html?grdid=" + id + "' target='_blank'>";
+          anchorOther = person.pairingId ? "<a href='vet_edit.html?vetid=" + person.pairingId + "' target='_blank'>" : anchor;
         } else if (person.type == 'Volunteer') {
           anchor = "<a href='vol_edit.html?volid=" + id + "' target='_blank'>";
+          anchorOther = anchor;
         }
 
         tr = $("<tr/>", { class: person.type });
@@ -80,7 +83,7 @@ function() {
         tr.append("<td>" + anchor + person.appdate + "</a></td>");
         tr.append("<td>" + anchor + person.flight + "</a></td>");
         tr.append("<td>" + anchor + person.status + "</a></td>");
-        tr.append("<td>" + anchor + person.pairing + "</a></td>");
+        tr.append("<td>" + anchorOther + person.pairing + "</a></td>");
         rslt.append(tr);  
 
       }
