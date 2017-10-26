@@ -149,11 +149,11 @@ function(head, req) {
       if (result[key]) {
         if (result[key].length > 0) {
           send("\"");
-          send(result[key]);
+          send(result[key].toString().trim());
           send("\"");
         } else {
           if (!isNaN(result[key])) {
-            send(result[key].toString());
+            send(result[key].toString().trim());
           }
         }
       }
