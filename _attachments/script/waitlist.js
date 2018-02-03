@@ -43,7 +43,8 @@ function addVetHeader() {
   tr.append("<th>App. Date</th>");
   tr.append("<th>Name</th>");
   tr.append("<th>Age</th>");
-  tr.append("<th>Wheelchair Bound</th>");
+  tr.append("<th>Group</th>");
+  tr.append("<th>Notes</th>");
   tr.append("<th>Oxygen</th>");
   tr.append("<th>Shirt Size</th>");
   tr.append("<th>Guardian</th>");
@@ -70,7 +71,8 @@ function addVetRow(tbody, doc, position) {
   tr.append("<td>" + anchor + doc.app_date + conflict + "</a></td>");
   tr.append("<td>" + anchor + doc.name.first + " " + doc.name.last + "</a></td>");
   tr.append("<td>" + anchor + age + "</a></td>");
-  tr.append("<td>" + anchor + (doc.medical.isWheelchairBound ? "Yes" : "") + "</a></td>");
+  tr.append("<td>" + anchor + (doc.flight.group || "") + "</a></td>");
+  tr.append("<td class='colStatus'>" + anchor + (doc.flight.status_note || "") + "</a></td>");
   tr.append("<td>" + anchor + (doc.medical.requiresOxygen ? "Yes" : "") + "</a></td>");
   tr.append("<td>" + anchor + doc.shirt.size + "</a></td>");
   tr.append("<td>" + anchor + doc.guardian.name + "</a></td>");
