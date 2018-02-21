@@ -2,7 +2,7 @@
 
 ## Requirements
 
-* CouchDB version 1.0.1, 1.0.2, 1.1.0, or 1.2.0
+* CouchDB version 1.x
   * Installers for Linux, Apple, and others: <http://wiki.apache.org/couchdb/Installation>
   * Installer for Windows: <http://wiki.apache.org/couchdb/Windows_binary_installer?action=show&redirect=Windows+binary+installer>
 * CouchApp version 0.7.5
