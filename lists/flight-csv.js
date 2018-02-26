@@ -102,6 +102,8 @@ function(head, req) {
         flight_media_waiver:           (r.flight.mediaWaiver || ""),
         flight_books_ordered:          (r.flight.booksOrdered || ""),
         media_ok:                      (r.media_ok || ""),
+        media_newspaper_ok:            (r.media_newspaper_ok || ""),
+        media_interview_ok:            (r.media_interview_ok || ""),
         medical_release:               (r.medical.release || ""),
         medical_level:                 (r.medical.level || ""),
         medical_alt_level:             (r.medical.alt_level || ""),

@@ -328,8 +328,20 @@
           <input type="checkbox" name="call_email_sent" {{selCallEmailSent}} value="true" />
         </li>
         <li>
-          <label for="media_ok">media release</label>
-          <input type="checkbox" name="media_ok" {{selMediaOk}} value="true" />
+          <label for="media_newspaper_ok">media newspaper ok</label>
+          <select name="media_newspaper_ok" id="media_newspaper_ok" >
+            <option {{selNewspaper-Unknown}}>--</option>
+            <option {{selNewspaper-Yes}}>Yes</option>
+            <option {{selNewspaper-No}}>No</option>
+          </select>
+        </li>
+        <li>
+          <label for="media_interview_ok">media interview ok</label>
+          <select name="media_interview_ok" id="media_interview_ok" >
+            <option {{selInterview-Unknown}}>--</option>
+            <option {{selInterview-Yes}}>Yes</option>
+            <option {{selInterview-No}}>No</option>
+          </select>
         </li>
         <li>
           <label for="flight_confirmed_date">confirmed date</label>

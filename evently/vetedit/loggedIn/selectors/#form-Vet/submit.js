@@ -232,10 +232,14 @@ function(context) {
           hasChanged = true;
         }
       }
-      var isMediaOkForm = (f.media_ok === "true");
-      var isMediaOkDoc = (doc.media_ok === true);
-      if (isMediaOkForm != isMediaOkDoc) {
-        doc.media_ok = isMediaOkForm;
+      var newspaperOk = f.media_newspaper_ok.replace("--", "Unknown");
+      if (doc.media_newspaper_ok != newspaperOk) {
+        doc.media_newspaper_ok = newspaperOk;
+        hasChanged = true;
+      }
+      var interviewOk = f.media_interview_ok.replace("--", "Unknown");
+      if (doc.media_interview_ok != interviewOk) {
+        doc.media_interview_ok = interviewOk;
         hasChanged = true;
       }
       var isFlightWaiverForm = (f.flight_waiver === "true");

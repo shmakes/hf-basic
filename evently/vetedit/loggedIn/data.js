@@ -128,7 +128,8 @@ function(r) {
         medical_level:         r.medical.level,
         medical_alt_level:     r.medical.alt_level,
         medical_release:       (r.medical.release || false),
-        media_ok:              (r.media_ok || false),
+        media_newspaper_ok:    (r.media_newspaper_ok || (function(oldMediaVal, oldConfVal){ if(oldMediaVal === true){return "Yes";} else if(oldConfVal) {return "No"} else {return "Unknown"} })(r.media_ok, r.flight.confirmed_by)),
+        media_interview_ok:    (r.media_interview_ok || "Unknown"),
         apparel_item:          (r.apparel.item || ""),
         apparel_date:          (r.apparel.date || ""),
         apparel_delivery:      (r.apparel.delivery || ""),
@@ -156,10 +157,13 @@ function(r) {
     result[selectedVetType] = "selected";
     var selectedGender = "selGender-" + (r.gender || "M");
     result[selectedGender] = "selected";
-
-    if (r.media_ok) {
-      result["selMediaOk"] = "checked=yes";
-    }
+    var selectedNewspaperOk = "selNewspaper-" + (r.media_newspaper_ok || (function(oldMediaVal, oldConfVal){ 
+      if(oldMediaVal === true){return "Yes";} 
+      else if(oldConfVal) {return "No"} 
+      else {return "Unknown"} })(r.media_ok, r.flight.confirmed_by));
+    result[selectedNewspaperOk] = "selected";
+    var selectedInterviewOk = "selInterview-" + (r.media_interview_ok || "Unknown");
+    result[selectedInterviewOk] = "selected";
     if (r.medical.release) {
       result["selMedicalRelease"] = "checked=yes";
     }
@@ -286,6 +290,9 @@ function(r) {
         medical_review:        "",
         medical_level:         "",
         medical_alt_level:     "",
+        medical_release:       false,
+        media_newspaper_ok:    "Unknown",
+        media_interview_ok:    "Unknown",
         apparel_item:          "",
         apparel_date:          "",
         apparel_delivery:      "",
