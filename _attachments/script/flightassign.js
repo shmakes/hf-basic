@@ -68,14 +68,15 @@ function addVets(app, user, flightName, vets) {
 }
 
 function updateCounts() {
-  var vets = [], grds = [], vetCnt = 0, grdCnt = 0, vetCnf = 0, grdCnf = 0;
+  var vets = [], grds = [], vetsConf = [], grdsConf = [], vetCnt = 0, grdCnt = 0, vetCnf = 0, grdCnf = 0;
   $("tr.Veteran").each(function() {
     var vetId = $(this).attr("id");
     if (vetId.length > 0) vets.push(vetId);
     var vetConfirmed = $(this).children("td.confirmed");
-    if (vetConfirmed.length > 0) vetCnf += 1;
+    if (vetConfirmed.length > 0) vetsConf.push(vetId);
   });
   vetCnt = strUnique(vets).length;
+  vetCnf = strUnique(vetsConf).length;
   $("#vetCount").val(vetCnt);
   $("#vetConfirm").val(vetCnf);
 
@@ -83,9 +84,10 @@ function updateCounts() {
     var grdId = $(this).attr("id");
     if (grdId.length > 0) grds.push(grdId);
     var grdConfirmed = $(this).children("td.confirmed");
-    if (grdConfirmed.length > 0) grdCnf += 1;
+    if (grdConfirmed.length > 0) grdsConf.push(grdId);
   });
   grdCnt = strUnique(grds).length;
+  grdCnf = strUnique(grdsConf).length;
   $("#grdCount").val(grdCnt);
   $("#grdConfirm").val(grdCnf);
 
