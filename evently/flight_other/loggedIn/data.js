@@ -19,6 +19,7 @@ function(r) {
         entry["vet_flight_waiver"]   = vet.doc.flight.waiver;
         entry["vet_flight_media_waiver"]   = vet.doc.flight.mediaWaiver;
         entry["vet_medical_release"] = vet.doc.medical.release;
+        entry["vet_homecoming_destination"] = vet.doc.homecoming ? (vet.doc.homecoming.destination || "") : "";
         entry["vet_apparel_notes"]   = vet.doc.apparel.notes;
 
         if (vet.doc.flight.waiver) {

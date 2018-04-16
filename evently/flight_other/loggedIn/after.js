@@ -28,12 +28,12 @@ function() {
       1: { sorter:"checkboxes" }, 
       2: { sorter:"checkboxes" }, 
       3: { sorter:"checkboxes" }, 
-      6: { sorter:"checkboxes" }, 
       7: { sorter:"checkboxes" }, 
       8: { sorter:"checkboxes" }, 
       9: { sorter:"checkboxes" }, 
       10: { sorter:"checkboxes" }, 
-      12: { sorter:"surname" } 
+      11: { sorter:"checkboxes" }, 
+      13: { sorter:"surname" } 
     },
     textExtraction: function(elem) {
       var $input = $("input", elem);
@@ -41,5 +41,7 @@ function() {
       return $input.val() || $(elem).text();
     }
   });
+
+  updateDestinationCounts($$(this).app, $("#flightName").val());
 };
 //@ sourceURL=/flight_other/after.js

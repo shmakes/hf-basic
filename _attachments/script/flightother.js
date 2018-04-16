@@ -48,3 +48,49 @@ function changeCheckbox(app, checkBox, docId, newCheckValue, user) {
     }
   });
 }
+
+function changeDestination(app, docId, newDestination, user, flight) {
+  app.db.openDoc(docId, {
+    success : function(doc) {
+        if (!doc.homecoming) {
+          doc.homecoming = {};
+        }
+        doc.homecoming.destination = newDestination;
+        app.db.saveDoc(doc, {
+          success: function(data) {
+            updateDestinationCounts(app, flight);
+            console.log(data);
+          },
+          error: function(status) {
+            console.log(status);
+          }
+        });
+    }
+  });
+}
+
+function updateDestinationCounts(app, flightId) {
+  var content = "";
+  var output = $("#destination_counts");
+  output.html("");
+  app.db.view("basic/homecoming_destinations", {
+    descending : false,
+    group: true,
+    group_level: 2,
+    include_docs: false,
+    start_key: "[\"" + flightId + "\",\" \"]",
+    end_key: "[\"" + flightId + "\",{}]",
+    type : "newRows",
+    success: function(resp) {
+      if (resp.rows.length > 0) {
+        for (row in resp.rows) {
+          var destination = "<span class='homecoming_destination'>" + resp.rows[row].key[1] + "</span>";
+          content += destination + ": <strong>" + resp.rows[row].value + "</strong>&nbsp;&nbsp; | ";
+        }
+      } else {
+        content = "<h3>No destinations found.</h3>";
+      }
+      output.append(content);
+    }
+  });
+}

@@ -476,6 +476,22 @@
     </fieldset>
 
     <fieldset>
+      <legend accesskey="H">
+        <span>Homecoming</span>
+      </legend>
+      <ol>
+        <li>
+          <br/>
+        </li>
+        <li>
+          <label for="homecoming_destination">destination</label>
+          <input type="text" name="homecoming_destination" maxlength="30" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{homecoming_destination}}" style="width: 20em" />
+          <button id="showDestinations" type="button">Destinations</button>
+        </li>
+      </ol>
+    </fieldset>
+
+    <fieldset class="alt">
       <legend accesskey="O">
         <span>Other</span>
       </legend>
@@ -521,6 +537,14 @@
     <h2 id="GroupTitle">Groups in use:</h2>
     <div id="groups_content"></div>
     <button id="close_groups" type="button" class="close"> Close </button>
+  </div>
+
+  <div id="destinations_trigger" rel="#destinationlist"></div>
+  <div class="modal destinationList" id="destinationlist">
+    <h2 id="DestinationTitle">Destinations in use this flight:</h2>
+    <br/>
+    <div id="destinations_content"></div>
+    <button id="close_destinations" type="button" class="close"> Close </button>
   </div>
 
   <div id="flight_history_trigger" rel="#flighthistorylist"></div>

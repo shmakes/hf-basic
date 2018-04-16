@@ -200,6 +200,17 @@ function() {
     top: '1'
   });
 
+  $("#destinations_trigger").overlay({
+    mask: {
+      color: '#ebecff',
+      loadSpeed: 200,
+      opacity: 0.7
+    },
+    fixed: false,
+    closeOnClick: false,
+    top: '1'
+  });
+
   $("#flight_history_trigger").overlay({
     mask: {
       color: '#ebecff',

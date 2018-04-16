@@ -60,6 +60,10 @@ function(head, req) {
       r.apparel = {};
     }
     
+    if (!r.homecoming) {
+      r.homecoming = {};
+    }
+
     if (!r.call) {
       r.call = {};
     }
@@ -124,6 +128,7 @@ function(head, req) {
         pair_first_name:               pairFirstName,
         pair_last_name:                pairLastName,
         flight_bus:                    r.flight.bus.replace("Alpha", "Alpha ").replace("Bravo", "Bravo "),
+        homecoming_destination:        (r.homecoming.destination || ""),
         apparel_item:                  (r.apparel.item || ""),
         apparel_date:                  (r.apparel.date || ""),
         apparel_delivery:              (r.apparel.delivery || ""),

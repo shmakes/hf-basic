@@ -10,6 +10,7 @@
     <input id="flightCap" type="text" name="capacity" readonly="readonly" value="{{capacity}}" style="width: 5em" /> 
     <label for="flight_date">flight date</label>
     <input type="text" name="flight_date" readonly="readonly" value="{{flight_date}}" style="width: 10em" /> 
+    <div id="destination_counts"></div>
   </p>
   <br />
 
@@ -24,6 +25,7 @@
         <th>Liability</th>
         <th>Media</th>
         <th>Medical</th>
+        <th>Homecoming Destination</th>
         <th>Apparel Notes</th>
         <th>Apparel Notes</th>
         <th>Liability</th>
@@ -42,6 +44,7 @@
         <td class="Veteran colSeat  {{vet_confirmed}}"><input type="checkbox"   name="vet_flight_waiver" {{selVetFlightWaiver}} value="{{vet_flight_waiver}}" /></td>
         <td class="Veteran colSeat  {{vet_confirmed}}"><input type="checkbox"   name="vet_flight_mediaWaiver" {{selVetFlightMediaWaiver}} value="{{vet_flight_mediaWaiver}}" /></td>
         <td class="Veteran colSeat  {{vet_confirmed}}"><input type="checkbox"   name="vet_medical_release" {{selVetMedicalRelease}} value="{{vet_medical_release}}" /></td>
+        <td class="Veteran colName  {{vet_confirmed}}"><input type="text"       name="vet_homecoming_destination" pattern="[a-zA-Z0-9 ]{0,}" maxlength="30" value="{{vet_homecoming_destination}}" /></td>
         <td class="Veteran colNote  {{vet_confirmed}}"><textarea rows=3 cols=60 name="vet_apparel_notes">{{vet_apparel_notes}}</textarea></td>
         <td class="Guardian colNote {{grd_confirmed}}"><textarea rows=3 cols=60 name="grd_apparel_notes">{{grd_apparel_notes}}</textarea></td>
         <td class="Guardian colSeat {{grd_confirmed}}"><input type="checkbox"   name="grd_flight_waiver" {{selGrdFlightWaiver}} value="{{grd_flight_waiver}}" /></td>
