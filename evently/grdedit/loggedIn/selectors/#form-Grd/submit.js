@@ -15,6 +15,12 @@ function(context) {
 
       doc.type = f.type;
 
+      for (var p in f) {
+        if (f.hasOwnProperty(p)) {
+          f[p] = f[p].trim();
+        }
+      }
+
       if (!doc.name) {
         doc.name = {};
       }

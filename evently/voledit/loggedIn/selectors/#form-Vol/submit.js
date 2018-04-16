@@ -8,6 +8,12 @@ function(context) {
     var app = $$(form).app, 
       f = form.serializeObject();
 
+    for (var p in f) {
+      if (f.hasOwnProperty(p)) {
+        f[p] = f[p].trim();
+      }
+    }
+
     function saveDoc(doc) {
       var user = $("#user_name").text();
       var timestamp = ISODateString(new Date());
