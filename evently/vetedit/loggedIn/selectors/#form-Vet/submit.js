@@ -539,6 +539,9 @@ function(context) {
       if (!doc.homecoming) {
         doc.homecoming = {};
       }
+      if (f.flight_id === "None") {
+        f.homecoming_destination = "";
+      }
 
       if ('homecoming_destination' in f && f.homecoming_destination != doc.homecoming.destination) {
         doc.homecoming.destination = f.homecoming_destination;
