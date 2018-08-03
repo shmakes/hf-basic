@@ -171,7 +171,12 @@ function update_status_ctrl_states() {
     $("#pair_rem").removeAttr("disabled");
     $("#flight_confirmed_date").removeAttr("disabled");
     $("input[name='flight_confirmed_by']").removeAttr("disabled");
-    $("input[name='flight_seat']").removeAttr("disabled");
+    if ($("input[name='flight_nofly']").attr('checked')) {
+      $("input[name='flight_seat']").val("NF");
+      $("input[name='flight_seat']").attr('disabled', 'disabled');
+    } else {
+      $("input[name='flight_seat']").removeAttr("disabled");
+    }
     $("input[name='preferred_airport']").removeAttr("disabled");
     $("#flight_bus").removeAttr("disabled");
     $("input[name='veteran_pref_notes']").removeAttr("disabled");

@@ -144,6 +144,7 @@ function(context) {
         doc.flight.waiver = false;
         doc.flight.mediaWaiver = false;
         doc.flight.booksOrdered = 0;
+        doc.flight.nofly = false;
       }
       if (!doc.flight.training) {
         doc.flight.training = "None";
@@ -234,6 +235,19 @@ function(context) {
           change: "changed media waiver received from: " + doc.flight.mediaWaiver + " to: " + isFlightMediaWaiverForm + " by: " + user
         });
         doc.flight.mediaWaiver = isFlightMediaWaiverForm;
+        hasChanged = true;
+      }
+      var isFlightNoFlyForm = (f.flight_nofly === "true");
+      var isFlightNoFlyDoc = (doc.flight.nofly === true);
+      if (isFlightNoFlyForm != isFlightNoFlyDoc) {
+        doc.flight.history.push({
+          id: timestamp,
+          change: "changed flight nofly from: " + doc.flight.nofly + " to: " + isFlightNoFlyForm + " by: " + user
+        });
+        doc.flight.nofly = isFlightNoFlyForm;
+        if (isFlightNoFlyForm) {
+          doc.flight.seat = "NF";
+        }
         hasChanged = true;
       }
       var isTrainingCompleteForm = (f.flight_training_complete === "true");

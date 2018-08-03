@@ -71,6 +71,7 @@ function(r) {
         flight_bus:             r.flight.bus,
         flight_waiver:          (r.flight.waiver || false),
         flight_media_waiver:    (r.flight.mediaWaiver || false),
+        flight_nofly:           (r.flight.nofly || false),
         call_assigned_to:       r.call.assigned_to,
         call_fm_number:         r.call.fm_number,
         call_mail_sent:         (r.call.mail_sent  || false),
@@ -177,6 +178,9 @@ function(r) {
     if (r.flight.mediaWaiver) {
       result["selFlightMediaWaiver"] = "checked=yes";
     }
+    if (r.flight.nofly) {
+      result["selFlightNoFly"] = "checked=yes";
+    }
     if (r.medical.usesCane === 1) {
       result["selMed-cane"] = "checked='yes'";
     }
@@ -236,6 +240,7 @@ function(r) {
         flight_history:         [],
         flight_waiver:          false,
         flight_media_waiver:    false,
+        flight_nofly:           false,
         call_assigned_to:       "",
         call_fm_number:         "",
         call_mail_sent:         false,

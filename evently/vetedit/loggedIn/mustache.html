@@ -405,6 +405,10 @@
           <input type="checkbox" name="flight_media_waiver" {{selFlightMediaWaiver}} value="true" />
         </li>
         <li>
+          <label for="flight_nofly">not flying</label>
+          <input type="checkbox" name="flight_nofly" {{selFlightNoFly}} value="true" />
+        </li>
+        <li>
           <label for="flight_seat">assigned seat</label>
           <input type="text" name="flight_seat" maxlength="10" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{flight_seat}}" style="width: 5em" />
         </li>
