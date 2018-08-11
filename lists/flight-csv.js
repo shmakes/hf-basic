@@ -101,6 +101,7 @@ function(head, req) {
         flight_training_notes:         r.flight.training_notes,
         flight_paid:                   paid,
         flight_seat:                   r.flight.seat,
+        flight_nofly:                  (r.flight.nofly || false),
         flight_group:                  (r.flight.group || ""),
         flight_waiver:                 (r.flight.waiver || ""),
         flight_media_waiver:           (r.flight.mediaWaiver || ""),

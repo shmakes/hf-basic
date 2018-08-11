@@ -18,10 +18,12 @@ function(r) {
         entry["vet_name_last"]   = vet.name_last;
         entry["vet_city"]        = vet.city;
         entry["vet_limitations"] = vet.med_limits;
+        entry["vet_group"]       = vet.group;
         entry["vet_bus"]         = vet.bus;
         entry["vet_seat"]        = vet.seat;
         entry["vet_pairing"]     = vet.pairing;
         entry["vet_confirmed"]   = vet.confirmed;
+        entry["vet_nofly"]       = vet.nofly;
         entry["vet_pairName"]    = vet.pairName;
       }
 
@@ -48,6 +50,7 @@ function(r) {
         entry["grd_seat"]       = grd.seat;
         entry["grd_pairing"]    = grd.pairing;
         entry["grd_confirmed"]  = grd.confirmed;
+        entry["grd_nofly"]      = grd.nofly;
         entry["grd_pairName"]   = grd.pairName;
       }
       pairList.push(entry);

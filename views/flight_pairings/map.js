@@ -1,10 +1,14 @@
 function(doc) {
   var flt = {};
   var confirmed = "unconfirmed";
+  var nofly = "";
   if (doc.flight) {
     flt = doc.flight;
     if (flt.confirmed_date) {
       confirmed = "";
+    }
+    if (flt.nofly) {
+      nofly = "nofly";
     }
   }
   if (doc.type == "Veteran") {
@@ -16,9 +20,11 @@ function(doc) {
            "name_last": doc.name.last, 
            "city": doc.address.city + ", " + doc.address.state, 
            "med_limits": "[" + (doc.medical.level || " ") + "/" + (doc.medical.alt_level || " ") + "] " + (doc.medical.limitations || ""),
+           "group": (flt.group || " "),
            "bus": (flt.bus || "None"),
            "seat": (flt.seat || ""),
            "confirmed": confirmed,
+           "nofly": nofly,
            "pairing": (doc.guardian.id || "")
          });
   } else if (doc.type == "Guardian") {
@@ -37,6 +43,7 @@ function(doc) {
                "bus": (flt.bus || "None"),
                "seat": (flt.seat || ""),
                "confirmed": confirmed,
+               "nofly": nofly,
                "pairing": (doc.veteran.pairings[vet].id || "")
              });
       }
@@ -54,6 +61,7 @@ function(doc) {
              "bus": (flt.bus || "None"),
              "seat": (flt.seat || ""),
              "confirmed": confirmed,
+             "nofly": nofly,
              "pairing": ""
            });
     }

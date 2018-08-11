@@ -70,10 +70,13 @@ function addVets(app, user, flightName, vets) {
 function updateCounts() {
   var vets = [], grds = [], vetsConf = [], grdsConf = [], vetCnt = 0, grdCnt = 0, vetCnf = 0, grdCnf = 0;
   $("tr.Veteran").each(function() {
-    var vetId = $(this).attr("id");
-    if (vetId.length > 0) vets.push(vetId);
-    var vetConfirmed = $(this).children("td.confirmed");
-    if (vetConfirmed.length > 0) vetsConf.push(vetId);
+    var vetNoFly = $(this).children("td.nofly");
+    if (vetNoFly.length < 1) {
+        var vetId = $(this).attr("id");
+        if (vetId.length > 0) vets.push(vetId);
+        var vetConfirmed = $(this).children("td.confirmed");
+        if (vetConfirmed.length > 0) vetsConf.push(vetId);
+    }
   });
   vetCnt = strUnique(vets).length;
   vetCnf = strUnique(vetsConf).length;
@@ -81,10 +84,13 @@ function updateCounts() {
   $("#vetConfirm").val(vetCnf);
 
   $("tr.Guardian").each(function() {
-    var grdId = $(this).attr("id");
-    if (grdId.length > 0) grds.push(grdId);
-    var grdConfirmed = $(this).children("td.confirmed");
-    if (grdConfirmed.length > 0) grdsConf.push(grdId);
+    var grdNoFly = $(this).children("td.nofly");
+    if (grdNoFly.length < 1) {
+        var grdId = $(this).attr("id");
+        if (grdId.length > 0) grds.push(grdId);
+        var grdConfirmed = $(this).children("td.confirmed");
+        if (grdConfirmed.length > 0) grdsConf.push(grdId);
+    }
   });
   grdCnt = strUnique(grds).length;
   grdCnf = strUnique(grdsConf).length;

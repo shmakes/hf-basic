@@ -43,7 +43,7 @@
   <table id="fltdetail" class="tablesorter Pairs">
     <thead>
       <tr>
-        <th colspan="5">Veteran</th>
+        <th colspan="6">Veteran</th>
         <th rowspan="2"> - </th>
         <th colspan="6">Guardian</th>
       </tr>
@@ -51,6 +51,7 @@
         <th>Name</th>
         <th>City</th>
         <th>Limitations</th>
+        <th>Group</th>
         <th>Bus</th>
         <th>Seat</th>
         <th>Seat</th>
@@ -63,10 +64,11 @@
     </thead>
     <tbody>
   {{#pairs}}
-      <tr class="DataRow{{invalid_row}}" vetid="{{vet_id}}" grdid="{{grd_id}}">
-        <td class="Veteran colName" name="vet_name">{{vet_name_first}} {{vet_name_last}}</td>
+      <tr class="DataRow{{invalid_row}} {{vet_nofly}}" vetid="{{vet_id}}" grdid="{{grd_id}}">
+        <td class="Veteran colName {{vet_nofly}}" name="vet_name">{{vet_name_first}} {{vet_name_last}}</td>
         <td class="Veteran colCity">{{vet_city}}</td>
         <td class="Veteran colLimitations">{{vet_limitations}}</td>
+        <td class="Veteran colBus" name="vet_group">{{vet_group}}</td>
         <td class="Veteran colBus" name="vet_bus">{{vet_bus}}</td>
         <td class="Veteran colSeat {{vet_confirmed}}"><input id="vetSeat" type="text" maxlength="10" value="{{vet_seat}}" style="width: 2em" /></td>
         <td class="Veteran"><button class="modalInput">&gt;</button></td>
@@ -75,7 +77,7 @@
         <td class="Guardian colLimitations">{{grd_experience}}</td>
         <td class="Guardian colLimitations">{{grd_training}}</td>
         <td class="Guardian colCity">{{grd_city}}</td>
-        <td class="Guardian colName" name="grd_name">{{grd_name_first}} {{grd_name_last}}</td>
+        <td class="Guardian colName {{grd_nofly}}" name="grd_name">{{grd_name_first}} {{grd_name_last}}</td>
       </tr>
   {{/pairs}}
     </body>

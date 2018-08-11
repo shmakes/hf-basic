@@ -1,11 +1,15 @@
 function(doc) {
   var flt = {};
   var confirmed = " ";
+  var nofly = " ";
 
   if (doc.flight) {
     flt = doc.flight;
     if ((flt.confirmed_date) && (flt.confirmed_date.length > 0)) {
       confirmed = "confirmed";
+    }
+    if (flt.nofly) {
+      nofly = "nofly";
     }
   }
   if (doc.type == "Veteran") {
@@ -19,7 +23,7 @@ function(doc) {
            "city": doc.address.city + ", " + doc.address.state, 
            "appdate": (doc.app_date || " "),
            "group": (doc.flight.group || " ") + " (" + (doc.vet_type || "WWII") + ")",
-           "nofly": (doc.flight.nofly || " "),
+           "nofly": nofly,
            "fm_number": (doc.call ? (doc.call.fm_number || " ") : " "),
            "assigned_to": (doc.call ? (doc.call.assigned_to || " ") : " "),
            "mail_sent": (doc.call ? (doc.call.mail_sent ? "Y" : "N") : "N"),
@@ -40,7 +44,7 @@ function(doc) {
                "city": doc.address.city + ", " + doc.address.state, 
                "appdate": (doc.app_date || " "),
                "group": (doc.flight.group || " "),
-               "nofly": (doc.flight.nofly || " "),
+               "nofly": nofly,
                "fm_number": (doc.call ? (doc.call.fm_number || " ") : " "),
                "assigned_to": (doc.call ? (doc.call.assigned_to || " ") : " "),
                "mail_sent": (doc.call ? (doc.call.mail_sent ? "Y" : " ") : " "),
@@ -60,7 +64,7 @@ function(doc) {
              "city": doc.address.city + ", " + doc.address.state, 
              "appdate": (doc.app_date || " "),
              "group": (doc.flight.group || " "),
-             "nofly": (doc.flight.nofly || " "),
+             "nofly": nofly,
              "fm_number": (doc.call ? (doc.call.fm_number || " ") : " "),
              "assigned_to": (doc.call ? (doc.call.assigned_to || " ") : " "),
              "mail_sent": (doc.call ? (doc.call.mail_sent ? "Y" : " ") : " "),

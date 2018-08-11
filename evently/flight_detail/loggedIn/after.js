@@ -36,12 +36,15 @@ function() {
       type: 'text'
   });
   $("#fltdetail").tablesorter({
-    headers: { 0: { sorter:"surname" }, 11: { sorter:"surname" } },
+    headers: { 0: { sorter:"surname" }, 12: { sorter:"surname" } },
     textExtraction: function(elem) {
       var $input = $("input[type=text]", elem);
 
       return $input.val() || $(elem).text();
     }
   });
+  $("input[value='NF']").attr('disabled', 'disabled');
+  $("input[value='NF']").attr('class', 'nofly');
+
 };
 //@ sourceURL=/flight_detail/after.js
