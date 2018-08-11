@@ -4,10 +4,12 @@ function(cb) {
   //$.log("docid: " + docid)
 
   function byAppDate(a,b) {
-    if (a.appDate < b.appDate)
-       return -1;
-    if (a.appDate > b.appDate)
-      return 1;
+    var akey = (a.group || "aa") + a.appDate;
+    var bkey = (b.group || "aa") + b.appDate;
+    if (akey < bkey)
+       return 1;
+    if (akey > bkey)
+      return -1;
     return 0;
   }
 
@@ -39,6 +41,9 @@ function(cb) {
                 pairing = {};
                 pairing.pid = p.pair;
                 pairing.missing_person = "";
+                if (typeof pairing.group === 'undefined') {
+                  pairing.group = p.group;
+                }
                 if (typeof pairing.appDate === 'undefined') {
                   pairing.appDate = p.appdate;
                 }
@@ -54,6 +59,7 @@ function(cb) {
               person.city = p.city;
               person.appdate = p.appdate;
               person.group = p.group;
+              person.nofly = p.nofly;
               person.fm_number = p.fm_number;
               person.assigned_to = p.assigned_to;
               person.mail_sent = p.mail_sent;
