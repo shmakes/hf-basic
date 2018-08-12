@@ -153,7 +153,7 @@ function PairGuardianToVeteran2(app, vetdoc, vetName, grdIdNew, oldgrd, user) {
 }
 
 function update_status_ctrl_states() {
-  if($("#flight_status").val() !== "Active") {
+  if(($("#flight_status").val() !== "Active") && ($("#flight_status").val() !== "Copied")) {
     $("#flight_id").attr('disabled', 'disabled');
     $("input[name='flight_group']").attr('disabled', 'disabled');
     $("#pair_add").attr('disabled', 'disabled');

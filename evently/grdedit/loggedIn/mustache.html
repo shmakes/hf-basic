@@ -6,6 +6,8 @@
       <a target="_blank" href="/_utils/document.html?{{db_name}}/{{id}}">{{raw_data_lnk}}</a>
     <span class="c9">D R:
       <input type="date" class="date" id="app_date" name="app_date" pattern="[0-9-]{10,10}" maxlength="10" value="{{app_date}}" style="width: 8em" required="required" />
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <button id="copyNew" type="button">copy new</button>
     </span>
   </p>
 
@@ -243,6 +245,7 @@
             <option {{selStatus-Removed}}>Removed</option>
             <option {{selStatus-Future-Spring}}>Future-Spring</option>
             <option {{selStatus-Future-Fall}}>Future-Fall</option>
+            <option {{selStatus-Copied}}>Copied</option>
           </select>
           <button id="showFlightHistory" type="button">History</button>
         </li>
