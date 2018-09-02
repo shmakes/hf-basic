@@ -164,6 +164,7 @@ function changeSeat(app, docId, newSeat, user) {
 function updateCounts() {
   var buses = $("td.colBus");
   var busTally = {
+    "None": [],
     "Alpha1": [],
     "Alpha2": [],
     "Alpha3": [],
@@ -179,7 +180,7 @@ function updateCounts() {
   $.each(buses, function() {
     var bus = $(this);
     var busName = bus.text();
-    if (busName.length > 4) {
+    if (busName.length > 3) {
       var pType = bus.attr("name"), pId = "";
       if (pType === "vet_bus") {
         pId = bus.parent().attr("vetid");
@@ -191,16 +192,29 @@ function updateCounts() {
     }
   });
 
-  var alphaCount = 0, bravoCount = 0;
+  var alphaCount = 0, bravoCount = 0, noneCount = 0;
   for (var busKey in busTally) {
     var cnt = strUnique(busTally[busKey]).length;
     $("#" + busKey).val(cnt);
     if (busKey.substr(0, 5) === "Alpha") {
       alphaCount += cnt;
-    } else {
+    } else if (busKey.substr(0, 5) === "Bravo") {
       bravoCount += cnt;
+    } else {
+      noneCount += cnt;
     }
   }
   $("#alphaCount").val(alphaCount);
   $("#bravoCount").val(bravoCount);
+  $("#noneCount").val(noneCount);
+  var alphaNFVets = $("td.nofly").filter("td.Veteran").siblings("td[name='vet_bus']").filter(":contains('Alpha')").length;
+  var bravoNFVets = $("td.nofly").filter("td.Veteran").siblings("td[name='vet_bus']").filter(":contains('Bravo')").length;
+  var noneNFVets =  $("td.nofly").filter("td.Veteran").siblings("td[name='vet_bus']").filter(":contains('None')").length;
+  var alphaNFGrds = $("td.nofly").filter("td.Guardian").siblings("td[name='grd_bus']").filter(":contains('Alpha')").length;
+  var bravoNFGrds = $("td.nofly").filter("td.Guardian").siblings("td[name='grd_bus']").filter(":contains('Bravo')").length;
+  var noneNFGrds =  $("td.nofly").filter("td.Guardian").siblings("td[name='grd_bus']").filter(":contains('None')").length;
+  alphaFlightCount
+  $("#alphaFlightCount").val(alphaCount - alphaNFVets - alphaNFGrds);
+  $("#bravoFlightCount").val(bravoCount - bravoNFVets - bravoNFGrds);
+  $("#noneFlightCount").val(noneCount - noneNFVets - noneNFGrds);
 }
