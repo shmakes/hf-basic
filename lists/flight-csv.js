@@ -68,6 +68,14 @@ function(head, req) {
       r.call = {};
     }
     
+    if (!r.alt_contact) {
+      r.alt_contact = {};
+    }
+    
+    if (!r.alt_contact.address) {
+      r.alt_contact.address = {};
+    }
+    
     result = {
         flight_id:                     r.flight.id,
         type:                          r.type,
@@ -135,6 +143,9 @@ function(head, req) {
         apparel_delivery:              (r.apparel.delivery || ""),
         apparel_notes:                 (r.apparel.notes || ""),
         apparel_by:                    (r.apparel.by || ""),
+        emerg_contact_name:            (r.emerg_contact.name || r.alt_contact.name || ""),
+        emerg_contact_phone:           (r.emerg_contact.address.phone || r.emerg_contact.address.phone_eve || r.emerg_contact.address.phone_mbl || r.alt_contact.address.phone || r.alt_contact.address.phone_eve || r.alt_contact.address.phone_mbl || ""),
+        emerg_contact_email:           (r.emerg_contact.address.email || r.alt_contact.address.email || ""),
         id:                            r._id,
         rev:                           r._rev,
         created_at:                    r.metadata.created_at,
@@ -170,4 +181,3 @@ function(head, req) {
     send("\n");
   }
 }
-
