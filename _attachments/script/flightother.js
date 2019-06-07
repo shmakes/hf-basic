@@ -14,6 +14,22 @@ function changeApparelNotes(app, docId, newApparelNote, user) {
   });
 }
 
+function changeShirtSize(app, docId, newShirtSize, user) {
+  var validShirtSizes = [ "None", "S", "M", "L", "XL", "2XL", "3XL", "4XL", "5XL" ];
+  if (jQuery.inArray(newShirtSize, validShirtSizes) >= 0) {
+    app.db.openDoc(docId, {
+      success : function(doc) {
+          doc.shirt.size = newShirtSize;
+          app.db.saveDoc(doc, {
+            success : function() {}
+          });
+      }
+    });
+  } else {
+    alert("Invalid size not saved.");
+  }
+}
+
 function changeBookCount(app, docId, newBookCount, user) {
   app.db.openDoc(docId, {
     success : function(doc) {

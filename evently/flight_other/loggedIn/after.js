@@ -1,6 +1,6 @@
 function() {
 
-  $("#form-Flight").validator();
+  $("[name=vet_shirt_size]").validator({ position: 'bottom center' });
 
   $(this).show();
   $.tablesorter.addParser({
@@ -28,18 +28,24 @@ function() {
       1: { sorter:"checkboxes" }, 
       2: { sorter:"checkboxes" }, 
       3: { sorter:"checkboxes" }, 
-      7: { sorter:"checkboxes" }, 
-      8: { sorter:"checkboxes" }, 
       9: { sorter:"checkboxes" }, 
       10: { sorter:"checkboxes" }, 
       11: { sorter:"checkboxes" }, 
-      13: { sorter:"surname" } 
+      12: { sorter:"checkboxes" }, 
+      13: { sorter:"checkboxes" }, 
+      15: { sorter:"surname" } 
     },
     textExtraction: function(elem) {
       var $input = $("input", elem);
 
       return $input.val() || $(elem).text();
     }
+  });
+
+  var validShirtSizes = [ "None", "S", "M", "L", "XL", "2XL", "3XL", "4XL", "5XL" ];
+  $.tools.validator.fn("[name=vet_shirt_size]", "Enter a valid size",
+    function(input, value) {
+    return (jQuery.inArray(value, validShirtSizes) >= 0);
   });
 
   updateDestinationCounts($$(this).app, $("#flightName").val());
