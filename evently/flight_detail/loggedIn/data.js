@@ -21,6 +21,7 @@ function(r) {
         entry["vet_group"]       = vet.group;
         entry["vet_bus"]         = vet.bus;
         entry["vet_seat"]        = vet.seat;
+        entry["vet_shirt"]       = vet.shirt;
         entry["vet_pairing"]     = vet.pairing;
         entry["vet_confirmed"]   = vet.confirmed;
         entry["vet_nofly"]       = vet.nofly;
@@ -48,6 +49,7 @@ function(r) {
         entry["grd_training"]   = training;
         entry["grd_bus"]        = grd.bus;
         entry["grd_seat"]       = grd.seat;
+        entry["grd_shirt"]      = grd.shirt;
         entry["grd_pairing"]    = grd.pairing;
         entry["grd_confirmed"]  = grd.confirmed;
         entry["grd_nofly"]      = grd.nofly;

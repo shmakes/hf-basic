@@ -52,9 +52,9 @@
   <table id="fltdetail" class="tablesorter Pairs">
     <thead>
       <tr>
-        <th colspan="6">Veteran</th>
+        <th colspan="7">Veteran</th>
         <th rowspan="2"> - </th>
-        <th colspan="6">Guardian</th>
+        <th colspan="7">Guardian</th>
       </tr>
       <tr>
         <th>Name</th>
@@ -63,6 +63,8 @@
         <th>Group</th>
         <th>Bus</th>
         <th>Seat</th>
+        <th>Shirt</th>
+        <th>Shirt</th>
         <th>Seat</th>
         <th>Bus</th>
         <th>Experience</th>
@@ -80,7 +82,9 @@
         <td class="Veteran colBus" name="vet_group">{{vet_group}}</td>
         <td class="Veteran colBus" name="vet_bus">{{vet_bus}}</td>
         <td class="Veteran colSeat {{vet_confirmed}}"><input id="vetSeat" type="text" maxlength="10" value="{{vet_seat}}" style="width: 2em" /></td>
+        <td class="Veteran colBus" name="vet_shirt">{{vet_shirt}}</td>
         <td class="Veteran"><button class="modalInput">&gt;</button></td>
+        <td class="Guardian colBus" name="grd_shirt">{{grd_shirt}}</td>
         <td class="Guardian colSeat {{grd_confirmed}}"><input id="grdSeat" type="text" maxlength="10" value="{{grd_seat}}" style="width: 2em" /></td>
         <td class="Guardian colBus" name="grd_bus">{{grd_bus}}</td>
         <td class="Guardian colLimitations">{{grd_experience}}</td>

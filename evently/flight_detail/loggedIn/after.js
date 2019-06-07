@@ -36,7 +36,7 @@ function() {
       type: 'text'
   });
   $("#fltdetail").tablesorter({
-    headers: { 0: { sorter:"surname" }, 12: { sorter:"surname" } },
+    headers: { 0: { sorter:"surname" }, 14: { sorter:"surname" } },
     textExtraction: function(elem) {
       var $input = $("input[type=text]", elem);
 

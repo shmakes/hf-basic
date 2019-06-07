@@ -23,6 +23,7 @@ function(doc) {
            "group": (flt.group || " "),
            "bus": (flt.bus || "None"),
            "seat": (flt.seat || ""),
+           "shirt": (doc.shirt.size || ""),
            "confirmed": confirmed,
            "nofly": nofly,
            "pairing": (doc.guardian.id || "")
@@ -42,6 +43,7 @@ function(doc) {
                "training_complete": flt.training_complete,
                "bus": (flt.bus || "None"),
                "seat": (flt.seat || ""),
+               "shirt": (doc.shirt.size || ""),
                "confirmed": confirmed,
                "nofly": nofly,
                "pairing": (doc.veteran.pairings[vet].id || "")
@@ -60,6 +62,7 @@ function(doc) {
              "training_complete": flt.training_complete,
              "bus": (flt.bus || "None"),
              "seat": (flt.seat || ""),
+             "shirt": (doc.shirt.size || ""),
              "confirmed": confirmed,
              "nofly": nofly,
              "pairing": ""
