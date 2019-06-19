@@ -131,6 +131,8 @@ function(head, req) {
         medical_requires_oxygen:       (r.medical.requiresOxygen || 0),
         service_branch:                ((r.service && r.service.branch) || ""),
         service_rank:                  ((r.service && r.service.rank) || ""),
+        service_dates:                 ((r.service && r.service.dates) || ""),
+        service_activity:              ((r.service && r.service.activity) || ""),
         mail_call_name:                ((r.mail_call && r.mail_call.name) || ""),
         mail_call_phone:               ((r.mail_call && r.mail_call.address.phone) || ""),
         mail_call_email:               ((r.mail_call && r.mail_call.address.email) || ""),
