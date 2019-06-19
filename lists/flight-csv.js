@@ -8,6 +8,7 @@ function(head, req) {
   var paid = "";
   var conflict = "";
   var medNotesExp = "";
+  var serviceActivity = ""
 
   start({
     "headers": {
@@ -76,6 +77,10 @@ function(head, req) {
       r.alt_contact.address = {};
     }
     
+    if (r.service && r.service.activity) {
+      serviceActivity = r.service.activity.replace(/\"/g, "''");
+    }
+
     result = {
         flight_id:                     r.flight.id,
         type:                          r.type,
@@ -132,7 +137,7 @@ function(head, req) {
         service_branch:                ((r.service && r.service.branch) || ""),
         service_rank:                  ((r.service && r.service.rank) || ""),
         service_dates:                 ((r.service && r.service.dates) || ""),
-        service_activity:              ((r.service && r.service.activity && r.service.activity.replace("\"", "''".replace("\n", "|")).replace("\r", ";")) || ""),
+        service_activity:              serviceActivity,
         mail_call_name:                ((r.mail_call && r.mail_call.name) || ""),
         mail_call_phone:               ((r.mail_call && r.mail_call.address.phone) || ""),
         mail_call_email:               ((r.mail_call && r.mail_call.address.email) || ""),
