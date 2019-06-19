@@ -132,7 +132,7 @@ function(head, req) {
         service_branch:                ((r.service && r.service.branch) || ""),
         service_rank:                  ((r.service && r.service.rank) || ""),
         service_dates:                 ((r.service && r.service.dates) || ""),
-        service_activity:              ((r.service && r.service.activity.replace("\"", "''")) || ""),
+        service_activity:              ((r.service && r.service.activity && r.service.activity.replace("\"", "''".replace("\n", "|")).replace("\r", ";")) || ""),
         mail_call_name:                ((r.mail_call && r.mail_call.name) || ""),
         mail_call_phone:               ((r.mail_call && r.mail_call.address.phone) || ""),
         mail_call_email:               ((r.mail_call && r.mail_call.address.email) || ""),
