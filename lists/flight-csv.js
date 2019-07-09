@@ -79,6 +79,8 @@ function(head, req) {
     
     if (r.service && r.service.activity) {
       serviceActivity = r.service.activity.replace(/\"/g, "''");
+    } else {
+      serviceActivity = "";
     }
 
     result = {
