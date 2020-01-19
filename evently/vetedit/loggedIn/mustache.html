@@ -308,6 +308,10 @@
           <input type="checkbox" name="call_mail_sent" {{selCallMailSent}} value="true" />
         </li>
         <li>
+          <label for="call_email_sent">veteran email sent</label>
+          <input type="checkbox" name="call_email_sent" {{selCallEmailSent}} value="true" />
+        </li>
+        <li>
           <label for="mc_name">mail call contact</label>
           <input type="text" name="mc_name" maxlength="30" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{mc_name}}" style="width: 15em" />
         </li>
@@ -322,10 +326,6 @@
         <li>
           <label for="mc_addr_email">mail call email</label>
           <input type="email" name="mc_addr_email" value="{{mc_addr_email}}" style="width: 17em" />
-        </li>
-        <li>
-          <label for="call_email_sent">mail call email sent</label>
-          <input type="checkbox" name="call_email_sent" {{selCallEmailSent}} value="true" />
         </li>
         <li>
           <label for="media_newspaper_ok">media newspaper ok</label>
