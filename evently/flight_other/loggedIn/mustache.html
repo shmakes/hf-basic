@@ -18,7 +18,7 @@
     <thead>
       <tr>
         <th colspan="7">Veteran</th>
-        <th colspan="9">Guardian</th>
+        <th colspan="10">Guardian</th>
       </tr>
       <tr>
         <th>Name</th>
@@ -30,6 +30,7 @@
         <th>Apparel Notes</th>
         <th>Apparel Notes</th>
         <th>Size</th>
+        <th>See Doc</th>
         <th>Liability</th>
         <th>Media</th>
         <th>Medical</th>
@@ -51,6 +52,7 @@
         <td class="Veteran colNote   {{vet_confirmed}}"><textarea rows=3 cols=60 name="vet_apparel_notes">{{vet_apparel_notes}}</textarea></td>
         <td class="Guardian colNote  {{grd_confirmed}}"><textarea rows=3 cols=60 name="grd_apparel_notes">{{grd_apparel_notes}}</textarea></td>
         <td class="Guardian colShirt {{grd_confirmed}}"><input type="text"       name="grd_shirt_size" pattern="^(?:S|M|L|XL|2XL|3XL|4XL|5XL)*$" maxlength="4" size="3" value="{{grd_shirt_size}}" /></td>
+        <td class="Guardian colSeat  {{grd_confirmed}}"><input type="checkbox"   name="grd_flight_training_see_doc" {{selGrdFlightTrainingSeeDoc}} value="{{grd_flight_training_see_doc}}" /></td>
         <td class="Guardian colSeat  {{grd_confirmed}}"><input type="checkbox"   name="grd_flight_waiver" {{selGrdFlightWaiver}} value="{{grd_flight_waiver}}" /></td>
         <td class="Guardian colSeat  {{grd_confirmed}}"><input type="checkbox"   name="grd_flight_mediaWaiver" {{selGrdFlightMediaWaiver}} value="{{grd_flight_mediaWaiver}}" /></td>
         <td class="Guardian colSeat  {{grd_confirmed}}"><input type="checkbox"   name="grd_medical_release" {{selGrdMedicalRelease}} value="{{grd_medical_release}}" /></td>

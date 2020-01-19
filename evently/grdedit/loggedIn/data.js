@@ -82,6 +82,7 @@ function(r) {
         flight_history:            r.flight.history,
         flight_training:           (r.flight.training || ""),
         flight_training_notes:     (r.flight.training_notes || ""),
+        flight_training_see_doc:   (r.flight.training_see_doc || false),
         flight_training_complete:  (r.flight.training_complete || false),
         flight_paid:               (r.flight.paid || false),
         flight_books_ordered:      (r.flight.booksOrdered || 0),
@@ -169,6 +170,9 @@ function(r) {
     if (r.flight.mediaWaiver) {
       result["selFlightMediaWaiver"] = "checked=yes";
     }
+    if (r.flight.training_see_doc) {
+      result["selFlightTrainingSeeDoc"] = "checked=yes";
+    }
     if (r.flight.training_complete) {
       result["selFlightTrainingComplete"] = "checked=yes";
     }
@@ -213,6 +217,7 @@ function(r) {
         flight_history:            [],
         flight_training:           "",
         flight_training_notes:     "",
+        flight_training_see_doc:   false,
         flight_training_complete:  false,
         flight_paid:               false,
         flight_waiver:             false,

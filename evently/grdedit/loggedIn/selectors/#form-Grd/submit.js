@@ -139,6 +139,7 @@ function(context) {
         doc.flight.bus = "None";
         doc.flight.status = "Active";
         doc.flight.status_note = "";
+        doc.flight.training_see_doc = false;
         doc.flight.training_complete = false;
         doc.flight.paid = false;
         doc.flight.waiver = false;
@@ -248,6 +249,16 @@ function(context) {
         if (isFlightNoFlyForm) {
           doc.flight.seat = "NF";
         }
+        hasChanged = true;
+      }
+      var isTrainingSeeDoctorForm = (f.flight_training_see_doc === "true");
+      var isTrainingSeeDoctorDoc = (doc.flight.training_see_doc === true);
+      if (isTrainingSeeDoctorForm != isTrainingSeeDoctorDoc) {
+        doc.flight.history.push({
+          id: timestamp,
+          change: "changed training see doctor from: " + isTrainingSeeDoctorDoc + " to: " + isTrainingSeeDoctorForm + " by: " + user
+        });
+        doc.flight.training_see_doc = isTrainingSeeDoctorForm;
         hasChanged = true;
       }
       var isTrainingCompleteForm = (f.flight_training_complete === "true");

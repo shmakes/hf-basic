@@ -52,6 +52,7 @@ function(r) {
         entry["grd_name_last"]              = grd.name_last;
         entry["grd_shirt_size"]                   = grd.doc.shirt.size;
         entry["grd_apparel_notes"]          = grd.doc.apparel.notes;
+        entry["grd_flight_training_see_doc"] = grd.doc.flight.training_see_doc;
         entry["grd_flight_waiver"]          = grd.doc.flight.waiver;
         entry["grd_flight_media_waiver"]    = grd.doc.flight.mediaWaiver;
         entry["grd_medical_release"]        = grd.doc.medical.release;
@@ -60,6 +61,9 @@ function(r) {
         entry["grd_flight_paid"]            = grd.doc.flight.paid;
         entry["grd_flight_booksOrdered"]    = grd.doc.flight.booksOrdered || 0;
 
+        if (grd.doc.flight.training_see_doc) {
+          entry["selGrdFlightTrainingSeeDoc"] = "checked=yes";
+        }
         if (grd.doc.flight.waiver) {
           entry["selGrdFlightWaiver"] = "checked=yes";
         }
