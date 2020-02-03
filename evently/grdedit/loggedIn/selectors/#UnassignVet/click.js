@@ -1,7 +1,11 @@
 function() {
   var veteran_id1 = $("#veteran_id").attr('value');
   var veteran_id2 = $("#veteran_id2").attr('value');
-  if (veteran_id2.length > 0) {
+  var veteran_id3 = $("#veteran_id3").attr('value');
+  if (veteran_id3.length > 0) {
+    var target_id = $("input#veteran_id3");
+    var target_name = $("input#veteran_name3");
+  } else if (veteran_id2.length > 0) {
     var target_id = $("input#veteran_id2");
     var target_name = $("input#veteran_name2");
   } else if (veteran_id1.length > 0) {

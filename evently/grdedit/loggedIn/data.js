@@ -63,6 +63,13 @@ function(r) {
       vetName2 = r.veteran.pairings[1].name;
     }
 
+    var vetId3 = "";
+    var vetName3 = "";
+    if (r.veteran.pairings.length > 2) {
+      vetId3 = r.veteran.pairings[2].id;
+      vetName3 = r.veteran.pairings[2].name;
+    }
+
     var result = {
         db_name:                   dbname,
         id:                        r._id,
@@ -96,6 +103,8 @@ function(r) {
         veteran_name:              vetName,
         veteran_id2:               vetId2,
         veteran_name2:             vetName2,
+        veteran_id3:               vetId3,
+        veteran_name3:             vetName3,
         veteran_pref_notes:        r.veteran.pref_notes,
         first_name:                r.name.first,
         middle_name:               r.name.middle,

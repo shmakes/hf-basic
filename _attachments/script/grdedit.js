@@ -21,10 +21,19 @@ function UpdateVeteranLinks() {
     lnk2.show();
     lnk2.attr("href", "vet_edit.html?vetid=" + vetId2);
   }
+
+  var vetId3 = $("#veteran_id3").attr('value');
+  if (vetId3.length === 0) {
+    $("#vet_edit_link3").hide();
+  } else {
+    var lnk3 = $("#vet_edit_link3");
+    lnk3.show();
+    lnk3.attr("href", "vet_edit.html?vetid=" + vetId3);
+  }
 }
 
 function UpdateGuardianPairingFields(vet, grd) {
-  var vetId1 = vetId2 = vetName1 = vetName2 = "";
+  var vetId1 = vetId2 = vetId3 = vetName1 = vetName2 = vetName3 = "";
   if ((grd.veteran) && (grd.veteran.pairings)) {
     if (grd.veteran.pairings.length > 0) {
       vetId1 = grd.veteran.pairings[0].id;
@@ -34,12 +43,18 @@ function UpdateGuardianPairingFields(vet, grd) {
       vetId2 = grd.veteran.pairings[1].id;
       vetName2 = grd.veteran.pairings[1].name;
     }
+    if (grd.veteran.pairings.length > 2) {
+      vetId3 = grd.veteran.pairings[2].id;
+      vetName3 = grd.veteran.pairings[2].name;
+    }
   }
 
   $("input#veteran_id").val(vetId1);
   $("input#veteran_name").val(vetName1);
   $("input#veteran_id2").val(vetId2);
   $("input#veteran_name2").val(vetName2);
+  $("input#veteran_id3").val(vetId3);
+  $("input#veteran_name3").val(vetName3);
 
   $("input#docrev").val(grd._rev);
 
