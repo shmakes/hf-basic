@@ -1,4 +1,6 @@
 function() {
+  ByLastNameAssign
+  $("#ByLastNameAssign").prop('disabled', false)  
   var guardian_id = $("input[name='_id']").attr('value');
   if (guardian_id.length === 32) {
     var veteran_id1 = $("#veteran_id").attr('value');
