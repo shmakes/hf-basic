@@ -80,6 +80,9 @@ function(r) {
         mc_relation:            (r.mail_call.relation || ""),
         mc_addr_phone:          (r.mail_call.address.phone || ""),
         mc_addr_email:          (r.mail_call.address.email || ""),
+        mc_received:            (r.mail_call.received || false),
+        mc_adopt:               (r.mail_call.adopt || false),
+        mc_notes:               (r.mail_call.notes || ""),
         guardian_id:            r.guardian.id,
         guardian_name:          r.guardian.name,
         guardian_pref_notes:    r.guardian.pref_notes,
@@ -208,6 +211,12 @@ function(r) {
     if (r.call.email_sent) {
       result["selCallEmailSent"] = "checked=yes";
     }
+    if (r.mail_call.received) {
+      result["selMailCallRcvd"] = "checked=yes";
+    }
+    if (r.mail_call.adopt) {
+      result["selMailCallAdopt"] = "checked=yes";
+    }
     if (r.apparel.item) {
       result["selApparel-" + r.apparel.item] = "selected";
     }
@@ -248,6 +257,9 @@ function(r) {
         mc_relation:            "",
         mc_addr_phone:          "",
         mc_addr_email:          "",
+        mc_received:            false,
+        mc_adopt:               false,
+        mc_notes:               "",
         call_email_sent:        false,
         guardian_id:            "",
         guardian_name:          "",

@@ -19,6 +19,8 @@ function(r) {
         entry["vet_flight_waiver"]          = vet.doc.flight.waiver;
         entry["vet_flight_media_waiver"]    = vet.doc.flight.mediaWaiver;
         entry["vet_medical_release"]        = vet.doc.medical.release;
+        entry["vet_mailcall_received"]      = vet.doc.mail_call.received;
+        entry["vet_mailcall_adopt"]         = vet.doc.mail_call.adopt;
         entry["vet_homecoming_destination"] = vet.doc.homecoming ? (vet.doc.homecoming.destination || "") : "";
         entry["vet_shirt_size"]                   = vet.doc.shirt.size;
         entry["vet_apparel_notes"]          = vet.doc.apparel.notes;
@@ -31,6 +33,12 @@ function(r) {
         }
         if (vet.doc.medical.release) {
           entry["selVetMedicalRelease"] = "checked=yes";
+        }
+        if (vet.doc.mail_call.received) {
+          entry["selVetMailCallReceived"] = "checked=yes";
+        }
+        if (vet.doc.mail_call.adopt) {
+          entry["selVetMailCallAdopt"] = "checked=yes";
         }
       }
 

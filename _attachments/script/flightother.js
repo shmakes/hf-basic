@@ -48,14 +48,22 @@ function changeBookCount(app, docId, newBookCount, user) {
 
 function changeCheckbox(app, checkBox, docId, newCheckValue, user) {
   var propMap = checkBox.split("_");
-  var cat = propMap[1];
+  var cat = propMap[1].replace("mailcall", "mail_call");
   var prp = propMap.slice(2).join("_");
   app.db.openDoc(docId, {
     success : function(doc) {
-        doc.flight.history.push({
-          id: ISODateString(new Date()),
-          change: "changed " + cat + " " + propMap.slice(2).join(" ") + " from: " + doc[cat][prp] + " to: " + newCheckValue + " by: " + user
-        });
+        if (cat === "mail_call") {
+          doc.call.history.push({
+            id: ISODateString(new Date()),
+            change: "changed " + cat + " " + propMap.slice(2).join(" ") + " from: " + doc[cat][prp] + " to: " + newCheckValue + " by: " + user
+          });
+
+        } else {
+          doc.flight.history.push({
+            id: ISODateString(new Date()),
+            change: "changed " + cat + " " + propMap.slice(2).join(" ") + " from: " + doc[cat][prp] + " to: " + newCheckValue + " by: " + user
+          });
+        }
 
         doc[cat][prp] = newCheckValue;
         app.db.saveDoc(doc, {

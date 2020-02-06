@@ -142,6 +142,36 @@ function(context) {
         doc.mail_call.address = {};
         doc.mail_call.address.phone = "";
         doc.mail_call.address.email = "";
+        doc.mail_call.received = "";
+        doc.mail_call.adopt = "";
+        doc.mail_call.notes = "";
+      }
+
+      var isMailCallReceivedForm = (f.mc_received === "true");
+      var isMailCallReceivedDoc = (doc.mail_call.received === true);
+      if (isMailCallReceivedForm != isMailCallReceivedDoc) {
+        doc.call.history.push({
+          id: timestamp,
+          change: "changed mail call received from: " + isMailCallReceivedDoc + " to: " + isMailCallReceivedForm + " by: " + user
+        });
+        doc.mail_call.received = isMailCallReceivedForm;
+        hasChanged = true;
+      }
+
+      var isMailCallAdoptForm = (f.mc_adopt === "true");
+      var isMailCallAdoptDoc = (doc.mail_call.adopt === true);
+      if (isMailCallAdoptForm != isMailCallAdoptDoc) {
+        doc.call.history.push({
+          id: timestamp,
+          change: "changed mail call adopt from: " + isMailCallAdoptDoc + " to: " + isMailCallAdoptForm + " by: " + user
+        });
+        doc.mail_call.adopt = isMailCallAdoptForm;
+        hasChanged = true;
+      }
+
+      if (doc.mail_call.notes != f.mc_notes) {
+        doc.mail_call.notes = f.mc_notes;
+        hasChanged = true;
       }
 
       if (doc.mail_call.relation != f.mc_relation) {

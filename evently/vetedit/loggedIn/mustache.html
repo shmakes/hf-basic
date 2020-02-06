@@ -351,6 +351,18 @@
           <label for="flight_confirmed_by">confirmed by</label>
           <input type="text" name="flight_confirmed_by" maxlength="30" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{flight_confirmed_by}}" style="width: 15em" />
         </li>
+        <li>
+          <label for="mc_received">mail call received</label>
+          <input type="checkbox" name="mc_received" {{selMailCallRcvd}} value="true" />
+        </li>
+        <li>
+          <label for="mc_adopt">mail call adoption</label>
+          <input type="checkbox" name="mc_adopt" {{selMailCallAdopt}} value="true" />
+        </li>
+        <li>
+          <label for="mc_notes">mail call notes</label>
+          <input type="text" name="mc_notes" maxlength="50" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{mc_notes}}" style="width: 30em" />
+        </li>
       </ol>
     </fieldset>
 
