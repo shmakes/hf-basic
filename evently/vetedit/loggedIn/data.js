@@ -71,6 +71,8 @@ function(r) {
         flight_bus:             r.flight.bus,
         flight_waiver:          (r.flight.waiver || false),
         flight_media_waiver:    (r.flight.mediaWaiver || false),
+        flight_vaccinated:      (r.flight.vaccinated || false),
+        flight_infection_test:  (r.flight.infection_test || false),
         flight_nofly:           (r.flight.nofly || false),
         call_assigned_to:       r.call.assigned_to,
         call_fm_number:         r.call.fm_number,
@@ -181,6 +183,12 @@ function(r) {
     if (r.flight.mediaWaiver) {
       result["selFlightMediaWaiver"] = "checked=yes";
     }
+    if (r.flight.vaccinated) {
+      result["selFlightVaccinated"] = "checked=yes";
+    }
+    if (r.flight.infection_test) {
+      result["selFlightInfectionTest"] = "checked=yes";
+    }
     if (r.flight.nofly) {
       result["selFlightNoFly"] = "checked=yes";
     }
@@ -249,6 +257,8 @@ function(r) {
         flight_history:         [],
         flight_waiver:          false,
         flight_media_waiver:    false,
+        flight_vaccinated:      false,
+        flight_infection_test:  false,
         flight_nofly:           false,
         call_assigned_to:       "",
         call_fm_number:         "",

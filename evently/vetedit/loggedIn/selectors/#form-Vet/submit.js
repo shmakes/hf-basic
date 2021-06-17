@@ -207,6 +207,8 @@ function(context) {
         doc.flight.status_note = "";
         doc.flight.waiver = false;
         doc.flight.mediaWaiver = false;
+        doc.flight.vaccinated = false;
+        doc.flight.infection_test = false;
         doc.flight.nofly = false;
       }
 
@@ -297,6 +299,26 @@ function(context) {
           change: "changed media waiver received from: " + doc.flight.mediaWaiver + " to: " + isFlightMediaWaiverForm + " by: " + user
         });
         doc.flight.mediaWaiver = isFlightMediaWaiverForm;
+        hasChanged = true;
+      }
+      var isFlightVaccinatedForm = (f.flight_vaccinated === "true");
+      var isFlightVaccinatedDoc = (doc.flight.vaccinated === true);
+      if (isFlightVaccinatedForm != isFlightVaccinatedDoc) {
+        doc.flight.history.push({
+          id: timestamp,
+          change: "changed vaccinated from: " + doc.flight.vaccinated + " to: " + isFlightVaccinatedForm + " by: " + user
+        });
+        doc.flight.vaccinated = isFlightVaccinatedForm;
+        hasChanged = true;
+      }
+      var isFlightInfectionTestForm = (f.flight_infection_test === "true");
+      var isFlightInfectionTestDoc = (doc.flight.infection_test === true);
+      if (isFlightInfectionTestForm != isFlightInfectionTestDoc) {
+        doc.flight.history.push({
+          id: timestamp,
+          change: "changed infection test from: " + doc.flight.infection_test + " to: " + isFlightInfectionTestForm + " by: " + user
+        });
+        doc.flight.infection_test = isFlightInfectionTestForm;
         hasChanged = true;
       }
       var isFlightNoFlyForm = (f.flight_nofly === "true");
