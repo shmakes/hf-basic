@@ -1,5 +1,5 @@
 function(doc) {
-  var statuses = ["Active", "Future-Fall", "Future-Spring"];
+  var statuses = ["Active", "Future-Fall", "Future-Spring", "Future-PostRestriction"];
   var conflict = ["WWII", "Korea", "Vietnam", "Afghanistan", "Iraq"];
   if ((doc.type == "Veteran") 
       && (statuses.indexOf(doc.flight.status) != -1)
