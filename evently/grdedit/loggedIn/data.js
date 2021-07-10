@@ -95,6 +95,8 @@ function(r) {
         flight_books_ordered:      (r.flight.booksOrdered || 0),
         flight_waiver:             (r.flight.waiver || false),
         flight_media_waiver:       (r.flight.mediaWaiver || false),
+        flight_vaccinated:         (r.flight.vaccinated || false),
+        flight_infection_test:     (r.flight.infection_test || false),
         flight_nofly:              (r.flight.nofly || false),
         call_assigned_to:          r.call.assigned_to,
         call_fm_number:            r.call.fm_number,
@@ -179,6 +181,12 @@ function(r) {
     if (r.flight.mediaWaiver) {
       result["selFlightMediaWaiver"] = "checked=yes";
     }
+    if (r.flight.vaccinated) {
+      result["selFlightVaccinated"] = "checked=yes";
+    }
+    if (r.flight.infection_test) {
+      result["selFlightInfectionTest"] = "checked=yes";
+    }
     if (r.flight.training_see_doc) {
       result["selFlightTrainingSeeDoc"] = "checked=yes";
     }
@@ -231,6 +239,8 @@ function(r) {
         flight_paid:               false,
         flight_waiver:             false,
         flight_media_waiver:       false,
+        flight_vaccinated:         false,
+        flight_infection_test:     false,
         flight_books_ordered:      0,
         flight_nofly:              false,
         call_assigned_to:          "",

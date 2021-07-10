@@ -1,5 +1,5 @@
 function(doc) {
-  var statuses = ["Active", "Future-Fall", "Future-Spring"];
+  var statuses = ["Active", "Future-Fall", "Future-Spring", "Future-PostRestriction"];
   
   if ((doc.type == "Guardian") 
       && (statuses.indexOf(doc.flight.status) != -1)

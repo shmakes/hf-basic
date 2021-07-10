@@ -383,6 +383,7 @@
             <option {{selStatus-Removed}}>Removed</option>
             <option {{selStatus-Future-Spring}}>Future-Spring</option>
             <option {{selStatus-Future-Fall}}>Future-Fall</option>
+            <option {{selStatus-Future-PostRestriction}}>Future-PostRestriction</option>
           </select>
           <button id="showFlightHistory" type="button">History</button>
         </li>
@@ -415,6 +416,14 @@
         <li>
           <label for="flight_media_waiver">media waiver recvd</label>
           <input type="checkbox" name="flight_media_waiver" {{selFlightMediaWaiver}} value="true" />
+        </li>
+        <li>
+          <label for="flight_vaccinated">vaccinated</label>
+          <input type="checkbox" name="flight_vaccinated" {{selFlightVaccinated}} value="true" />
+        </li>
+        <li>
+          <label for="flight_infection_test">infection tested</label>
+          <input type="checkbox" name="flight_infection_test" {{selFlightInfectionTest}} value="true" />
         </li>
         <li>
           <label for="flight_nofly">not flying</label>
