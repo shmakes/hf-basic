@@ -470,63 +470,63 @@ function(context) {
         hasChanged = true;
       }
 
-      if (!doc.accomodations) {
-        doc.accomodations = {};
-        doc.accomodations.arrival_date = "";
-        doc.accomodations.arrival_time = "";
-        doc.accomodations.arrival_flight = "";
-        doc.accomodations.hotel_name = "";
-        doc.accomodations.room_type = "None";
-        doc.accomodations.attend_banquette = "";
-        doc.accomodations.banquette_guest = "";
-        doc.accomodations.departure_date = "";
-        doc.accomodations.departure_time = "";
-        doc.accomodations.departure_flight = "";
-        doc.accomodations.notes = "";
+      if (!doc.accommodations) {
+        doc.accommodations = {};
+        doc.accommodations.arrival_date = "";
+        doc.accommodations.arrival_time = "";
+        doc.accommodations.arrival_flight = "";
+        doc.accommodations.hotel_name = "";
+        doc.accommodations.room_type = "None";
+        doc.accommodations.attend_banquette = "";
+        doc.accommodations.banquette_guest = "";
+        doc.accommodations.departure_date = "";
+        doc.accommodations.departure_time = "";
+        doc.accommodations.departure_flight = "";
+        doc.accommodations.notes = "";
       }
 
-      if ('accom_arrival_date' in f && f.accom_arrival_date != doc.accomodations.arrival_date) {
-        doc.accomodations.arrival_date = f.accom_arrival_date;
+      if ('accomm_arrival_date' in f && f.accomm_arrival_date != doc.accommodations.arrival_date) {
+        doc.accommodations.arrival_date = f.accomm_arrival_date;
         hasChanged = true;
       }
-      if ('accom_arrival_time' in f && f.accom_arrival_time != doc.accomodations.arrival_time) {
-        doc.accomodations.arrival_time = f.accom_arrival_time;
+      if ('accomm_arrival_time' in f && f.accomm_arrival_time != doc.accommodations.arrival_time) {
+        doc.accommodations.arrival_time = f.accomm_arrival_time;
         hasChanged = true;
       }
-      if ('accom_arrival_flight' in f && f.accom_arrival_flight != doc.accomodations.arrival_flight) {
-        doc.accomodations.arrival_flight = f.accom_arrival_flight;
+      if ('accomm_arrival_flight' in f && f.accomm_arrival_flight != doc.accommodations.arrival_flight) {
+        doc.accommodations.arrival_flight = f.accomm_arrival_flight;
         hasChanged = true;
       }
-      if ('accom_hotel_name' in f && f.accom_hotel_name != doc.accomodations.hotel_name) {
-        doc.accomodations.hotel_name = f.accom_hotel_name;
+      if ('accomm_hotel_name' in f && f.accomm_hotel_name != doc.accommodations.hotel_name) {
+        doc.accommodations.hotel_name = f.accomm_hotel_name;
         hasChanged = true;
       }
-      if ('accom_room_type' in f && f.accom_room_type != doc.accomodations.room_type) {
-        doc.accomodations.room_type = f.accom_room_type;
+      if ('accomm_room_type' in f && f.accomm_room_type != doc.accommodations.room_type) {
+        doc.accommodations.room_type = f.accomm_room_type;
         hasChanged = true;
       }
-      if ('accom_attend_banquette' in f && f.accom_attend_banquette != doc.accomodations.attend_banquette) {
-        doc.accomodations.attend_banquette = f.accom_attend_banquette;
+      if ('accomm_attend_banquette' in f && f.accomm_attend_banquette != doc.accommodations.attend_banquette) {
+        doc.accommodations.attend_banquette = f.accomm_attend_banquette;
         hasChanged = true;
       }
-      if ('accom_banquette_guest' in f && f.accom_banquette_guest != doc.accomodations.banquette_guest) {
-        doc.accomodations.banquette_guest = f.accom_banquette_guest;
+      if ('accomm_banquette_guest' in f && f.accomm_banquette_guest != doc.accommodations.banquette_guest) {
+        doc.accommodations.banquette_guest = f.accomm_banquette_guest;
         hasChanged = true;
       }
-      if ('accom_departure_date' in f && f.accom_departure_date != doc.accomodations.departure_date) {
-        doc.accomodations.departure_date = f.accom_departure_date;
+      if ('accomm_departure_date' in f && f.accomm_departure_date != doc.accommodations.departure_date) {
+        doc.accommodations.departure_date = f.accomm_departure_date;
         hasChanged = true;
       }
-      if ('accom_departure_time' in f && f.accom_departure_time != doc.accomodations.departure_time) {
-        doc.accomodations.departure_time = f.accom_departure_time;
+      if ('accomm_departure_time' in f && f.accomm_departure_time != doc.accommodations.departure_time) {
+        doc.accommodations.departure_time = f.accomm_departure_time;
         hasChanged = true;
       }
-      if ('accom_departure_flight' in f && f.accom_departure_flight != doc.accomodations.departure_flight) {
-        doc.accomodations.departure_flight = f.accom_departure_flight;
+      if ('accomm_departure_flight' in f && f.accomm_departure_flight != doc.accommodations.departure_flight) {
+        doc.accommodations.departure_flight = f.accomm_departure_flight;
         hasChanged = true;
       }
-      if ('accom_notes' in f && f.accom_notes != doc.accomodations.notes) {
-        doc.accomodations.notes = f.accom_notes;
+      if ('accomm_notes' in f && f.accomm_notes != doc.accommodations.notes) {
+        doc.accommodations.notes = f.accomm_notes;
         hasChanged = true;
       }
 

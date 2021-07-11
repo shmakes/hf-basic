@@ -13,7 +13,7 @@ function(head, req) {
   start({
     "headers": {
       "Content-Type": "text/csv",
-      "Content-disposition": "attachment;filename=Accomodations.csv"
+      "Content-disposition": "attachment;filename=Accommodations.csv"
      }
   });
 
@@ -61,8 +61,8 @@ function(head, req) {
       r.apparel = {};
     }
     
-    if (!r.accomodations) {
-      r.accomodations = {};
+    if (!r.accommodations) {
+      r.accommodations = {};
     }
     
     if (!r.homecoming) {
@@ -128,17 +128,17 @@ function(head, req) {
         service_activity:              serviceActivity,
         pair_first_name:               pairFirstName,
         pair_last_name:                pairLastName,
-        accom_arrival_date:     (r.accomodations.arrival_date || ""),
-        accom_arrival_time:     (r.accomodations.arrival_time || ""),
-        accom_arrival_flight:   (r.accomodations.arrival_flight || ""),
-        accom_hotel_name:       (r.accomodations.hotel_name || ""),
-        accom_room_type:        (r.accomodations.room_type || ""),
-        accom_attend_banquette: (r.accomodations.attend_banquette || ""),
-        accom_banquette_guest:  (r.accomodations.banquette_guest || ""),
-        accom_departure_date:   (r.accomodations.departure_date || ""),
-        accom_departure_time:   (r.accomodations.departure_time || ""),
-        accom_departure_flight: (r.accomodations.departure_flight || ""),
-        accom_notes:            (r.accomodations.notes || ""),
+        accomm_arrival_date:           (r.accommodations.arrival_date || ""),
+        accomm_arrival_time:           (r.accommodations.arrival_time || ""),
+        accomm_arrival_flight:         (r.accommodations.arrival_flight || ""),
+        accomm_hotel_name:             (r.accommodations.hotel_name || ""),
+        accomm_room_type:              (r.accommodations.room_type || ""),
+        accomm_attend_banquette:       (r.accommodations.attend_banquette || ""),
+        accomm_banquette_guest:        (r.accommodations.banquette_guest || ""),
+        accomm_departure_date:         (r.accommodations.departure_date || ""),
+        accomm_departure_time:         (r.accommodations.departure_time || ""),
+        accomm_departure_flight:       (r.accommodations.departure_flight || ""),
+        accomm_notes:                  (r.accommodations.notes || ""),
         id:                            r._id,
         rev:                           r._rev,
         created_at:                    r.metadata.created_at,
