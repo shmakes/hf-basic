@@ -268,6 +268,12 @@ function() {
      }
   });
 
+  var hostname = window.location.hostname;
+  if (hostname === "db.starsandstripeshonorflight.org") {
+    var accom = $("#AccomodationsBlock");
+    accom.css("display", "none");
+  }
+
   $(this).show();
 };
 
