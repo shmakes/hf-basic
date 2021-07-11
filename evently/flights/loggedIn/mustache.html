@@ -3,7 +3,7 @@
   <tr>
     <th>flight</th>
     <th colspan="3">options</th>
-    <th colspan="3">exports</th>
+    <th colspan="4">exports</th>
   </tr>
 {{#flights}}
   <tr class="DataRow">
@@ -14,6 +14,7 @@
     <td class="colStatus"><a href='_list/flight-csv/active_by_flight?startkey=["{{flight_name}}", "a"]&endkey=["{{flight_name}}", "Z"]&include_docs=true'>All</a></td>
     <td class="colStatus"><a href='_list/flight-csv/active_by_flight?startkey=["{{flight_name}}","Veteran"]&endkey=["{{flight_name}}","Veteran"]&include_docs=true'>Veterans</a></td>
     <td class="colStatus"><a href='_list/flight-csv/active_by_flight?startkey=["{{flight_name}}","Guardian"]&endkey=["{{flight_name}}","Guardian"]&include_docs=true'>Guardians</a></td>
+    <td class="colStatus"><a href='_list/accomodations-csv/active_by_flight?startkey=["{{flight_name}}", "a"]&endkey=["{{flight_name}}", "Z"]&include_docs=true'>Accomodations</a></td>
   </tr>
 {{/flights}}
 </table>

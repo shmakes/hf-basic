@@ -470,6 +470,66 @@ function(context) {
         hasChanged = true;
       }
 
+      if (!doc.accomodations) {
+        doc.accomodations = {};
+        doc.accomodations.arrival_date = "";
+        doc.accomodations.arrival_time = "";
+        doc.accomodations.arrival_flight = "";
+        doc.accomodations.hotel_name = "";
+        doc.accomodations.room_type = "None";
+        doc.accomodations.attend_banquette = "";
+        doc.accomodations.banquette_guest = "";
+        doc.accomodations.departure_date = "";
+        doc.accomodations.departure_time = "";
+        doc.accomodations.departure_flight = "";
+        doc.accomodations.notes = "";
+      }
+
+      if ('accom_arrival_date' in f && f.accom_arrival_date != doc.accomodations.arrival_date) {
+        doc.accomodations.arrival_date = f.accom_arrival_date;
+        hasChanged = true;
+      }
+      if ('accom_arrival_time' in f && f.accom_arrival_time != doc.accomodations.arrival_time) {
+        doc.accomodations.arrival_time = f.accom_arrival_time;
+        hasChanged = true;
+      }
+      if ('accom_arrival_flight' in f && f.accom_arrival_flight != doc.accomodations.arrival_flight) {
+        doc.accomodations.arrival_flight = f.accom_arrival_flight;
+        hasChanged = true;
+      }
+      if ('accom_hotel_name' in f && f.accom_hotel_name != doc.accomodations.hotel_name) {
+        doc.accomodations.hotel_name = f.accom_hotel_name;
+        hasChanged = true;
+      }
+      if ('accom_room_type' in f && f.accom_room_type != doc.accomodations.room_type) {
+        doc.accomodations.room_type = f.accom_room_type;
+        hasChanged = true;
+      }
+      if ('accom_attend_banquette' in f && f.accom_attend_banquette != doc.accomodations.attend_banquette) {
+        doc.accomodations.attend_banquette = f.accom_attend_banquette;
+        hasChanged = true;
+      }
+      if ('accom_banquette_guest' in f && f.accom_banquette_guest != doc.accomodations.banquette_guest) {
+        doc.accomodations.banquette_guest = f.accom_banquette_guest;
+        hasChanged = true;
+      }
+      if ('accom_departure_date' in f && f.accom_departure_date != doc.accomodations.departure_date) {
+        doc.accomodations.departure_date = f.accom_departure_date;
+        hasChanged = true;
+      }
+      if ('accom_departure_time' in f && f.accom_departure_time != doc.accomodations.departure_time) {
+        doc.accomodations.departure_time = f.accom_departure_time;
+        hasChanged = true;
+      }
+      if ('accom_departure_flight' in f && f.accom_departure_flight != doc.accomodations.departure_flight) {
+        doc.accomodations.departure_flight = f.accom_departure_flight;
+        hasChanged = true;
+      }
+      if ('accom_notes' in f && f.accom_notes != doc.accomodations.notes) {
+        doc.accomodations.notes = f.accom_notes;
+        hasChanged = true;
+      }
+
 
       if (!doc.metadata) {
         doc.metadata = {};

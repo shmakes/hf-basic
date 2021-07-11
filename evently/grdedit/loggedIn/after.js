@@ -109,6 +109,23 @@ function() {
     speed: 100
   });
 
+  $("#accom_arrival_date").dateinput({
+    format: 'yyyy-mm-dd',
+    selectors: true,
+    min: -300,
+    max: 300,
+    speed: 100
+  });
+
+  $("#accom_departure_date").dateinput({
+    format: 'yyyy-mm-dd',
+    selectors: true,
+    min: -300,
+    max: 300,
+    speed: 100
+  });
+
+
   $("#form-Grd").validator({ position: 'bottom center' });
 
   document.title = $("input[name='first_name']").val() + " " + $("input[name='last_name']").val();

@@ -70,6 +70,10 @@ function(r) {
       vetName3 = r.veteran.pairings[2].name;
     }
 
+    if (!r.accomodations) {
+      r.accomodations = {};
+    }
+
     var result = {
         db_name:                   dbname,
         id:                        r._id,
@@ -146,6 +150,17 @@ function(r) {
         apparel_delivery:          (r.apparel.delivery || ""),
         apparel_by:                (r.apparel.by || ""),
         apparel_notes:             (r.apparel.notes || ""),
+        accom_arrival_date:        (r.accomodations.arrival_date || ""),
+        accom_arrival_time:        (r.accomodations.arrival_time || ""),
+        accom_arrival_flight:      (r.accomodations.arrival_flight || ""),
+        accom_hotel_name:          (r.accomodations.hotel_name || ""),
+        accom_room_type:           (r.accomodations.room_type || ""),
+        accom_attend_banquette:    (r.accomodations.attend_banquette || ""),
+        accom_banquette_guest:     (r.accomodations.banquette_guest || ""),
+        accom_departure_date:      (r.accomodations.departure_date || ""),
+        accom_departure_time:      (r.accomodations.departure_time || ""),
+        accom_departure_flight:    (r.accomodations.departure_flight || ""),
+        accom_notes:               (r.accomodations.notes || ""),
         created_at:                r.metadata.created_at,
         updated_at:                r.metadata.updated_at,
         created_by:                r.metadata.created_by,
@@ -207,6 +222,12 @@ function(r) {
     }
     if (r.apparel.delivery) {
       result["selDelivery-" + r.apparel.delivery] = "selected";
+    }
+    if (r.accomodations.room_type) {
+      result["selRoomType-" + r.accomodations.room_type] = "selected";
+    }
+    if (r.accomodations.attend_banquette) {
+      result["selBanquette"] = "checked=yes";
     }
     var selectedGender = "selGender-" + (r.gender || "M");
     result[selectedGender] = "selected";
@@ -287,6 +308,17 @@ function(r) {
         apparel_delivery:          "",
         apparel_by:                "",
         apparel_notes:             "",
+        accom_arrival_date:        "",
+        accom_arrival_time:        "",
+        accom_arrival_flight:      "",
+        accom_hotel_name:          "",
+        accom_room_type:           "",
+        accom_attend_banquette:    "",
+        accom_banquette_guest:     "",
+        accom_departure_date:      "",
+        accom_departure_time:      "",
+        accom_departure_flight:    "",
+        accom_notes:               "",
         created_at:                "",
         updated_at:                "",
         created_by:                "",
