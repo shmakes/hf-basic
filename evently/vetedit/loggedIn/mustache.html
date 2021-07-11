@@ -517,50 +517,54 @@
     </fieldset>
 
     <fieldset class="alt">
-      <legend accesskey="A">
+      <legend accesskey="B">
         <span>Accomodations</span>
       </legend>
       <br />
       <ol>
         <li>
-          <label for="arrival_date">arrival date</label>
-          <input type="date" class="date" id="arrival_date" name="arrival_date" pattern="[0-9-]{0,10}" maxlength="10" value="{{arrival_date}}" data-value="{{arrival_date}}" style="width: 8em" />
+          <label for="accom_arrival_date">arrival date</label>
+          <input type="date" class="date" id="accom_arrival_date" name="accom_arrival_date" pattern="[0-9-]{0,10}" maxlength="10" value="{{accom_arrival_date}}" data-value="{{accom_arrival_date}}" style="width: 8em" />
+          time: 
+          <input type="text" name="accom_arrival_time" maxlength="30" pattern="[a-zA-Z0-9:.,# /-]{0,}" value="{{accom_arrival_time}}" style="width: 10em" />
         </li>
         <li>
-          <label for="arrival_flight">arrival flight</label>
-          <input type="text" name="arrival_flight" maxlength="30" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{arrival_flight}}" style="width: 15em" />
+          <label for="accom_arrival_flight">arrival flight</label>
+          <input type="text" name="accom_arrival_flight" maxlength="30" pattern="[a-zA-Z0-9:.,# /-]{0,}" value="{{accom_arrival_flight}}" style="width: 25em" />
         </li>
         <li>
-          <label for="accomodations_hotel_name">hotel name</label>
-          <input type="text" name="arrival_flight" maxlength="30" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{arrival_flight}}" style="width: 15em" />
+          <label for="accom_hotel_name">hotel name</label>
+          <input type="text" name="accom_hotel_name" maxlength="30" pattern="[a-zA-Z0-9:.,# /-]{0,}" value="{{accom_hotel_name}}" style="width: 25em" />
         </li>
         <li>
-          <label for="accomodations_room_type">room type</label>
-          <select name="accomodations_room_type" id="accomodations_room_type" >
+          <label for="accom_room_type">room type</label>
+          <select name="accom_room_type" id="accom_room_type" >
             <option>None</option>
             <option {{selRoomType-Double}}>Double</option>
-            <option {{selRoomtype-Single}}>Single</option>
+            <option {{selRoomType-Single}}>Single</option>
           </select>
         </li>
         <li>
-          <label for="banquette">attend banquette</label>
-          <input type="checkbox" name="banquette" {{selBanquette}} value="true" />
+          <label for="accom_attend_banquette">attend banquette</label>
+          <input type="checkbox" name="accom_attend_banquette" {{selBanquette}} value="true" />
         </li>
         <li>
-          <label for="banquette_guest">banquette guest</label>
-          <input type="text" name="banquette_guest" maxlength="30" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{banquette_guest}}" style="width: 15em" />
+          <label for="accom_banquette_guest">banquette guest</label>
+          <input type="text" name="accom_banquette_guest" maxlength="30" pattern="[a-zA-Z0-9:.,# /-]{0,}" value="{{accom_banquette_guest}}" style="width: 15em" />
         </li>
         <li>
-          <label for="departure_date">departure date</label>
-          <input type="date" class="date" id="departure_date" name="departure_date" pattern="[0-9-]{0,10}" maxlength="10" value="{{departure_date}}" data-value="{{departure_date}}" style="width: 8em" />
+          <label for="accom_departure_date">departure date</label>
+          <input type="date" class="date" id="accom_departure_date" name="accom_departure_date" pattern="[0-9-]{0,10}" maxlength="10" value="{{accom_departure_date}}" data-value="{{accom_departure_date}}" style="width: 8em" />
+          time: 
+          <input type="text" name="accom_departure_time" maxlength="30" pattern="[a-zA-Z0-9:.,# /-]{0,}" value="{{accom_departure_time}}" style="width: 10em" />
         </li>
         <li>
-          <label for="departure_flight">departure flight</label>
-          <input type="text" name="departure_flight" maxlength="30" pattern="[a-zA-Z0-9.,# /-]{0,}" value="{{departure_flight}}" style="width: 15em" />
+          <label for="accom_departure_flight">departure flight</label>
+          <input type="text" name="accom_departure_flight" maxlength="30" pattern="[a-zA-Z0-9:.,# /-]{0,}" value="{{accom_departure_flight}}" style="width: 25em" />
         </li>
         <li>
-          <label for="accomodations_notes">notes</label>
-          <textarea rows="3" cols="70" name="apparel_notes">{{apparel_notes}}</textarea>
+          <label for="accom_notes">notes</label>
+          <textarea rows="3" cols="70" name="accom_notes">{{accom_notes}}</textarea>
         </li>
       </ol>
     </fieldset>
