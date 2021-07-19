@@ -153,7 +153,7 @@ function() {
     speed: 100
   });
 
-  $("#accom_arrival_date").dateinput({
+  $("#accomm_arrival_date").dateinput({
     format: 'yyyy-mm-dd',
     selectors: true,
     min: -300,
@@ -161,7 +161,7 @@ function() {
     speed: 100
   });
 
-  $("#accom_departure_date").dateinput({
+  $("#accomm_departure_date").dateinput({
     format: 'yyyy-mm-dd',
     selectors: true,
     min: -300,
@@ -270,8 +270,8 @@ function() {
 
   var hostname = window.location.hostname;
   if (hostname === "db.starsandstripeshonorflight.org") {
-    var accom = $("#AccomodationsBlock");
-    accom.css("display", "none");
+    var accomm = $("#AccommodationsBlock");
+    accomm.css("display", "none");
   }
 
   $(this).show();

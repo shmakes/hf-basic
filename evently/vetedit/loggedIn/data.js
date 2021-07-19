@@ -51,8 +51,8 @@ function(r) {
       r.homecoming = {};
     }
 
-    if (!r.accomodations) {
-      r.accomodations = {};
+    if (!r.accommodations) {
+      r.accommodations = {};
     }
 
     var result = {
@@ -149,17 +149,17 @@ function(r) {
         apparel_delivery:       (r.apparel.delivery || ""),
         apparel_notes:          (r.apparel.notes || ""),
         apparel_by:             (r.apparel.by || ""),
-        accom_arrival_date:     (r.accomodations.arrival_date || ""),
-        accom_arrival_time:     (r.accomodations.arrival_time || ""),
-        accom_arrival_flight:   (r.accomodations.arrival_flight || ""),
-        accom_hotel_name:       (r.accomodations.hotel_name || ""),
-        accom_room_type:        (r.accomodations.room_type || ""),
-        accom_attend_banquette: (r.accomodations.attend_banquette || ""),
-        accom_banquette_guest:  (r.accomodations.banquette_guest || ""),
-        accom_departure_date:   (r.accomodations.departure_date || ""),
-        accom_departure_time:   (r.accomodations.departure_time || ""),
-        accom_departure_flight: (r.accomodations.departure_flight || ""),
-        accom_notes:            (r.accomodations.notes || ""),
+        accomm_arrival_date:     (r.accommodations.arrival_date || ""),
+        accomm_arrival_time:     (r.accommodations.arrival_time || ""),
+        accomm_arrival_flight:   (r.accommodations.arrival_flight || ""),
+        accomm_hotel_name:       (r.accommodations.hotel_name || ""),
+        accomm_room_type:        (r.accommodations.room_type || ""),
+        accomm_attend_banquette: (r.accommodations.attend_banquette || ""),
+        accomm_banquette_guest:  (r.accommodations.banquette_guest || ""),
+        accomm_departure_date:   (r.accommodations.departure_date || ""),
+        accomm_departure_time:   (r.accommodations.departure_time || ""),
+        accomm_departure_flight: (r.accommodations.departure_flight || ""),
+        accomm_notes:            (r.accommodations.notes || ""),
         created_at:             r.metadata.created_at,
         updated_at:             r.metadata.updated_at,
         created_by:             r.metadata.created_by,
@@ -246,10 +246,10 @@ function(r) {
     if (r.apparel.delivery) {
       result["selDelivery-" + r.apparel.delivery] = "selected";
     }
-    if (r.accomodations.room_type) {
-      result["selRoomType-" + r.accomodations.room_type] = "selected";
+    if (r.accommodations.room_type) {
+      result["selRoomType-" + r.accommodations.room_type] = "selected";
     }
-    if (r.accomodations.attend_banquette) {
+    if (r.accommodations.attend_banquette) {
       result["selBanquette"] = "checked=yes";
     }
 
@@ -351,17 +351,17 @@ function(r) {
         apparel_delivery:       "",
         apparel_notes:          "",
         apparel_by:             "",
-        accom_arrival_date:     "",
-        accom_arrival_time:     "",
-        accom_arrival_flight:   "",
-        accom_hotel_name:       "",
-        accom_room_type:        "",
-        accom_attend_banquette: "",
-        accom_banquette_guest:  "",
-        accom_departure_date:   "",
-        accom_departure_time:   "",
-        accom_departure_flight: "",
-        accom_notes:            "",
+        accomm_arrival_date:     "",
+        accomm_arrival_time:     "",
+        accomm_arrival_flight:   "",
+        accomm_hotel_name:       "",
+        accomm_room_type:        "",
+        accomm_attend_banquette: "",
+        accomm_banquette_guest:  "",
+        accomm_departure_date:   "",
+        accomm_departure_time:   "",
+        accomm_departure_flight: "",
+        accomm_notes:            "",
         created_at:             "",
         updated_at:             "",
         created_by:             "",

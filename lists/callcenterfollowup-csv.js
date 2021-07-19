@@ -13,7 +13,7 @@ function(head, req) {
   start({
     "headers": {
       "Content-Type": "text/csv",
-      "Content-disposition": "attachment;filename=Accomodations.csv"
+      "Content-disposition": "attachment;filename=CallCenterFollowUp.csv"
      }
   });
 
@@ -61,10 +61,6 @@ function(head, req) {
       r.apparel = {};
     }
     
-    if (!r.accomodations) {
-      r.accomodations = {};
-    }
-    
     if (!r.homecoming) {
       r.homecoming = {};
     }
@@ -92,53 +88,35 @@ function(head, req) {
         type:                          r.type,
         app_date:                      r.app_date,
         conflict:                      conflict,
+        call_assigned_to:              (r.call.assigned_to || ""),
         first_name:                    r.name.first,
         middle_name:                   r.name.middle,
         last_name:                     r.name.last,
         nick_name:                     r.name.nickname,
-        addr_street:                   r.address.street,
-        addr_city:                     r.address.city,
-        addr_county:                   r.address.county,
-        addr_state:                    r.address.state,
-        addr_zip:                      r.address.zip,
-        addr_phone_day:                r.address.phone_day,
-        addr_phone_eve:                r.address.phone_eve,
-        addr_phone_mbl:                r.address.phone_mbl,
         addr_email:                    r.address.email,
+        flight_group:                  (r.flight.group || ""),
+        medical_release:               (r.medical.release || ""),
+        flight_waiver:                 (r.flight.waiver || ""),
+        flight_media_waiver:           (r.flight.mediaWaiver || ""),
+        flight_vaccinated:             (r.flight.vaccinated || ""),
+        flight_infection_test:         (r.flight.infection_test || ""),
+        veteran_mail_sent:             (r.call.mail_sent || false),
+        email_sent:                    (r.call.email_sent || false),
+        mail_call_received:            ((r.mail_call && r.mail_call.received) || ""),
+        flight_training:               training,
+        flight_paid:                   paid,
         birth_date:                    r.birth_date,
         gender:                        r.gender,
         shirt_size:                    r.shirt.size,
-        call_assigned_to:              (r.call.assigned_to || ""),
         call_fm_number:                (r.call.fm_number || ""),
-        call_mail_sent:                (r.call.mail_sent  || false),
-        call_email_sent:               (r.call.email_sent || false),
         flight_status:                 r.flight.status,
         flight_status_note:            r.flight.status_note,
         flight_confirmed_date:         r.flight.confirmed_date,
         flight_confirmed_by:           r.flight.confirmed_by,
-        flight_training:               training,
         flight_training_notes:         r.flight.training_notes,
-        flight_paid:                   paid,
-        flight_seat:                   r.flight.seat,
         flight_nofly:                  (r.flight.nofly || false),
-        flight_group:                  (r.flight.group || ""),
-        service_branch:                ((r.service && r.service.branch) || ""),
-        service_rank:                  ((r.service && r.service.rank) || ""),
-        service_dates:                 ((r.service && r.service.dates) || ""),
-        service_activity:              serviceActivity,
         pair_first_name:               pairFirstName,
         pair_last_name:                pairLastName,
-        accom_arrival_date:     (r.accomodations.arrival_date || ""),
-        accom_arrival_time:     (r.accomodations.arrival_time || ""),
-        accom_arrival_flight:   (r.accomodations.arrival_flight || ""),
-        accom_hotel_name:       (r.accomodations.hotel_name || ""),
-        accom_room_type:        (r.accomodations.room_type || ""),
-        accom_attend_banquette: (r.accomodations.attend_banquette || ""),
-        accom_banquette_guest:  (r.accomodations.banquette_guest || ""),
-        accom_departure_date:   (r.accomodations.departure_date || ""),
-        accom_departure_time:   (r.accomodations.departure_time || ""),
-        accom_departure_flight: (r.accomodations.departure_flight || ""),
-        accom_notes:            (r.accomodations.notes || ""),
         id:                            r._id,
         rev:                           r._rev,
         created_at:                    r.metadata.created_at,
@@ -173,5 +151,4 @@ function(head, req) {
     }
     send("\n");
   }
-
 }
