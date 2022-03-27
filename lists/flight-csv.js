@@ -155,9 +155,20 @@ function(head, req) {
         apparel_delivery:              (r.apparel.delivery || ""),
         apparel_notes:                 (r.apparel.notes || ""),
         apparel_by:                    (r.apparel.by || ""),
-        emerg_contact_name:            (r.emerg_contact.name || r.alt_contact.name || ""),
-        emerg_contact_phone:           (r.emerg_contact.address.phone || r.emerg_contact.address.phone_eve || r.emerg_contact.address.phone_mbl || r.alt_contact.address.phone || r.alt_contact.address.phone_eve || r.alt_contact.address.phone_mbl || ""),
-        emerg_contact_email:           (r.emerg_contact.address.email || r.alt_contact.address.email || ""),
+
+        emerg_contact_name:            (r.emerg_contact.name || ""),
+        emerg_contact_relation:        (r.emerg_contact.relation || ""),
+        emerg_contact_phone_day:       (r.emerg_contact.address.phone || ""),
+        emerg_contact_phone_eve:       (r.emerg_contact.address.phone_eve || ""),
+        emerg_contact_phone_mbl:       (r.emerg_contact.address.phone_mbl || ""),
+
+        alt_contact_name:              (r.alt_contact.name || ""),
+        alt_contact_relation:          (r.alt_contact.relation || ""),
+        alt_contact_phone_day:         (r.alt_contact.address.phone || ""),
+        alt_contact_phone_eve:         (r.alt_contact.address.phone_eve || ""),
+        alt_contact_phone_mbl:         (r.alt_contact.address.phone_mbl || ""),
+        alt_contact_email:             (r.alt_contact.address.email || ""),
+
         id:                            r._id,
         rev:                           r._rev,
         created_at:                    r.metadata.created_at,
