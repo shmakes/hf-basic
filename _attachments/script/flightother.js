@@ -55,13 +55,13 @@ function changeCheckbox(app, checkBox, docId, newCheckValue, user) {
         if (cat === "mail_call") {
           doc.call.history.push({
             id: ISODateString(new Date()),
-            change: "changed " + cat + " " + propMap.slice(2).join(" ") + " from: " + doc[cat][prp] + " to: " + newCheckValue + " by: " + user
+            change: "changed " + cat + " " + propMap.slice(2).join(" ") + " from: " + (doc[cat][prp] || false) + " to: " + newCheckValue + " by: " + user
           });
 
         } else {
           doc.flight.history.push({
             id: ISODateString(new Date()),
-            change: "changed " + cat + " " + propMap.slice(2).join(" ") + " from: " + doc[cat][prp] + " to: " + newCheckValue + " by: " + user
+            change: "changed " + cat + " " + propMap.slice(2).join(" ") + " from: " + (doc[cat][prp] || false) + " to: " + newCheckValue + " by: " + user
           });
         }
 

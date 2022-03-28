@@ -142,6 +142,7 @@ function(r) {
         medical_limitations:       r.medical.limitations,
         medical_experience:        r.medical.experience,
         medical_release:           (r.medical.release || false),
+        medical_form:              (r.medical.form || false),
         medical_can_push:          (r.medical.can_push || false),
         medical_can_lift:          (r.medical.can_lift || false),
         medical_level:             (r.medical.level || ""),
@@ -183,6 +184,9 @@ function(r) {
     }
     if (r.medical.release === true || r.medical.release === 'Y' || r.medical.release === 'y' ) {
       result["selMedicalRelease"] = "checked=yes";
+    }
+    if (r.medical.form) {
+      result["selMedicalForm"] = "checked=yes";
     }
     if (r.medical.can_push) {
       result["selMedicalCanPush"] = "checked=yes";
@@ -300,6 +304,7 @@ function(r) {
         medical_limitations:       "",
         medical_experience:        "",
         medical_release:           false,
+        medical_form:              false,
         medical_can_push:          false,
         medical_can_lift:          false,
         medical_level:             "",

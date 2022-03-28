@@ -397,6 +397,7 @@ function(context) {
       if (!doc.medical) {
         doc.medical = {};
         doc.medical.release = false;
+        doc.medical.form = false;
         doc.medical.can_push = false;
         doc.medical.can_lift = false;
         doc.medical.limitations = false;
@@ -411,6 +412,16 @@ function(context) {
           change: "changed medical release received from: " + doc.medical.release + " to: " + isMedicalReleaseForm + " by: " + user
         });
         doc.medical.release = isMedicalReleaseForm;
+        hasChanged = true;
+      }
+      var isMedicalFormForm = (f.medical_form === "true");
+      var isMedicalFormDoc = (doc.medical.form === true);
+      if (isMedicalFormForm != isMedicalFormDoc) {
+        doc.flight.history.push({
+          id: timestamp,
+          change: "changed medical form received from: " + (doc.medical.form || false) + " to: " + isMedicalFormForm + " by: " + user
+        });
+        doc.medical.form = isMedicalFormForm;
         hasChanged = true;
       }
       var medLimitations = f.medical_limitations.replace(/"/g, "'").replace(/\\/g, "/");

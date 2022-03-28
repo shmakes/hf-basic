@@ -141,6 +141,7 @@ function(r) {
         medical_level:          r.medical.level,
         medical_alt_level:      r.medical.alt_level,
         medical_release:        (r.medical.release || false),
+        medical_form:           (r.medical.form || false),
         media_newspaper_ok:     (r.media_newspaper_ok || (function(oldMediaVal, oldConfVal){ if(oldMediaVal === true){return "Yes";} else if(oldConfVal) {return "No"} else {return "Unknown"} })(r.media_ok, r.flight.confirmed_by)),
         media_interview_ok:     (r.media_interview_ok || "Unknown"),
         homecoming_destination: (r.homecoming.destination || ""),
@@ -191,6 +192,9 @@ function(r) {
     result[selectedInterviewOk] = "selected";
     if (r.medical.release) {
       result["selMedicalRelease"] = "checked=yes";
+    }
+    if (r.medical.form) {
+      result["selMedicalForm"] = "checked=yes";
     }
     if (r.flight.waiver) {
       result["selFlightWaiver"] = "checked=yes";
@@ -343,6 +347,7 @@ function(r) {
         medical_level:          "",
         medical_alt_level:      "",
         medical_release:        false,
+        medical_form:           false,
         media_newspaper_ok:     "Unknown",
         media_interview_ok:     "Unknown",
         homecoming_destination: "",

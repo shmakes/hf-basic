@@ -28,13 +28,14 @@ function() {
       1: { sorter:"checkboxes" }, 
       2: { sorter:"checkboxes" }, 
       3: { sorter:"checkboxes" }, 
-      6: { sorter:"checkboxes" }, 
-      9: { sorter:"checkboxes" }, 
+      4: { sorter:"checkboxes" }, 
+      7: { sorter:"checkboxes" }, 
       10: { sorter:"checkboxes" }, 
-      13: { sorter:"checkboxes" }, 
+      11: { sorter:"checkboxes" }, 
       14: { sorter:"checkboxes" }, 
       15: { sorter:"checkboxes" }, 
-      16: { sorter:"surname" } 
+      16: { sorter:"checkboxes" }, 
+      17: { sorter:"surname" } 
     },
     textExtraction: function(elem) {
       var $input = $("input", elem);

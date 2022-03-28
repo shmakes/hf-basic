@@ -125,6 +125,7 @@ function(head, req) {
         media_newspaper_ok:            (r.media_newspaper_ok || ""),
         media_interview_ok:            (r.media_interview_ok || ""),
         medical_release:               (r.medical.release || ""),
+        medical_form:                  (r.medical.form || ""),
         medical_level:                 (r.medical.level || ""),
         medical_alt_level:             (r.medical.alt_level || ""),
         medical_limitations:           (r.medical.limitations || ""),
