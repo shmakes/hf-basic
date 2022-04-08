@@ -392,6 +392,10 @@ function(context) {
         doc.emerg_contact.address.phone = f.ec_phone;
         hasChanged = true;
       }
+      if (doc.emerg_contact.address.email != f.ec_addr_email) {
+        doc.emerg_contact.address.email = f.ec_addr_email;
+        hasChanged = true;
+      }
 
 
       if (!doc.medical) {

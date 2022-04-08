@@ -137,6 +137,7 @@ function(r) {
         ec_relation:               (r.emerg_contact.relation || ""),
         ec_name:                   (r.emerg_contact.name || ""),
         ec_addr_phone:             (r.emerg_contact.address.phone || ""),
+        ec_addr_email:             (r.emerg_contact.address.email || ""),
         notes_other:               r.notes.other,
         notes_service:             r.notes.service,
         medical_limitations:       r.medical.limitations,
