@@ -162,6 +162,7 @@ function(head, req) {
         emerg_contact_phone_day:       (r.emerg_contact.address.phone || ""),
         emerg_contact_phone_eve:       (r.emerg_contact.address.phone_eve || ""),
         emerg_contact_phone_mbl:       (r.emerg_contact.address.phone_mbl || ""),
+        emerg_contact_email:           (r.emerg_contact.address.email || r.alt_contact.address.email || ""),
 
         alt_contact_name:              (r.alt_contact.name || ""),
         alt_contact_relation:          (r.alt_contact.relation || ""),
