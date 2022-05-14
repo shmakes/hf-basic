@@ -1,12 +1,12 @@
 function() {
   var vetId = $(this).parent().parent().attr("vetid");
-  var newShirtSize = $(this).val();
+  var newJacketSize = $(this).val();
   var user = $("#user_name").text();
   var app = $$(this).app;
 
-  changeApparelShirtSize(app, vetId, newShirtSize, user);
+  changeApparelJacketSize(app, vetId, newJacketSize, user);
   $("#fltdetail").trigger("update");   
   return true;
 };
 
-//@ sourceURL=flight_other/loggedIn/selectors/#vetShirtSizeChange~change.js
+//@ sourceURL=flight_other/loggedIn/selectors/#vetJacketSizeChange~change.js

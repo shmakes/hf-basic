@@ -1,12 +1,12 @@
 function() {
   var grdId = $(this).parent().parent().attr("grdid");
-  var newShirtSize = $(this).val();
+  var newJacketSize = $(this).val();
   var user = $("#user_name").text();
   var app = $$(this).app;
 
-  changeApparelShirtSize(app, grdId, newShirtSize, user);
+  changeApparelJacketSize(app, grdId, newJacketSize, user);
   $("#fltdetail").trigger("update");   
   return false;
 };
 
-//@ sourceURL=flight_other/loggedIn/selectors/#grdShirtSizeChange~change.js
+//@ sourceURL=flight_other/loggedIn/selectors/#grdJacketSizeChange~change.js

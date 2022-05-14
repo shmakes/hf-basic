@@ -30,6 +30,38 @@ function changeShirtSize(app, docId, newShirtSize, user) {
   }
 }
 
+function changeApparelJacketSize(app, docId, newJacketSize, user) {
+  var validJacketSizes = [ "None", "S", "M", "L", "XL", "2XL", "3XL", "4XL", "5XL" ];
+  if (jQuery.inArray(newJacketSize, validJacketSizes) >= 0) {
+    app.db.openDoc(docId, {
+      success : function(doc) {
+          doc.apparel.jacket_size = newJacketSize;
+          app.db.saveDoc(doc, {
+            success : function() {}
+          });
+      }
+    });
+  } else {
+    alert("Invalid jacket size not saved.");
+  }
+}
+
+function changeApparelShirtSize(app, docId, newShirtSize, user) {
+  var validShirtSizes = [ "None", "S", "M", "L", "XL", "2XL", "3XL", "4XL", "5XL", "WS", "WM", "WL", "WXL", "W2XL", "W3XL", "W4XL", "W5XL" ];
+  if (jQuery.inArray(newShirtSize, validShirtSizes) >= 0) {
+    app.db.openDoc(docId, {
+      success : function(doc) {
+          doc.apparel.shirt_size = newShirtSize;
+          app.db.saveDoc(doc, {
+            success : function() {}
+          });
+      }
+    });
+  } else {
+    alert("Invalid shirt size not saved.");
+  }
+}
+
 function changeBookCount(app, docId, newBookCount, user) {
   app.db.openDoc(docId, {
     success : function(doc) {
