@@ -108,6 +108,8 @@ function(head, req) {
         birth_date:                    r.birth_date,
         gender:                        r.gender,
         shirt_size:                    r.shirt.size,
+        apparel_jacket_size:           (r.apparel.jacket_size || ""),
+        apparel_shirt_size:            (r.apparel.shirt_size || ""),
         call_fm_number:                (r.call.fm_number || ""),
         flight_status:                 r.flight.status,
         flight_status_note:            r.flight.status_note,

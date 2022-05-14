@@ -152,6 +152,8 @@ function(head, req) {
         flight_bus:                    r.flight.bus.replace("Alpha", "Alpha ").replace("Bravo", "Bravo "),
         homecoming_destination:        (r.homecoming.destination || ""),
         apparel_item:                  (r.apparel.item || ""),
+        apparel_jacket_size:           (r.apparel.jacket_size || ""),
+        apparel_shirt_size:            (r.apparel.shirt_size || ""),
         apparel_date:                  (r.apparel.date || ""),
         apparel_delivery:              (r.apparel.delivery || ""),
         apparel_notes:                 (r.apparel.notes || ""),
