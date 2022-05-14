@@ -148,6 +148,8 @@ function(r) {
         medical_can_lift:          (r.medical.can_lift || false),
         medical_level:             (r.medical.level || ""),
         apparel_item:              (r.apparel.item || ""),
+        apparel_jacket_size:    (r.apparel.jacket_size || ""),
+        apparel_shirt_size:     (r.apparel.shirt_size || ""),
         apparel_date:              (r.apparel.date || ""),
         apparel_delivery:          (r.apparel.delivery || ""),
         apparel_by:                (r.apparel.by || ""),
@@ -224,6 +226,12 @@ function(r) {
     }
     if (r.apparel.item) {
       result["selApparel-" + r.apparel.item] = "selected";
+    }
+    if (r.apparel.jacket_size) {
+      result["selApparelJacket-" + r.apparel.jacket_size] = "selected";
+    }
+    if (r.apparel.shirt_size) {
+      result["selApparelShirt-" + r.apparel.shirt_size] = "selected";
     }
     if (r.apparel.delivery) {
       result["selDelivery-" + r.apparel.delivery] = "selected";

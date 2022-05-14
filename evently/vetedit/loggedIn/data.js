@@ -255,8 +255,6 @@ function(r) {
     if (r.apparel.shirt_size) {
       result["selApparelShirt-" + r.apparel.shirt_size] = "selected";
     }
-    var selectedSize = "selShrt-" + r.shirt.size;
-    result[selectedSize] = "selected";
     if (r.apparel.delivery) {
       result["selDelivery-" + r.apparel.delivery] = "selected";
     }
@@ -362,6 +360,8 @@ function(r) {
         media_interview_ok:     "Unknown",
         homecoming_destination: "",
         apparel_item:           "",
+        apparel_jacket_size:    "",
+        apparel_shirt_size:     "",
         apparel_date:           "",
         apparel_delivery:       "",
         apparel_notes:          "",
