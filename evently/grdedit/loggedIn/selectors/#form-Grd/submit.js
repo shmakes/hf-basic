@@ -458,6 +458,8 @@ function(context) {
       if (!doc.apparel) {
         doc.apparel = {};
         doc.apparel.item = "None";
+        doc.apparel.jacket_size = "None";
+        doc.apparel.shirt_size = "None";
         doc.apparel.date = "";
         doc.apparel.delivery = "None";
         doc.apparel.by = "";
@@ -466,6 +468,14 @@ function(context) {
 
       if ('apparel_item' in f && f.apparel_item != doc.apparel.item) {
         doc.apparel.item = f.apparel_item;
+        hasChanged = true;
+      }
+      if ('apparel_jacket_size' in f && f.apparel_jacket_size != doc.apparel.jacket_size) {
+        doc.apparel.jacket_size = f.apparel_jacket_size;
+        hasChanged = true;
+      }
+      if ('apparel_shirt_size' in f && f.apparel_shirt_size != doc.apparel.shirt_size) {
+        doc.apparel.shirt_size = f.apparel_shirt_size;
         hasChanged = true;
       }
       if ('apparel_date' in f && f.apparel_date != doc.apparel.date) {

@@ -23,7 +23,9 @@ function(r) {
         entry["vet_mailcall_received"]      = vet.doc.mail_call.received;
         entry["vet_mailcall_adopt"]         = vet.doc.mail_call.adopt;
         entry["vet_homecoming_destination"] = vet.doc.homecoming ? (vet.doc.homecoming.destination || "") : "";
-        entry["vet_shirt_size"]                   = vet.doc.shirt.size;
+        entry["vet_shirt_size"]             = vet.doc.shirt.size;
+        entry["vet_apparel_shirt_size"]    = vet.doc.apparel.shirt_size;
+        entry["vet_apparel_jacket_size"]    = vet.doc.apparel.jacket_size;
         entry["vet_apparel_notes"]          = vet.doc.apparel.notes;
 
         if (vet.doc.flight.waiver) {
@@ -62,7 +64,9 @@ function(r) {
         entry["grd_id"]                     = grd.id;
         entry["grd_name_first"]             = grd.name_first;
         entry["grd_name_last"]              = grd.name_last;
-        entry["grd_shirt_size"]                   = grd.doc.shirt.size;
+        entry["grd_shirt_size"]             = grd.doc.shirt.size;
+        entry["grd_apparel_shirt_size"]    = grd.doc.apparel.shirt_size;
+        entry["grd_apparel_jacket_size"]    = grd.doc.apparel.jacket_size;
         entry["grd_apparel_notes"]          = grd.doc.apparel.notes;
         entry["grd_flight_training_see_doc"] = grd.doc.flight.training_see_doc;
         entry["grd_flight_waiver"]          = grd.doc.flight.waiver;
