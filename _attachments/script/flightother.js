@@ -31,7 +31,7 @@ function changeShirtSize(app, docId, newShirtSize, user) {
 }
 
 function changeApparelJacketSize(app, docId, newJacketSize, user) {
-  var validJacketSizes = [ "None", "S", "M", "L", "XL", "2XL", "3XL", "4XL", "5XL" ];
+  var validJacketSizes = [ "None", "XS", "S", "M", "L", "XL", "2XL", "3XL", "4XL", "5XL" ];
   if (jQuery.inArray(newJacketSize, validJacketSizes) >= 0) {
     app.db.openDoc(docId, {
       success : function(doc) {
@@ -47,7 +47,7 @@ function changeApparelJacketSize(app, docId, newJacketSize, user) {
 }
 
 function changeApparelShirtSize(app, docId, newShirtSize, user) {
-  var validShirtSizes = [ "None", "S", "M", "L", "XL", "2XL", "3XL", "4XL", "5XL", "WS", "WM", "WL", "WXL", "W2XL", "W3XL", "W4XL", "W5XL" ];
+  var validShirtSizes = [ "None", "XS", "S", "M", "L", "XL", "2XL", "3XL", "4XL", "5XL", "WXS", "WS", "WM", "WL", "WXL", "W2XL", "W3XL", "W4XL", "W5XL" ];
   if (jQuery.inArray(newShirtSize, validShirtSizes) >= 0) {
     app.db.openDoc(docId, {
       success : function(doc) {
