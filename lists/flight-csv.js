@@ -6,6 +6,7 @@ function(head, req) {
   var pairLastName = "";
   var training = "";
   var paid = "";
+  var grdTrainStatus = {};
   var conflict = "";
   var medNotesExp = "";
   var serviceActivity = ""
@@ -21,8 +22,8 @@ function(head, req) {
     pairName = [];
     pairFirstName = "";
     pairLastName = "";
-    training = "";    
-    paid = "";    
+    training = "";
+    paid = "";
     r = row.doc;
     if (r.type === "Veteran") {
       pairName = r.guardian.name.split(" ");
@@ -33,13 +34,6 @@ function(head, req) {
         pairName = r.veteran.pairings[0].name.split(" ");
       }
 
-      // Training status
-      if (r.flight.training) {
-        if (r.flight.training_complete) {
-          training = "* ";
-        }
-        training += r.flight.training;
-      }      
       // Paid status
       if (r.flight.paid) {
         paid = "Y";
@@ -47,6 +41,21 @@ function(head, req) {
         paid = "N";
       }
       medNotesExp = (r.medical.experience || "");
+    }
+
+    // Training status
+    if (r.flight.training) {
+      if (r.flight.training_complete) {
+        training = "* ";
+      }
+      training += r.flight.training;
+      grdTrainStatus[r._id] = training;
+    } else {
+      if (r.guardian && r.guardian.id) {
+        if (r.guardian.id in grdTrainStatus) {
+          training = grdTrainStatus[r.guardian.id];
+        }
+      }
     }
 
     // Split the pair name.
