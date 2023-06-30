@@ -181,7 +181,17 @@
       &nbsp;<textarea rows="3" cols="90" name="medical_experience">{{medical_experience}}</textarea>
     </span></p>
 
-
+  <p class="P10">10.<span>&nbsp;Food Restriction</span>
+  <span class="T10">:</span>
+  <span class="T11">
+          <select name="medical_food_restriction" id="medical_food_restriction" value="{{medical_food_restriction}}" >
+            <option {{selFoodRestriction-None}}>None</option>
+            <option {{selFoodRestriction-Gluten Free}}>Gluten Free</option>
+            <option {{selFoodRestriction-Vegitarian}}>Vegitarian</option>
+            <option {{selFoodRestriction-Vegan}}>Vegan</option>
+          </select>
+  </span>
+  <br />
   <br />
 
     <fieldset class="alt">

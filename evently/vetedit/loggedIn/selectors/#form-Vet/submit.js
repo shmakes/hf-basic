@@ -387,6 +387,11 @@ function(context) {
         hasChanged = true;
       }
 
+      if (doc.medical.food_restriction != f.medical_food_restriction) {
+        doc.medical.food_restriction = f.medical_food_restriction;
+        hasChanged = true;
+      }
+
       if (!doc.service) {
         doc.service = {};
       }
@@ -517,6 +522,7 @@ function(context) {
         doc.medical.level = "";
         doc.medical.alt_level = "";
         doc.medical.review = "";
+        doc.medical.food_restriction = "None";
       }
       var isMedicalReleaseForm = (f.medical_release === "true");
       var isMedicalReleaseDoc = (doc.medical.release === true);

@@ -142,6 +142,7 @@ function(r) {
         notes_service:             r.notes.service,
         medical_limitations:       r.medical.limitations,
         medical_experience:        r.medical.experience,
+        medical_food_restriction:  (r.medical.food_restriction || "None"),
         medical_release:           (r.medical.release || false),
         medical_form:              (r.medical.form || false),
         medical_can_push:          (r.medical.can_push || false),
@@ -242,6 +243,8 @@ function(r) {
     if (r.accommodations.attend_banquette) {
       result["selBanquette"] = "checked=yes";
     }
+    var selectedFoodRestriction = "selFoodRestriction-" + (r.medical.food_restriction || "None");
+    result[selectedFoodRestriction] = "selected";
     var selectedGender = "selGender-" + (r.gender || "M");
     result[selectedGender] = "selected";
     var selectedNotesService = "selNotesService-" + (r.notes.service || "N");
@@ -312,6 +315,7 @@ function(r) {
         notes_service:             "",
         medical_limitations:       "",
         medical_experience:        "",
+        medical_food_restriction:  "None",
         medical_release:           false,
         medical_form:              false,
         medical_can_push:          false,

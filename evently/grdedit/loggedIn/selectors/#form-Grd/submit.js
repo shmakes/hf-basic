@@ -407,6 +407,7 @@ function(context) {
         doc.medical.limitations = false;
         doc.medical.experience = false;
         doc.medical.level = "";
+        doc.medical.food_restriction = "None";
       }
       var isMedicalReleaseForm = (f.medical_release === "true");
       var isMedicalReleaseDoc = (doc.medical.release === true);
@@ -438,6 +439,12 @@ function(context) {
         doc.medical.experience = medExperience;
         hasChanged = true;
       }
+
+      if (doc.medical.food_restriction != f.medical_food_restriction) {
+        doc.medical.food_restriction = f.medical_food_restriction;
+        hasChanged = true;
+      }
+
       var isMedicalCanPushForm = (f.medical_can_push === "true");
       var isMedicalCanPushDoc = (doc.medical.can_push === true);
       if (isMedicalCanPushForm != isMedicalCanPushDoc) {

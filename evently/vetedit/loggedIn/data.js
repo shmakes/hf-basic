@@ -137,6 +137,7 @@ function(r) {
         ac_addr_phone_mbl:      (r.alt_contact.address.phone_mbl || ""),
         ac_addr_email:          r.alt_contact.address.email,
         medical_limitations:    r.medical.limitations,
+        medical_food_restriction: (r.medical.food_restriction || "None"),
         medical_review:         r.medical.review,
         medical_level:          r.medical.level,
         medical_alt_level:      r.medical.alt_level,
@@ -183,6 +184,8 @@ function(r) {
     result[selectedBranch] = "selected";
     var selectedVetType = "selVetType-" + (r.vet_type || "WWII");
     result[selectedVetType] = "selected";
+    var selectedFoodRestriction = "selFoodRestriction-" + (r.medical.food_restriction || "None");
+    result[selectedFoodRestriction] = "selected";
     var selectedGender = "selGender-" + (r.gender || "M");
     result[selectedGender] = "selected";
     var selectedNewspaperOk = "selNewspaper-" + (r.media_newspaper_ok || (function(oldMediaVal, oldConfVal){ 
@@ -351,6 +354,7 @@ function(r) {
         ac_addr_phone:          "",
         ac_addr_email:          "",
         medical_limitations:    "",
+        medical_food_restriction: "None",
         medical_review:         "",
         medical_level:          "",
         medical_alt_level:      "",
