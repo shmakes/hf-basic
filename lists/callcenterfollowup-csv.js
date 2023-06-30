@@ -113,6 +113,7 @@ function(head, req) {
         apparel_shirt_size:            (r.apparel.shirt_size || ""),
         apparel_date_sent:             (r.apparel.date || ""),
         call_fm_number:                (r.call.fm_number || ""),
+        call_center_notes:             (r.call.notes || ""),
         flight_status:                 r.flight.status,
         flight_status_note:            r.flight.status_note,
         flight_confirmed_date:         r.flight.confirmed_date,
