@@ -206,6 +206,10 @@
           <button id="showCallHistory" type="button">History</button>
         </li>
         <li>
+          <label for="call_center_notes">call notes</label>
+          <textarea rows="3" cols="70" name="call_center_notes">{{call_center_notes}}</textarea>
+        </li>
+        <li>
           <label for="call_fm_number">FM #</label>
           <input type="text" name="call_fm_number" maxlength="5" pattern="[F,M,0-9]{0,}" value="{{call_fm_number}}" style="width: 5em" />
           <small>(A number or "FM")</small>

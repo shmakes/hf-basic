@@ -93,6 +93,7 @@ function(context) {
         doc.call.fm_number = "";
         doc.call.mail_sent = false;
         doc.call.email_sent = false;
+        doc.call.notes = "";
       }
 
       if ('call_assigned_to' in f && f.call_assigned_to != doc.call.assigned_to) {
@@ -103,7 +104,13 @@ function(context) {
         doc.call.assigned_to = f.call_assigned_to;
         hasChanged = true;
       }
-
+      if ('call_center_notes' in f) {
+        var callNote = f.call_center_notes.replace(/"/g, "'").replace(/\\/g, "/");
+        if (callNote != doc.call.notes) {
+          doc.call.notes = callNote;
+          hasChanged = true;
+        }
+      }
       if ('call_fm_number' in f && f.call_fm_number != doc.call.fm_number) {
         doc.call.history.push({
           id: timestamp,
