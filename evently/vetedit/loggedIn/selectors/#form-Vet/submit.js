@@ -394,11 +394,6 @@ function(context) {
         hasChanged = true;
       }
 
-      if (doc.medical.food_restriction != f.medical_food_restriction) {
-        doc.medical.food_restriction = f.medical_food_restriction;
-        hasChanged = true;
-      }
-
       if (!doc.service) {
         doc.service = {};
       }
@@ -622,6 +617,11 @@ function(context) {
       var medReview = f.medical_review.replace(/"/g, "'").replace(/\\/g, "/");
       if (doc.medical.review != medReview) {
         doc.medical.review = medReview;
+        hasChanged = true;
+      }
+
+      if (doc.medical.food_restriction != f.medical_food_restriction) {
+        doc.medical.food_restriction = f.medical_food_restriction;
         hasChanged = true;
       }
 
