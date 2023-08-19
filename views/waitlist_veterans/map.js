@@ -1,9 +1,10 @@
 function(doc) {
   var statuses = ["Active", "Future-Fall", "Future-Spring", "Future-PostRestriction"];
-  var conflict = ["WWII", "Korea", "Vietnam", "Afghanistan", "Iraq"];
+  var conflictOrder = {"WWII": 1, "Korea": 2, "Vietnam": 3, "Afghanistan": 3, "Iraq": 3, "Other": 3};
+
   if ((doc.type == "Veteran") 
       && (statuses.indexOf(doc.flight.status) != -1)
       && (doc.flight.id == "None")) {
-    emit(conflict.indexOf((doc.vet_type || 'WWII')) + "-" + doc.app_date, doc.flight.group);
+    emit((conflictOrder[(doc.vet_type || 'WWII')] || 3) + "-" + doc.app_date, doc.flight.group);
   }
 }
