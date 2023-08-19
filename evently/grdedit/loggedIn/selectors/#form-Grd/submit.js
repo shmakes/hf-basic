@@ -341,7 +341,7 @@ function(context) {
         var birthMonth = parseInt(f.birth_month, 10) - 1;
         var birthDay = parseInt(f.birth_day, 10);
         var bdate = new Date(birthYear, birthMonth, birthDay);
-        var bdateNewStr = ISODateString(bdate).substr(0,10);
+        var bdateNewStr = birthYear + "-" + (birthMonth+1).toString().padStart(2, "0") + "-" + birthDay.toString().padStart(2, "0");
         if ((bdate.getFullYear() === birthYear) 
             && (bdate.getMonth() === birthMonth) 
             && (bdate.getDate() === birthDay)) { // was valid
