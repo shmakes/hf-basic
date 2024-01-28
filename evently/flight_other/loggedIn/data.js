@@ -16,10 +16,6 @@ function(r) {
         entry["vet_id"]                     = vet.id;
         entry["vet_name_first"]             = vet.name_first;
         entry["vet_name_last"]              = vet.name_last;
-        entry["vet_flight_waiver"]          = vet.doc.flight.waiver;
-        entry["vet_flight_media_waiver"]    = vet.doc.flight.mediaWaiver;
-        entry["vet_medical_release"]        = vet.doc.medical.release;
-        entry["vet_medical_form"]           = vet.doc.medical.form;
         entry["vet_mailcall_received"]      = vet.doc.mail_call.received;
         entry["vet_mailcall_adopt"]         = vet.doc.mail_call.adopt;
         entry["vet_homecoming_destination"] = vet.doc.homecoming ? (vet.doc.homecoming.destination || "") : "";
@@ -28,18 +24,6 @@ function(r) {
         entry["vet_apparel_jacket_size"]    = vet.doc.apparel.jacket_size;
         entry["vet_apparel_notes"]          = vet.doc.apparel.notes;
 
-        if (vet.doc.flight.waiver) {
-          entry["selVetFlightWaiver"] = "checked=yes";
-        }
-        if (vet.doc.flight.mediaWaiver) {
-          entry["selVetFlightMediaWaiver"] = "checked=yes";
-        }
-        if (vet.doc.medical.release) {
-          entry["selVetMedicalRelease"] = "checked=yes";
-        }
-        if (vet.doc.medical.form) {
-          entry["selVetMedicalForm"] = "checked=yes";
-        }
         if (vet.doc.mail_call.received) {
           entry["selVetMailCallReceived"] = "checked=yes";
         }
@@ -68,31 +52,11 @@ function(r) {
         entry["grd_apparel_shirt_size"]    = grd.doc.apparel.shirt_size;
         entry["grd_apparel_jacket_size"]    = grd.doc.apparel.jacket_size;
         entry["grd_apparel_notes"]          = grd.doc.apparel.notes;
-        entry["grd_flight_training_see_doc"] = grd.doc.flight.training_see_doc;
-        entry["grd_flight_waiver"]          = grd.doc.flight.waiver;
-        entry["grd_flight_media_waiver"]    = grd.doc.flight.mediaWaiver;
-        entry["grd_medical_release"]        = grd.doc.medical.release;
-        entry["grd_medical_form"]           = grd.doc.medical.form;
         entry["grd_flight_training"]        = grd.doc.flight.training;
         entry["grd_flight_training_comp"]   = grd.doc.flight.training_complete;
         entry["grd_flight_paid"]            = grd.doc.flight.paid;
         entry["grd_flight_booksOrdered"]    = grd.doc.flight.booksOrdered || 0;
 
-        if (grd.doc.flight.training_see_doc) {
-          entry["selGrdFlightTrainingSeeDoc"] = "checked=yes";
-        }
-        if (grd.doc.flight.waiver) {
-          entry["selGrdFlightWaiver"] = "checked=yes";
-        }
-        if (grd.doc.flight.mediaWaiver) {
-          entry["selGrdFlightMediaWaiver"] = "checked=yes";
-        }
-        if (grd.doc.medical.release) {
-          entry["selGrdMedicalRelease"] = "checked=yes";
-        }
-        if (grd.doc.medical.form) {
-          entry["selGrdMedicalForm"] = "checked=yes";
-        }
         if (grd.doc.flight.training_complete) {
           entry["selGrdFlightTrainingComp"] = "checked=yes";
         }

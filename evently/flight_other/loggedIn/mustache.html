@@ -22,10 +22,6 @@
       </tr>
       <tr>
         <th>Name</th>
-        <th>Liability</th>
-        <th>Media</th>
-        <th>Medical</th>
-        <th>MedForm</th>
         <th>MailCall</th>
         <th>Adopt</th>
         <th>Homecoming Destination</th>
@@ -35,11 +31,6 @@
         <th>Apparel Notes</th>
         <th>Shirt</th>
         <th>Jacket</th>
-        <th>See Doc</th>
-        <th>Liability</th>
-        <th>Media</th>
-        <th>Medical</th>
-        <th>MedForm</th>
         <th>Training</th>
         <th>Paid</th>
         <th>Books</th>
@@ -50,10 +41,6 @@
   {{#pairs}}
       <tr class="DataRow{{invalid_row}}" vetid="{{vet_id}}" grdid="{{grd_id}}">
         <td class="Veteran colName" name="vet_name">{{vet_name_first}} {{vet_name_last}}</td>
-        <td class="Veteran colSeat   {{vet_confirmed}}"><input type="checkbox"   name="vet_flight_waiver" {{selVetFlightWaiver}} value="{{vet_flight_waiver}}" /></td>
-        <td class="Veteran colSeat   {{vet_confirmed}}"><input type="checkbox"   name="vet_flight_mediaWaiver" {{selVetFlightMediaWaiver}} value="{{vet_flight_mediaWaiver}}" /></td>
-        <td class="Veteran colSeat   {{vet_confirmed}}"><input type="checkbox"   name="vet_medical_release" {{selVetMedicalRelease}} value="{{vet_medical_release}}" /></td>
-        <td class="Veteran colSeat   {{vet_confirmed}}"><input type="checkbox"   name="vet_medical_form" {{selVetMedicalForm}} value="{{vet_medical_form}}" /></td>
         <td class="Veteran colSeat   {{vet_confirmed}}"><input type="checkbox"   name="vet_mailcall_received" {{selVetMailCallReceived}} value="{{vet_mailcall_received}}" /></td>
         <td class="Veteran colSeat   {{vet_confirmed}}"><input type="checkbox"   name="vet_mailcall_adopt" {{selVetMailCallAdopt}} value="{{vet_mailcall_adopt}}" /></td>
         <td class="Veteran colName   {{vet_confirmed}}"><input type="text"       name="vet_homecoming_destination" pattern="[a-zA-Z0-9 ]{0,}" maxlength="30" value="{{vet_homecoming_destination}}" /></td>
@@ -67,11 +54,6 @@
           App: {{grd_shirt_size}}
         </td>
         <td class="Guardian colShirt {{grd_confirmed}}"><input type="text"       name="grd_jacket_size" pattern="^(?:XS|S|M|L|XL|2XL|3XL|4XL|5XL)*$" maxlength="4" size="3" value="{{grd_apparel_jacket_size}}" /></td>
-        <td class="Guardian colSeat  {{grd_confirmed}}"><input type="checkbox"   name="grd_flight_training_see_doc" {{selGrdFlightTrainingSeeDoc}} value="{{grd_flight_training_see_doc}}" /></td>
-        <td class="Guardian colSeat  {{grd_confirmed}}"><input type="checkbox"   name="grd_flight_waiver" {{selGrdFlightWaiver}} value="{{grd_flight_waiver}}" /></td>
-        <td class="Guardian colSeat  {{grd_confirmed}}"><input type="checkbox"   name="grd_flight_mediaWaiver" {{selGrdFlightMediaWaiver}} value="{{grd_flight_mediaWaiver}}" /></td>
-        <td class="Guardian colSeat  {{grd_confirmed}}"><input type="checkbox"   name="grd_medical_release" {{selGrdMedicalRelease}} value="{{grd_medical_release}}" /></td>
-        <td class="Guardian colSeat  {{grd_confirmed}}"><input type="checkbox"   name="grd_medical_form" {{selGrdMedicalForm}} value="{{grd_medical_form}}" /></td>
         <td class="Guardian colSeat  {{grd_confirmed}}">
           {{grd_flight_training}}<br />
           <input type="checkbox"   name="grd_flight_training_complete" {{selGrdFlightTrainingComp}} value="{{grd_flight_training_complete}}" />
