@@ -74,6 +74,11 @@ function(r) {
       r.accommodations = {};
     }
 
+    var trainingType = r.flight.training || ""
+    if (trainingType == "Make-up") {
+      trainingType = "Phone";
+    }
+
     var result = {
         db_name:                   dbname,
         id:                        r._id,
@@ -91,7 +96,7 @@ function(r) {
         flight_seat:               r.flight.seat,
         flight_bus:                r.flight.bus,
         flight_history:            r.flight.history,
-        flight_training:           (r.flight.training || ""),
+        flight_training:           trainingType,
         flight_training_notes:     (r.flight.training_notes || ""),
         flight_training_see_doc:   (r.flight.training_see_doc || false),
         flight_training_complete:  (r.flight.training_complete || false),
@@ -183,10 +188,8 @@ function(r) {
     result[selectedSize] = "selected";
     var selectedStatus = "selStatus-" + r.flight.status;
     result[selectedStatus] = "selected";
-    if (r.flight.training) {
-      var selectedTraining = "selTraining-" + r.flight.training;
-      result[selectedTraining] = "selected";
-    }
+    var selectedTraining = "selTraining-" + trainingType;
+    result[selectedTraining] = "selected";
     if (r.medical.release === true || r.medical.release === 'Y' || r.medical.release === 'y' ) {
       result["selMedicalRelease"] = "checked=yes";
     }
