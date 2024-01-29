@@ -1,12 +1,12 @@
 $.couch.app(function(app) {  
-  $("#flight_medical").evently("flight_medical", app);
-  $.evently.connect($("#account"), $("#flight_medical"), ["loggedIn", "loggedOut"]);
+  $("#flight_gtcheckin").evently("flight_gtcheckin", app);
+  $.evently.connect($("#account"), $("#flight_gtcheckin"), ["loggedIn", "loggedOut"]);
 });
 
-function changeMedicalNotes(app, docId, newMedicalNote, user) {
+function changeMailCallNotes(app, docId, newMailCallNote, user) {
   app.db.openDoc(docId, {
     success : function(doc) {
-        doc.medical.review = newMedicalNote;
+        doc.mail_call.notes = newMailCallNote;
         app.db.saveDoc(doc, {
           success : function() {}
         });
