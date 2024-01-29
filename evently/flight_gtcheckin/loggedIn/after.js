@@ -24,15 +24,12 @@ function() {
   });
   $("#fltdetail").tablesorter({
     headers: { 
-      0: { sorter:"surname" }, 
-      1: { sorter:"checkboxes" }, 
-      2: { sorter:"checkboxes" }, 
-      5: { sorter:"checkboxes" }, 
+      7: { sorter:"checkboxes" }, 
       8: { sorter:"checkboxes" }, 
       9: { sorter:"checkboxes" }, 
+      10: { sorter:"checkboxes" }, 
+      11: { sorter:"checkboxes" }, 
       12: { sorter:"checkboxes" }, 
-      13: { sorter:"checkboxes" }, 
-      14: { sorter:"surname" } 
     },
     textExtraction: function(elem) {
       var $input = $("input", elem);
