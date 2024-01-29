@@ -1,0 +1,68 @@
+<div>
+  <span class="grey-note">
+    Flight Doc ID: {{id}} 
+    <a target="_blank" href="/_utils/document.html?{{db_name}}/{{id}}">{{raw_data_lnk}}</a>
+  </span>
+  <p>
+    <label for="flight_name">flight</label>
+    <input id="flightName" type="text" name="flight_name" readonly="readonly" value="{{flight_name}}" style="width: 10em" /> 
+    <label for="capacity">capacity</label>
+    <input id="flightCap" type="text" name="capacity" readonly="readonly" value="{{capacity}}" style="width: 5em" /> 
+    <label for="flight_date">flight date</label>
+    <input type="text" name="flight_date" readonly="readonly" value="{{flight_date}}" style="width: 10em" /> 
+  </p>
+  <br />
+
+  <table id="fltdetail" class="tablesorter Pairs">
+    <thead>
+      <tr>
+        <th colspan="8">Veteran</th>
+        <th colspan="7">Guardian</th>
+      </tr>
+      <tr>
+        <th>Name</th>
+        <th>MedForm</th>
+        <th>Vaccinated</th>
+        <th>Bus</th>
+        <th>Seat</th>
+        <th>Oxygen</th>
+        <th>Level</th>
+        <th>Medical Notes</th>
+        <th>Training</th>
+        <th>See Doc</th>
+        <th>Seat</th>
+        <th>Bus</th>
+        <th>Vaccinated</th>
+        <th>MedForm</th>
+        <th>Name</th>
+      </tr> 
+    </thead>
+    <tbody>
+  {{#pairs}}
+      <tr class="DataRow{{invalid_row}}" vetid="{{vet_id}}" grdid="{{grd_id}}">
+        <td class="Veteran colName" name="vet_name">{{vet_name_first}} {{vet_name_last}}</td>
+        <td class="Veteran colSeat   {{vet_confirmed}}"><input type="checkbox"   name="vet_medical_form" {{selVetMedicalForm}} value="{{vet_medical_form}}" /></td>
+        <td class="Veteran colSeat   {{vet_confirmed}}"><input type="checkbox"   name="vet_flight_vaccinated" {{selVetFlightVaccinated}} value="{{vet_flight_vaccinated}}" /></td>
+        <td class="Veteran colBus    {{vet_confirmed}}">{{vet_flight_bus}}</td>
+        <td class="Veteran colSeat   {{vet_confirmed}}">{{vet_flight_seat}}</td>
+        <td class="Veteran colSeat   {{vet_confirmed}}"><input type="checkbox"   name="vet_medical_requires_oxygen" {{selVetMedicalRequiresOxygen}} value="{{vet_medical_requires_oxygen}}" disabled="disabled" /></td>
+        <td class="Veteran colSeat   {{vet_confirmed}}">{{vet_medical_limitations}}</td>
+        <td class="Veteran colNote   {{vet_confirmed}}"><textarea rows=3 cols=120 name="vet_medical_review">{{vet_medical_review}}</textarea></td>
+        <td class="Guardian colSeat  {{grd_confirmed}}">
+          {{grd_flight_training}}<br />
+          <input type="checkbox"   name="grd_flight_training_complete" {{selGrdFlightTrainingComp}} value="{{grd_flight_training_complete}}" disabled="disabled" />
+        </td>
+        <td class="Guardian colSeat  {{grd_confirmed}}">
+          {{grd_medical_level}}<br />
+          <input type="checkbox"   name="grd_flight_training_see_doc" {{selGrdFlightTrainingSeeDoc}} value="{{grd_flight_training_see_doc}}" /></td>
+        <td class="Guardian colSeat  {{grd_confirmed}}">{{grd_flight_seat}}</td>
+        <td class="Guardian colBus   {{grd_confirmed}}">{{grd_flight_bus}}</td>
+        <td class="Guardian colSeat  {{grd_confirmed}}"><input type="checkbox"   name="grd_flight_vaccinated" {{selGrdFlightVaccinated}} value="{{grd_flight_vaccinated}}" /></td>
+        <td class="Guardian colSeat  {{grd_confirmed}}"><input type="checkbox"   name="grd_medical_form" {{selGrdMedicalForm}} value="{{grd_medical_form}}" /></td>
+        <td class="Guardian colName" name="grd_name">{{grd_name_first}} {{grd_name_last}}</td>
+      </tr>
+  {{/pairs}}
+    </body>
+  </table>
+</div>
+
