@@ -10,6 +10,19 @@
     <input id="flightCap" type="text" name="capacity" readonly="readonly" value="{{capacity}}" style="width: 5em" /> 
     <label for="flight_date">flight date</label>
     <input type="text" name="flight_date" readonly="readonly" value="{{flight_date}}" style="width: 10em" /> 
+    | filter by first letter of last name 
+    <label>from: </label>
+    <select id="fromLetter">
+      {{#alphabet}}
+        <option>{{letter}}</option>
+      {{/alphabet}}
+    </select>
+    <label>to: </label>
+    <select id="toLetter">
+      {{#alphabet}}
+        <option>{{letter}}</option>
+      {{/alphabet}}
+    </select>
   </p>
   <br />
 

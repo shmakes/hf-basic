@@ -37,5 +37,6 @@ function() {
       return $input.val() || $(elem).text();
     }
   });
+  $("#toLetter").val('Z');
 };
 //@ sourceURL=/flight_gtcheckin/after.js

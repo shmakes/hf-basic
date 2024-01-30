@@ -68,6 +68,12 @@ function(r) {
       pairList.push(entry);
     }
 
+    var alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map(function(r) {
+      return {
+        letter: r
+      };
+    });
+
     var result = {
         db_name:               dbname,
         id:                    r._id,
@@ -77,6 +83,7 @@ function(r) {
         flight_name:           r.name,
         capacity:              r.capacity,
         flight_date:           r.flight_date,
+        alphabet:              alphabet,
         pairs:                 pairList
     }
 
