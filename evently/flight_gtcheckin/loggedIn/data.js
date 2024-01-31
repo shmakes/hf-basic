@@ -84,7 +84,7 @@ function(r) {
         capacity:              r.capacity,
         flight_date:           r.flight_date,
         from:                  r.fromLetter,
-        to:                    r.toLetter,
+        thru:                  r.thruLetter,
         alphabet:              alphabet,
         pairs:                 pairList
     }

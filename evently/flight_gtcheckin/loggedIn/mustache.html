@@ -10,21 +10,22 @@
     <input id="flightCap" type="text" name="capacity" readonly="readonly" value="{{capacity}}" style="width: 5em" /> 
     <label for="flight_date">flight date</label>
     <input type="text" name="flight_date" readonly="readonly" value="{{flight_date}}" style="width: 10em" /> 
-    | filter by first letter of last name 
+    &nbsp;&nbsp;&nbsp;
+    filter by first letter of guardian last name 
     <label>from: </label>
     <select id="fromLetter">
       {{#alphabet}}
         <option>{{letter}}</option>
       {{/alphabet}}
     </select>
-    <label>to: </label>
-    <select id="toLetter">
+    <label>thru: </label>
+    <select id="thruLetter">
       {{#alphabet}}
         <option>{{letter}}</option>
       {{/alphabet}}
     </select>
     <input type="hidden" id="from" value="{{from}}" />
-    <input type="hidden" id="to"   value="{{to}}" />
+    <input type="hidden" id="thru"   value="{{thru}}" />
   </p>
   <br />
 

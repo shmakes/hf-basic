@@ -40,7 +40,7 @@ function() {
 
   var from = $("#from").val()
   $("#fromLetter").val(from);
-  var to = $("#to").val()
-  $("#toLetter").val(to);
+  var thru = $("#thru").val()
+  $("#thruLetter").val(thru);
 };
 //@ sourceURL=/flight_gtcheckin/after.js

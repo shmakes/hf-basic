@@ -1,9 +1,12 @@
 function(cb) {
   var app = $$(this).app;
   var docid = app.req.query.fltid;
-  var fromLetter = app.req.query.from || "A";
-  var toLetter = app.req.query.to || "Z";
-  //$.log("docid: " + docid)
+  var fromLetterParam = app.req.query.from || "A";
+  var thruLetterParam = app.req.query.thru || "Z";
+  var fromLetter = fromLetterParam.charAt(0).toUpperCase();
+  var thruLetter = thruLetterParam.charAt(0).toUpperCase();
+  if (fromLetter < "A" || fromLetter > "Z") {fromLetter = "A";}
+  if (thruLetter < "A" || thruLetter > "Z") {thruLetter = "Z";}
 
   if (docid.length == 32) {
     app.db.openDoc(docid, {
@@ -50,12 +53,12 @@ function(cb) {
             }
 
             var filteredPairs = [];
+            var nextHigherThruLetter = String.fromCharCode(thruLetter.toUpperCase().charCodeAt(0) + 1);
             for (idx in doc.pairs) {
               var pairing = doc.pairs[idx];
               if (pairing.grd) {
                 var grdLastName = pairing.grd[0].name_last.toUpperCase();
-                var nextHigherToLetter = String.fromCharCode(toLetter.toUpperCase().charCodeAt(0) + 1);
-                if (grdLastName > fromLetter.toUpperCase() && grdLastName < nextHigherToLetter) {
+                if (grdLastName > fromLetter.toUpperCase() && grdLastName < nextHigherThruLetter) {
                   filteredPairs.push(pairing);
                 }
               }
@@ -63,7 +66,7 @@ function(cb) {
 
             doc.pairs = filteredPairs;
             doc.fromLetter = fromLetter;
-            doc.toLetter = toLetter;
+            doc.thruLetter = thruLetter;
             cb(doc);
           }
         })
