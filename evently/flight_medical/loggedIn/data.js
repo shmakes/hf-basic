@@ -14,10 +14,8 @@ function(r) {
         entry["vet_id"]                     = vet.id;
         entry["vet_name_first"]             = vet.name_first;
         entry["vet_name_last"]              = vet.name_last;
-        entry["vet_medical_release"]        = vet.doc.medical.release;
         entry["vet_medical_form"]           = vet.doc.medical.form;
         entry["vet_flight_vaccinated"]      = vet.doc.flight.vaccinated;
-        entry["vet_flight_infection_test"]  = vet.doc.flight.infection_test;
         entry["vet_flight_bus"]             = vet.doc.flight.bus;
         entry["vet_flight_seat"]            = vet.doc.flight.seat;
         entry["vet_medical_requires_oxygen"]= vet.doc.medical.requiresOxygen;
@@ -26,12 +24,6 @@ function(r) {
 
         if (vet.doc.flight.vaccinated) {
           entry["selVetFlightVaccinated"] = "checked=yes";
-        }
-        if (vet.doc.flight.infection_test) {
-          entry["selVetFlightInfectionTest"] = "checked=yes";
-        }
-        if (vet.doc.medical.release) {
-          entry["selVetMedicalRelease"] = "checked=yes";
         }
         if (vet.doc.medical.form) {
           entry["selVetMedicalForm"] = "checked=yes";
@@ -54,8 +46,6 @@ function(r) {
         entry["grd_medical_level"]          = grd.doc.medical.level;
         entry["grd_flight_training_see_doc"]= grd.doc.flight.training_see_doc;
         entry["grd_flight_vaccinated"]      = grd.doc.flight.vaccinated;
-        entry["grd_flight_infection_test"]  = grd.doc.flight.infection_test;
-        entry["grd_medical_release"]        = grd.doc.medical.release;
         entry["grd_medical_form"]           = grd.doc.medical.form;
         entry["grd_flight_training"]        = grd.doc.flight.training;
         entry["grd_flight_training_comp"]   = grd.doc.flight.training_complete;
@@ -67,12 +57,6 @@ function(r) {
         }
         if (grd.doc.flight.vaccinated) {
           entry["selGrdFlightVaccinated"] = "checked=yes";
-        }
-        if (grd.doc.flight.infection_test) {
-          entry["selGrdFlightInfectionTest"] = "checked=yes";
-        }
-        if (grd.doc.medical.release) {
-          entry["selGrdMedicalRelease"] = "checked=yes";
         }
         if (grd.doc.medical.form) {
           entry["selGrdMedicalForm"] = "checked=yes";

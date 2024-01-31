@@ -27,18 +27,9 @@ function() {
       0: { sorter:"surname" }, 
       1: { sorter:"checkboxes" }, 
       2: { sorter:"checkboxes" }, 
-      3: { sorter:"checkboxes" }, 
-      4: { sorter:"checkboxes" }, 
-      5: { sorter:"checkboxes" }, 
-      6: { sorter:"checkboxes" }, 
-      14: { sorter:"checkboxes" }, 
-      15: { sorter:"checkboxes" }, 
-      16: { sorter:"checkboxes" }, 
-      17: { sorter:"checkboxes" }, 
-      18: { sorter:"checkboxes" }, 
-      19: { sorter:"checkboxes" }, 
-      20: { sorter:"checkboxes" }, 
-      22: { sorter:"surname" } 
+      10: { sorter:"checkboxes" }, 
+      11: { sorter:"checkboxes" }, 
+      13: { sorter:"surname" } 
     },
     textExtraction: function(elem) {
       var $input = $("input", elem);

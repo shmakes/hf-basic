@@ -319,7 +319,7 @@
           <label for="call_mail_sent">veteran mail sent</label>
           <input type="checkbox" name="call_mail_sent" {{selCallMailSent}} value="true" />
         </li>
-        <li>
+        <li hidden>
           <label for="call_email_sent">email veteran</label>
           <input type="checkbox" name="call_email_sent" {{selCallEmailSent}} value="true" />
         </li>
@@ -417,7 +417,7 @@
             {{/flights}}
           </select>
         </li>
-        <li>
+        <li hidden>
           <label for="medical_release">medical waiver recvd</label>
           <input type="checkbox" name="medical_release" {{selMedicalRelease}} value="true" />
         </li>
@@ -425,8 +425,8 @@
           <label for="flight_waiver">liability waiver recvd</label>
           <input type="checkbox" name="flight_waiver" {{selFlightWaiver}} value="true" />
         </li>
-        <li>
-          <label for="flight_media_waiver">media waiver recvd</label>
+        <li hidden>
+          <label for="flight_media_waiver">media waivers recvd</label>
           <input type="checkbox" name="flight_media_waiver" {{selFlightMediaWaiver}} value="true" />
         </li>
         <li>
@@ -437,7 +437,7 @@
           <label for="flight_vaccinated">vaccinated</label>
           <input type="checkbox" name="flight_vaccinated" {{selFlightVaccinated}} value="true" />
         </li>
-        <li>
+        <li hidden>
           <label for="flight_infection_test">infection tested</label>
           <input type="checkbox" name="flight_infection_test" {{selFlightInfectionTest}} value="true" />
         </li>

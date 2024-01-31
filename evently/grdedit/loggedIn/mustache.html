@@ -214,7 +214,7 @@
           <input type="text" name="call_fm_number" maxlength="5" pattern="[F,M,0-9]{0,}" value="{{call_fm_number}}" style="width: 5em" />
           <small>(A number or "FM")</small>
         </li>
-        <li>
+        <li hidden>
           <label for="call_email_sent">guardian email sent</label>
           <input type="checkbox" name="call_email_sent" {{selCallEmailSent}} value="true" />
         </li>
@@ -282,15 +282,15 @@
           <label for="flight_training_see_doc">see doctor at training</label>
           <input type="checkbox" name="flight_training_see_doc" {{selFlightTrainingSeeDoc}} value="true" />
         </li>
-        <li>
+        <li hidden>
           <label for="medical_release">medical waiver recvd</label>
           <input type="checkbox" name="medical_release" {{selMedicalRelease}} value="true" />
         </li>
         <li>
-          <label for="flight_waiver">liability waiver recvd</label>
+          <label for="flight_waiver">liability waivers recvd</label>
           <input type="checkbox" name="flight_waiver" {{selFlightWaiver}} value="true" />
         </li>
-        <li>
+        <li hidden>
           <label for="flight_media_waiver">media waiver recvd</label>
           <input type="checkbox" name="flight_media_waiver" {{selFlightMediaWaiver}} value="true" />
         </li>
@@ -302,7 +302,7 @@
           <label for="flight_vaccinated">vaccinated</label>
           <input type="checkbox" name="flight_vaccinated" {{selFlightVaccinated}} value="true" />
         </li>
-        <li>
+        <li hidden>
           <label for="flight_infection_test">infection tested</label>
           <input type="checkbox" name="flight_infection_test" {{selFlightInfectionTest}} value="true" />
         </li>
