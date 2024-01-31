@@ -1,6 +1,8 @@
 function(cb) {
   var app = $$(this).app;
   var docid = app.req.query.fltid;
+  var fromLetter = app.req.query.from || "A";
+  var toLetter = app.req.query.to || "Z";
   //$.log("docid: " + docid)
 
   if (docid.length == 32) {
@@ -47,6 +49,21 @@ function(cb) {
               doc.pairs.push(pairing);
             }
 
+            var filteredPairs = [];
+            for (idx in doc.pairs) {
+              var pairing = doc.pairs[idx];
+              if (pairing.grd) {
+                var grdLastName = pairing.grd[0].name_last.toUpperCase();
+                var nextHigherToLetter = String.fromCharCode(toLetter.toUpperCase().charCodeAt(0) + 1);
+                if (grdLastName > fromLetter.toUpperCase() && grdLastName < nextHigherToLetter) {
+                  filteredPairs.push(pairing);
+                }
+              }
+            }
+
+            doc.pairs = filteredPairs;
+            doc.fromLetter = fromLetter;
+            doc.toLetter = toLetter;
             cb(doc);
           }
         })

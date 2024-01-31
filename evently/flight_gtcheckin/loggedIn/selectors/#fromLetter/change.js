@@ -1,14 +1,15 @@
 function() {
     var from = $(this).val();
     var to = $("#toLetter").val();
-    $('[name="grd_last_name"]').each(function() {
-      if ($(this)[0].innerText.startsWith(from)) {
-        $(this).parent().remove();
-      }
-      if ($(this)[0].innerText.startsWith(to)) {
-        $(this).parent().remove();
-      }
-    });
+    var pathName = $(location).attr('pathname');
+    var search = $(location).attr('search');
+    var urlSearchParams = new URLSearchParams(search);
+    var params = Object.fromEntries(urlSearchParams.entries());
+    params["from"] = from;
+    params["to"]   = to;
+    var newSearch = $.param(params);
+    var newLoc = pathName + "?" + newSearch;
+    window.location.href = newLoc;
 };
 
 //@ sourceURL=fromLetter/change.js
