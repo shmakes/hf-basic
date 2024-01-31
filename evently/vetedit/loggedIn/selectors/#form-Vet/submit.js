@@ -461,6 +461,10 @@ function(context) {
         doc.emerg_contact.address.phone_mbl = f.ec_phone_mbl;
         hasChanged = true;
       }
+      if (doc.emerg_contact.address.email != f.ec_email) {
+        doc.emerg_contact.address.email = f.ec_email;
+        hasChanged = true;
+      }
 
 
       if (!doc.alt_contact) {
