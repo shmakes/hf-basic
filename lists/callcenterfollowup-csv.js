@@ -8,7 +8,6 @@ function(head, req) {
   var paid = "";
   var conflict = "";
   var medNotesExp = "";
-  var serviceActivity = ""
 
   start({
     "headers": {
@@ -57,10 +56,6 @@ function(head, req) {
       pairLastName = pairName.slice(0,1);
     }
 
-    if (!r.apparel) {
-      r.apparel = {};
-    }
-    
     if (!r.homecoming) {
       r.homecoming = {};
     }
@@ -69,61 +64,34 @@ function(head, req) {
       r.call = {};
     }
     
-    if (!r.alt_contact) {
-      r.alt_contact = {};
-    }
-    
-    if (!r.alt_contact.address) {
-      r.alt_contact.address = {};
-    }
-    
-    if (r.service && r.service.activity) {
-      serviceActivity = r.service.activity.replace(/\"/g, "''");
-    } else {
-      serviceActivity = "";
-    }
-
     result = {
         flight_id:                     r.flight.id,
         type:                          r.type,
         app_date:                      r.app_date,
         conflict:                      conflict,
         call_assigned_to:              (r.call.assigned_to || ""),
+        flight_confirmed_date:         r.flight.confirmed_date,
+        flight_confirmed_by:           r.flight.confirmed_by,
         first_name:                    r.name.first,
         middle_name:                   r.name.middle,
         last_name:                     r.name.last,
         nick_name:                     r.name.nickname,
-        addr_email:                    r.address.email,
-        flight_group:                  (r.flight.group || ""),
-        waiver_liability:              (r.flight.waiver || ""),
+        flight_waiver:                 (r.flight.waiver || ""),
         medical_form:                  (r.medical.form || ""),
-        flight_vaccinated:             (r.flight.vaccinated || ""),
-        veteran_mail_sent:             (r.call.mail_sent || false),
-        mail_call_received:            ((r.mail_call && r.mail_call.received) || ""),
-        flight_training:               training,
+        medical_requires_oxygen:       (r.medical.requiresOxygen || 0),
+        medical_level:                 (r.medical.level || ""),
+        medical_alt_level:             (r.medical.alt_level || ""),
+        medical_food_restriction:      (r.medical.food_restriction || "None"),
         flight_paid:                   paid,
-        birth_date:                    r.birth_date,
-        gender:                        r.gender,
-        shirt_size:                    r.shirt.size,
-        apparel_jacket_size:           (r.apparel.jacket_size || ""),
-        apparel_shirt_size:            (r.apparel.shirt_size || ""),
-        apparel_date_sent:             (r.apparel.date || ""),
-        call_fm_number:                (r.call.fm_number || ""),
-        call_center_notes:             (r.call.notes || ""),
-        flight_status:                 r.flight.status,
-        flight_status_note:            r.flight.status_note,
-        flight_confirmed_date:         r.flight.confirmed_date,
-        flight_confirmed_by:           r.flight.confirmed_by,
-        flight_training_notes:         r.flight.training_notes,
-        flight_nofly:                  (r.flight.nofly || false),
+        flight_training:               training,
+        mail_call_received:            ((r.mail_call && r.mail_call.received) || ""),
+        mail_call_adopt:               ((r.mail_call && r.mail_call.adopt) || ""),
+        mail_call_notes:               ((r.mail_call && r.mail_call.notes) || ""),
         pair_first_name:               pairFirstName,
         pair_last_name:                pairLastName,
-        id:                            r._id,
-        rev:                           r._rev,
-        created_at:                    r.metadata.created_at,
-        updated_at:                    r.metadata.updated_at,
-        created_by:                    r.metadata.created_by,
-        updated_by:                    r.metadata.updated_by
+        flight_bus:                    r.flight.bus.replace("Alpha", "Alpha ").replace("Bravo", "Bravo "),
+        homecoming_destination:        (r.homecoming.destination || ""),
+        call_center_notes:             (r.call.notes || ""),
     }
 
     if (headerNeeded) {
