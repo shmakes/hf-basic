@@ -92,6 +92,9 @@ function(head, req) {
         flight_bus:                    r.flight.bus.replace("Alpha", "Alpha ").replace("Bravo", "Bravo "),
         homecoming_destination:        (r.homecoming.destination || ""),
         call_center_notes:             (r.call.notes || ""),
+        apparel_date:                  (r.apparel.date || ""),
+        apparel_delivery:              (r.apparel.delivery || ""),
+        apparel_notes:                 (r.apparel.notes || ""),
     }
 
     if (headerNeeded) {
