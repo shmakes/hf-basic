@@ -1,0 +1,91 @@
+<div>
+  <span class="grey-note">
+    Flight Doc ID: {{id}} 
+    <a target="_blank" href="/_utils/document.html?{{db_name}}/{{id}}">{{raw_data_lnk}}</a>
+  </span>
+  <p>
+    <label for="flight_name">flight</label>
+    <input id="flightName" type="text" name="flight_name" readonly="readonly" value="{{flight_name}}" style="width: 10em" /> 
+    <label for="capacity">capacity</label>
+    <input id="flightCap" type="text" name="capacity" readonly="readonly" value="{{capacity}}" style="width: 5em" /> 
+    <label for="flight_date">flight date</label>
+    <input type="text" name="flight_date" readonly="readonly" value="{{flight_date}}" style="width: 10em" /> 
+    &nbsp;&nbsp;&nbsp;
+    filter by first letter of guardian last name 
+    <label>from: </label>
+    <select id="fromLetter">
+      {{#alphabet}}
+        <option>{{letter}}</option>
+      {{/alphabet}}
+    </select>
+    <label>thru: </label>
+    <select id="thruLetter">
+      {{#alphabet}}
+        <option>{{letter}}</option>
+      {{/alphabet}}
+    </select>
+    <input type="hidden" id="from" value="{{from}}" />
+    <input type="hidden" id="thru"   value="{{thru}}" />
+  </p>
+  <br />
+
+  <table id="fltdetail" class="tablesorter Pairs">
+    <thead>
+      <tr>
+        <th colspan="11">Guardian</th>
+        <th colspan="7">Veteran</th>
+      </tr>
+      <tr>
+        <th>Last Name</th>
+        <th>First Name</th>
+        <th>Middle Name</th>
+        <th>DOB</th>
+        <th>Gender</th>
+        <th>Mobile Phone</th>
+        <th>Email</th>
+        <th>Training</th>
+        <th>Paid</th>
+        <th>Waivers</th>
+        <th>See Doc</th>
+        <th>Mail Call Received</th>
+        <th>Mail Call Adoption</th>
+        <th>Mail Call Notes</th>
+        <th>First Name</th>
+        <th>Middle Name</th>
+        <th>Last Name</th>
+        <th>Bus</th>
+      </tr> 
+    </thead>
+    <tbody>
+  {{#pairs}}
+      <tr class="DataRow{{invalid_row}}" vetid="{{vet_id}}" grdid="{{grd_id}}">
+        <td class="Guardian colName" name="grd_last_name">{{grd_name_last}}</td>
+        <td class="Guardian colName" name="grd_first_name">{{grd_name_first}}</td>
+        <td class="Guardian colName" name="grd_middle_name">{{grd_name_middle}}</td>
+        <td class="Guardian colName" name="grd_birth_date">{{grd_birth_date}}</td>
+        <td class="Guardian colName" name="grd_gender">{{grd_gender}}</td>
+        <td class="Guardian colName" name="grd_addr_phone_mbl">{{grd_addr_phone_mbl}}</td>
+        <td class="Guardian colName" name="grd_addr_email">{{grd_addr_email}}</td>
+        <td class="Guardian colSeat  {{grd_confirmed}}">
+          {{grd_flight_training}}<br />
+          <input type="checkbox"   name="grd_flight_training_complete" {{selGrdFlightTrainingComp}} value="{{grd_flight_training_complete}}" />
+        </td>
+        <td class="Guardian colSeat  {{grd_confirmed}}"><input type="checkbox"   name="grd_flight_paid" {{selGrdFlightPaid}} value="{{grd_flight_paid}}" /></td>
+        <td class="Guardian colSeat  {{grd_confirmed}}"><input type="checkbox"   name="grd_flight_waiver" {{selGrdFlightWaiver}} value="{{grd_flight_waiver}}" /></td>
+        <td class="Guardian colSeat  {{grd_confirmed}}">
+          {{grd_medical_level}}<br />
+          <input type="checkbox"   name="grd_flight_training_see_doc" {{selGrdFlightTrainingSeeDoc}} value="{{grd_flight_training_see_doc}}" />
+        </td>
+        <td class="Veteran colSeat   {{vet_confirmed}}"><input type="checkbox"   name="vet_mailcall_received" {{selVetMailCallReceived}} value="{{vet_mailcall_received}}" /></td>
+        <td class="Veteran colSeat   {{vet_confirmed}}"><input type="checkbox"   name="vet_mailcall_adopt" {{selVetMailCallAdopt}} value="{{vet_mailcall_adopt}}" /></td>
+        <td class="Veteran colNote   {{vet_confirmed}}"><textarea rows=3 cols=80 name="vet_mailcall_notes">{{vet_mailcall_notes}}</textarea></td>
+        <td class="Veteran colName" name="vet_first_name">{{vet_name_first}}</td>
+        <td class="Veteran colName" name="vet_middle_name">{{vet_name_middle}}</td>
+        <td class="Veteran colName" name="vet_last_name">{{vet_name_last}}</td>
+        <td class="Veteran colBus    {{vet_confirmed}}">{{vet_flight_bus}}</td>
+      </tr>
+  {{/pairs}}
+    </body>
+  </table>
+</div>
+
