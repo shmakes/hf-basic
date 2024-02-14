@@ -38,9 +38,12 @@ function() {
     }
   });
 
-  var from = $("#from").val()
+  var from = $("#from").val();
   $("#fromLetter").val(from);
-  var thru = $("#thru").val()
+  var thru = $("#thru").val();
   $("#thruLetter").val(thru);
+  MultiselectDropdown(window.MultiselectDropdownOptions);
+  var ttypes = $("#trnTypes").val();
+  $("#trainingTypes").val(ttypes);
 };
 //@ sourceURL=/flight_gtcheckin/after.js
