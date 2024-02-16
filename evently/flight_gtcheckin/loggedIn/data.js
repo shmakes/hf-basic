@@ -75,6 +75,7 @@ function(r) {
       pairList.push(entry);
     }
 
+
     var alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map(function(r) {
       return {
         letter: r
@@ -96,6 +97,8 @@ function(r) {
         alphabet:              alphabet,
         pairs:                 pairList
     }
+
+    r.trainingTypes.forEach((t) => result["SelType-" + t] = "selected");
 
   } else {
 

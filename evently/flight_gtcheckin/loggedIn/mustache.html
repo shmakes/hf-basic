@@ -28,11 +28,11 @@
     <input type="hidden" id="thru"   value="{{thru}}" />
     &nbsp;&nbsp;&nbsp;
     training types 
-    <select id="trainingTypes" multiple multiselect-search="false" multiselect-select-all="false" multiselect-max-items="4" multiselect-hide-x = "true" style="width: 400px">
-      <option>Main</option>
-      <option>Phone</option>
-      <option>Previous</option>
-      <option>Web</option>
+    <select id="trainingTypes" multiple multiselect-search="false" multiselect-select-all="true" multiselect-max-items="4" multiselect-hide-x = "false" style="width: 400px">
+      <option {{SelType-Main}}>Main</option>
+      <option {{SelType-Phone}}>Phone</option>
+      <option {{SelType-Previous}}>Previous</option>
+      <option {{SelType-Web}}>Web</option>
     </select>
     <input type="hidden" id="trnTypes"   value="{{trnTypes}}" />
   </p>
