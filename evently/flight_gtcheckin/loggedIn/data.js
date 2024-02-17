@@ -36,14 +36,21 @@ function(r) {
           entry["invalid_row"] = "";
         }
         grd = pair.grd[0];
+        dob = Date.parse(grd.doc.birth_date);
+        if (dob) {
+          dobFormatted = new Intl.DateTimeFormat("en-US", { year: "numeric", month: "2-digit", day: "2-digit" }).format(dob);
+        } else {
+          dobFormatted = grd.doc.birth_date;
+        }
+
         entry["grd_id"]                     = grd.id;
         entry["grd_name_first"]             = grd.name_first;
         entry["grd_name_middle"]            = grd.doc.name.middle;
         entry["grd_name_last"]              = grd.name_last;
-        entry["grd_birth_date"]             = grd.doc.birth_date;
+        entry["grd_birth_date"]             = dobFormatted;
         entry["grd_gender"]                 = grd.doc.gender;
         entry["grd_addr_phone_mbl"]         = grd.doc.address.phone_mbl;
-        entry["grd_addr_email"]             = grd.doc.address.email;
+        entry["grd_addr_email"]             = grd.doc.address.email.toLowerCase();
         entry["grd_flight_training"]        = grd.doc.flight.training;
         entry["grd_flight_training_comp"]   = grd.doc.flight.training_complete;
         entry["grd_flight_paid"]            = grd.doc.flight.paid;
@@ -68,6 +75,7 @@ function(r) {
       pairList.push(entry);
     }
 
+
     var alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map(function(r) {
       return {
         letter: r
@@ -85,9 +93,12 @@ function(r) {
         flight_date:           r.flight_date,
         from:                  r.fromLetter,
         thru:                  r.thruLetter,
+        trnTypes:              r.trainingTypes.join(','),
         alphabet:              alphabet,
         pairs:                 pairList
     }
+
+    r.trainingTypes.forEach((t) => result["SelType-" + t] = "selected");
 
   } else {
 

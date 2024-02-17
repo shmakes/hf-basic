@@ -119,6 +119,14 @@ table.Pairs .colSeat {
   width: 45px;
 }
 
+table.Pairs .colWrap {
+  word-break: break-word;
+}
+
+table.Pairs .colNoWrap {
+  white-space: nowrap;
+}
+
 table.Pairs .unconfirmed {
   background-color:#f00;
 }

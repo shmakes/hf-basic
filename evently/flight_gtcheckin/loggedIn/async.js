@@ -7,6 +7,11 @@ function(cb) {
   var thruLetter = thruLetterParam.charAt(0).toUpperCase();
   if (fromLetter < "A" || fromLetter > "Z") {fromLetter = "A";}
   if (thruLetter < "A" || thruLetter > "Z") {thruLetter = "Z";}
+  var trainingTypesParam = app.req.query.type || "";
+  var trainingTypes = [];
+  if (trainingTypesParam) {
+    trainingTypes = trainingTypesParam.split(",");
+  }
 
   if (docid.length == 32) {
     app.db.openDoc(docid, {
@@ -58,7 +63,9 @@ function(cb) {
               var pairing = doc.pairs[idx];
               if (pairing.grd) {
                 var grdLastName = pairing.grd[0].name_last.toUpperCase();
-                if (grdLastName > fromLetter.toUpperCase() && grdLastName < nextHigherThruLetter) {
+                var grdTraining = pairing.grd[0].doc.flight.training;
+                if (grdLastName > fromLetter.toUpperCase() && grdLastName < nextHigherThruLetter 
+                          && (trainingTypes.length < 1 || trainingTypes.indexOf(grdTraining) > -1)) {
                   filteredPairs.push(pairing);
                 }
               }
@@ -67,6 +74,7 @@ function(cb) {
             doc.pairs = filteredPairs;
             doc.fromLetter = fromLetter;
             doc.thruLetter = thruLetter;
+            doc.trainingTypes = trainingTypes;
             cb(doc);
           }
         })
