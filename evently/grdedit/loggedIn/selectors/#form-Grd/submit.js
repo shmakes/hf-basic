@@ -149,6 +149,7 @@ function(context) {
         doc.flight.training_see_doc = false;
         doc.flight.training_complete = false;
         doc.flight.paid = false;
+        doc.flight.exempt = false;
         doc.flight.waiver = false;
         doc.flight.mediaWaiver = false;
         doc.flight.vaccinated = false;
@@ -308,6 +309,16 @@ function(context) {
           change: "changed paid from: " + doc.flight.paid + " to: " + isPaidForm + " by: " + user
         });
         doc.flight.paid = isPaidForm;
+        hasChanged = true;
+      }
+      var isExemptForm = (f.flight_exempt === "true");
+      var isExemptDoc = (doc.flight.exempt === true);
+      if (isExemptForm != isExemptDoc) {
+        doc.flight.history.push({
+          id: timestamp,
+          change: "changed exempt from: " + (doc.flight.exempt || "false") + " to: " + isExemptForm + " by: " + user
+        });
+        doc.flight.exempt = isExemptForm;
         hasChanged = true;
       }
       if ('flight_books_ordered' in f ) {

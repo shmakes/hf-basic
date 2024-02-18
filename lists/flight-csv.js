@@ -6,6 +6,7 @@ function(head, req) {
   var pairLastName = "";
   var training = "";
   var paid = "";
+  var exempt = "";
   var grdTrainStatus = {};
   var conflict = "";
   var medNotesExp = "";
@@ -24,6 +25,7 @@ function(head, req) {
     pairLastName = "";
     training = "";
     paid = "";
+    exempt = "";
     r = row.doc;
     if (r.type === "Veteran") {
       pairName = r.guardian.name.split(" ");
@@ -39,6 +41,12 @@ function(head, req) {
         paid = "Y";
       } else {
         paid = "N";
+      }
+      // Exempt status
+      if (r.flight.exempt) {
+        exempt = "Y";
+      } else {
+        exempt = "N";
       }
       medNotesExp = (r.medical.experience || "");
     }
@@ -124,6 +132,7 @@ function(head, req) {
         flight_training:               training,
         flight_training_notes:         r.flight.training_notes,
         flight_paid:                   paid,
+        flight_exempt:                 exempt,
         flight_seat:                   r.flight.seat,
         flight_nofly:                  (r.flight.nofly || false),
         flight_group:                  (r.flight.group || ""),
