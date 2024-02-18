@@ -53,7 +53,7 @@ function(head, req) {
         conflict:                      "",
         service_branch:                "",
         flight_group:                  "",
-        flight_bus:                    "",
+        vet_flight_bus:                "",
         first_name:                    "",
         middle_name:                   "",
         last_name:                     "",
@@ -65,6 +65,7 @@ function(head, req) {
         pair_shirt_size:               "",
         pair_first_name:               "",
         pair_last_name:                "",
+        grd_flight_bus:                "",
         flight_nofly:                  false
     };
 
@@ -77,7 +78,7 @@ function(head, req) {
         result.conflict=                      (pair.vet.vet_type || "WWII");
         result.service_branch=                ((pair.vet.service && pair.vet.service.branch) || "");
         result.flight_group=                  (pair.vet.flight.group || "");
-        result.flight_bus=                    pair.vet.flight.bus.replace("Alpha", "Alpha ").replace("Bravo", "Bravo ");
+        result.vet_flight_bus=                pair.vet.flight.bus.replace("Alpha", "Alpha ").replace("Bravo", "Bravo ");
         result.first_name=                    pair.vet.name.first;
         result.middle_name=                   pair.vet.name.middle;
         result.last_name=                     pair.vet.name.last;
@@ -92,6 +93,7 @@ function(head, req) {
         result.pair_shirt_size=               pair.grd[0].shirt.size;
         result.pair_first_name=               pair.grd[0].name.first;
         result.pair_last_name=                pair.grd[0].name.last;
+        result.grd_flight_bus=                pair.grd[0].flight.bus.replace("Alpha", "Alpha ").replace("Bravo", "Bravo ");
         result.flight_nofly=                  (pair.grd[0].flight.nofly || false);
     }
 
