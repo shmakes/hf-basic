@@ -315,6 +315,10 @@
           <input type="checkbox" name="flight_paid" {{selFlightPaid}} value="true" />
         </li>
         <li>
+          <label for="flight_exempt">exempt</label>
+          <input type="checkbox" name="flight_exempt" {{selFlightExempt}} value="true" />
+        </li>
+        <li>
           <label for="flight_books_ordered">books ordered</label>
           <input type="text" name="flight_books_ordered" maxlength="2" pattern="[0-9]{1,2}" value="{{flight_books_ordered}}" style="width: 2em" />
         </li>
