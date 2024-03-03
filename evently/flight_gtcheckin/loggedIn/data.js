@@ -50,7 +50,7 @@ function(r) {
         entry["grd_birth_date"]             = dobFormatted;
         entry["grd_gender"]                 = grd.doc.gender;
         entry["grd_addr_phone_mbl"]         = grd.doc.address.phone_mbl;
-        entry["grd_addr_email"]             = grd.doc.address.email.toLowerCase();
+        entry["grd_flight_training_notes"]  = grd.doc.flight.training_notes;
         entry["grd_flight_training"]        = grd.doc.flight.training;
         entry["grd_flight_training_comp"]   = grd.doc.flight.training_complete;
         entry["grd_flight_paid"]            = grd.doc.flight.paid;

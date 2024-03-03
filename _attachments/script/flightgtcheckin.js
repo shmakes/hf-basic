@@ -14,6 +14,17 @@ function changeMailCallNotes(app, docId, newMailCallNote, user) {
   });
 }
 
+function changeFlightTrainingNotes(app, docId, newFlightTrainingNote, user) {
+  app.db.openDoc(docId, {
+    success : function(doc) {
+        doc.flight.training_notes = newFlightTrainingNote;
+        app.db.saveDoc(doc, {
+          success : function() {}
+        });
+    }
+  });
+}
+
 function changeCheckbox(app, checkBox, docId, newCheckValue, user) {
   var propMap = checkBox.split("_");
   var cat = propMap[1].replace("mailcall", "mail_call");

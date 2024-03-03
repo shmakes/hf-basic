@@ -3,4 +3,4 @@ function() {
   window.open("grd_edit.html?grdid=" + grdId, '_blank');
 };
 
-//@ sourceURL=flight_gtcheckin/loggedIn/selectors/td#grd_last_name~click.js
+//@ sourceURL=flight_gtcheckin/loggedIn/selectors/td#grd_first_name~click.js

@@ -3,4 +3,4 @@ function() {
   window.open("vet_edit.html?vetid=" + vetId, '_blank');
 };
 
-//@ sourceURL=flight_gtcheckin/loggedIn/selectors/td#vet_last_name~click.js
+//@ sourceURL=flight_gtcheckin/loggedIn/selectors/td#vet_first_name~click.js
