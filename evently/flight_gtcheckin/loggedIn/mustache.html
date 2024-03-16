@@ -51,9 +51,8 @@
         <th>DOB</th>
         <th>Gender</th>
         <th>Mobile Phone</th>
-        <th>Email</th>
+        <th>Training Notes</th>
         <th>Training</th>
-        <th>Paid</th>
         <th>Waivers</th>
         <th>See Doc</th>
         <th>Mail Recvd</th>
@@ -74,12 +73,11 @@
         <td class="Guardian colName" name="grd_birth_date">{{grd_birth_date}}</td>
         <td class="Guardian colSeat" name="grd_gender">{{grd_gender}}</td>
         <td class="Guardian colName colNoWrap" name="grd_addr_phone_mbl">{{grd_addr_phone_mbl}}</td>
-        <td class="Guardian colName colWrap" name="grd_addr_email">{{grd_addr_email}}</td>
+        <td class="Guardian colNote"><textarea rows=3 cols=40 name="grd_flight_training_notes">{{grd_flight_training_notes}}</textarea></td>
         <td class="Guardian colSeat  {{grd_confirmed}}">
           {{grd_flight_training}}<br />
           <input type="checkbox"   name="grd_flight_training_complete" {{selGrdFlightTrainingComp}} value="{{grd_flight_training_complete}}" />
         </td>
-        <td class="Guardian colSeat  {{grd_confirmed}}"><input type="checkbox"   name="grd_flight_paid" {{selGrdFlightPaid}} value="{{grd_flight_paid}}" /></td>
         <td class="Guardian colSeat  {{grd_confirmed}}"><input type="checkbox"   name="grd_flight_waiver" {{selGrdFlightWaiver}} value="{{grd_flight_waiver}}" /></td>
         <td class="Guardian colSeat  {{grd_confirmed}}"><input type="checkbox"   name="grd_flight_training_see_doc" {{selGrdFlightTrainingSeeDoc}} value="{{grd_flight_training_see_doc}}" /></td>
         <td class="Veteran colSeat   {{vet_confirmed}}"><input type="checkbox"   name="vet_mailcall_received" {{selVetMailCallReceived}} value="{{vet_mailcall_received}}" /></td>

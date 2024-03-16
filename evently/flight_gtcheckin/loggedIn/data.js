@@ -50,19 +50,15 @@ function(r) {
         entry["grd_birth_date"]             = dobFormatted;
         entry["grd_gender"]                 = grd.doc.gender;
         entry["grd_addr_phone_mbl"]         = grd.doc.address.phone_mbl;
-        entry["grd_addr_email"]             = grd.doc.address.email.toLowerCase();
+        entry["grd_flight_training_notes"]  = grd.doc.flight.training_notes;
         entry["grd_flight_training"]        = grd.doc.flight.training;
         entry["grd_flight_training_comp"]   = grd.doc.flight.training_complete;
-        entry["grd_flight_paid"]            = grd.doc.flight.paid;
         entry["grd_flight_waiver"]          = grd.doc.flight.waiver;
         entry["grd_medical_level"]          = grd.doc.medical.level;
         entry["grd_flight_training_see_doc"]= grd.doc.flight.training_see_doc;
 
         if (grd.doc.flight.training_complete) {
           entry["selGrdFlightTrainingComp"] = "checked=yes";
-        }
-        if (grd.doc.flight.paid) {
-          entry["selGrdFlightPaid"] = "checked=yes";
         }
         if (grd.doc.flight.waiver) {
           entry["selGrdFlightWaiver"] = "checked=yes";
