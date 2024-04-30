@@ -4,6 +4,7 @@
     <title>Honor Flight</title>
     <link rel="stylesheet" href="style/main.css" type="text/css">
     <link rel="stylesheet" href="style/table.css" type="text/css">    
+    <link rel="stylesheet" href="style/search.css" type="text/css">    
   </head>
   <body>
     <div id="header">
@@ -15,7 +16,20 @@
       <div id="presenters"></div>        
       <br style="clear:both;"/>
     </div>
+    <hr />
+
+    <input placeholder="Search here" id="searchWidgetTrigger" />
+
+    <div id="search_widget">
+
+      <!-- Search widget element is not visible by default -->
+      <gen-search-widget
+        configId="f00adf8a-0801-4fa5-83f2-d066a26f6160"
+        triggerId="searchWidgetTrigger">
+      </gen-search-widget>
+    </div>
   </body>
   <script src="vendor/couchapp/loader.js"></script>
   <script src="script/presenterlist.js"></script>
+  <script src="https://cloud.google.com/ai/gen-app-builder/client?hl=en_US"></script>
 </html>
