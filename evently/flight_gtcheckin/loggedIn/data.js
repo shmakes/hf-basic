@@ -36,18 +36,12 @@ function(r) {
           entry["invalid_row"] = "";
         }
         grd = pair.grd[0];
-        dob = Date.parse(grd.doc.birth_date);
-        if (dob) {
-          dobFormatted = new Intl.DateTimeFormat("en-US", { year: "numeric", month: "2-digit", day: "2-digit" }).format(dob);
-        } else {
-          dobFormatted = grd.doc.birth_date;
-        }
 
         entry["grd_id"]                     = grd.id;
         entry["grd_name_first"]             = grd.name_first;
         entry["grd_name_middle"]            = grd.doc.name.middle;
         entry["grd_name_last"]              = grd.name_last;
-        entry["grd_birth_date"]             = dobFormatted;
+        entry["grd_birth_date"]             = grd.doc.birth_date;
         entry["grd_gender"]                 = grd.doc.gender;
         entry["grd_addr_phone_mbl"]         = grd.doc.address.phone_mbl;
         entry["grd_flight_training_notes"]  = grd.doc.flight.training_notes;
