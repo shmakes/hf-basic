@@ -36,12 +36,16 @@ function(r) {
           entry["invalid_row"] = "";
         }
         grd = pair.grd[0];
+        bdateObj = new Date(grd.doc.birth_date);
+        byear = bdateObj.getFullYear();
+        bmonth = (1 + bdateObj.getMonth()).toString().padStart(2, '0');
+        bday = (1 + bdateObj.getDate()).toString().padStart(2, '0');
 
         entry["grd_id"]                     = grd.id;
         entry["grd_name_first"]             = grd.name_first;
         entry["grd_name_middle"]            = grd.doc.name.middle;
         entry["grd_name_last"]              = grd.name_last;
-        entry["grd_birth_date"]             = grd.doc.birth_date;
+        entry["grd_birth_date"]             = bmonth + '/' + bday + '/' + byear;
         entry["grd_gender"]                 = grd.doc.gender;
         entry["grd_addr_phone_mbl"]         = grd.doc.address.phone_mbl;
         entry["grd_flight_training_notes"]  = grd.doc.flight.training_notes;

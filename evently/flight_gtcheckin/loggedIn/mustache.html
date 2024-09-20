@@ -40,11 +40,11 @@
 
   <table id="fltdetail" class="tablesorter Pairs">
     <thead>
-      <tr>
+      <tr class="larger">
         <th colspan="11">Guardian</th>
         <th colspan="7">Veteran</th>
       </tr>
-      <tr>
+      <tr class="larger">
         <th>Last Name</th>
         <th>First Name</th>
         <th>Middle Name</th>
@@ -56,21 +56,16 @@
         <th>Waivers</th>
         <th>See Doc</th>
         <th>Mail Recvd</th>
-        <th>Mail Adopt</th>
-        <th>Mail Call Notes</th>
-        <th>First Name</th>
-        <th>Middle Name</th>
-        <th>Last Name</th>
         <th>Bus</th>
       </tr> 
     </thead>
     <tbody>
   {{#pairs}}
-      <tr class="DataRow{{invalid_row}}" vetid="{{vet_id}}" grdid="{{grd_id}}">
-        <td class="Guardian colSeat" name="grd_last_name">{{grd_name_last}}</td>
-        <td class="Guardian colSeat" name="grd_first_name">{{grd_name_first}}</td>
-        <td class="Guardian colSeat" name="grd_middle_name">{{grd_name_middle}}</td>
-        <td class="Guardian colName" name="grd_birth_date">{{grd_birth_date}}</td>
+      <tr class="DataRow{{invalid_row}} LargeRow" vetid="{{vet_id}}" grdid="{{grd_id}}">
+        <td class="Guardian colName" name="grd_last_name">{{grd_name_last}}</td>
+        <td class="Guardian colName" name="grd_first_name">{{grd_name_first}}</td>
+        <td class="Guardian colName" name="grd_middle_name">{{grd_name_middle}}</td>
+        <td class="Guardian colDate" name="grd_birth_date">{{grd_birth_date}}</td>
         <td class="Guardian colSeat" name="grd_gender">{{grd_gender}}</td>
         <td class="Guardian colName colNoWrap" name="grd_addr_phone_mbl">{{grd_addr_phone_mbl}}</td>
         <td class="Guardian colNote"><textarea rows=3 cols=40 name="grd_flight_training_notes">{{grd_flight_training_notes}}</textarea></td>
@@ -81,12 +76,7 @@
         <td class="Guardian colSeat  {{grd_confirmed}}"><input type="checkbox"   name="grd_flight_waiver" {{selGrdFlightWaiver}} value="{{grd_flight_waiver}}" /></td>
         <td class="Guardian colSeat  {{grd_confirmed}}"><input type="checkbox"   name="grd_flight_training_see_doc" {{selGrdFlightTrainingSeeDoc}} value="{{grd_flight_training_see_doc}}" /></td>
         <td class="Veteran colSeat   {{vet_confirmed}}"><input type="checkbox"   name="vet_mailcall_received" {{selVetMailCallReceived}} value="{{vet_mailcall_received}}" /></td>
-        <td class="Veteran colSeat   {{vet_confirmed}}"><input type="checkbox"   name="vet_mailcall_adopt" {{selVetMailCallAdopt}} value="{{vet_mailcall_adopt}}" /></td>
-        <td class="Veteran colNote   {{vet_confirmed}}"><textarea rows=3 cols=40 name="vet_mailcall_notes">{{vet_mailcall_notes}}</textarea></td>
-        <td class="Veteran colSeat" name="vet_first_name">{{vet_name_first}}</td>
-        <td class="Veteran colSeat" name="vet_middle_name">{{vet_name_middle}}</td>
-        <td class="Veteran colSeat" name="vet_last_name">{{vet_name_last}}</td>
-        <td class="Veteran colBus    {{vet_confirmed}}">{{vet_flight_bus}}</td>
+        <td class="Veteran colBus    {{vet_confirmed}}" name="vet_flight_bus">{{vet_flight_bus}}</td>
       </tr>
   {{/pairs}}
     </body>

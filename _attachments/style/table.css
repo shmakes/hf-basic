@@ -35,6 +35,10 @@ tr.Separator {
   background-color: #ffa;
 }
 
+tr.LargeRow {
+  font-size: 2em;
+}
+
 table.MixedList a {
   display:block;
 }
@@ -97,6 +101,14 @@ table.MixedList .colSpacer {
 
 table.Pairs .colName {
   width: 150px;
+}
+
+table.Pairs .colDate {
+  width: 150px;
+}
+
+table.Pairs .colNote {
+  width: 250px;
 }
 
 table.Pairs .colCity {

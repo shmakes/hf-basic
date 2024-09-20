@@ -28,7 +28,6 @@ function() {
       8: { sorter:"checkboxes" }, 
       9: { sorter:"checkboxes" }, 
       10: { sorter:"checkboxes" }, 
-      11: { sorter:"checkboxes" }, 
     },
     textExtraction: function(elem) {
       var $input = $("input", elem);
