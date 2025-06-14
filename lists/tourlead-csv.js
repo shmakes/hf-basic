@@ -84,13 +84,13 @@ function(head, req) {
         result.last_name=                     pair.vet.name.last;
         result.birth_date=                    pair.vet.birth_date;
         result.gender=                        pair.vet.gender;
-        result.shirt_size=                    pair.vet.shirt.size;
+        result.shirt_size=                    pair.vet.apparel ? pair.vet.apparel.shirt_size : pair.vet.shirt.size;
         result.vet_seat=                      pair.vet.flight.seat;
     }
 
     if (pair.grd) {
         result.grd_seat=                      pair.grd[0].flight.seat;
-        result.pair_shirt_size=               pair.grd[0].shirt.size;
+        result.pair_shirt_size=               pair.grd[0].apparel ? pair.grd[0].apparel.shirt_size : pair.grd[0].shirt.size;
         result.pair_first_name=               pair.grd[0].name.first;
         result.pair_last_name=                pair.grd[0].name.last;
         result.grd_flight_bus=                pair.grd[0].flight.bus.replace("Alpha", "Alpha ").replace("Bravo", "Bravo ");
