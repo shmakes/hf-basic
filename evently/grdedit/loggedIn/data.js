@@ -110,6 +110,7 @@ function(r) {
         flight_nofly:              (r.flight.nofly || false),
         call_assigned_to:          r.call.assigned_to,
         call_center_notes:         r.call.notes,
+        how_heard_about:           (r.call.how_heard_about || ""),
         call_fm_number:            r.call.fm_number,
         call_email_sent:           (r.call.email_sent || false),
         veteran_id:                vetId,
@@ -251,6 +252,8 @@ function(r) {
     if (r.accommodations.attend_banquette) {
       result["selBanquette"] = "checked=yes";
     }
+    var selectedHowHeardAbout = "selHowHeard-" + (r.call.how_heard_about || "Unknown").split(' ').join('_');
+    result[selectedHowHeardAbout] = "selected";
     var selectedFoodRestriction = "selFoodRestriction-" + (r.medical.food_restriction || "None");
     result[selectedFoodRestriction] = "selected";
     var selectedGender = "selGender-" + (r.gender || "M");
@@ -291,6 +294,7 @@ function(r) {
         flight_nofly:              false,
         call_assigned_to:          "",
         call_center_notes:         "",
+        how_heard_about:           "Unknown",
         call_fm_number:            "",
         call_email_sent:           false,
         veteran_id:                "",

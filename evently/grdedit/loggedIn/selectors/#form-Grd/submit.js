@@ -95,6 +95,7 @@ function(context) {
         doc.call = {};
         doc.call.history = [];
         doc.call.assigned_to = "";
+        doc.call.how_heard_about = "Unknown",
         doc.call.fm_number = "";
         doc.call.mail_sent = false;
         doc.call.email_sent = false;
@@ -115,6 +116,10 @@ function(context) {
           doc.call.notes = callNote;
           hasChanged = true;
         }
+      }
+      if ('how_heard_about' in f && f.how_heard_about != doc.call.how_heard_about) {
+        doc.call.how_heard_about = f.how_heard_about;
+        hasChanged = true;
       }
       if ('call_fm_number' in f && f.call_fm_number != doc.call.fm_number) {
         doc.call.history.push({

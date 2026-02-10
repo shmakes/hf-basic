@@ -80,6 +80,7 @@ function(r) {
         flight_nofly:           (r.flight.nofly || false),
         call_assigned_to:       r.call.assigned_to,
         call_center_notes:      r.call.notes,
+        how_heard_about:        (r.call.how_heard_about || ""),
         call_fm_number:         r.call.fm_number,
         call_mail_sent:         (r.call.mail_sent  || false),
         call_email_sent:        (r.call.email_sent || false),
@@ -197,6 +198,8 @@ function(r) {
     result[selectedNewspaperOk] = "selected";
     var selectedInterviewOk = "selInterview-" + (r.media_interview_ok || "Unknown");
     result[selectedInterviewOk] = "selected";
+    var selectedHowHeardAbout = "selHowHeard-" + (r.call.how_heard_about || "Unknown").split(' ').join('_');
+    result[selectedHowHeardAbout] = "selected";
     if (r.medical.release) {
       result["selMedicalRelease"] = "checked=yes";
     }
@@ -300,6 +303,7 @@ function(r) {
         flight_nofly:           false,
         call_assigned_to:       "",
         call_center_notes:      "",
+        how_heard_about:        "Unknown",
         call_fm_number:         "",
         call_mail_sent:         false,
         mc_name:                "",

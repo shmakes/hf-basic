@@ -210,6 +210,23 @@
           <textarea rows="3" cols="70" name="call_center_notes">{{call_center_notes}}</textarea>
         </li>
         <li>
+          <label for="how_heard_about">how heard about</label>
+          <select name="how_heard_about" id="how_heard_about">
+            <option value="Unknown" {{selHowHeard-Unknown}}>Unknown</option>
+            <option value="VA or vet org" {{selHowHeard-VA_or_vet_org}}>VA or vet org</option>
+            <option value="radio segment" {{selHowHeard-radio_segment}}>radio segment</option>
+            <option value="tv interview or segment" {{selHowHeard-tv_interview_or_segment}}>tv interview or segment</option>
+            <option value="school or community event" {{selHowHeard-school_or_community_event}}>school or community event</option>
+            <option value="an SSHF event or fundraiser" {{selHowHeard-an_SSHF_event_or_fundraiser}}>an SSHF event or fundraiser</option>
+            <option value="newspaper or magazine ad or story" {{selHowHeard-newspaper_or_magazine_ad_or_story}}>newspaper or magazine ad or story</option>
+            <option value="social media" {{selHowHeard-social_media}}>social media</option>
+            <option value="family or friend" {{selHowHeard-family_or_friend}}>family or friend</option>
+            <option value="airport signage or experience" {{selHowHeard-airport_signage_or_experience}}>airport signage or experience</option>
+            <option value="Kwik Trip Pump ad" {{selHowHeard-Kwik_Trip_Pump_ad}}>Kwik Trip Pump ad</option>
+            <option value="other" {{selHowHeard-other}}>other</option>
+          </select>
+        </li>
+        <li>
           <label for="call_fm_number">FM #</label>
           <input type="text" name="call_fm_number" maxlength="5" pattern="[F,M,0-9]{0,}" value="{{call_fm_number}}" style="width: 5em" />
           <small>(A number or "FM")</small>
