@@ -122,6 +122,7 @@ function(head, req) {
         gender:                        r.gender,
         shirt_size:                    r.shirt.size,
         call_assigned_to:              (r.call.assigned_to || ""),
+        how_heard_about:               (r.call.how_heard_about || ""),
         call_fm_number:                (r.call.fm_number || ""),
         call_mail_sent:                (r.call.mail_sent  || false),
         call_email_sent:               (r.call.email_sent || false),
