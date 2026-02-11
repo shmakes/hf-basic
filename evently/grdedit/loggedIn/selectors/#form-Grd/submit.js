@@ -117,7 +117,7 @@ function(context) {
           hasChanged = true;
         }
       }
-      if ('how_heard_about' in f && f.how_heard_about != doc.call.how_heard_about) {
+      if ('how_heard_about' in f && f.how_heard_about != (doc.call.how_heard_about || "Unknown")) {
         doc.call.how_heard_about = f.how_heard_about;
         hasChanged = true;
       }
