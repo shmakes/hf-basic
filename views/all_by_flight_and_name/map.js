@@ -23,6 +23,7 @@ function(doc) {
          ], 
          {"type": ptype,
            "name": doc.name.first + " " + doc.name.last, 
+           "phone": (doc.address.phone_day || "-"), 
            "city": doc.address.city + ", " + doc.address.state, 
            "appdate": doc.app_date,
            "flight": (flt.id || "-"),
