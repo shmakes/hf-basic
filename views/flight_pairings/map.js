@@ -24,6 +24,8 @@ function(doc) {
            "bus": (flt.bus || "None"),
            "seat": (flt.seat || ""),
            "shirt": (doc.shirt.size || ""),
+           "fm_number": (doc.call ? (doc.call.fm_number || " ") : " "),
+           "assigned_to": (doc.call ? (doc.call.assigned_to || " ") : " "),
            "confirmed": confirmed,
            "nofly": nofly,
            "pairing": (doc.guardian.id || "")
@@ -44,6 +46,8 @@ function(doc) {
                "bus": (flt.bus || "None"),
                "seat": (flt.seat || ""),
                "shirt": (doc.shirt.size || ""),
+               "fm_number": (doc.call ? (doc.call.fm_number || " ") : " "),
+               "assigned_to": (doc.call ? (doc.call.assigned_to || " ") : " "),
                "confirmed": confirmed,
                "nofly": nofly,
                "pairing": (doc.veteran.pairings[vet].id || "")
@@ -63,6 +67,8 @@ function(doc) {
              "bus": (flt.bus || "None"),
              "seat": (flt.seat || ""),
              "shirt": (doc.shirt.size || ""),
+             "fm_number": (doc.call ? (doc.call.fm_number || " ") : " "),
+             "assigned_to": (doc.call ? (doc.call.assigned_to || " ") : " "),
              "confirmed": confirmed,
              "nofly": nofly,
              "pairing": ""
