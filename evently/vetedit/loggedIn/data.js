@@ -185,7 +185,7 @@ function(r) {
     result[selectedStatus] = "selected";
     var selectedBranch = "selBranch-" + r.service.branch.split(' ').join('_');
     result[selectedBranch] = "selected";
-    var selectedVetType = "selVetType-" + (r.vet_type || "WWII");
+    var selectedVetType = "selVetType-" + (r.vet_type || "WWII").split(' ').join('_');
     result[selectedVetType] = "selected";
     var selectedFoodRestriction = "selFoodRestriction-" + (r.medical.food_restriction || "None");
     result[selectedFoodRestriction] = "selected";
